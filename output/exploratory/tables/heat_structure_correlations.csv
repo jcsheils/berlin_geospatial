@@ -1,0 +1,4 @@
+urban_metric,outcome,spearman_rho,p_value
+TreeCover_Pct,Landsat_LST_C,-0.8391608391608393,0.0006428259886278202
+BuiltSurface_Pct,Landsat_LST_C,0.6433566433566434,0.024003191200713644
+PopulationDensity_per_km2,Landsat_LST_C,0.6643356643356644,0.01845271802844544

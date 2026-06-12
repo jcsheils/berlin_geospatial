@@ -1,0 +1,13 @@
+heat_or_urban_metric,watering_metric,spearman_rho,p_value
+Landsat_LST_C,reach_pct,0.30069930069930073,0.34225952894002465
+Landsat_LST_C,litres_per_inventory_tree,0.2377622377622378,0.4568008526399232
+Landsat_LST_C,events_per_1000_inventory,0.2447552447552448,0.4432619364501832
+TreeCover_Pct,reach_pct,-0.5034965034965035,0.09515736659412469
+TreeCover_Pct,litres_per_inventory_tree,-0.4755244755244756,0.11817595701303213
+TreeCover_Pct,events_per_1000_inventory,-0.46153846153846156,0.13094806950717278
+BuiltSurface_Pct,reach_pct,0.6433566433566434,0.024003191200713644
+BuiltSurface_Pct,litres_per_inventory_tree,0.7062937062937064,0.010245193941127852
+BuiltSurface_Pct,events_per_1000_inventory,0.6783216783216784,0.0153173290532817
+PopulationDensity_per_km2,reach_pct,0.7062937062937064,0.010245193941127852
+PopulationDensity_per_km2,litres_per_inventory_tree,0.7482517482517484,0.005124081698753058
+PopulationDensity_per_km2,events_per_1000_inventory,0.7132867132867133,0.009201779777634755

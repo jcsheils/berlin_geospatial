@@ -1,0 +1,10 @@
+metric,value
+Raw events,58847
+Exact duplicate rows removed,111
+Unique tree IDs,11278
+Coordinate pairs swapped,56
+Missing/invalid Berlin coordinates after correction,125
+Events above 500 L,5
+"Events above 1,000 L",1
+First timestamp,2020-05-18 20:42:02.524869+00:00
+Last timestamp,2026-04-30 00:00:00+00:00

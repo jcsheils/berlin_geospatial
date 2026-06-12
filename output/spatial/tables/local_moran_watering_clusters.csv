@@ -1,0 +1,543 @@
+plr_id,plr_name,bzr_name,District,watering_reach_pct,local_moran_cluster,local_moran_i,local_moran_p
+02500728,Samariterviertel,Frankfurter Allee Nord,Friedrichshain-Kreuzberg,31.218697829716195,High-High,18.276275146962483,0.003
+02500729,Pettenkofer Straße,Frankfurter Allee Nord,Friedrichshain-Kreuzberg,14.772727272727273,High-High,7.972717560266153,0.003
+08100314,Donaustraße,Reuterstraße,Neukölln,14.641744548286605,High-High,4.279490426767372,0.017
+07300515,Taunusstraße,Friedenau West,Tempelhof-Schöneberg,13.072625698324023,High-High,3.648080247859576,0.026
+07300516,Odenwaldstraße,Friedenau West,Tempelhof-Schöneberg,10.54421768707483,High-High,4.133839768059759,0.012
+03601244,Humannplatz,Prenzlauer Berg Nord,Pankow,9.926470588235293,High-High,2.725227505548567,0.027
+03601346,Gethsemanekirche,Helmholtzplatz,Pankow,8.783783783783784,High-High,2.2047446434562743,0.042
+04300623,Karl-August-Platz,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,8.719646799116997,High-High,2.71950505682554,0.01
+07100206,Großgörschenstraße,Schöneberg Nordost,Tempelhof-Schöneberg,8.65533230293663,High-High,2.2958535948445817,0.012
+04300621,Richard-Wagner-Straße,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,8.595988538681949,High-High,2.943916077128656,0.007
+02200207,Gleisdreieck,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,8.482142857142858,High-High,1.5226185156607064,0.045
+02500830,Niederbarnimstraße,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,8.363636363636363,High-High,5.3971825317079665,0.001
+02200208,Rathaus Yorckstraße,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,8.361581920903955,High-High,1.6040786380776206,0.048
+08100206,Flughafenstraße,Neuköllner Mitte/Zentrum,Neukölln,8.185840707964601,High-High,1.805348163165567,0.039
+04300414,Schloßstraße,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,8.025682182985554,High-High,2.407959435641854,0.007
+04300416,Amtsgerichtsplatz,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,7.962529274004684,High-High,2.2080157591985037,0.018
+04501040,Hindemithplatz,Lietzenburger Straße,Charlottenburg-Wilmersdorf,7.936507936507937,High-High,1.5322821616416347,0.046
+08100310,Maybachufer,Reuterstraße,Neukölln,7.723577235772358,High-High,1.8886626660648826,0.024
+02500833,Boxhagener Platz,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,7.587768969422424,High-High,2.617680878642933,0.012
+03601243,Rodenbergstraße,Prenzlauer Berg Nord,Pankow,7.44949494949495,High-High,1.8161033329191667,0.021
+02500831,Wismarplatz,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,7.448494453248811,High-High,6.095955861449981,0.001
+08100311,Reuterplatz,Reuterstraße,Neukölln,7.339449541284404,High-High,3.0489741694828254,0.004
+07200307,Bayerischer Platz,Schöneberg Südwest,Tempelhof-Schöneberg,7.314974182444062,High-High,1.0887909783159757,0.047
+07300618,Ceciliengärten,Friedenau Ost,Tempelhof-Schöneberg,7.265774378585086,High-High,1.6381276786562233,0.032
+04500936,Droysenstraße,Halensee,Charlottenburg-Wilmersdorf,7.129455909943715,High-High,1.8293328227937624,0.019
+02200213,Graefekiez Nord,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,7.06605222734255,High-High,2.284032703371697,0.004
+02500727,Forckenbeckplatz,Frankfurter Allee Nord,Friedrichshain-Kreuzberg,7.065217391304348,High-High,4.015763499731475,0.002
+07300517,Perelsplatz,Friedenau West,Tempelhof-Schöneberg,6.902086677367576,High-High,1.7998583938876431,0.013
+02400522,Richard-Sorge-Viertel,Karl-Marx-Allee Nord,Friedrichshain-Kreuzberg,6.868867082961642,High-High,1.104481435589454,0.045
+03601141,Arnimplatz,Prenzlauer Berg Nordwest,Pankow,6.78391959798995,High-High,1.709237537026117,0.025
+02500832,Traveplatz,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,6.744868035190616,High-High,1.7682683187497665,0.006
+07200411,Julius-Leber-Brücke,Schöneberg Südost,Tempelhof-Schöneberg,6.3559322033898304,High-High,1.4999775174051153,0.024
+07200409,Belziger Straße,Schöneberg Südost,Tempelhof-Schöneberg,6.229860365198711,High-High,1.3309256927707787,0.027
+07100102,Kalckreuthstraße,Schöneberg Nordwest,Tempelhof-Schöneberg,6.155507559395248,High-High,1.1092788832741813,0.035
+07100204,Barbarossaplatz,Schöneberg Nordost,Tempelhof-Schöneberg,6.080347448425624,High-High,1.5889391146456053,0.006
+01100104,Körnerstraße,Tiergarten Süd,Mitte,5.8690744920993225,High-High,1.0419598775015868,0.047
+02300417,Reichenberger Straße West,Südliche Luisenstadt,Friedrichshain-Kreuzberg,5.838323353293413,High-High,1.3831804796756484,0.023
+02500726,Hausburgviertel,Frankfurter Allee Nord,Friedrichshain-Kreuzberg,5.758157389635317,High-High,1.4145330325579812,0.03
+08100312,Weichselplatz,Reuterstraße,Neukölln,5.566037735849057,High-High,1.7583042408479372,0.002
+01401047,Sparrplatz,Wedding Zentrum,Mitte,5.565862708719852,High-High,1.0698217703934814,0.035
+01200625,Lübecker Straße,Moabit Ost,Mitte,5.555555555555555,High-High,1.599020264630801,0.019
+08100415,Ganghoferstraße,Rixdorf,Neukölln,5.506607929515418,High-High,1.3247681372576539,0.011
+07100205,Alvenslebenstraße,Schöneberg Nordost,Tempelhof-Schöneberg,5.454545454545454,High-High,1.4830444772846831,0.013
+07100103,Frobenstraße,Schöneberg Nordwest,Tempelhof-Schöneberg,5.434782608695652,High-High,1.348762126766459,0.016
+01200626,Thomasiusstraße,Moabit Ost,Mitte,5.301455301455301,High-High,0.7314408515959862,0.048
+02200212,Graefekiez Süd,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,5.289256198347108,High-High,1.564385756147788,0.007
+02400624,Weberwiese,Karl-Marx-Allee Süd,Friedrichshain-Kreuzberg,5.200433369447454,High-High,0.9289809724403618,0.02
+08100418,Hertzbergplatz,Rixdorf,Neukölln,4.952830188679245,High-High,0.8113233569992826,0.03
+03601453,Alter Schlachthof,Prenzlauer Berg Ost,Pankow,4.81335952848723,High-High,1.9832276055529827,0.001
+04400835,Rüdesheimer Platz,Schmargendorf,Charlottenburg-Wilmersdorf,4.72488038277512,High-High,0.8324074675305978,0.022
+03601142,Falkplatz,Prenzlauer Berg Nordwest,Pankow,4.5477772100153295,High-High,0.733058644287227,0.018
+07200414,Hohenfriedbergstraße,Schöneberg Südost,Tempelhof-Schöneberg,4.29042904290429,High-High,0.8034107991659084,0.023
+03701555,Sredzkistraße,Prenzlauer Berg Südwest,Pankow,4.25531914893617,High-High,0.6477689254206915,0.018
+07100101,Wittenbergplatz,Schöneberg Nordwest,Tempelhof-Schöneberg,4.028436018957346,High-High,0.4098858911811197,0.045
+04501151,Hildegardstraße,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,3.656307129798903,High-High,0.5099569455485725,0.024
+08100419,Treptower Straße Nord,Rixdorf,Neukölln,3.6468330134357005,High-High,0.41905606240928156,0.037
+04300517,Tegeler Weg,Mierendorffplatz,Charlottenburg-Wilmersdorf,3.5637149028077753,High-High,0.9639778465094775,0.016
+06100103,Markelstraße,Schloßstraße,Steglitz-Zehlendorf,3.5618878005342833,High-High,0.31420167017684963,0.045
+01300834,Brunnenstraße,Brunnenstraße Nord,Mitte,3.5472972972972974,High-High,0.39128601242058914,0.034
+02200210,Urbanstraße,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,3.4533976977348684,High-High,0.32245709367403974,0.033
+04300413,Klausenerplatz,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,3.2863849765258215,High-High,0.4945223517898317,0.018
+02200209,Viktoriapark,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,3.218059558117195,High-High,0.4494758767124435,0.003
+03601347,Helmholtzplatz,Helmholtzplatz,Pankow,3.1620553359683794,High-High,0.6092626593582139,0.002
+07200308,Volkspark (Rudolph-Wilde-Park),Schöneberg Südwest,Tempelhof-Schöneberg,2.8279181708784598,High-High,0.1861084599772585,0.036
+02500835,Stralauer Kiez,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,2.6737967914438503,High-High,0.12158461907271916,0.039
+07300619,Grazer Platz,Friedenau Ost,Tempelhof-Schöneberg,2.577660277594184,High-High,0.09675086773775655,0.033
+04300624,Savignyplatz,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,2.522935779816514,High-High,0.11751196596335477,0.03
+04300619,Alt-Lietzow,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,2.4858757062146895,High-High,0.14499119911461325,0.015
+03400828,Spiekermann Straße,Pankow Süd,Pankow,2.3157894736842106,High-High,0.05908591506107902,0.031
+01300733,Gesundbrunnen,Osloer Straße,Mitte,2.284011916583913,High-High,0.04407301279987791,0.021
+01401043,Antonstraße,Wedding Zentrum,Mitte,2.2151898734177213,High-High,0.02778393287466778,0.03
+03200309,Eddastraße,Buchholz,Pankow,2.712571726656234,High-Low,-0.10009612817763393,0.037
+10200628,Neue Grottkauer Straße,Hellersdorf Süd,Marzahn-Hellersdorf,2.4246877296105804,High-Low,-0.06049169786165499,0.001
+08200832,Buckow Mitte,Buckow,Neukölln,2.2595596755504057,High-Low,-0.02502119077060573,0.017
+07400823,Wittekindstraße,Tempelhof Südwest,Tempelhof-Schöneberg,1.971608832807571,Low-High,-0.04390787393155357,0.038
+02300418,Reichenberger Straße Ost,Südliche Luisenstadt,Friedrichshain-Kreuzberg,1.9381443298969072,Low-High,-0.09252916526484548,0.004
+01401045,Schwedenstraße,Wedding Zentrum,Mitte,1.9067796610169492,Low-High,-0.07133125744548012,0.031
+04501153,Babelsberger Straße,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,1.7041053446940357,Low-High,-0.13899975351268443,0.013
+07200410,Feurigstraße,Schöneberg Südost,Tempelhof-Schöneberg,1.272264631043257,Low-High,-0.311666771310123,0.03
+03601139,Norweger Viertel,Prenzlauer Berg Nordwest,Pankow,1.0771992818671454,Low-High,-0.40718086176119933,0.007
+01300835,Humboldthain Süd,Brunnenstraße Nord,Mitte,0.5726341169379144,Low-High,-0.5644436856604929,0.026
+03701657,Thälmannpark,Prenzlauer Berg Süd,Pankow,0.5575266092245311,Low-High,-0.8018769949528006,0.003
+11300826,Frankfurter Allee Süd,Frankfurter Allee Süd,Lichtenberg,0.36396724294813465,Low-High,-0.380009573929242,0.036
+08100101,Hasenheide,Schillerpromenade,Neukölln,0.20446096654275092,Low-High,-1.019128563021467,0.006
+01200521,Zwinglistraße,Moabit West,Mitte,0.0,Low-High,-0.7973596715598128,0.025
+05300841,Siemensdamm,Siemensstadt,Spandau,2.023121387283237,Low-Low,0.022124199617661388,0.008
+12200515,Alt-Tegel,West 5 - Tegel,Reinickendorf,1.73287123433751,Low-Low,0.06983682324530767,0.04
+08200726,Hufeisensiedlung,Britz,Neukölln,1.5384615384615385,Low-Low,0.10140252466297,0.033
+07601546,Franziusweg,Lichtenrade Süd,Tempelhof-Schöneberg,1.436130007558579,Low-Low,0.13640912534097444,0.021
+08200728,Ortolanweg,Britz,Neukölln,1.3477088948787062,Low-Low,0.13912639956901846,0.023
+05100210,Germersheimer Platz,Falkenhagener Feld,Spandau,1.3358778625954197,Low-Low,0.14336107402241788,0.019
+11100205,Wartenberg Süd,Neu-Hohenschönhausen Nord,Lichtenberg,1.3196480938416422,Low-Low,0.15197131253127755,0.02
+05200419,Am Heideberg,Brunsbütteler Damm,Spandau,1.272264631043257,Low-Low,0.16108592475406092,0.04
+06200317,Lankwitz Süd,Lankwitz,Steglitz-Zehlendorf,1.2686905301314,Low-Low,0.12843385771870483,0.032
+12400722,Hermsdorf West,Nord 1 - Frohnau/Hermsdorf,Reinickendorf,1.0700909577314073,Low-Low,0.18676214400207589,0.025
+04200204,Angerburger Allee,Heerstraße,Charlottenburg-Wilmersdorf,1.0460251046025104,Low-Low,0.21351840305582995,0.009
+09501737,Alt-Friedrichshagen,Friedrichshagen,Treptow-Köpenick,1.0098884914790658,Low-Low,0.2062025041752857,0.045
+12200310,Klixstraße,West 4 - Auguste-Viktoria-Allee,Reinickendorf,0.8083140877598153,Low-Low,0.2168186600139728,0.04
+12500825,Borsigwalde,West 3 - Borsigwalde/Freie Scholle,Reinickendorf,0.8060182697474476,Low-Low,0.21504129723691728,0.04
+05100317,Freiheit,Spandau Mitte,Spandau,0.684931506849315,Low-Low,0.23915563625723807,0.026
+12400616,Konradshöhe/Tegelort,West 2 - Heiligensee/Konradshöhe,Reinickendorf,0.647715005397625,Low-Low,0.29506198033904113,0.014
+05200630,Wilhelmstadt West,Wilhelmstadt,Spandau,0.6401137980085349,Low-Low,0.28097252533039413,0.018
+05200421,Spandauer Straße,Brunsbütteler Damm,Spandau,0.6342494714587738,Low-Low,0.2687872029849293,0.03
+06300524,Berlepschstraße,Teltower Damm,Steglitz-Zehlendorf,0.6128702757916241,Low-Low,0.25618883522752484,0.04
+05100104,Maselake,Hakenfelde,Spandau,0.5995203836930456,Low-Low,0.3176865078141736,0.007
+10300734,Biesdorf Süd,Biesdorf,Marzahn-Hellersdorf,0.5892623308598866,Low-Low,0.2488493686249772,0.048
+03300412,Karow Bahnhof,Karow,Pankow,0.5823186871360508,Low-Low,0.31154164398616846,0.016
+07601236,Marienfelder Allee Nordwest,Marienfelde Nord,Tempelhof-Schöneberg,0.5813953488372093,Low-Low,0.25834365594507475,0.045
+12100205,Teichstraße,Ost 2 - Alt-Reinickendorf,Reinickendorf,0.5803728455856489,Low-Low,0.25069159267387153,0.013
+07501133,Fritz-Werner-Straße,Mariendorf Süd,Tempelhof-Schöneberg,0.5653266331658291,Low-Low,0.24498867649141481,0.044
+07601442,Kettinger Straße,Lichtenrade Nord,Tempelhof-Schöneberg,0.5539358600583091,Low-Low,0.292983335536408,0.013
+05200631,Wilhelmstadt Ost,Wilhelmstadt,Spandau,0.4835589941972921,Low-Low,0.31073387020515025,0.018
+07601237,Kirchstraße,Marienfelde Nord,Tempelhof-Schöneberg,0.4529441368897836,Low-Low,0.3287832252183958,0.021
+11100204,Falkenberg West,Neu-Hohenschönhausen Nord,Lichtenberg,0.44814340588988477,Low-Low,0.28701048071000895,0.036
+07601544,John-Locke-Straße,Lichtenrade Süd,Tempelhof-Schöneberg,0.42771599657827203,Low-Low,0.28127711009566536,0.04
+10100210,Marzahner Promenade,Marzahn Mitte,Marzahn-Hellersdorf,0.40955631399317405,Low-Low,0.3526634807895422,0.001
+10400938,Mahlsdorf Nord,Mahlsdorf,Marzahn-Hellersdorf,0.40726817042606517,Low-Low,0.3591424526327194,0.001
+06400838,Krumme Lanke,Zehlendorf Nord,Steglitz-Zehlendorf,0.3952569169960474,Low-Low,0.3129420446133987,0.009
+05100314,Kurstraße,Spandau Mitte,Spandau,0.39113428943937417,Low-Low,0.3030936803861557,0.043
+10400941,Pilgramer Straße,Mahlsdorf,Marzahn-Hellersdorf,0.3711722858026601,Low-Low,0.34070328211213424,0.026
+12500928,Waidmannslust,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.36958817317845827,Low-Low,0.2996879948008443,0.035
+05100208,Im Spektefeld,Falkenhagener Feld,Spandau,0.36737692872887584,Low-Low,0.36711328913366875,0.003
+10100316,Landsberger Tor,Marzahn Süd,Marzahn-Hellersdorf,0.3599712023038157,Low-Low,0.37036263381881207,0.001
+05300737,Gartenfelder Straße,Haselhorst,Spandau,0.3393665158371041,Low-Low,0.37116008057814565,0.003
+11200410,Malchower Weg,Alt-Hohenschönhausen Nord,Lichtenberg,0.337609723160027,Low-Low,0.3282615991195729,0.03
+12400619,Heiligensee,West 2 - Heiligensee/Konradshöhe,Reinickendorf,0.32550967962994687,Low-Low,0.3146866481151804,0.005
+08200725,Mohriner Allee Nord,Britz,Neukölln,0.32051282051282054,Low-Low,0.3190949069126029,0.039
+06400737,Nikolassee,Zehlendorf Südwest,Steglitz-Zehlendorf,0.31658092599920856,Low-Low,0.356347433624378,0.004
+11100309,Mühlengrund,Neu-Hohenschönhausen Süd,Lichtenberg,0.31545741324921134,Low-Low,0.3407841819586803,0.009
+08401246,Waltersdorfer Chaussee Ost,Rudow,Neukölln,0.2883922134102379,Low-Low,0.3705122281137824,0.014
+05200420,Staakener Straße,Brunsbütteler Damm,Spandau,0.28222013170272814,Low-Low,0.33475361097689066,0.002
+09300921,Preußen Siedlung,Altglienicke,Treptow-Köpenick,0.27726432532347506,Low-Low,0.37137688179926304,0.003
+10100206,Wuhletalstraße,Marzahn Mitte,Marzahn-Hellersdorf,0.2683020314296665,Low-Low,0.39170177481384844,0.001
+10400837,Kaulsdorf Süd,Kaulsdorf,Marzahn-Hellersdorf,0.26758409785932724,Low-Low,0.3624963140806133,0.012
+03300517,Märchenland,Blankenburg/Heinersdorf/Märchenland,Pankow,0.2523128679562658,Low-Low,0.37148284910796575,0.001
+11200515,Weiße Taube,Alt-Hohenschönhausen Süd,Lichtenberg,0.24783147459727387,Low-Low,0.3298555569448196,0.041
+09301025,Alt-Bohnsdorf,Bohnsdorf,Treptow-Köpenick,0.242914979757085,Low-Low,0.3798815354580246,0.012
+12500927,Wittenau Nord,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.2375296912114014,Low-Low,0.3474492671910549,0.014
+10100313,Alt-Marzahn,Marzahn Süd,Marzahn-Hellersdorf,0.23515579071134626,Low-Low,0.37892924134924666,0.001
+12601031,Lübarser Straße,Rollbergesiedlung,Reinickendorf,0.2276176024279211,Low-Low,0.3599066312986013,0.017
+12601236,Schorfheidestraße,MV Süd,Reinickendorf,0.22624434389140272,Low-Low,0.37984506841440036,0.011
+05100102,Am Forstacker,Hakenfelde,Spandau,0.21551724137931033,Low-Low,0.3910779848849592,0.016
+03300411,Karow Nord,Karow,Pankow,0.2130249543517955,Low-Low,0.369481475373589,0.032
+08401243,Alt-Rudow,Rudow,Neukölln,0.2031488065007618,Low-Low,0.3588710765341881,0.013
+05200629,Borkumer Straße,Wilhelmstadt,Spandau,0.19138755980861244,Low-Low,0.3360508753919137,0.032
+08401241,Blumenviertel,Rudow,Neukölln,0.18099547511312217,Low-Low,0.3602733767126562,0.003
+11401033,Gensinger Straße,Friedrichsfelde Nord,Lichtenberg,0.18001800180018002,Low-Low,0.3452682240193697,0.039
+05400943,Jägerallee,Gatow/Kladow,Spandau,0.17690575747828885,Low-Low,0.4109287210584442,0.003
+08301036,Gropiusstadt Mitte,Gropiusstadt Ost,Neukölln,0.17117425539198905,Low-Low,0.4015980744552508,0.001
+09300920,Dorf Altglienicke,Altglienicke,Treptow-Köpenick,0.16989466530750935,Low-Low,0.367705904245105,0.01
+09401431,Allende I,Allende-Viertel,Treptow-Köpenick,0.16583747927031509,Low-Low,0.37815380387320885,0.014
+11200411,Hauptstraße,Alt-Hohenschönhausen Nord,Lichtenberg,0.16574585635359115,Low-Low,0.342320467847922,0.022
+05100316,Carl-Schurz-Straße,Spandau Mitte,Spandau,0.16012810248198558,Low-Low,0.3093855744089034,0.043
+05200633,Graetschelsteig,Wilhelmstadt,Spandau,0.14749262536873156,Low-Low,0.36433072367384756,0.025
+10200422,Hellersdorfer Promenade,Hellersdorf Nord,Marzahn-Hellersdorf,0.14749262536873156,Low-Low,0.41711633337026016,0.001
+08401242,Zittauer Straße,Rudow,Neukölln,0.1457725947521866,Low-Low,0.39571260836726724,0.006
+12601235,Dannenwalder Weg,MV Süd,Reinickendorf,0.14347202295552366,Low-Low,0.3656125527336824,0.014
+10300731,Oberfeldstraße,Biesdorf,Marzahn-Hellersdorf,0.14285714285714285,Low-Low,0.41078104611944527,0.001
+06400735,Wannsee,Zehlendorf Südwest,Steglitz-Zehlendorf,0.14180374361883152,Low-Low,0.3920083520688248,0.035
+08200730,Handwerker-Siedlung,Britz,Neukölln,0.13003901170351106,Low-Low,0.35386370332650946,0.025
+10100312,Springpfuhl,Marzahn Süd,Marzahn-Hellersdorf,0.12946180876641392,Low-Low,0.4022370916805252,0.013
+05200524,Döberitzer Weg,Heerstraße,Spandau,0.12547051442910917,Low-Low,0.4176653871775504,0.004
+05200634,Börnicker Straße,Wilhelmstadt,Spandau,0.1182033096926714,Low-Low,0.36572077456351293,0.01
+05200528,Weinmeisterhornweg,Heerstraße,Spandau,0.10604453870625663,Low-Low,0.4149221173319563,0.002
+05100101,Hakenfelde Nord,Hakenfelde,Spandau,0.1,Low-Low,0.39059403468568354,0.007
+05300736,Zitadellenweg,Haselhorst,Spandau,0.09652509652509653,Low-Low,0.38828447139808625,0.004
+10100315,Bärenstein,Marzahn Süd,Marzahn-Hellersdorf,0.09402914903620123,Low-Low,0.39951946611388867,0.003
+11100307,Zingster Straße Ost,Neu-Hohenschönhausen Süd,Lichtenberg,0.08976660682226212,Low-Low,0.3750666597067658,0.029
+05100105,Amorbacher Weg,Hakenfelde,Spandau,0.08607498087222647,Low-Low,0.3531611020432039,0.002
+10200629,Teterower Ring,Hellersdorf Süd,Marzahn-Hellersdorf,0.07668711656441718,Low-Low,0.342583298739467,0.043
+07501134,Hundsteinweg,Mariendorf Süd,Tempelhof-Schöneberg,0.0730282375851996,Low-Low,0.34565703477615123,0.019
+04400729,Hundekehle,Grunewald,Charlottenburg-Wilmersdorf,0.06640106241699867,Low-Low,0.35399828856839044,0.032
+05200525,Pillnitzer Weg,Heerstraße,Spandau,0.06188118811881188,Low-Low,0.4141394096163491,0.005
+12500926,Wittenau Mitte,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.059453032104637336,Low-Low,0.36969363715428816,0.019
+10400939,Alt-Mahlsdorf,Mahlsdorf,Marzahn-Hellersdorf,0.05704506560182544,Low-Low,0.3920351752641068,0.018
+10400835,Kaulsdorf Nord,Kaulsdorf,Marzahn-Hellersdorf,0.040666937779585195,Low-Low,0.3485241009959511,0.038
+10400940,Elsensee,Mahlsdorf,Marzahn-Hellersdorf,0.031181789834736514,Low-Low,0.4077430925530208,0.012
+03300514,Blankenburg,Blankenburg/Heinersdorf/Märchenland,Pankow,0.023148148148148147,Low-Low,0.30751223449436216,0.029
+11100101,Dörfer Malchow-Wartenberg,"Malchow, Wartenberg und Falkenberg",Lichtenberg,0.02107037505267594,Low-Low,0.36658329054565075,0.031
+03100101,Bucher Forst,Buch,Pankow,0.0,Low-Low,0.34243314575751793,0.035
+03100102,Klinikum Buch,Buch,Pankow,0.0,Low-Low,0.4481442151080599,0.021
+03100103,Karower Chaussee,Buch,Pankow,0.0,Low-Low,0.4332062635227893,0.021
+03300515,Blankenburger Süden,Blankenburg/Heinersdorf/Märchenland,Pankow,0.0,Low-Low,0.41935197596885626,0.041
+05100103,Mertensstraße,Hakenfelde,Spandau,0.0,Low-Low,0.4060235959031159,0.018
+05100206,Griesingerstraße,Falkenhagener Feld,Spandau,0.0,Low-Low,0.41903692863232705,0.022
+05100207,An der Tränke,Falkenhagener Feld,Spandau,0.0,Low-Low,0.4481442151080599,0.021
+05100209,Westerwaldstraße,Falkenhagener Feld,Spandau,0.0,Low-Low,0.372860298474479,0.039
+05100211,An der Kappe,Falkenhagener Feld,Spandau,0.0,Low-Low,0.35826752366515585,0.023
+05100313,Eiswerder,Spandau Mitte,Spandau,0.0,Low-Low,0.395998622196625,0.002
+05200418,Isenburger Weg,Brunsbütteler Damm,Spandau,0.0,Low-Low,0.367929907503198,0.043
+05200422,Werkstraße,Brunsbütteler Damm,Spandau,0.0,Low-Low,0.40818882442828713,0.029
+05200423,Magistratsweg,Brunsbütteler Damm,Spandau,0.0,Low-Low,0.4017022498266195,0.018
+05200526,Rudolf-Wissell-Großsiedlung,Heerstraße,Spandau,0.0,Low-Low,0.42447002728300237,0.018
+05200527,Maulbeerallee,Heerstraße,Spandau,0.0,Low-Low,0.39867084090282745,0.022
+05200632,Tiefwerder,Wilhelmstadt,Spandau,0.0,Low-Low,0.35325751603543726,0.043
+05300735,Haveleck,Haselhorst,Spandau,0.0,Low-Low,0.4303876051202177,0.004
+05300838,Gartenfeld,Siemensstadt,Spandau,0.0,Low-Low,0.42870705761104255,0.002
+05400942,Alt-Gatow,Gatow/Kladow,Spandau,0.0,Low-Low,0.41520375459136605,0.007
+05400944,Kladower Damm,Gatow/Kladow,Spandau,0.0,Low-Low,0.4214151278851267,0.008
+06400842,Hüttenweg,Zehlendorf Nord,Steglitz-Zehlendorf,0.0,Low-Low,0.34442443033974013,0.048
+07501032,Imbrosweg,Mariendorf Nord,Tempelhof-Schöneberg,0.0,Low-Low,0.3746241965405588,0.04
+07601238,Marienfelde Nordost,Marienfelde Nord,Tempelhof-Schöneberg,0.0,Low-Low,0.31183459034987,0.047
+08300934,Gropiusstadt Nord-West,Gropiusstadt West,Neukölln,0.0,Low-Low,0.4278558572477567,0.005
+08300935,Gropiusstadt Süd-West,Gropiusstadt West,Neukölln,0.0,Low-Low,0.4323027287864041,0.009
+08301037,Gropiusstadt Süd-Ost,Gropiusstadt Ost,Neukölln,0.0,Low-Low,0.41322699909651756,0.042
+08401139,Vogelviertel Süd,Buckow Nord,Neukölln,0.0,Low-Low,0.4344037152295507,0.002
+08401244,Waßmannsdorfer Chaussee,Rudow,Neukölln,0.0,Low-Low,0.4146264520737679,0.024
+09300923,Kölner Viertel,Altglienicke,Treptow-Köpenick,0.0,Low-Low,0.3962687740345621,0.042
+09401432,Siedlung Kämmereiheide,Allende-Viertel,Treptow-Köpenick,0.0,Low-Low,0.4164761543139892,0.018
+09401635,Müggelheim,Müggelheim,Treptow-Köpenick,0.0,Low-Low,0.3688343007820794,0.047
+10100101,Marzahn West,Marzahn Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.43685572704921766,0.001
+10100102,Rosenbecker Straße,Marzahn Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4481442151080599,0.001
+10100103,Wittenberger Straße,Marzahn Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.43685572704921766,0.001
+10100104,Golliner Straße,Marzahn Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4481442151080599,0.002
+10100205,Gewerbegebiet Bitterfelder Straße,Marzahn Mitte,Marzahn-Hellersdorf,0.0,Low-Low,0.4115991647615709,0.002
+10100207,Ahrensfelder Berge,Marzahn Mitte,Marzahn-Hellersdorf,0.0,Low-Low,0.42643706403091286,0.001
+10100208,Bürgerpark,Marzahn Mitte,Marzahn-Hellersdorf,0.0,Low-Low,0.41249411307045086,0.027
+10100209,Lea-Grundig-Straße,Marzahn Mitte,Marzahn-Hellersdorf,0.0,Low-Low,0.4070617118350322,0.007
+10100311,Marzahner Chaussee,Marzahn Süd,Marzahn-Hellersdorf,0.0,Low-Low,0.4088413238968465,0.001
+10100314,Auersbergstraße,Marzahn Süd,Marzahn-Hellersdorf,0.0,Low-Low,0.4165097663354001,0.018
+10200417,Zossener Straße,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4267932796401053,0.002
+10200418,Kyritzer Straße,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4292125162075665,0.014
+10200419,Havelländer Ring,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4419386387605,0.001
+10200420,Gut Hellersdorf,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.3644576406548409,0.03
+10200421,Helle Mitte,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Low-Low,0.4419386387605,0.001
+10200524,Adele-Sandrock-Straße,Hellersdorf Ost,Marzahn-Hellersdorf,0.0,Low-Low,0.42869346593596175,0.001
+10200525,Schleipfuhl,Hellersdorf Ost,Marzahn-Hellersdorf,0.0,Low-Low,0.4245862956377351,0.016
+10200526,Boulevard Kastanienallee,Hellersdorf Ost,Marzahn-Hellersdorf,0.0,Low-Low,0.36170516674854825,0.038
+10300732,Buckower Ring,Biesdorf,Marzahn-Hellersdorf,0.0,Low-Low,0.42790236768823525,0.001
+10300733,Alt-Biesdorf,Biesdorf,Marzahn-Hellersdorf,0.0,Low-Low,0.4173704014310298,0.005
+10400836,Alt-Kaulsdorf,Kaulsdorf,Marzahn-Hellersdorf,0.0,Low-Low,0.4137910561487766,0.003
+11100102,Dorf Falkenberg,"Malchow, Wartenberg und Falkenberg",Lichtenberg,0.0,Low-Low,0.3965792178034472,0.016
+11100308,Zingster Straße West,Neu-Hohenschönhausen Süd,Lichtenberg,0.0,Low-Low,0.3895980995468912,0.02
+12200414,TXL,West 1 - Tegel-Süd/Flughafensee,Reinickendorf,0.0,Low-Low,0.378453975311188,0.02
+12500929,Lübars,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.0,Low-Low,0.39885265505623935,0.008
+12601133,Treuenbrietzener Straße,MV Nord,Reinickendorf,0.0,Low-Low,0.43402466479605867,0.004
+12601134,Märkisches Zentrum,MV Nord,Reinickendorf,0.0,Low-Low,0.42126756618653066,0.002
+04400725,Güterbahnhof Grunewald,Grunewald,Charlottenburg-Wilmersdorf,,No inventory,,
+06200418,Landweg,Ostpreußendamm,Steglitz-Zehlendorf,,No inventory,,
+03601348,Senefelderstraße,Helmholtzplatz,Pankow,18.446601941747574,Not significant,3.7785342078353814,0.081
+07400825,Friedrich-Karl-Straße,Tempelhof Südwest,Tempelhof-Schöneberg,15.675675675675675,Not significant,-1.2580728152034335,0.262
+04300412,Schlossgarten,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,15.476190476190476,Not significant,1.702078227613995,0.103
+08100313,Bouchéstraße,Reuterstraße,Neukölln,12.751677852348994,Not significant,1.3579368550069533,0.153
+01100415,Invalidenstraße,Brunnenstraße Süd,Mitte,12.357217030114226,Not significant,1.159757832888591,0.166
+01200520,Bremer Straße,Moabit West,Mitte,11.695906432748538,Not significant,1.913202803155154,0.066
+07200412,Schöneberger Linse,Schöneberg Südost,Tempelhof-Schöneberg,11.214953271028037,Not significant,1.2459541129842995,0.16
+02300315,Lausitzer Platz,Nördliche Luisenstadt,Friedrichshain-Kreuzberg,11.192930780559646,Not significant,1.6508310452507828,0.103
+01401044,Uferstraße,Wedding Zentrum,Mitte,10.311750599520384,Not significant,0.17650483556191401,0.35
+02200211,Chamissokiez,Tempelhofer Vorstadt,Friedrichshain-Kreuzberg,10.165184243964422,Not significant,1.3905237560278298,0.081
+01401046,Nordufer,Wedding Zentrum,Mitte,9.747292418772563,Not significant,1.4216489040663867,0.098
+01300732,Soldiner Straße,Osloer Straße,Mitte,9.205776173285198,Not significant,0.9106074718444188,0.15
+08100209,Glasower Straße,Neuköllner Mitte/Zentrum,Neukölln,8.941877794336811,Not significant,0.5299764579204201,0.225
+07200413,Cheruskerstraße,Schöneberg Südost,Tempelhof-Schöneberg,7.820738137082601,Not significant,0.9000918452280641,0.065
+03701660,Bötzowstraße,Prenzlauer Berg Süd,Pankow,7.592407592407592,Not significant,0.44778010419667047,0.216
+01200522,Elberfelder Straße,Moabit West,Mitte,7.575757575757576,Not significant,0.9281741289418542,0.082
+11400927,Victoriastadt,Neu-Lichtenberg,Lichtenberg,7.550335570469799,Not significant,0.35414421735409757,0.249
+01400942,Westliche Müllerstraße,Parkviertel,Mitte,7.275132275132275,Not significant,1.1964542487855774,0.056
+02500834,Revaler Straße,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,7.17948717948718,Not significant,1.2154746284174218,0.063
+03400827,Trelleborger Viertel,Pankow Süd,Pankow,7.06436420722135,Not significant,1.048772134747624,0.069
+03400721,Florakiez,Pankow Zentrum,Pankow,7.063572149344097,Not significant,0.36889789059579925,0.235
+03701658,Christburger Straße,Prenzlauer Berg Süd,Pankow,7.048458149779735,Not significant,0.4802496216133825,0.195
+03601140,Malmöer Straße,Prenzlauer Berg Nordwest,Pankow,6.174957118353345,Not significant,0.6062259126728962,0.138
+04500938,Hochmeisterplatz,Halensee,Charlottenburg-Wilmersdorf,6.106870229007634,Not significant,0.21395701053274294,0.278
+01200519,Emdener Straße,Moabit West,Mitte,5.853051058530511,Not significant,0.7033632294545977,0.122
+03500936,Komponistenviertel Weißensee,Weißensee,Pankow,5.809523809523809,Not significant,-0.4504966479054475,0.112
+03400829,Arnold-Zweig-Straße,Pankow Süd,Pankow,5.730129390018484,Not significant,0.23402708936997646,0.259
+03601452,Velodrom,Prenzlauer Berg Ost,Pankow,5.56701030927835,Not significant,0.39454075500041796,0.124
+01100416,Arkonaplatz,Brunnenstraße Süd,Mitte,5.54016620498615,Not significant,0.8324178092441584,0.051
+08100417,Braunschweiger Straße,Rixdorf,Neukölln,5.47945205479452,Not significant,0.7765344623376397,0.051
+01100103,Lützowstraße,Tiergarten Süd,Mitte,5.365853658536586,Not significant,0.6096484808821465,0.074
+04501148,Brabanter Platz,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,5.2781740370898715,Not significant,-0.03885132131549631,0.457
+06100102,Schloßstraße,Schloßstraße,Steglitz-Zehlendorf,5.221932114882507,Not significant,-0.02260400701041901,0.437
+09200511,Griechischer Park,Oberschöneweide,Treptow-Köpenick,5.10718789407314,Not significant,-0.22864838254415495,0.43
+03500934,Weißenseer Spitze,Weißensee,Pankow,5.09433962264151,Not significant,-0.20170483307264891,0.328
+01300730,Drontheimer Straße,Osloer Straße,Mitte,5.034013605442177,Not significant,0.25009789799555315,0.207
+02300419,Wrangelkiez,Südliche Luisenstadt,Friedrichshain-Kreuzberg,4.95603517186251,Not significant,0.35912603265969345,0.155
+04501152,Prager Platz,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,4.918032786885246,Not significant,0.3280170034894434,0.156
+11400930,Zachertstraße,Neu-Lichtenberg,Lichtenberg,4.805194805194805,Not significant,-0.1745248504706949,0.414
+02500836,Stralauer Halbinsel,Frankfurter Allee Süd FK,Friedrichshain-Kreuzberg,4.7696038803556995,Not significant,-0.0665367914366762,0.492
+01100414,Nordbahnhof,Brunnenstraße Süd,Mitte,4.545454545454546,Not significant,0.5756552995376207,0.085
+11400929,Weitlingkiez,Neu-Lichtenberg,Lichtenberg,4.521963824289406,Not significant,-0.2151343412941092,0.279
+08100102,Schillerpromenade Nord,Schillerpromenade,Neukölln,4.483007953723789,Not significant,0.40496582973591927,0.092
+08100208,Körnerpark,Neuköllner Mitte/Zentrum,Neukölln,4.4204322200392925,Not significant,0.27608033132333315,0.146
+01401048,Leopoldplatz,Wedding Zentrum,Mitte,4.171494785631518,Not significant,0.23973461779317348,0.15
+02300314,Oranienplatz,Nördliche Luisenstadt,Friedrichshain-Kreuzberg,4.096989966555184,Not significant,0.38977688449260894,0.068
+09401330,Wendenschloß,Köpenick Süd,Treptow-Köpenick,4.050279329608938,Not significant,-0.3399605330183362,0.215
+04501147,Leon-Jessel-Platz,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,3.7254901960784315,Not significant,0.022764879739110785,0.395
+11501238,Rummelsburg,Rummelsburger Bucht,Lichtenberg,3.6608863198458574,Not significant,0.03264875045852791,0.346
+02400521,Friedenstraße,Karl-Marx-Allee Nord,Friedrichshain-Kreuzberg,3.564154786150713,Not significant,0.10082842669051939,0.258
+09501940,Güterbahnhof Köpenick,Dammvorstadt,Treptow-Köpenick,3.4965034965034967,Not significant,-0.18167871618815784,0.17
+06100210,Bismarckstraße,Albrechtstraße,Steglitz-Zehlendorf,3.488372093023256,Not significant,-0.018250557591546954,0.453
+07400720,Gontermannstraße,Tempelhof Nord,Tempelhof-Schöneberg,3.4324942791762014,Not significant,0.12912931114843862,0.176
+02100106,Wassertorplatz,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,3.42809364548495,Not significant,0.20542315630868974,0.108
+04501149,Nikolsburger Platz,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,3.3692722371967654,Not significant,0.07072841857017098,0.269
+03701554,Teutoburger Platz,Prenzlauer Berg Südwest,Pankow,3.3596837944664033,Not significant,0.14387876617118225,0.15
+08200622,Jahnstraße,Britz Nord,Neukölln,3.2808398950131235,Not significant,0.006623423532715286,0.398
+01100313,Heine-Viertel Ost,Alexanderplatz,Mitte,3.2697547683923704,Not significant,-0.048271422707588205,0.394
+03400723,Garbátyplatz,Pankow Zentrum,Pankow,3.264812575574365,Not significant,0.04765854547368008,0.31
+01300731,Koloniestraße,Osloer Straße,Mitte,3.235591506572295,Not significant,0.20878932242867032,0.082
+01100309,Oranienburger Straße,Alexanderplatz,Mitte,3.2292787944025836,Not significant,0.17783958503572006,0.095
+06100209,Feuerbachstraße,Albrechtstraße,Steglitz-Zehlendorf,3.2161555721765147,Not significant,0.1125049701504482,0.182
+04501043,Preußenpark,Lietzenburger Straße,Charlottenburg-Wilmersdorf,3.211586901763224,Not significant,0.21509187400702226,0.056
+03500935,Behaimstraße,Weißensee,Pankow,3.125,Not significant,0.025112769978217354,0.352
+01100207,Leipziger Straße,Regierungsviertel,Mitte,3.0735455543358947,Not significant,-0.08869504833796478,0.269
+02300316,Köpenicker Straße,Nördliche Luisenstadt,Friedrichshain-Kreuzberg,3.0448717948717947,Not significant,0.21135580607004426,0.058
+01300836,Humboldthain Nordwest,Brunnenstraße Nord,Mitte,3.008752735229759,Not significant,0.15260237791796094,0.051
+09100202,Plänterwald West,Plänterwald,Treptow-Köpenick,3.0012004801920766,Not significant,-0.030770173993195784,0.49
+04500939,Eisenzahnstraße,Halensee,Charlottenburg-Wilmersdorf,2.9940119760479043,Not significant,0.02630417558748526,0.338
+08100416,Alt-Rixdorf,Rixdorf,Neukölln,2.9885057471264367,Not significant,0.16517831107910233,0.101
+01400939,Glasgower Straße,Parkviertel,Mitte,2.906208718626156,Not significant,0.04216963984851113,0.276
+09501939,Bahnhofstraße,Dammvorstadt,Treptow-Köpenick,2.894356005788712,Not significant,-0.07183187436140431,0.196
+01200623,Stephankiez,Moabit Ost,Mitte,2.857142857142857,Not significant,0.17023379795265836,0.057
+02100102,Mehringplatz,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,2.7827648114901256,Not significant,0.0374381104698399,0.275
+03701659,Immanuelkirchstraße,Prenzlauer Berg Süd,Pankow,2.7816411682892905,Not significant,0.09327533657069113,0.121
+11300725,Nibelungenviertel,Alt-Lichtenberg,Lichtenberg,2.7419354838709675,Not significant,-0.10055686297985267,0.076
+04200310,Fürstenplatz,Westend,Charlottenburg-Wilmersdorf,2.6,Not significant,-0.05326071184502662,0.217
+03400724,Wolfshagener Straße,Pankow Zentrum,Pankow,2.5813692480359145,Not significant,-0.05739215056789351,0.183
+09200613,Bahnhof Schöneweide,Niederschöneweide,Treptow-Köpenick,2.545968882602546,Not significant,-0.02767760896789827,0.255
+04400832,Breite Straße,Schmargendorf,Charlottenburg-Wilmersdorf,2.5441696113074204,Not significant,-0.06392409789120986,0.099
+01200518,Beusselkiez,Moabit West,Mitte,2.5316455696202533,Not significant,0.01861165788548952,0.304
+06300633,Augustaplatz,Drakestraße,Steglitz-Zehlendorf,2.4903392013739802,Not significant,-0.042271371836037776,0.21
+11501340,Karlshorst Nord,Karlshorst,Lichtenberg,2.4702380952380953,Not significant,-0.04740910631652492,0.084
+09200819,Köllnische Vorstadt,Köllnische Vorstadt/Spindlersfeld,Treptow-Köpenick,2.460456942003515,Not significant,-0.03937849040920389,0.168
+04501041,George-Grosz-Platz,Lietzenburger Straße,Charlottenburg-Wilmersdorf,2.4296675191815855,Not significant,0.027627326775025884,0.189
+11300618,Storkower Bogen,Fennpfuhl,Lichtenberg,2.416918429003021,Not significant,0.000820778614927767,0.426
+04300518,Kaiserin-Augusta-Allee,Mierendorffplatz,Charlottenburg-Wilmersdorf,2.4042073628850487,Not significant,0.04104602859091307,0.101
+11501339,Karlshorst West,Karlshorst,Lichtenberg,2.3959646910466583,Not significant,-0.013194224456236334,0.428
+04501044,Ludwigkirchplatz,Lietzenburger Straße,Charlottenburg-Wilmersdorf,2.388535031847134,Not significant,0.014257101559814633,0.274
+03400826,Tiroler Viertel,Pankow Süd,Pankow,2.339688041594454,Not significant,0.03360804412734227,0.096
+01401049,Schulstraße,Wedding Zentrum,Mitte,2.328966521106259,Not significant,0.037600978664272526,0.078
+07400824,Bosepark,Tempelhof Südwest,Tempelhof-Schöneberg,2.3117076808351977,Not significant,0.049245170964688716,0.05
+01400938,Kameruner Straße,Parkviertel,Mitte,2.305159165751921,Not significant,0.04203561796803796,0.054
+08100520,Weiße Siedlung,Köllnische Heide,Neukölln,2.277904328018223,Not significant,0.003360965995797906,0.353
+06200422,Oberhofer Platz,Ostpreußendamm,Steglitz-Zehlendorf,2.2598870056497176,Not significant,-0.01588631663043738,0.159
+06300634,Lichterfelde West,Drakestraße,Steglitz-Zehlendorf,2.2490628904623073,Not significant,-0.013363253289195786,0.158
+01100308,Charitéviertel,Alexanderplatz,Mitte,2.236951118475559,Not significant,0.012843313886254242,0.132
+04300415,Lietzensee,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,2.235597592433362,Not significant,0.025776453104517538,0.08
+08100104,Wartheplatz,Schillerpromenade,Neukölln,2.1812080536912752,Not significant,-0.0008317833681276861,0.467
+01100312,Heine-Viertel West,Alexanderplatz,Mitte,2.1715526601520088,Not significant,-0.001572878816707871,0.458
+07400721,Paradestraße,Tempelhof Nord,Tempelhof-Schöneberg,2.169491525423729,Not significant,0.0029902026527332216,0.201
+12200308,Meller Bogen,West 4 - Auguste-Viktoria-Allee,Reinickendorf,2.127659574468085,Not significant,0.0004619199689070206,0.068
+04501045,Schaperstraße,Lietzenburger Straße,Charlottenburg-Wilmersdorf,2.1103896103896105,Not significant,-0.0030492970183215473,0.088
+03200205,Uhlandstraße,Blankenfelde/Niederschönhausen,Pankow,2.10867802108678,Not significant,0.0034418961680856342,0.066
+03601245,Ostseestraße,Prenzlauer Berg Nord,Pankow,2.088772845953003,Not significant,-0.006056618154334938,0.101
+03400830,Kissingenviertel,Pankow Süd,Pankow,2.087994034302759,Not significant,0.000330022705268991,0.44
+06100208,Bergstraße,Albrechtstraße,Steglitz-Zehlendorf,2.071563088512241,Not significant,-0.0007460704627703319,0.394
+04200309,Neu Westend,Westend,Charlottenburg-Wilmersdorf,2.030735455543359,Not significant,0.013854750195648595,0.086
+11300617,Fennpfuhlpark,Fennpfuhl,Lichtenberg,2.030008826125331,Not significant,0.015530106904592403,0.067
+06200314,Kaiser-Wilhelm-Straße,Lankwitz,Steglitz-Zehlendorf,2.0246478873239435,Not significant,0.010606597000261167,0.262
+04300622,Ernst-Reuter-Platz,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,1.993704092339979,Not significant,-0.017002136674686436,0.125
+01200517,Huttenkiez,Moabit West,Mitte,1.9464720194647203,Not significant,-0.02908664359653616,0.061
+12100206,Humboldtstraße,Ost 2 - Alt-Reinickendorf,Reinickendorf,1.8471010774756285,Not significant,0.051577829124670245,0.054
+03701556,Kollwitzplatz,Prenzlauer Berg Südwest,Pankow,1.8327605956471935,Not significant,-0.04178367030303571,0.124
+06300527,Sundgauer Straße,Teltower Damm,Steglitz-Zehlendorf,1.8261504747991235,Not significant,0.03534245860271048,0.149
+01200624,Heidestraße,Moabit Ost,Mitte,1.792573623559539,Not significant,0.003281750480242184,0.451
+06200312,Komponistenviertel Lankwitz,Lankwitz,Steglitz-Zehlendorf,1.7837235228539576,Not significant,0.04498945228520733,0.142
+09200614,Oberspree,Niederschöneweide,Treptow-Köpenick,1.7391304347826086,Not significant,0.02774581300365364,0.399
+01100311,Karl-Marx-Allee,Alexanderplatz,Mitte,1.7366136034732271,Not significant,0.017688647653848828,0.429
+03601451,Anton-Saefkow-Park,Prenzlauer Berg Ost,Pankow,1.694915254237288,Not significant,-0.051098557985395684,0.151
+08100103,Schillerpromenade Süd,Schillerpromenade,Neukölln,1.6042780748663101,Not significant,-0.036497790834590454,0.244
+06100101,Fichtenberg,Schloßstraße,Steglitz-Zehlendorf,1.5360983102918586,Not significant,0.01503849175010003,0.495
+09100408,Johannisthal Ost,Johannisthal,Treptow-Köpenick,1.4908890115958033,Not significant,0.10364120596787532,0.268
+09200717,Dörpfeldstraße Ost,Adlershof,Treptow-Köpenick,1.451841359773371,Not significant,0.05886673163136558,0.24
+01200629,Hansaviertel,Moabit Ost,Mitte,1.4354066985645932,Not significant,-0.06494463095642253,0.21
+06400841,Zehlendorf Eiche,Zehlendorf Nord,Steglitz-Zehlendorf,1.4297729184188395,Not significant,0.10253802955258888,0.091
+01200628,Lüneburger Straße,Moabit Ost,Mitte,1.422475106685633,Not significant,0.014809564812619237,0.49
+12100101,Letteplatz,Ost 1 - Reginhardstraße,Reinickendorf,1.4154870940882598,Not significant,0.002325038569531458,0.44
+09100305,Baumschulenweg Ost,Baumschulenweg,Treptow-Köpenick,1.4109347442680775,Not significant,0.0688508354348582,0.323
+04501150,Wilhelmsaue,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,1.4035087719298245,Not significant,-0.08392605207740243,0.152
+07501030,Machonstraße,Mariendorf Nord,Tempelhof-Schöneberg,1.3869625520110958,Not significant,-0.038165583361966494,0.28
+04200311,Königin-Elisabeth-Straße,Westend,Charlottenburg-Wilmersdorf,1.3686911890504705,Not significant,-0.15847907240597534,0.056
+11501341,Karlshorst Süd,Karlshorst,Lichtenberg,1.3579890205143021,Not significant,0.009346580699073294,0.472
+08100105,Silbersteinstraße,Schillerpromenade,Neukölln,1.3513513513513513,Not significant,-0.08208612224214377,0.161
+01400937,Afrikanische Straße,Parkviertel,Mitte,1.3392003061029272,Not significant,0.09757692889385228,0.097
+05100315,Ackerstraße,Spandau Mitte,Spandau,1.338432122370937,Not significant,0.13208713961299678,0.065
+09200510,Helmholtz-Kiez,Oberschöneweide,Treptow-Köpenick,1.3111888111888113,Not significant,0.005594181828580382,0.458
+01100101,Stülerstraße,Tiergarten Süd,Mitte,1.3011152416356877,Not significant,-0.1017358253998371,0.161
+04400834,Binger Straße,Schmargendorf,Charlottenburg-Wilmersdorf,1.2987012987012987,Not significant,-0.014572320371559472,0.37
+04501042,Breitscheidplatz,Lietzenburger Straße,Charlottenburg-Wilmersdorf,1.2893982808022924,Not significant,0.00252069769939205,0.456
+12100102,Hausotterplatz,Ost 1 - Reginhardstraße,Reinickendorf,1.244019138755981,Not significant,0.10017871111157982,0.187
+02100105,Prinzenstraße,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,1.1920529801324504,Not significant,-0.01737621068224857,0.373
+09200716,Dörpfeldstraße West,Adlershof,Treptow-Köpenick,1.183431952662722,Not significant,0.10293354140891389,0.282
+07400927,Rathaus Tempelhof,Tempelhof Südost,Tempelhof-Schöneberg,1.1449315833566043,Not significant,-0.06068775311761782,0.237
+11200513,Große-Leege-Straße,Alt-Hohenschönhausen Süd,Lichtenberg,1.1263073209975865,Not significant,0.18326626307539184,0.056
+04500937,Halensee,Halensee,Charlottenburg-Wilmersdorf,1.0775862068965518,Not significant,-0.22558096628693416,0.062
+04300620,Spreestadt,Otto-Suhr-Allee/Kantstraße,Charlottenburg-Wilmersdorf,1.0593220338983051,Not significant,-0.044631308004576355,0.312
+06100207,Mittelstraße,Albrechtstraße,Steglitz-Zehlendorf,1.0554089709762533,Not significant,0.03106804939218858,0.463
+11400931,Massower Straße,Neu-Lichtenberg,Lichtenberg,1.0501750291715286,Not significant,0.0679756453475783,0.319
+09100101,Alt-Treptow,Alt-Treptow,Treptow-Köpenick,1.020780167699599,Not significant,-0.230628617543639,0.053
+04400726,Bismarckallee,Grunewald,Charlottenburg-Wilmersdorf,0.9984025559105432,Not significant,0.04689262213330852,0.447
+02100104,Moritzplatz,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,0.9943181818181818,Not significant,-0.018640588986786225,0.374
+04200308,Branitzer Platz,Westend,Charlottenburg-Wilmersdorf,0.9766684753119913,Not significant,-0.12094509075220425,0.151
+03200206,Pastor-Niemöller-Platz,Blankenfelde/Niederschönhausen,Pankow,0.9574468085106383,Not significant,0.1502995405367243,0.135
+03200308,Nisbléstraße,Buchholz,Pankow,0.9562841530054644,Not significant,0.15139089644956472,0.182
+07601339,Tirschenreuther Ring West,Marienfelde Süd,Tempelhof-Schöneberg,0.9259259259259259,Not significant,0.2018214560495303,0.066
+04100102,Paul-Hertz-Siedlung,Charlottenburg Nord,Charlottenburg-Wilmersdorf,0.91324200913242,Not significant,0.1062319359627469,0.469
+08100207,Rollberg,Neuköllner Mitte/Zentrum,Neukölln,0.9104704097116844,Not significant,-0.289240670369385,0.05
+11300724,Roedeliusplatz,Alt-Lichtenberg,Lichtenberg,0.8982035928143712,Not significant,0.13341282505548546,0.286
+03400619,Wilhelmsruh,Schönholz/Wilhelmsruh/Rosenthal,Pankow,0.8766437069505323,Not significant,0.17684480775689537,0.104
+06300632,Schweizer Viertel,Drakestraße,Steglitz-Zehlendorf,0.8542030673655601,Not significant,0.11419239458183708,0.34
+06300629,Botanischer Garten,Drakestraße,Steglitz-Zehlendorf,0.842911877394636,Not significant,0.07001193362919679,0.399
+06100205,Südende,Albrechtstraße,Steglitz-Zehlendorf,0.819000819000819,Not significant,0.1690433036784535,0.139
+03400722,Parkstraße,Pankow Zentrum,Pankow,0.7936507936507936,Not significant,-0.03320167331002439,0.347
+06200421,Königsberger Straße,Ostpreußendamm,Steglitz-Zehlendorf,0.7936507936507936,Not significant,0.13228222869004436,0.196
+03200207,Herthaplatz,Blankenfelde/Niederschönhausen,Pankow,0.7927519818799547,Not significant,0.1291565429035723,0.24
+07501029,Ringstraße,Mariendorf Nord,Tempelhof-Schöneberg,0.7692307692307693,Not significant,0.18939287442015273,0.143
+02100103,Am Berlin Museum,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,0.7518796992481203,Not significant,-0.04246517911478525,0.336
+01200627,Zillesiedlung,Moabit Ost,Mitte,0.7194244604316546,Not significant,-0.09935716933565686,0.275
+07601548,Wittelsbacherstraße,Lichtenrade Süd,Tempelhof-Schöneberg,0.7153075822603719,Not significant,0.2715253624165121,0.05
+03500932,Bühringstraße,Weißensee,Pankow,0.6960556844547564,Not significant,0.05549325470783992,0.451
+06200420,Lichterfelde Süd,Ostpreußendamm,Steglitz-Zehlendorf,0.6711409395973155,Not significant,0.19666470821233567,0.162
+04400728,Hagenplatz,Grunewald,Charlottenburg-Wilmersdorf,0.6632277081798084,Not significant,0.2379149240170562,0.08
+03501038,Hansastraße,Weißensee Ost,Pankow,0.6535947712418301,Not significant,0.18034895505980467,0.111
+09100304,Baumschulenweg West,Baumschulenweg,Treptow-Köpenick,0.642508352608584,Not significant,0.19859805252972842,0.126
+01400940,Schillerpark,Parkviertel,Mitte,0.6405933917734322,Not significant,-0.03423060891467622,0.362
+01100310,Alexanderplatzviertel,Alexanderplatz,Mitte,0.640279394644936,Not significant,-0.010012080312590614,0.425
+04400727,Flinsberger Platz,Grunewald,Charlottenburg-Wilmersdorf,0.6396588486140725,Not significant,-0.018055911339479647,0.364
+12400723,Hermsdorf Ost/Waldsee,Nord 1 - Frohnau/Hermsdorf,Reinickendorf,0.6338231057332181,Not significant,0.25633344683500886,0.053
+02400625,Wriezener Bahnhof,Karl-Marx-Allee Süd,Friedrichshain-Kreuzberg,0.6329113924050633,Not significant,-0.24726174378846583,0.095
+06400839,Fischerhüttenstraße,Zehlendorf Nord,Steglitz-Zehlendorf,0.6224469947481035,Not significant,0.21127278007190176,0.141
+06300526,Zehlendorf Mitte,Teltower Damm,Steglitz-Zehlendorf,0.6140350877192983,Not significant,0.17356968963649336,0.221
+09301227,Karolinenhof,Schmöckwitz,Treptow-Köpenick,0.6097560975609756,Not significant,0.29196916221661445,0.052
+06100206,Stadtpark,Albrechtstraße,Steglitz-Zehlendorf,0.5974607916355489,Not significant,0.17676421158109187,0.147
+09401329,Kietzer Feld/Nachtheide,Köpenick Süd,Treptow-Köpenick,0.5835156819839533,Not significant,0.19565455890125483,0.073
+11100206,Wartenberg Nord,Neu-Hohenschönhausen Nord,Lichtenberg,0.5600497822028625,Not significant,0.2622827690428205,0.068
+04400833,Schlangenbader Straße,Schmargendorf,Charlottenburg-Wilmersdorf,0.5555555555555556,Not significant,0.15296594301344046,0.306
+07501135,Birnhornweg,Mariendorf Süd,Tempelhof-Schöneberg,0.5454545454545454,Not significant,0.2867478052768477,0.055
+11401032,Rosenfelder Ring,Friedrichsfelde Nord,Lichtenberg,0.5256241787122208,Not significant,0.13661774307593041,0.248
+11300723,Bornitzstraße,Alt-Lichtenberg,Lichtenberg,0.5208333333333334,Not significant,0.1729937249937473,0.289
+11400928,Nöldnerplatz,Neu-Lichtenberg,Lichtenberg,0.5161290322580645,Not significant,-0.10009770333408083,0.258
+09100407,Johannisthal West,Johannisthal,Treptow-Köpenick,0.5110732538330494,Not significant,0.19866660506586678,0.157
+08200623,Park am Buschkrug,Britz Nord,Neukölln,0.5096040768326147,Not significant,0.1727048951830697,0.206
+11300722,Rathaus Lichtenberg,Alt-Lichtenberg,Lichtenberg,0.5083022704168079,Not significant,-0.14974780161098455,0.164
+06400840,Fischtal,Zehlendorf Nord,Steglitz-Zehlendorf,0.5050505050505051,Not significant,0.24369570799919685,0.154
+04400830,Forckenbeckstraße,Schmargendorf,Charlottenburg-Wilmersdorf,0.5021760964178105,Not significant,0.0807309471179209,0.363
+06200313,Lankwitz Kirche,Lankwitz,Steglitz-Zehlendorf,0.47011417058428473,Not significant,0.17475345219567695,0.295
+11200514,Landsberger Allee,Alt-Hohenschönhausen Süd,Lichtenberg,0.468384074941452,Not significant,0.25308819063054316,0.065
+09502042,Mittelheide,Köpenick Nord,Treptow-Köpenick,0.4672897196261682,Not significant,0.171798710661264,0.295
+12601032,Rollbergesiedlung,Rollbergesiedlung,Reinickendorf,0.46674445740956827,Not significant,0.3172532225382067,0.061
+09100409,Landschaftspark Adlershof,Johannisthal,Treptow-Köpenick,0.46661880832735103,Not significant,0.17922961602043708,0.155
+09301228,Schmöckwitz/Rauchfangswerder,Schmöckwitz,Treptow-Köpenick,0.4664179104477612,Not significant,0.3116422502402136,0.072
+09200715,Wista,Adlershof,Treptow-Köpenick,0.4600722970752547,Not significant,0.2533331523587288,0.069
+06300631,Goerzwerke,Drakestraße,Steglitz-Zehlendorf,0.4570383912248629,Not significant,0.18742751275144395,0.144
+04501146,Barstraße,Volkspark Wilmersdorf,Charlottenburg-Wilmersdorf,0.44620723847297966,Not significant,-0.12010807437379033,0.243
+06300525,Zehlendorf Süd,Teltower Damm,Steglitz-Zehlendorf,0.4424778761061947,Not significant,0.2753888268808004,0.161
+03200310,Krugpfuhl,Buchholz,Pankow,0.4372540445999126,Not significant,0.2006499256428149,0.247
+01100206,Unter den Linden,Regierungsviertel,Mitte,0.4153686396677051,Not significant,0.0923037736097941,0.397
+11401135,Dolgenseestraße,Friedrichsfelde Süd,Lichtenberg,0.39698292973402144,Not significant,0.12913511514633286,0.345
+06300528,Teltower Damm,Teltower Damm,Steglitz-Zehlendorf,0.3641241855116903,Not significant,0.19574145587959965,0.159
+07601443,Töpchiner Weg,Lichtenrade Nord,Tempelhof-Schöneberg,0.36231884057971014,Not significant,0.24727379800644855,0.142
+01400941,Londoner Straße,Parkviertel,Mitte,0.352112676056338,Not significant,0.19080072119852962,0.253
+12400720,Frohnau West,Nord 1 - Frohnau/Hermsdorf,Reinickendorf,0.3520587785091076,Not significant,0.2899032518366986,0.074
+09501736,Hirschgarten,Friedrichshagen,Treptow-Köpenick,0.34843205574912894,Not significant,0.23294339789994079,0.108
+11300616,Hohenschönhauser Straße,Fennpfuhl,Lichtenberg,0.3466204506065858,Not significant,0.12005215877652801,0.338
+03601449,Michelangelostraße,Prenzlauer Berg Ost,Pankow,0.34057045551298426,Not significant,-0.1632024547141312,0.202
+06200316,Belßstraße,Lankwitz,Steglitz-Zehlendorf,0.34036759700476515,Not significant,0.27533630472678183,0.199
+12100204,Schäfersee,Ost 2 - Alt-Reinickendorf,Reinickendorf,0.33247137052087183,Not significant,0.25335202088876224,0.068
+08200831,Buckow West,Buckow,Neukölln,0.32858707557502737,Not significant,0.2623005827470233,0.127
+12200413,Tegel Süd,West 1 - Tegel-Süd/Flughafensee,Reinickendorf,0.32275416890801506,Not significant,0.2525008044194224,0.237
+02100101,Askanischer Platz,Südliche  Friedrichstadt,Friedrichshain-Kreuzberg,0.320659642693541,Not significant,-0.31658947447910324,0.097
+06400843,Thielallee,Zehlendorf Nord,Steglitz-Zehlendorf,0.32032615026208505,Not significant,0.20570477533317152,0.185
+06200423,Schütte-Lanz-Straße,Ostpreußendamm,Steglitz-Zehlendorf,0.31655587211142766,Not significant,0.19794134785098058,0.244
+04200206,Kranzallee,Heerstraße,Charlottenburg-Wilmersdorf,0.3125,Not significant,0.20036858380867398,0.185
+01100205,Wilhelmstraße,Regierungsviertel,Mitte,0.3067484662576687,Not significant,0.14530276477174028,0.341
+12200307,Reinickes Hof,West 4 - Auguste-Viktoria-Allee,Reinickendorf,0.2994011976047904,Not significant,0.21091085135469523,0.222
+09300922,Kosmos Viertel,Altglienicke,Treptow-Köpenick,0.2962962962962963,Not significant,0.37042790564344524,0.053
+03400620,Schönholz,Schönholz/Wilhelmsruh/Rosenthal,Pankow,0.29577048210588586,Not significant,0.004126780127335834,0.451
+02400623,Andreasviertel,Karl-Marx-Allee Süd,Friedrichshain-Kreuzberg,0.29282576866764276,Not significant,-0.2567869978203854,0.13
+03500933,Weißer See,Weißensee,Pankow,0.28629856850715746,Not significant,-0.0803774302831797,0.309
+09200818,Spindlersfeld,Köllnische Vorstadt/Spindlersfeld,Treptow-Köpenick,0.2812939521800281,Not significant,-0.03795682952087449,0.37
+07400928,Germaniagarten,Tempelhof Südost,Tempelhof-Schöneberg,0.2789400278940028,Not significant,0.1361337452433641,0.347
+12500930,Wittenau Süd,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.26362038664323373,Not significant,0.22077173122572505,0.145
+06200315,Gallwitzallee,Lankwitz,Steglitz-Zehlendorf,0.25985275010827197,Not significant,0.19175149220938384,0.219
+11401137,Erieseering,Friedrichsfelde Süd,Lichtenberg,0.2508780732563974,Not significant,0.09614351764855747,0.363
+11200512,Orankesee,Alt-Hohenschönhausen Süd,Lichtenberg,0.2451982018798529,Not significant,0.15967197131086405,0.245
+06400844,Dahlem,Zehlendorf Nord,Steglitz-Zehlendorf,0.24141630901287553,Not significant,0.1205180533855331,0.281
+04400831,Messelpark,Schmargendorf,Charlottenburg-Wilmersdorf,0.2336448598130841,Not significant,0.2485042101907099,0.164
+09401534,Altstadt Köpenick,Altstadt Köpenick,Treptow-Köpenick,0.23337222870478413,Not significant,0.16706755559820902,0.301
+05100312,Eckschanze,Spandau Mitte,Spandau,0.23228803716608595,Not significant,0.2811400697125771,0.112
+04200207,Eichkamp,Heerstraße,Charlottenburg-Wilmersdorf,0.2217704675660691,Not significant,0.25054031220241857,0.076
+12500824,Ziekowstraße/Freie Scholle,West 3 - Borsigwalde/Freie Scholle,Reinickendorf,0.21080368906455862,Not significant,0.2603193512931773,0.116
+09200512,Wuhlheide,Oberschöneweide,Treptow-Köpenick,0.2003338898163606,Not significant,-0.02438067829894526,0.401
+07400826,Marienhöhe,Tempelhof Südwest,Tempelhof-Schöneberg,0.19569471624266144,Not significant,-0.09524815136492151,0.267
+06200311,Alt-Lankwitz,Lankwitz,Steglitz-Zehlendorf,0.18915510718789408,Not significant,0.27050568716859263,0.065
+12400721,Frohnau Ost,Nord 1 - Frohnau/Hermsdorf,Reinickendorf,0.18670649738610903,Not significant,0.2773316999415171,0.226
+04200203,Olympiagelände,Heerstraße,Charlottenburg-Wilmersdorf,0.18218623481781376,Not significant,0.2624796942038093,0.15
+12400618,Heiligensee Nord,West 2 - Heiligensee/Konradshöhe,Reinickendorf,0.18072289156626506,Not significant,0.3644538747708809,0.077
+10200630,Cecilienplatz,Hellersdorf Süd,Marzahn-Hellersdorf,0.18050541516245489,Not significant,0.2470200287124375,0.274
+07400822,Lindenhofsiedlung,Tempelhof Südwest,Tempelhof-Schöneberg,0.15889830508474576,Not significant,-0.4682477873152042,0.051
+09100203,Plänterwald Ost,Plänterwald,Treptow-Köpenick,0.14450867052023122,Not significant,0.022197510734620743,0.464
+03300516,Heinersdorf,Blankenburg/Heinersdorf/Märchenland,Pankow,0.13513513513513514,Not significant,0.09952576170916853,0.336
+09501838,Rahnsdorf,Rahnsdorf,Treptow-Köpenick,0.1342957864696995,Not significant,0.3152021344650227,0.189
+07601547,Horstwalder Straße,Lichtenrade Süd,Tempelhof-Schöneberg,0.13351134846461948,Not significant,0.2929152660956407,0.159
+03300413,Karow Ost,Karow,Pankow,0.13280212483399734,Not significant,0.36740148328616656,0.053
+11100203,Falkenberg Ost,Neu-Hohenschönhausen Nord,Lichtenberg,0.12998266897746968,Not significant,0.3335006003675781,0.105
+03400725,Schlosspark,Pankow Zentrum,Pankow,0.12791813239526703,Not significant,0.17216419558785434,0.238
+07501031,Eisenacher Straße,Mariendorf Nord,Tempelhof-Schöneberg,0.1276324186343331,Not significant,-0.1998833374686854,0.178
+03400618,Rosenthal,Schönholz/Wilhelmsruh/Rosenthal,Pankow,0.125,Not significant,0.3168783102752284,0.068
+09502043,Dammheide,Köpenick Nord,Treptow-Köpenick,0.12048192771084337,Not significant,0.1848994526448362,0.188
+02400520,Barnimkiez,Karl-Marx-Allee Nord,Friedrichshain-Kreuzberg,0.11301031219098742,Not significant,-0.3938373792511248,0.068
+11401034,Tierpark,Friedrichsfelde Nord,Lichtenberg,0.11185682326621924,Not significant,0.27377298069657613,0.115
+06100204,Munsterdamm,Albrechtstraße,Steglitz-Zehlendorf,0.11139992573338285,Not significant,0.055425123004221324,0.469
+06300630,Hindenburgdamm,Drakestraße,Steglitz-Zehlendorf,0.10277492291880781,Not significant,0.17147818530079842,0.28
+11300620,Fennpfuhl Ost,Fennpfuhl,Lichtenberg,0.10214504596527069,Not significant,0.3140916801245238,0.066
+09301126,Grünau,Grünau,Treptow-Köpenick,0.09103322712790168,Not significant,0.24821519366867187,0.05
+12200412,Waldidyll/Flughafensee,West 1 - Tegel-Süd/Flughafensee,Reinickendorf,0.08865248226950355,Not significant,0.29523716304892517,0.092
+04100101,Jungfernheide/Plötzensee,Charlottenburg Nord,Charlottenburg-Wilmersdorf,0.0885324445370274,Not significant,-0.03072069321383824,0.385
+09501941,Friedrichshagener Straße,Dammvorstadt,Treptow-Köpenick,0.08787346221441125,Not significant,0.18969602235523145,0.26
+06400736,Düppel,Zehlendorf Südwest,Steglitz-Zehlendorf,0.08529304252467405,Not significant,0.3561620824134378,0.069
+08200624,Tempelhofer Weg,Britz Nord,Neukölln,0.08130081300813008,Not significant,0.21796035773930958,0.16
+08200727,Parchimer Allee Süd,Britz,Neukölln,0.08086253369272237,Not significant,0.3283405541985495,0.055
+04200205,Flatowallee,Heerstraße,Charlottenburg-Wilmersdorf,0.06770480704129993,Not significant,0.2520404224795444,0.229
+08100521,Schulenburgpark,Köllnische Heide,Neukölln,0.058719906048150326,Not significant,-0.16040671033435502,0.206
+11401136,Volkradstraße,Friedrichsfelde Süd,Lichtenberg,0.05530973451327434,Not significant,0.04235891359128816,0.493
+12100103,Breitkopfbecken,Ost 1 - Reginhardstraße,Reinickendorf,0.05411255411255411,Not significant,0.2893567455995821,0.24
+03200204,Blankenfelde,Blankenfelde/Niederschönhausen,Pankow,0.05170630816959669,Not significant,0.30765885789263137,0.066
+03501037,Rathaus Weißensee,Weißensee Ost,Pankow,0.05154639175257732,Not significant,0.3542283760401611,0.057
+03601450,Volkspark Prenzlauer Berg,Prenzlauer Berg Ost,Pankow,0.03695491500369549,Not significant,-0.09726550561202399,0.294
+12400617,Alt-Heiligensee,West 2 - Heiligensee/Konradshöhe,Reinickendorf,0.03411804844762879,Not significant,0.36134452319057764,0.13
+08200729,Britzer Garten,Britz,Neukölln,0.03125,Not significant,0.3014749534273066,0.084
+05300839,Rohrdamm,Siemensstadt,Spandau,0.02994908655286014,Not significant,0.3401698900992321,0.08
+01100102,Großer Tiergarten,Tiergarten Süd,Mitte,0.024582104228121928,Not significant,-0.060856897573363516,0.339
+11300721,Herzbergstraße,Alt-Lichtenberg,Lichtenberg,0.01886080724254998,Not significant,0.3108611884246089,0.056
+03400831,Pankower Tor,Pankow Süd,Pankow,0.0,Not significant,0.08237742027144272,0.446
+05300840,Nonnendammallee,Siemensstadt,Spandau,0.0,Not significant,0.32074789575922336,0.066
+05400945,Kafkastraße,Gatow/Kladow,Spandau,0.0,Not significant,0.4295364680832521,0.053
+06200419,Thermometersiedlung,Ostpreußendamm,Steglitz-Zehlendorf,0.0,Not significant,0.3442538009606223,0.268
+07601340,Tirschenreuther Ring Ost,Marienfelde Süd,Tempelhof-Schöneberg,0.0,Not significant,0.34504942780020476,0.115
+07601341,Diedersdorfer Weg,Marienfelde Süd,Tempelhof-Schöneberg,0.0,Not significant,0.32906147550368775,0.064
+07601545,Nahariyastraße,Lichtenrade Süd,Tempelhof-Schöneberg,0.0,Not significant,0.35588520611484137,0.069
+08200833,Buckow Ost,Buckow,Neukölln,0.0,Not significant,0.31346737987115175,0.156
+08401138,Goldhähnchenweg,Buckow Nord,Neukölln,0.0,Not significant,0.37301241575724475,0.077
+08401140,Vogelviertel Nord,Buckow Nord,Neukölln,0.0,Not significant,0.3677461981130017,0.086
+08401245,Frauenviertel,Rudow,Neukölln,0.0,Not significant,0.4178098188308743,0.097
+09100306,Späthsfelde,Baumschulenweg,Treptow-Köpenick,0.0,Not significant,0.33417293333361286,0.062
+09301024,Falkenberg,Bohnsdorf,Treptow-Köpenick,0.0,Not significant,0.40528415093284276,0.061
+09401433,Allende II,Allende-Viertel,Treptow-Köpenick,0.0,Not significant,0.35946635693695195,0.059
+10200423,Böhlener Straße,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Not significant,0.43263027423916006,0.054
+10200627,Am Kienberg,Hellersdorf Süd,Marzahn-Hellersdorf,0.0,Not significant,0.3277564918830274,0.104
+11300619,Rudolf-Seiffert-Park,Fennpfuhl,Lichtenberg,0.0,Not significant,0.18216545902401435,0.35
+12200309,Scharnweberstraße,West 4 - Auguste-Viktoria-Allee,Reinickendorf,0.0,Not significant,0.26847425737575026,0.097
+12200411,Schumacher-Quartier,West 1 - Tegel-Süd/Flughafensee,Reinickendorf,0.0,Not significant,0.33520158072818185,0.136

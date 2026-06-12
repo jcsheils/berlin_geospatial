@@ -1,0 +1,21 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+tmp/
+
+# Local environment and editor state
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+
+# GitHub rejects files over 100 MB. Keep the source tree inventory local.
+data/Berlin_trees.gpkg
+
+# Legacy working notebooks and proposal drafts kept outside the published analysis.
+Berlin_watering_Data*.ipynb
+Berlin_Urban_Heat_Thesis_Proposal.docx
+docs/*.docx
+docs/*.pdf

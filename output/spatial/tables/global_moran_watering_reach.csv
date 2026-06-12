@@ -1,0 +1,5 @@
+metric,value
+Moran's I,0.4405453105454913
+Expected I,-0.0018552875695732839
+Permutation p-value,0.001
+Permutations,999.0
