@@ -1,0 +1,81 @@
+{
+  "generated_at_utc": "2026-09-29T16:26:22.370831+00:00",
+  "source_audit": {
+    "rows": 9312,
+    "distinct_ortsteil_names": 96,
+    "years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "missing_lst_rows": 1811,
+    "missing_lst_pct": 19.448024054982817,
+    "duplicate_key_rows": 192,
+    "duplicate_keys": 96,
+    "duplicate_names": [
+      "Buckow"
+    ],
+    "exact_duplicate_rows": 0,
+    "valid_lst_count_min": 1,
+    "valid_lst_count_max": 64360,
+    "candidate_comparison_areas": 93,
+    "rainfall_missing_rows": 0,
+    "counts_semantics": "undefined; not assumed to be overpasses or valid-pixel coverage",
+    "missing_metadata": [
+      "extraction script",
+      "boundary file and vintage",
+      "Landsat sensor/product",
+      "acquisition dates and scene counts",
+      "cloud/shadow mask",
+      "monthly compositing method",
+      "LST_C_count definition",
+      "rainfall source, units and monthly aggregation"
+    ]
+  },
+  "spatial_audit": {
+    "official_areas": 97,
+    "comparison_areas": 93,
+    "current_inventory_trees_assigned": 955432,
+    "current_inventory_trees_unassigned": 915,
+    "recorded_tree_ids_assigned": 11127,
+    "recorded_events_assigned": 57786,
+    "recorded_litres_assigned": 2249502.0,
+    "recorded_events_unassigned": 0,
+    "recorded_litres_unassigned": 0.0,
+    "recorded_events_district_disagreement": 0,
+    "comparison_eligible_events_entire_period": 56711,
+    "core_eligible_area_months_before_LST_missingness": 2790,
+    "core_available_same_month_LST": 2639,
+    "source_boundary_alignment": "provisional; matching names/districts is not proof of identical polygons"
+  },
+  "boundary_source": "https://gdi.berlin.de/services/wfs/alkis_ortsteile?service=WFS&version=2.0.0&request=GetFeature&typeNames=alkis_ortsteile%3Aortsteile&outputFormat=application%2Fjson&srsName=EPSG%3A25833",
+  "boundary_catalogue": "https://daten.berlin.de/datensaetze/alkis-berlin-ortsteile-wfs-61bd3084",
+  "boundary_licence": "Datenlizenz Deutschland – Zero – Version 2.0",
+  "boundary_retrieved_date": "2026-09-29",
+  "boundary_change_reference": "https://www.berlin.de/ba-steglitz-zehlendorf/aktuelles/pressemitteilungen/2020/pressemitteilung.1024262.php",
+  "inputs_sha256": {
+    "data/raw/supervisor/berlin_ortsteile_LST_rain_2018_2025_LNDSAT.csv": "6a61abf0bbd46231a7db7c5c334e69d6fce4d3c7b5b32b345f0de76baddb2756",
+    "data/spatial/alkis_ortsteile_2026_09_29.geojson": "6b1577afa16c01cf2bb382f21883ca304ad14e00a51fd5215181cfb1fb82a08a",
+    "data/Berlin_trees.gpkg": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+    "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d"
+  },
+  "outputs_sha256": {
+    "source_row_audit": "64e1ea4b97b422019e8b5dd15336e81124e696ed067495500ce262711a55fe63",
+    "source_excluded_rows": "5456b38aacad4001972223c699c01069819c5a6bd8f4b4fd7609af8b22c78947",
+    "source_monthly_availability": "abf0cea32e7eeb9f6dd0ae360da12dbd7af72a47491188008f26f1a4b2fa3884",
+    "ortsteil_geography_audit": "42350a727fea4a7cc6c0cc646a422aa83b948631f4dbd38939cb0ca2bda726e2",
+    "recorded_tree_ortsteil_crosswalk": "1357825c3cf20bddf47b9abfefa44cc173c1b946e9311b8712d32ef675fe998a",
+    "unassigned_recorded_tree_days": "c9116547254a3ee173d546dad4d0e888ae3932fa4d2789bc40ddd1b668bcc8c5",
+    "ortsteil_month_watering_lst_2020_2025": "b8f3c61f9b7283c6798305bd4ab2e3044cc47432b0daf7740bbd3b9bbfa21f8b",
+    "provisional_pooled_correlations": "e288bcb079c72be459258c48a065288f9e4ac047ada6b5788debc8b80ca243e5",
+    "provisional_within_ortsteil_correlations": "b2d687bc6f618a3bbc0006b23c00e69e87665661a550357fab211fdf35a586ba"
+  },
+  "protocol_sha256": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986",
+  "code_sha256": "8b6415572ada95e1a6494ad1aa03d7f23bdcf837cbc4f0aba27ac4e2e17b19ba",
+  "claims": "Provisional descriptive correlations only. Source metadata and original polygon alignment remain unresolved. No causal or confirmatory cooling analysis."
+}

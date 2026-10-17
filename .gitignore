@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 tmp/
+.tmp/
+node_modules/
+
+# Local renders and artifact-tool inspection reports are QA products, not
+# deliverables. The DOCX and PPTX sources remain versionable.
+outputs/*/
+outputs/*.inspect.ndjson
 
 # Local environment and editor state
 .env
@@ -19,3 +26,22 @@ Berlin_watering_Data*.ipynb
 Berlin_Urban_Heat_Thesis_Proposal.docx
 docs/*.docx
 docs/*.pdf
+
+# Local authoring, caches, and unrelated presentation material.
+.conda/
+.pytest_cache/
+*.inspect.ndjson
+Exphormer_Presentation_ML4NLP.key
+joseph_proposal_slides.key
+Berlin_Thesis_Proposal_Revised_Oct2026.pdf
+berlin_watering_prelim_report.html
+presentation/
+references/*.pdf
+
+# Historical Office drafts are retained locally. Canonical examination copies
+# live under examination/proposal/ and examination/results/.
+outputs/*.docx
+outputs/*.pptx
+outputs/*.pdf
+output/docx/
+output/pdf/Berlin_Urban_Heat_Thesis_Proposal_Feedback_Integrated.pdf

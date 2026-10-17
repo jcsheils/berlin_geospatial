@@ -1,0 +1,58 @@
+[project]
+title = "Spatiotemporal Modeling of Citizen Tree Watering in Berlin"
+analysis_crs = "EPSG:25833"
+web_crs = "EPSG:4326"
+timezone = "Europe/Berlin"
+lor_vintage = "2021-01-01"
+recorded_watering_start = "2020-05-18"
+complete_recorded_watering_end_exclusive = "2026-01-01"
+random_seed = 42
+scope_version = "october-2026-seminar-proposal"
+core_study = "02_civic_heat_response"
+proposal = "examination/proposal/Proposal_October_2026.pdf"
+proposal_notes = "examination/proposal/README.md"
+claim = "Preliminary descriptive evidence; daily response, cooling-loss and allocation models remain planned."
+
+[project.exploratory_response]
+agreement_date = "2026-09-29"
+protocol = "docs/watering_response_exploratory_protocol.md"
+report = "output/watering_response/report.html"
+rq2 = "Does logged citizen watering respond to daily heat and dryness, and how does response vary after accounting for baseline participation?"
+temperature_scope = "DWD Berlin-Tempelhof air temperature; supplied monthly Ortsteil LST is provisional and is not the Part I overpass panel."
+claim = "Monthly associations are exploratory; no causal cooling or daily vulnerability interaction has been estimated."
+
+[project.schedule_triggers]
+core_priority = "Part II daily civic heat response"
+part_iii_checkpoint = "end-month-4"
+part_iii_fallback = "Descriptive allocation comparison if supporting data or validated prediction is delayed"
+satellite_watering_effect = "not-attempted-in-october-scope"
+
+[pillars.00_foundation]
+label = "Shared spatial and temporal foundation"
+status = "partial-ready"
+reason = "Frozen source snapshots, LOR-month and positive tree-day products exist; the balanced area-day panel and historical young-tree denominator remain planned."
+datasets = ["recorded_watering_events", "tree_inventory", "lor_boundaries_2021", "lor_month_recorded_watering_foundation", "recorded_tree_lor_crosswalk_2020_2025", "recorded_tree_day_watering_2020_2025", "area_day_behavioural_panel", "historical_young_tree_risk_set"]
+
+[pillars.01_cooling_loss]
+label = "Part I — Vegetation cooling loss (supporting)"
+status = "preliminary-only"
+reason = "Legacy district context and provisional Ortsteil monthly LST exist; no validated overpass/vegetation/drought panel or cooling-loss model has been fitted."
+datasets = ["legacy_heat_borough_snapshot", "supervisor_ortsteil_monthly_lst_rain", "landsat_lst_time_series", "sentinel_canopy_time_series", "hydrology_time_series", "vegetation_height_fractions", "built_form_controls"]
+
+[pillars.02_civic_heat_response]
+label = "Part II — Daily civic heat response (core)"
+status = "preliminary-only"
+reason = "Monthly response associations and a positive tree-day table motivate the core study; a balanced area-day panel, participation controls and hierarchical daily model are not yet complete."
+datasets = ["recorded_watering_events", "recorded_tree_day_watering_2020_2025", "area_day_behavioural_panel", "historical_young_tree_risk_set", "daily_weather", "lor_equity_environment_2024", "lor_population_by_age", "turnout_crosswalk", "heat_warning_calendar"]
+
+[pillars.03_allocation_comparison]
+label = "Part III — Allocation around volunteer effort (exploratory)"
+status = "blocked-planned"
+reason = "Descriptive equity screening exists, but calibrated logged-care prediction, historical eligible tree-seasons and validated allocation comparisons have not been implemented."
+datasets = ["tree_inventory", "historical_young_tree_risk_set", "lor_recorded_watering_equity_current", "landsat_lst_time_series", "built_form_controls"]
+
+[pillars.99_synthesis]
+label = "Bridge analysis and thesis synthesis"
+status = "blocked-planned"
+reason = "The preliminary map atlas is available; the bridge test needs posterior daily response slopes and vegetation cooling-loss estimates that do not yet exist."
+datasets = ["area_day_behavioural_panel", "landsat_lst_time_series", "sentinel_canopy_time_series", "hydrology_time_series"]

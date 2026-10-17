@@ -236,8 +236,8 @@ plr_id,plr_name,bzr_name,District,watering_reach_pct,local_moran_cluster,local_m
 12500929,Lübars,Nord 2 - Waidmannslust/Wittenau/Lübars,Reinickendorf,0.0,Low-Low,0.39885265505623935,0.008
 12601133,Treuenbrietzener Straße,MV Nord,Reinickendorf,0.0,Low-Low,0.43402466479605867,0.004
 12601134,Märkisches Zentrum,MV Nord,Reinickendorf,0.0,Low-Low,0.42126756618653066,0.002
-04400725,Güterbahnhof Grunewald,Grunewald,Charlottenburg-Wilmersdorf,,No inventory,,
-06200418,Landweg,Ostpreußendamm,Steglitz-Zehlendorf,,No inventory,,
+04400725,Güterbahnhof Grunewald,Grunewald,Charlottenburg-Wilmersdorf,,No catalogued trees,,
+06200418,Landweg,Ostpreußendamm,Steglitz-Zehlendorf,,No catalogued trees,,
 03601348,Senefelderstraße,Helmholtzplatz,Pankow,18.446601941747574,Not significant,3.7785342078353814,0.081
 07400825,Friedrich-Karl-Straße,Tempelhof Südwest,Tempelhof-Schöneberg,15.675675675675675,Not significant,-1.2580728152034335,0.262
 04300412,Schlossgarten,Schloss Charlottenburg,Charlottenburg-Wilmersdorf,15.476190476190476,Not significant,1.702078227613995,0.103
@@ -464,7 +464,7 @@ plr_id,plr_name,bzr_name,District,watering_reach_pct,local_moran_cluster,local_m
 04200206,Kranzallee,Heerstraße,Charlottenburg-Wilmersdorf,0.3125,Not significant,0.20036858380867398,0.185
 01100205,Wilhelmstraße,Regierungsviertel,Mitte,0.3067484662576687,Not significant,0.14530276477174028,0.341
 12200307,Reinickes Hof,West 4 - Auguste-Viktoria-Allee,Reinickendorf,0.2994011976047904,Not significant,0.21091085135469523,0.222
-09300922,Kosmos Viertel,Altglienicke,Treptow-Köpenick,0.2962962962962963,Not significant,0.37042790564344524,0.053
+09300922,Kosmos Viertel,Altglienicke,Treptow-Köpenick,0.2962962962962963,Not significant,0.37042790564344524,0.054
 03400620,Schönholz,Schönholz/Wilhelmsruh/Rosenthal,Pankow,0.29577048210588586,Not significant,0.004126780127335834,0.451
 02400623,Andreasviertel,Karl-Marx-Allee Süd,Friedrichshain-Kreuzberg,0.29282576866764276,Not significant,-0.2567869978203854,0.13
 03500933,Weißer See,Weißensee,Pankow,0.28629856850715746,Not significant,-0.0803774302831797,0.309
@@ -524,7 +524,7 @@ plr_id,plr_name,bzr_name,District,watering_reach_pct,local_moran_cluster,local_m
 11300721,Herzbergstraße,Alt-Lichtenberg,Lichtenberg,0.01886080724254998,Not significant,0.3108611884246089,0.056
 03400831,Pankower Tor,Pankow Süd,Pankow,0.0,Not significant,0.08237742027144272,0.446
 05300840,Nonnendammallee,Siemensstadt,Spandau,0.0,Not significant,0.32074789575922336,0.066
-05400945,Kafkastraße,Gatow/Kladow,Spandau,0.0,Not significant,0.4295364680832521,0.053
+05400945,Kafkastraße,Gatow/Kladow,Spandau,0.0,Not significant,0.4295364680832521,0.055
 06200419,Thermometersiedlung,Ostpreußendamm,Steglitz-Zehlendorf,0.0,Not significant,0.3442538009606223,0.268
 07601340,Tirschenreuther Ring Ost,Marienfelde Süd,Tempelhof-Schöneberg,0.0,Not significant,0.34504942780020476,0.115
 07601341,Diedersdorfer Weg,Marienfelde Süd,Tempelhof-Schöneberg,0.0,Not significant,0.32906147550368775,0.064
@@ -536,7 +536,7 @@ plr_id,plr_name,bzr_name,District,watering_reach_pct,local_moran_cluster,local_m
 09100306,Späthsfelde,Baumschulenweg,Treptow-Köpenick,0.0,Not significant,0.33417293333361286,0.062
 09301024,Falkenberg,Bohnsdorf,Treptow-Köpenick,0.0,Not significant,0.40528415093284276,0.061
 09401433,Allende II,Allende-Viertel,Treptow-Köpenick,0.0,Not significant,0.35946635693695195,0.059
-10200423,Böhlener Straße,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Not significant,0.43263027423916006,0.054
+10200423,Böhlener Straße,Hellersdorf Nord,Marzahn-Hellersdorf,0.0,Not significant,0.43263027423916006,0.056
 10200627,Am Kienberg,Hellersdorf Süd,Marzahn-Hellersdorf,0.0,Not significant,0.3277564918830274,0.104
 11300619,Rudolf-Seiffert-Park,Fennpfuhl,Lichtenberg,0.0,Not significant,0.18216545902401435,0.35
 12200309,Scharnweberstraße,West 4 - Auguste-Viktoria-Allee,Reinickendorf,0.0,Not significant,0.26847425737575026,0.097

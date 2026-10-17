@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "dataset_id": "lor_month_recorded_watering_foundation",
+  "generated_at_utc": "2026-07-10T19:39:21.891491+00:00",
+  "grain": "planungsraum_month",
+  "coverage": {
+    "start_inclusive": "2020-05-18",
+    "end_exclusive": "2026-01-01",
+    "timezone_for_calendar_month": "Europe/Berlin",
+    "months": 68,
+    "first_month_status": "partial_platform_start"
+  },
+  "geography": {
+    "lor_vintage": "2021-01-01",
+    "analysis_crs": "EPSG:25833",
+    "planungsraeume": 542
+  },
+  "inputs": {
+    "recorded_watering_events": {
+      "path": "data/giessdenkiez_bew\u00e4sserungsdaten (1).csv",
+      "sha256": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030"
+    },
+    "tree_inventory": {
+      "path": "data/Berlin_trees.gpkg",
+      "sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+      "crs_override": "Declared EPSG:4326 metadata overridden to EPSG:25833 after coordinate-range validation."
+    },
+    "lor_boundaries": {
+      "path": "data/spatial/lor_planungsraeume_2021.gpkg",
+      "sha256": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624"
+    }
+  },
+  "audit": {
+    "raw_source_rows": 58847,
+    "exact_duplicate_rows_removed": 111,
+    "invalid_timestamps_after_deduplication": 0,
+    "deduplicated_events_in_window": 58474,
+    "deduplicated_litres_in_window": 2277987.0,
+    "matched_and_lor_assigned_events": 57786,
+    "matched_and_lor_assigned_litres": 2249502.0,
+    "matched_and_lor_assigned_unique_trees": 11127,
+    "unmatched_or_unassigned_events": 688,
+    "unmatched_or_unassigned_litres": 28485.0,
+    "panel_rows": 36856
+  },
+  "semantics": {
+    "recorded_zero": "No Gieß den Kiez platform activity was recorded for that Planungsraum-month; municipal, private, and unlogged watering remain unobserved.",
+    "denominator_caveat": "All denominator-dependent fields use the current tree inventory. They are not historical month-specific eligible-tree risk sets and may include trees planted after the panel month.",
+    "first_month_caveat": "May 2020 is only observed from the declared platform start on 18 May and is marked partial_platform_start.",
+    "claim_boundary": "This foundation panel describes recorded activity. It does not estimate irrigation coverage, cooling effects, service failure, or causal impacts."
+  },
+  "outputs": {
+    "panel": "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv",
+    "recorded_tree_crosswalk": "data/processed/foundation/recorded_tree_lor_crosswalk_2020_2025.csv"
+  }
+}

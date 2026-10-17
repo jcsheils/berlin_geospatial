@@ -1,0 +1,1063 @@
+{
+  "schema_version": 1,
+  "prepared_date": "2026-10-17",
+  "scope": "October 2026 seminar proposal; saved preliminary evidence",
+  "selection": "Git tracked and non-ignored files at packaging time; uncompressed tree input is restored from included archive",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 199,
+      "sha256": "d804d9b43754f825816d653443f61e6ec86171ee49418e3e0dc2944cdf2fc943"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1137,
+      "sha256": "35ec9bcbf6c12912e0f5073eb383b02230bd474f1654955a693ca55cb5737b85"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 635,
+      "sha256": "380b46aab560a858be1a04dd3f25f64e00f09fb9d089b882f0dec7e4c9eaa33f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4783,
+      "sha256": "e87be750898e80dc345e7a135f4be885a8a4d152052796868a780910a45a4c8e"
+    },
+    {
+      "path": "analysis/build_equity_notebook.py",
+      "bytes": 28807,
+      "sha256": "2c14232a12483eedd027210b60a14fb00476da20a7c0397cdb5ac27c80e98aa4"
+    },
+    {
+      "path": "analysis/build_exploratory_notebook.py",
+      "bytes": 37337,
+      "sha256": "e4b03d16d0b0641ed2bbd42398ac35c8a3abe36536518e98e7c8d8acd1021d89"
+    },
+    {
+      "path": "analysis/build_ortsteil_report.py",
+      "bytes": 12104,
+      "sha256": "c6fca9b36c784c7046a8d0c9b32b0d6323bc6326d1000f2d5d4ed0e3592746a4"
+    },
+    {
+      "path": "analysis/build_spatial_notebook.py",
+      "bytes": 22951,
+      "sha256": "0179f8f2ca8fa352e39dba81df8ef27925a5682eea9117e5d38b574f0a7e6ee8"
+    },
+    {
+      "path": "analysis/build_watering_response_report.py",
+      "bytes": 22017,
+      "sha256": "07f662d08d5d657a6a1b01d92d4a8c3347b4ef527702a6556b4203bcd3f036e0"
+    },
+    {
+      "path": "analysis/build_watering_response_workbook.mjs",
+      "bytes": 11771,
+      "sha256": "9f460fd273e96e546cdacd4303d86fee34e34965a271b7a1ad52fa4591d870a2"
+    },
+    {
+      "path": "analysis/download_equity_data.py",
+      "bytes": 2690,
+      "sha256": "334ffec5f3291b20333047154644ffc077a403be01772b1adb785955a0b5698c"
+    },
+    {
+      "path": "analysis/extend_watering_response_workbook.mjs",
+      "bytes": 10333,
+      "sha256": "6e75919bd746bc5c8cf113c2dc94fac943465128fbf4d72b5860461d423ff61e"
+    },
+    {
+      "path": "config/datasets.toml",
+      "bytes": 12704,
+      "sha256": "a0622c6b42cfb45b562e0d4e2c3303d4385af58ef977b2455617ff5d19159736"
+    },
+    {
+      "path": "config/project.toml",
+      "bytes": 3939,
+      "sha256": "9c8c58e7375f6bb380d7415c852bb27df3e9d742b025e5503d43c874e313cb3c"
+    },
+    {
+      "path": "data/Berlin_heat_population_data.csv",
+      "bytes": 199962,
+      "sha256": "f57b6c52d26bfebd398df02ac484a4bcf6267c2499b7f4761b9a30e17d044800"
+    },
+    {
+      "path": "data/Berlin_heat_population_death_Birth_data.csv",
+      "bytes": 170453,
+      "sha256": "b0ca570a246b94de836f6aa2ca0ecf51ff40f3d7562d70e7e7731bfd36bba039"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 4060,
+      "sha256": "0fa0c903b3e2fcaab8dd29f87502d167d681a723abc29b7917318b4464cce53d"
+    },
+    {
+      "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
+      "bytes": 7888024,
+      "sha256": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030"
+    },
+    {
+      "path": "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv",
+      "bytes": 4650725,
+      "sha256": "19d311afd703b13f88d9ddd3474515444d67d0c556ae524e24bb83f7573fbd93"
+    },
+    {
+      "path": "data/processed/foundation/lor_month_recorded_watering_2020_2025.metadata.json",
+      "bytes": 2550,
+      "sha256": "42d8156d30b37577daa58acca3fee2d16afafae72c0520b58596581b1ddf8380"
+    },
+    {
+      "path": "data/processed/foundation/recorded_tree_lor_crosswalk_2020_2025.csv",
+      "bytes": 941300,
+      "sha256": "554ab34a08cd3ee9a57bdc297435c83be2a28344f2b60c8004f46148c9bf506c"
+    },
+    {
+      "path": "data/processed/temporal/berlin_calendar_month_recorded_watering_2021_2025.csv",
+      "bytes": 2413,
+      "sha256": "252415c5ba7440d4738124a64c9f6a5cf5ac72f6eb69b0bfab7ddea9a370878c"
+    },
+    {
+      "path": "data/processed/temporal/berlin_month_recorded_watering_2020_2025.csv",
+      "bytes": 12687,
+      "sha256": "dbb9301415a40cc9604ffc97d0efea987d9f1ffc9297bdefe9a701d006176ca4"
+    },
+    {
+      "path": "data/processed/temporal/berlin_season_recorded_watering_2021_2025.csv",
+      "bytes": 1784,
+      "sha256": "e4ed9515a5560a65d7ce2359801fec9d5cb5438ef6abe5c75ef8e58b578aef97"
+    },
+    {
+      "path": "data/processed/temporal/berlin_year_recorded_watering_2021_2025.csv",
+      "bytes": 677,
+      "sha256": "29d83d3bd7f8cc1e23265b4ba566d5b6a07940a9b2437ce2755205e9c5e4cfe5"
+    },
+    {
+      "path": "data/processed/temporal/lor_calendar_month_recorded_watering_2021_2025.csv",
+      "bytes": 1267498,
+      "sha256": "673fa4449824e7422d799717ac57e7dc07bd2d714fe542ceb6fffb966cbb7666"
+    },
+    {
+      "path": "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv",
+      "bytes": 11014792,
+      "sha256": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d"
+    },
+    {
+      "path": "data/processed/temporal/recorded_tree_day_watering_2020_2025.metadata.json",
+      "bytes": 6632,
+      "sha256": "b98419602130c8108b44d1312fe31ec3753049d6d7bdda8e5d6684144328da18"
+    },
+    {
+      "path": "data/processed/temporal/recorded_watering_timing_by_age_band_2021_2025.csv",
+      "bytes": 8142,
+      "sha256": "00cc634420e3d6a622608fd900ddb0a3bbd3505ed2f1cbcb56ad2fd24bf0c2dc"
+    },
+    {
+      "path": "data/processed/temporal/recorded_watering_timing_by_genus_2021_2025.csv",
+      "bytes": 49876,
+      "sha256": "ac0c492766d156e13a19d0040ef5897246f51bbf44024df0cd02d77229705220"
+    },
+    {
+      "path": "data/processed/temporal/watering_temporal_atlas_2020_2025.metadata.json",
+      "bytes": 7764,
+      "sha256": "8f329873f28a507f584588dd08dd076ecef4d1bb1820c8961ad657d576e79ff9"
+    },
+    {
+      "path": "data/raw/dwd/README.md",
+      "bytes": 1831,
+      "sha256": "ef2834e2c1e07c54833618bcbd40ff7b32eab07e226e1924688264c63398396a"
+    },
+    {
+      "path": "data/raw/dwd/tageswerte_KL_00433_19480101_20251231_hist.zip",
+      "bytes": 703922,
+      "sha256": "33b26c7013fd3f592291f7544197c25b3cea88d1cfd33d07d015e2fbb0271785"
+    },
+    {
+      "path": "data/raw/supervisor/README.md",
+      "bytes": 1880,
+      "sha256": "57a361be5658c3a9111627523ee0660a4d4991044a5c97e87403df7fd76849dd"
+    },
+    {
+      "path": "data/raw/supervisor/berlin_ortsteile_LST_rain_2018_2025_LNDSAT.csv",
+      "bytes": 666932,
+      "sha256": "6a61abf0bbd46231a7db7c5c334e69d6fce4d3c7b5b32b345f0de76baddb2756"
+    },
+    {
+      "path": "data/raw/tree_inventory/Berlin_trees.gpkg.gz",
+      "bytes": 61291950,
+      "sha256": "99cd7d38834946be2686dcdea5ce7b19a9cfeb3404e30238e0c376757f176a39"
+    },
+    {
+      "path": "data/raw/tree_inventory/README.md",
+      "bytes": 1873,
+      "sha256": "2cff98c5b20836ab531d6e54781328f33c14128e2fcb4fdee9181595e1142da5"
+    },
+    {
+      "path": "data/raw/tree_inventory/snapshot.json",
+      "bytes": 964,
+      "sha256": "131847aafbe1fc3048712818fd4fd3d157be6499068b35d1ddf49306130135c4"
+    },
+    {
+      "path": "data/spatial/README.md",
+      "bytes": 2864,
+      "sha256": "db87571684d8b59e8d1a4cad503ca0453f66b409c5d5e9c63c86b19649b72344"
+    },
+    {
+      "path": "data/spatial/alkis_ortsteile_2026_09_29.geojson",
+      "bytes": 2072822,
+      "sha256": "6b1577afa16c01cf2bb382f21883ca304ad14e00a51fd5215181cfb1fb82a08a"
+    },
+    {
+      "path": "data/spatial/lor_equity_environment_2024.gpkg",
+      "bytes": 11296768,
+      "sha256": "228649d7aad486bd943f5a1d002a9ecee71aa39fcd97f7b75d7335b82d96e35c"
+    },
+    {
+      "path": "data/spatial/lor_planungsraeume_2021.gpkg",
+      "bytes": 3846144,
+      "sha256": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624"
+    },
+    {
+      "path": "docs/analysis_plan.md",
+      "bytes": 4104,
+      "sha256": "15052b5dd896a909ec6f175393002b387c5a4aeadb028bc4971dc231b48f1f6d"
+    },
+    {
+      "path": "docs/archive/analysis_plan_august_2026.md",
+      "bytes": 13484,
+      "sha256": "0a6c75025f722d88c5f9cd9b8f270dd31f4ac926480e5f42e441ec886dd06c24"
+    },
+    {
+      "path": "docs/archive/project_august_2026.toml",
+      "bytes": 4832,
+      "sha256": "9dc85513a2429ccd88260fc92ec659ad5cdd18a5c1cd3bbb10b3fa6f74327e4d"
+    },
+    {
+      "path": "docs/archive/repository_architecture_august_2026.md",
+      "bytes": 9091,
+      "sha256": "d600b83f50cf0eac4d7fdfda9ffaa3c03cac1df60d4d6effc69a5900e7f84099"
+    },
+    {
+      "path": "docs/related_literature.md",
+      "bytes": 17500,
+      "sha256": "93160898cb2d6e860482f2c0594385ae3a60becd2c882b8c1caa26d9ca336224"
+    },
+    {
+      "path": "docs/repository_architecture.md",
+      "bytes": 2610,
+      "sha256": "da935a1c39f850e46057f80f37619fbddfc13e913920697ab2aff35b7fca1f00"
+    },
+    {
+      "path": "docs/temporal_analysis_protocol.md",
+      "bytes": 19833,
+      "sha256": "19f585ba926dd4afaa06184f87d17ab3b4285ec0f3b31f8dc593a2f8c1c371bb"
+    },
+    {
+      "path": "docs/watering_response_exploratory_protocol.md",
+      "bytes": 8941,
+      "sha256": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986"
+    },
+    {
+      "path": "examination/README.md",
+      "bytes": 3369,
+      "sha256": "0d6b1aa17e3748566e11cac9d399f27ee49db3706bea776146d721c5bcbe0a37"
+    },
+    {
+      "path": "examination/atlas/README.md",
+      "bytes": 10189,
+      "sha256": "759e38c569672c585492a4d76f974b42998efe79e64c100885ebd4d23c5b40e6"
+    },
+    {
+      "path": "examination/atlas/catalogue.csv",
+      "bytes": 6381,
+      "sha256": "8e9c7be4c09d71aefbf0a94b947b54415c0fe7c01ae8a67abace91fb5a89948e"
+    },
+    {
+      "path": "examination/data_dictionary.md",
+      "bytes": 3660,
+      "sha256": "3c9ca84442c611a4647b4645ef320297d10c4fe8066d95fdbfe38254e7b6db10"
+    },
+    {
+      "path": "examination/data_inventory.csv",
+      "bytes": 17646,
+      "sha256": "873f0172c3982a711cacaf7135c9701cb4986296a6f8003b628faf7d679fbc6f"
+    },
+    {
+      "path": "examination/data_schema.json",
+      "bytes": 64156,
+      "sha256": "e77cd5538d649e014ce2fe40489dc064b68d0ac785d4bb5f74fdb277dc06303b"
+    },
+    {
+      "path": "examination/preliminary_results.md",
+      "bytes": 6766,
+      "sha256": "27849c645ea50453acc3278dd74d10986e6bbf4dfeb6cdf52e28d5234c20eaf3"
+    },
+    {
+      "path": "examination/proposal/Proposal_October_2026.pdf",
+      "bytes": 305735,
+      "sha256": "67105114c4da34d4e3929bc66b35ad3e77c95baf26d41c1ca0e75c6ef1a278ec"
+    },
+    {
+      "path": "examination/proposal/README.md",
+      "bytes": 3672,
+      "sha256": "ad2812b07adbec69df5b5648c34c8f8ad90858a3fa7d91ec9f5e7e038e656c1e"
+    },
+    {
+      "path": "examination/proposal/Seminar_Slides_October_2026.key",
+      "bytes": 2374264,
+      "sha256": "07d043d560d3917fc55de463316e9f8fc1a3c197d0c3073b3477fbd4ead0873c"
+    },
+    {
+      "path": "examination/proposal/Seminar_Slides_October_2026.pdf",
+      "bytes": 1326805,
+      "sha256": "72f1767c020c70ca2e6f4ba7acd5b440b26ef5e9ab034cd024f45853733ceb8a"
+    },
+    {
+      "path": "examination/readiness.md",
+      "bytes": 3804,
+      "sha256": "7074f162245cc86c27c5b0326e52d8cef051b9681c22cf57fc11ef85f63ca44b"
+    },
+    {
+      "path": "examination/reproducibility.md",
+      "bytes": 5267,
+      "sha256": "68273c64c970ba478a76107a5728bbb6f1033992c4257cc3d893d7e14289f092"
+    },
+    {
+      "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",
+      "bytes": 1131699,
+      "sha256": "278e541db2d4b9fb5f61c345b11d27f6244e61f0ca2d5a81347d38a5a5f0b315"
+    },
+    {
+      "path": "examination/test_environment.json",
+      "bytes": 464,
+      "sha256": "def52c56851e82a5146fc60ba27db983528c62656399b9330c484036f000860a"
+    },
+    {
+      "path": "examination/validation.md",
+      "bytes": 3012,
+      "sha256": "c536a169ed1c16a75bd788d604ee45022605b6deec143ebdea873e14a2b231bd"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/figures/01_recorded_watering_monthly_timing.png",
+      "bytes": 205702,
+      "sha256": "643660e0467f622650c2569e317b9ab30e44f21c4ec1598be55d2b4a8a298a40"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/figures/02_recorded_watering_timing_by_tree_age_genus.png",
+      "bytes": 308743,
+      "sha256": "4d3e1f07346521438dcdd5c5c9602f11aae29a6798848210322e1661b89e0ecc"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/01_calendar_month_recorded_watering_atlas.png",
+      "bytes": 1930949,
+      "sha256": "0a839c60d9f60764aa5e5b98d39f3d591f4b8f8d6f98bf6737d8a545fe2b0425"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/02_active_season_recorded_watering_atlas.png",
+      "bytes": 3187106,
+      "sha256": "3216235b945c7ab43050e5717ff7d02b9fec6bc0ce0183877ccca0e402efe9ee"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/yearly/2021_monthly_recorded_watering_atlas.png",
+      "bytes": 1757189,
+      "sha256": "cc327174f2629f43a4650c3c14955dea87982513122a2d506c13835caf50ad26"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/yearly/2022_monthly_recorded_watering_atlas.png",
+      "bytes": 1931748,
+      "sha256": "384c8d765d2d67cf0c16089dfe12bb628f4d9b93661428d1fc67657bfdb66877"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/yearly/2023_monthly_recorded_watering_atlas.png",
+      "bytes": 1804646,
+      "sha256": "0914380163e67223d7e0bf828ab45f4da8074ff846c6b6880b103598a1c41ddc"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/yearly/2024_monthly_recorded_watering_atlas.png",
+      "bytes": 1760560,
+      "sha256": "64ecfbe3d07983fb1a0edea21590a07ffc6224dac8de8f6dd426b0bfcaefd1f8"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/maps/yearly/2025_monthly_recorded_watering_atlas.png",
+      "bytes": 1758739,
+      "sha256": "62da5e586ea38943cb150f39883fcd655afca706b7dcf966c9c88341bd3d27bf"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/berlin_calendar_month_recorded_watering_2021_2025.csv",
+      "bytes": 2413,
+      "sha256": "252415c5ba7440d4738124a64c9f6a5cf5ac72f6eb69b0bfab7ddea9a370878c"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/berlin_month_recorded_watering_2020_2025.csv",
+      "bytes": 12687,
+      "sha256": "dbb9301415a40cc9604ffc97d0efea987d9f1ffc9297bdefe9a701d006176ca4"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/berlin_season_recorded_watering_2021_2025.csv",
+      "bytes": 1784,
+      "sha256": "e4ed9515a5560a65d7ce2359801fec9d5cb5438ef6abe5c75ef8e58b578aef97"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/berlin_year_recorded_watering_2021_2025.csv",
+      "bytes": 677,
+      "sha256": "29d83d3bd7f8cc1e23265b4ba566d5b6a07940a9b2437ce2755205e9c5e4cfe5"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/lor_calendar_month_recorded_watering_2021_2025.csv",
+      "bytes": 1267498,
+      "sha256": "673fa4449824e7422d799717ac57e7dc07bd2d714fe542ceb6fffb966cbb7666"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_age_band_2021_2025.csv",
+      "bytes": 8142,
+      "sha256": "00cc634420e3d6a622608fd900ddb0a3bbd3505ed2f1cbcb56ad2fd24bf0c2dc"
+    },
+    {
+      "path": "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_genus_2021_2025.csv",
+      "bytes": 49876,
+      "sha256": "ac0c492766d156e13a19d0040ef5897246f51bbf44024df0cd02d77229705220"
+    },
+    {
+      "path": "output/equity/figures/01_lor_watering_social_environment.png",
+      "bytes": 1248030,
+      "sha256": "99574c590aab2311b3f88a27e5e97afc96fca7b2dc85c7b2370bd04b1393a973"
+    },
+    {
+      "path": "output/equity/figures/02_watering_equity_distributions.png",
+      "bytes": 305552,
+      "sha256": "6a691d9e3a4dd406f6c53817c7576901c6a2740ea4628ab16aa216d8296c302d"
+    },
+    {
+      "path": "output/equity/figures/03_priority_gap_candidates.png",
+      "bytes": 398044,
+      "sha256": "c78a873de1f4c2eeff2b95a41c5dbcbbd12c43598dfa336736cc3706f4af9172"
+    },
+    {
+      "path": "output/equity/lor_watering_equity_2020_2025.gpkg",
+      "bytes": 4046848,
+      "sha256": "b2af9e21ef4a56b091984ce4f9fe51039ccbc92d52857f930ae1694f652a125f"
+    },
+    {
+      "path": "output/equity/tables/equity_associations.csv",
+      "bytes": 1784,
+      "sha256": "abd3573fe5af0aee5ad40811c289e0336a3380a1adc295202f3a2e044ae83f05"
+    },
+    {
+      "path": "output/equity/tables/equity_join_audit.csv",
+      "bytes": 279,
+      "sha256": "c028b3fe3566ae826d34a2d6c38b7d170c393905f568d1bc11484931ea11b2ee"
+    },
+    {
+      "path": "output/equity/tables/lor_watering_equity_metrics.csv",
+      "bytes": 164475,
+      "sha256": "35c502e75bdc095bf210ce12ab8dd8e17bd70cd96ae0548f4de143e7f86c1f27"
+    },
+    {
+      "path": "output/equity/tables/priority_gap_planungsraeume.csv",
+      "bytes": 2085,
+      "sha256": "b6ffc15e310746a6df66219cbbc53faee808dde0f93cce64e27c99c7ee6974dd"
+    },
+    {
+      "path": "output/equity/tables/sensitivity_inventory_thresholds.csv",
+      "bytes": 1278,
+      "sha256": "0ba1fd8256b6f6364af3e56761b7a2f6732cd67a837587bce29880a845007b5c"
+    },
+    {
+      "path": "output/equity/tables/watering_by_environmental_need.csv",
+      "bytes": 1515,
+      "sha256": "b4e4ee36c3f2ca20750fa10354a414c8a5b9d4db8bdb4c4d02858c9e8e06b89b"
+    },
+    {
+      "path": "output/equity/tables/watering_by_social_status.csv",
+      "bytes": 447,
+      "sha256": "63bc970310e110c8f41d611332a74e4acade4778b66c154877dbb0d3e8373b88"
+    },
+    {
+      "path": "output/equity/tables/watering_group_tests.csv",
+      "bytes": 256,
+      "sha256": "d1c1bd760121529151a757b33e098213f79ce92fba556ecde4b0ca73468d39ac"
+    },
+    {
+      "path": "output/exploratory/figures/01_monthly_watering_activity.png",
+      "bytes": 178261,
+      "sha256": "00541eea3102c0874804e2c5816a019514dc8c6871225bfdc7a1c9066ab12119"
+    },
+    {
+      "path": "output/exploratory/figures/02_district_normalized_watering.png",
+      "bytes": 107923,
+      "sha256": "ab2045f7c704f24bf58411927815ba7907e6653dd16ebe5dc9c21dba6bfec0f1"
+    },
+    {
+      "path": "output/exploratory/figures/03_heat_watering_alignment.png",
+      "bytes": 238480,
+      "sha256": "a962eda8abe3c89123c2d563c7d0f87c14cc21c8f6a897f3e42917c90da3312f"
+    },
+    {
+      "path": "output/exploratory/figures/04_tree_selectivity.png",
+      "bytes": 100007,
+      "sha256": "dede24dd1ae3c5c7c942465112718e47e32f371fa05c0e6ef141506aafbc4c0b"
+    },
+    {
+      "path": "output/exploratory/figures/05_watering_age_timing_temperature.png",
+      "bytes": 253398,
+      "sha256": "367e72e76593a8e2eab4865df2e4959d23777ec0895de9fdea81f40a546251c9"
+    },
+    {
+      "path": "output/exploratory/supporting_datasets.md",
+      "bytes": 7139,
+      "sha256": "fb6a812c5923f08bb4908fdd3aa92aaea65495047ceb96842db0cb304d0be35a"
+    },
+    {
+      "path": "output/exploratory/tables/age_watering_temperature_correlations.csv",
+      "bytes": 1606,
+      "sha256": "e4126528493e1cc520048d582ff4755b679f62fd281b430461a9db04cbb67ece"
+    },
+    {
+      "path": "output/exploratory/tables/district_heat_watering_join.csv",
+      "bytes": 2525,
+      "sha256": "89559bf665985c91a800c76ced2a8fc10d12a3190ac75f278f8ff8c9254b65bb"
+    },
+    {
+      "path": "output/exploratory/tables/district_spearman_correlations.csv",
+      "bytes": 994,
+      "sha256": "c5263fd1ade72fc9defc95622d55266f53b16f01b0b2725676694fb3f4bee6db"
+    },
+    {
+      "path": "output/exploratory/tables/district_watering_metrics_2020_2025.csv",
+      "bytes": 1670,
+      "sha256": "56678d5d3fb0fb7b8db3a59be306d4e51b392973cf9c1adf2685ea5107866f8f"
+    },
+    {
+      "path": "output/exploratory/tables/district_year_age_watering_temperature_panel.csv",
+      "bytes": 6635,
+      "sha256": "6c3412d1acea05d9a8615e781dfbdfc1c3e895215cb5c32648c31fcf0c27dc80"
+    },
+    {
+      "path": "output/exploratory/tables/heat_structure_correlations.csv",
+      "bytes": 262,
+      "sha256": "0f483f747b4517dfacb3f6514b50af943bec7487e6ba12ae58b795b5f61b53f0"
+    },
+    {
+      "path": "output/exploratory/tables/mortality_field_audit.csv",
+      "bytes": 149,
+      "sha256": "2d97fe87dc201a35f049fdc89977851f71d49f0fc85367691d9b461abd1a2485"
+    },
+    {
+      "path": "output/exploratory/tables/street_tree_age_selectivity.csv",
+      "bytes": 376,
+      "sha256": "df2b57e7e085f93f4405db3ca22ab52a337772a30ed4656ba01be9c50497f931"
+    },
+    {
+      "path": "output/exploratory/tables/street_tree_genus_reach.csv",
+      "bytes": 741,
+      "sha256": "42f372f7ef4aae7d441f1ee8733432a252dc15d2d9d6359c7c4110bf8a870fe4"
+    },
+    {
+      "path": "output/exploratory/tables/supporting_dataset_inventory.csv",
+      "bytes": 3406,
+      "sha256": "ade0fa5d49fdd778f645f450e6dfc7a91d99e687a1837c8d8da644294785b604"
+    },
+    {
+      "path": "output/exploratory/tables/tree_id_match_summary.csv",
+      "bytes": 179,
+      "sha256": "73123e436fe1d26c5dd7b48d8fe1b0e3f98a1ec54f47f76e4ed1fc34d6dabf79"
+    },
+    {
+      "path": "output/exploratory/tables/watering_age_calendar_month.csv",
+      "bytes": 1928,
+      "sha256": "6e7897c7658d8749ddf1ca1ba5e38e4934ba02a47a9ae667c57340a761071657"
+    },
+    {
+      "path": "output/exploratory/tables/watering_age_group_summary.csv",
+      "bytes": 495,
+      "sha256": "fbed31992397305430ff7c4548330d6666d5d36676bdd0f3c87018c669956bde"
+    },
+    {
+      "path": "output/exploratory/tables/watering_age_yearly.csv",
+      "bytes": 471,
+      "sha256": "a549b82f0c51d1833614f60f786053894d44aaed4286cd86a1d5edcacc91894f"
+    },
+    {
+      "path": "output/exploratory/tables/watering_by_year.csv",
+      "bytes": 352,
+      "sha256": "cf638af99000109492a3af41eb749cfa76b075f856a84417fc52399bde48376b"
+    },
+    {
+      "path": "output/exploratory/tables/watering_concentration.csv",
+      "bytes": 126,
+      "sha256": "24743dc924ff3d13f06d68fb4e74bf50f24767fbfccf12c3d7a077f57151c270"
+    },
+    {
+      "path": "output/exploratory/tables/watering_data_quality.csv",
+      "bytes": 305,
+      "sha256": "b58ca1b1f331d8b9c2ce7ab3eea142c73c48d954cfbbb29e566611a7474b9c12"
+    },
+    {
+      "path": "output/jupyter-notebook/berlin-lor-equity-environment.ipynb",
+      "bytes": 1039410,
+      "sha256": "717e59c4ecd239fd5e9e5f4745e349cfdcfcb0433d57766ad75bdd0222aa2afd"
+    },
+    {
+      "path": "output/jupyter-notebook/berlin-lor-spatial-watering.ipynb",
+      "bytes": 1189544,
+      "sha256": "7455050ac63bd90cbe8b2e6738d5bb7b1ba4baf189f3f26a402cdb1bd7c3b27f"
+    },
+    {
+      "path": "output/jupyter-notebook/berlin-urban-heat-exploration.ipynb",
+      "bytes": 668598,
+      "sha256": "4258d6048f554d6c8c090459ecc92aca77d7c799ce863c68ddc5450859003110"
+    },
+    {
+      "path": "output/pdf/Berlin_Examination_Brief_October_2026.pdf",
+      "bytes": 112477,
+      "sha256": "e6eeccd6849d96a717281f4cd81abd6fb5e59b93a84e823b2548fff83a3b5c00"
+    },
+    {
+      "path": "output/pdf/Berlin_Map_Atlas_October_2026.pdf",
+      "bytes": 17165211,
+      "sha256": "f19dc0a23af3e9efbfa148e30c2a03250e334a65dee32cec76568973c4d977ff"
+    },
+    {
+      "path": "output/spatial/figures/01_district_spatial_baseline.png",
+      "bytes": 571127,
+      "sha256": "6d90c7b0f5c904bf09de0270a2c14684383b71102bdfa662d595a8fdbc1299cd"
+    },
+    {
+      "path": "output/spatial/figures/02_lor_watering_reach_intensity.png",
+      "bytes": 915959,
+      "sha256": "aaf152c26e00139cb4915e9bc5c50497d54476e46a39885978eaae74aa7cb91a"
+    },
+    {
+      "path": "output/spatial/figures/03_lor_local_moran_clusters.png",
+      "bytes": 646666,
+      "sha256": "d8a1a6199989e5af9cc959b59417d985fda644edc1069f71a8c4e7a354b159e6"
+    },
+    {
+      "path": "output/spatial/lor_watering_metrics_2020_2025.gpkg",
+      "bytes": 3878912,
+      "sha256": "3c50947ab3daa4dfac34459c5262db9acb51c6f8e8a52e8584990465efcac9ad"
+    },
+    {
+      "path": "output/spatial/maps/lor_watering_interactive.html",
+      "bytes": 2802928,
+      "sha256": "0e5625480083d51fb7e39ce34b58bf4905139b517ab18dc92918ff7fadb80a45"
+    },
+    {
+      "path": "output/spatial/tables/global_moran_watering_reach.csv",
+      "bytes": 121,
+      "sha256": "b639071bb153f3469435eebbc5f45a1cdef5325d67a44b1416b90093c57c62fe"
+    },
+    {
+      "path": "output/spatial/tables/local_moran_watering_clusters.csv",
+      "bytes": 61152,
+      "sha256": "3df6026e3fdb0c8079af71da44ea21785361aa4e4da13ae6ed4d8c98ce8bf442"
+    },
+    {
+      "path": "output/spatial/tables/lor_watering_metrics_2020_2025.csv",
+      "bytes": 83741,
+      "sha256": "524111c423a336ae499d62ff9edc71e1927fc19b2a519c2cc91abefd65810ab8"
+    },
+    {
+      "path": "output/spatial/tables/spatial_join_audit.csv",
+      "bytes": 213,
+      "sha256": "bc18d8768d87fddf101521fb3b759e5472121cceefc8660a553cdbe5e851e747"
+    },
+    {
+      "path": "output/watering_response/figures/01_monthly_watering.png",
+      "bytes": 216872,
+      "sha256": "f32928f7ea9a49d683e20d624292b25a8b2f49500c332083ebd1a9da3b07bce1"
+    },
+    {
+      "path": "output/watering_response/figures/02_comparable_seasons.png",
+      "bytes": 79517,
+      "sha256": "5a57e6b767c98ced7c7bc43ff6e2d2fdadb5dff7b8aa73833c1d0445504cb055"
+    },
+    {
+      "path": "output/watering_response/figures/03_weather_associations.png",
+      "bytes": 89967,
+      "sha256": "0f1249eb8baadbdb9edb21472f219928e0c85ec46ac76868280fb3e1d6ce46de"
+    },
+    {
+      "path": "output/watering_response/figures/04_social_status.png",
+      "bytes": 56512,
+      "sha256": "d7847d648477410b1d71a6ee6366cf87502fe3bb15f8601b72af90fa50ce4fb0"
+    },
+    {
+      "path": "output/watering_response/metadata.json",
+      "bytes": 5031,
+      "sha256": "d7b6179abd315fc44a665518dba756d0483975f695f172756adcd758433706be"
+    },
+    {
+      "path": "output/watering_response/ortsteil/figures/01_lst_availability.png",
+      "bytes": 88814,
+      "sha256": "e73c31b1181a9fc918c426c64319d465cbb1142d1029a98dc89608e330ed2326"
+    },
+    {
+      "path": "output/watering_response/ortsteil/figures/02_provisional_correlations.png",
+      "bytes": 68488,
+      "sha256": "650bf57f99bede58cedb60b79343fdd1ce4d800683b751a11a7e21048ee7303e"
+    },
+    {
+      "path": "output/watering_response/ortsteil/metadata.json",
+      "bytes": 4104,
+      "sha256": "e7420c57fd29d5fec2bf7588a78b5c26b02f91489d1ff8e564021c8a9c495427"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/ortsteil_geography_audit.csv",
+      "bytes": 7012,
+      "sha256": "42350a727fea4a7cc6c0cc646a422aa83b948631f4dbd38939cb0ca2bda726e2"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/ortsteil_month_watering_lst_2020_2025.csv",
+      "bytes": 2370274,
+      "sha256": "b8f3c61f9b7283c6798305bd4ab2e3044cc47432b0daf7740bbd3b9bbfa21f8b"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/provisional_pooled_correlations.csv",
+      "bytes": 14436,
+      "sha256": "e288bcb079c72be459258c48a065288f9e4ac047ada6b5788debc8b80ca243e5"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/provisional_within_ortsteil_correlations.csv",
+      "bytes": 83118,
+      "sha256": "b2d687bc6f618a3bbc0006b23c00e69e87665661a550357fab211fdf35a586ba"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/recorded_tree_ortsteil_crosswalk.csv",
+      "bytes": 658511,
+      "sha256": "1357825c3cf20bddf47b9abfefa44cc173c1b946e9311b8712d32ef675fe998a"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/source_excluded_rows.csv",
+      "bytes": 50490,
+      "sha256": "5456b38aacad4001972223c699c01069819c5a6bd8f4b4fd7609af8b22c78947"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/source_monthly_availability.csv",
+      "bytes": 3016,
+      "sha256": "abf0cea32e7eeb9f6dd0ae360da12dbd7af72a47491188008f26f1a4b2fa3884"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/source_row_audit.csv",
+      "bytes": 840646,
+      "sha256": "64e1ea4b97b422019e8b5dd15336e81124e696ed067495500ce262711a55fe63"
+    },
+    {
+      "path": "output/watering_response/ortsteil/tables/unassigned_recorded_tree_days.csv",
+      "bytes": 340,
+      "sha256": "c9116547254a3ee173d546dad4d0e888ae3932fa4d2789bc40ddd1b668bcc8c5"
+    },
+    {
+      "path": "output/watering_response/ortsteil/workbook_data.json",
+      "bytes": 7908679,
+      "sha256": "c509ffaeb6c64eaa7a55f3b8a045372d6c05140ff9c265ff2d17b62d9cbbb33d"
+    },
+    {
+      "path": "output/watering_response/report.html",
+      "bytes": 835184,
+      "sha256": "ef8e4ec7554721d7eb61f17b68a11418d3f92cdbee39594c94c061112b501dbb"
+    },
+    {
+      "path": "output/watering_response/report.md",
+      "bytes": 4194,
+      "sha256": "d35b0faab06cbf71aa7c92ba0275e3d8b60258aeee37da7ffb94a99a877c9b7a"
+    },
+    {
+      "path": "output/watering_response/tables/berlin_june_september_comparison.csv",
+      "bytes": 567,
+      "sha256": "7a0a352c996b0c91e0f619fd23760090167a9a530695fd2ccc87b43513aaf5f6"
+    },
+    {
+      "path": "output/watering_response/tables/berlin_month_weather_watering.csv",
+      "bytes": 14155,
+      "sha256": "0248f03013eb6b4474d5ded3fee66c47c364ab8170307d8379e55ae28217f603"
+    },
+    {
+      "path": "output/watering_response/tables/berlin_year_watering.csv",
+      "bytes": 353,
+      "sha256": "5ad80a7617b649d206019e43da7d3d309c17616f3d42ab14d220af381bda4c07"
+    },
+    {
+      "path": "output/watering_response/tables/district_june_september_comparison.csv",
+      "bytes": 2671,
+      "sha256": "54f0082ba682168c78ee383ada126cd491e2acf10be33b10b65c3f8698d5314f"
+    },
+    {
+      "path": "output/watering_response/tables/district_month_station_context.csv",
+      "bytes": 209028,
+      "sha256": "3c5328de59a135965a09359f28deaa53778800066c8b9a506d2fd9f6a860a64c"
+    },
+    {
+      "path": "output/watering_response/tables/district_month_watering.csv",
+      "bytes": 93915,
+      "sha256": "fa294e4c04a4f44e8074eef05f4958b6fcef44c7f21f1859297084954d901289"
+    },
+    {
+      "path": "output/watering_response/tables/dwd_00433_daily_2020_2025.csv",
+      "bytes": 101645,
+      "sha256": "5543895ec2c1b2989bfe4e9258b965bd39f7c29543b10f44d1087b5c31415be0"
+    },
+    {
+      "path": "output/watering_response/tables/dwd_00433_monthly_2020_2025.csv",
+      "bytes": 6457,
+      "sha256": "30bd28e58024a0de52d7a0a94813965785f0c8c02b01d1c61d4d6bf2770f716e"
+    },
+    {
+      "path": "output/watering_response/tables/lor_month_watering_social_context.csv",
+      "bytes": 5367537,
+      "sha256": "7a31f3bb17c33c09e9837d11c7e0284ae55bb6f7d244760126f42c6fbdccf325"
+    },
+    {
+      "path": "output/watering_response/tables/monthly_adjusted_associations.csv",
+      "bytes": 5679,
+      "sha256": "b75ff849b3e0b10c0a82aa0d8cfd3934120a525ede39ecb6366b939424cf955c"
+    },
+    {
+      "path": "output/watering_response/tables/monthly_raw_correlations.csv",
+      "bytes": 2335,
+      "sha256": "e63d75d251c9b354bbf587b67a7552bd6b74f8a31a5da37dc0c3aba18244acc8"
+    },
+    {
+      "path": "output/watering_response/tables/social_status_month_watering.csv",
+      "bytes": 35231,
+      "sha256": "569d17c06eaac4f8e65ba953008680f5804a660b3e44c1b55a008477ff14d830"
+    },
+    {
+      "path": "output/watering_response/tables/social_status_summary_2021_2025.csv",
+      "bytes": 481,
+      "sha256": "5d06406e6242bfefe9b7db788f7508a1c0a18184060802a6edcf2903b429e2c7"
+    },
+    {
+      "path": "output/watering_response/workbook_data.json",
+      "bytes": 610420,
+      "sha256": "3ddd8a5a9070553abc20ae67722558fcb4a020003fcf68e5fdc3a8e7af46f2ea"
+    },
+    {
+      "path": "package.json",
+      "bytes": 42,
+      "sha256": "609158e6c5fbc237939fa3ddf7faab80ab690bdc0c8d584414a885130103c4e8"
+    },
+    {
+      "path": "pillars/00_foundation/README.md",
+      "bytes": 2028,
+      "sha256": "84e72e6606346d2e004b301db35649ff77db072077bfaa6e26abb2f692ec6ca5"
+    },
+    {
+      "path": "pillars/01_heat_dynamics/README.md",
+      "bytes": 2135,
+      "sha256": "522d808f377e34e97c46def8e07129f81cbef06215c801dbdd596c01aad644ba"
+    },
+    {
+      "path": "pillars/02_canopy_cooling_drought/README.md",
+      "bytes": 1558,
+      "sha256": "f21936f79a7940877918768924e069dae58625a92ea0d230b64c658ce617f15b"
+    },
+    {
+      "path": "pillars/03_citizen_water_intervention/README.md",
+      "bytes": 2748,
+      "sha256": "dd4e95aec1abd44bf7d4b13460aa109009c64be7d359171207fca1847006d286"
+    },
+    {
+      "path": "pillars/04_spatial_justice_vulnerability/README.md",
+      "bytes": 2794,
+      "sha256": "fa861d62be24786063489469cb6dbc538cf913f80680e86dbd9d8bcf77cdf07a"
+    },
+    {
+      "path": "pillars/05_policy_economics/README.md",
+      "bytes": 1111,
+      "sha256": "7f3cf779b9417ca8a4b93df57e92863f73bbcbffa5661b0246db59ecb43f9ea5"
+    },
+    {
+      "path": "pillars/99_synthesis/README.md",
+      "bytes": 2286,
+      "sha256": "00de8de2c20e4baeedbd34c555d75c180220434f8f5801904f1442f806a74418"
+    },
+    {
+      "path": "pipelines/03_build_lor_month_panel.py",
+      "bytes": 1101,
+      "sha256": "316a50933b966107ac33616fd4c2df686f3fb0a87fe234339100f697cb6b5a2d"
+    },
+    {
+      "path": "pipelines/04_build_watering_temporal_atlas.py",
+      "bytes": 1839,
+      "sha256": "bf818ee74b72ac85832e07b383eb87fbf4bd863a878438fc65df6e36f1e4f383"
+    },
+    {
+      "path": "pipelines/05_build_recorded_tree_day.py",
+      "bytes": 1534,
+      "sha256": "b3a4cf69afc71c835afed7c43eb8ecd53d8392b3f31543870fb223c1424c7732"
+    },
+    {
+      "path": "pipelines/06_build_watering_response.py",
+      "bytes": 637,
+      "sha256": "83fff29f3e92190f0baff02b5dad03b9c406026bb8253b64b411f12a45c9f9c3"
+    },
+    {
+      "path": "pipelines/07_build_ortsteil_lst.py",
+      "bytes": 609,
+      "sha256": "0590b77a6c8350fe09334c8adb73c42aaca17f1fdfec0d15da73f12714b10971"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 508,
+      "sha256": "f894405889f550d5536fb4ed854480a0dac62d84f2b536dcbc59f354976406b7"
+    },
+    {
+      "path": "requirements-examination.txt",
+      "bytes": 91,
+      "sha256": "06a0e5719f432f79bd5bff0df039b0297f0af5664193553324129d3cfbd41e3c"
+    },
+    {
+      "path": "requirements-spatial.txt",
+      "bytes": 192,
+      "sha256": "ba9b34533a95023dd6c1658d986d85daabd8321a138596d625ff7d10db792c9b"
+    },
+    {
+      "path": "src/berlin_heat/__init__.py",
+      "bytes": 156,
+      "sha256": "2e7161e14adae30641593d83ea7102f5569c93bb11fa247007723d64778930bb"
+    },
+    {
+      "path": "src/berlin_heat/__main__.py",
+      "bytes": 80,
+      "sha256": "3d2438ae92f4746e9ffaa1f837b1fe803f6281091d1f31f8c95643716f257d9a"
+    },
+    {
+      "path": "src/berlin_heat/cli.py",
+      "bytes": 4517,
+      "sha256": "d5b8ed914b65a2ecd3abd556edc8dd8969294bf59512819a21f03ba864ebd3a7"
+    },
+    {
+      "path": "src/berlin_heat/contracts.py",
+      "bytes": 6750,
+      "sha256": "bdfa7b2543cabb5c8acf0e1ce45dc508aaab5a342c0efad50de80988955eb19d"
+    },
+    {
+      "path": "src/berlin_heat/lor_month_panel.py",
+      "bytes": 13556,
+      "sha256": "71f9cc45e6c748c07f49d5550fa1e1ee3f99bb176af29c29c3a07d09bdae2240"
+    },
+    {
+      "path": "src/berlin_heat/manifest.py",
+      "bytes": 6519,
+      "sha256": "485853bd9d5d599f77aeb1f2834af64d73fe84f3cbb29431659a20a72435b748"
+    },
+    {
+      "path": "src/berlin_heat/ortsteil_lst.py",
+      "bytes": 18458,
+      "sha256": "8b6415572ada95e1a6494ad1aa03d7f23bdcf837cbc4f0aba27ac4e2e17b19ba"
+    },
+    {
+      "path": "src/berlin_heat/paths.py",
+      "bytes": 1591,
+      "sha256": "e55c77a115c36053c82d7f768199b64cdbad33b70d06c3f079266f3641a0c8cd"
+    },
+    {
+      "path": "src/berlin_heat/recorded_tree_day.py",
+      "bytes": 31902,
+      "sha256": "dd14429586d45891c57abca47af662faca08299bb216b259f1688aae1dfc3810"
+    },
+    {
+      "path": "src/berlin_heat/watering_response.py",
+      "bytes": 17419,
+      "sha256": "db32f65b1f93ad3d9eb3eea4bd92735cd9c5ca1eb23a2b1929f006e6573b251c"
+    },
+    {
+      "path": "src/berlin_heat/watering_temporal.py",
+      "bytes": 44104,
+      "sha256": "615f68aad88d8f422b381ca4f32fe79402cb1cc2832cccc86518e693e8cb4ab4"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 57,
+      "sha256": "bae4cc260c44e2301fdf81f0bc3bd374ad479dec358ac3ce326927c96e2d6ade"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "bytes": 2551,
+      "sha256": "0a836fd42344b167664d1fa02e5ba3d0d84d28606836997a7d99be7d98a14d1f"
+    },
+    {
+      "path": "tests/test_current_results.py",
+      "bytes": 4938,
+      "sha256": "2851529c0fc7961267b58d540a2ea2731ccb929cb10f21d2f55a7b39554c89c1"
+    },
+    {
+      "path": "tests/test_equity_download.py",
+      "bytes": 2853,
+      "sha256": "6c2a51d4116550f8eaf39da7caf4aec5bcd34ef19dba10ad756c904161555cb7"
+    },
+    {
+      "path": "tests/test_lor_month_panel.py",
+      "bytes": 3655,
+      "sha256": "13643fa74436172af4c2d29730530e13321f3c2afbfe23b176ab9da05fb56bc6"
+    },
+    {
+      "path": "tests/test_manifest.py",
+      "bytes": 3284,
+      "sha256": "aec7a20f91c72c93bbd1dbfc6bc475ca4b7863e0bb322f49ed6eb4b3c44ba5dd"
+    },
+    {
+      "path": "tests/test_ortsteil_lst.py",
+      "bytes": 4000,
+      "sha256": "2999582dc8a47e8a9f0fae170e5e4da500beb0ce47aea95e0dc81c56a99880e3"
+    },
+    {
+      "path": "tests/test_proposal_artifacts.py",
+      "bytes": 1204,
+      "sha256": "3088e4ef5e05576103eb8bcd9f8aa903e5d5251a7534f78007b3e36eeb9882a7"
+    },
+    {
+      "path": "tests/test_recorded_tree_day.py",
+      "bytes": 5268,
+      "sha256": "c862d1b159f68d2feb381f901f8dbe7206df02333383f45983eb1c72c42469e9"
+    },
+    {
+      "path": "tests/test_watering_response.py",
+      "bytes": 3371,
+      "sha256": "f8ebba7f14e12da3c5cb064bde85b4e88a2ce1b8ebbeb0387367a9a66e22be6b"
+    },
+    {
+      "path": "tests/test_watering_temporal.py",
+      "bytes": 15838,
+      "sha256": "bf0f506b2c802338370209afa942591efb2c3e59e43c41c92cc48f05fcf555e1"
+    },
+    {
+      "path": "tools/apply_latest_feedback_to_proposal.py",
+      "bytes": 13399,
+      "sha256": "b271e89985415f0bd5b21d62a44814baac2195a216be362efb64572d924e41aa"
+    },
+    {
+      "path": "tools/apply_supervisor_feedback_minimal.py",
+      "bytes": 22236,
+      "sha256": "23288e0b73a77bee3aea4b9530853c55c474981b832dc3648b75ffc0ffbb1ecb"
+    },
+    {
+      "path": "tools/build_examination.py",
+      "bytes": 33676,
+      "sha256": "276d2db21fc5931ad96e6f0934aae60f06a2030cc38aab88712cdeb64c4a42e4"
+    },
+    {
+      "path": "tools/build_feedback_integrated_proposal.py",
+      "bytes": 56742,
+      "sha256": "9056827a294cedca04898f724a9b464c04d7983e35676ab12553e0c44de27b77"
+    },
+    {
+      "path": "tools/restore_tree_inventory.py",
+      "bytes": 1842,
+      "sha256": "61a4d29d228332803e68976461dc01b3592fc53b0f121ecca9b2d46252692572"
+    },
+    {
+      "path": "tools/revise_proposal_must_cites.py",
+      "bytes": 9745,
+      "sha256": "1bd8872d8e0222c77dfdb2693ea52815bf5e5c8dc8529ee276a5093a83879d58"
+    },
+    {
+      "path": "tools/update_proposal_slides.mjs",
+      "bytes": 9070,
+      "sha256": "e0d8c403e7e672ca773fa2f149bfa326952f78dc8033a001fcb330a9982a5ef2"
+    },
+    {
+      "path": "tools/verify_examination.py",
+      "bytes": 1921,
+      "sha256": "3d5ec2e82e49afc9011be2789488857b7300bf918b6a13c9271a9c60a87b6c74"
+    }
+  ]
+}

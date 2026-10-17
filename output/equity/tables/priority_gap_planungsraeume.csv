@@ -1,0 +1,11 @@
+plr_id,plr_name,bzr_name,District,inventory_trees,watered_trees,watering_reach_pct,litres_per_inventory_tree,si_v,s4,thermal_burden,green_provision,multiple_burden,need_index,watering_supply_rank,priority_gap
+01200521,Zwinglistraße,Moabit West,Mitte,244.0,0.0,0.0,0.0,niedrig,42.254,hoch,schlecht,fünffach,0.8888888888888888,0.0691588785046729,0.819730010384216
+05300840,Nonnendammallee,Siemensstadt,Spandau,550.0,0.0,0.0,0.0,sehr niedrig,52.308,mittel,schlecht,zweifach,0.8333333333333334,0.0691588785046729,0.7641744548286604
+12200309,Scharnweberstraße,West 4 - Auguste-Viktoria-Allee,Reinickendorf,808.0,0.0,0.0,0.0,sehr niedrig,47.305,mittel,schlecht,dreifach,0.8333333333333334,0.0691588785046729,0.7641744548286604
+08401138,Goldhähnchenweg,Buckow Nord,Neukölln,48.0,0.0,0.0,0.0,sehr niedrig,42.644,gering,schlecht,dreifach,0.6666666666666666,0.0691588785046729,0.5975077881619937
+08100521,Schulenburgpark,Köllnische Heide,Neukölln,1703.0,1.0,0.058719906048150326,0.029359953024075163,sehr niedrig,64.016,hoch,gut,vierfach,0.6666666666666666,0.16635514018691588,0.5003115264797507
+08301037,Gropiusstadt Süd-Ost,Gropiusstadt Ost,Neukölln,356.0,0.0,0.0,0.0,niedrig,42.063,gering,schlecht,dreifach,0.5555555555555555,0.0691588785046729,0.4863966770508826
+05100314,Kurstraße,Spandau Mitte,Spandau,767.0,3.0,0.39113428943937417,1.1473272490221642,sehr niedrig,50.95,mittel,schlecht,dreifach,0.8333333333333334,0.394392523364486,0.4389408099688474
+12601235,Dannenwalder Weg,MV Süd,Reinickendorf,697.0,1.0,0.14347202295552366,1.951219512195122,sehr niedrig,46.98,gering,schlecht,vierfach,0.6666666666666666,0.2411214953271028,0.4255451713395638
+04400833,Schlangenbader Straße,Schmargendorf,Charlottenburg-Wilmersdorf,720.0,4.0,0.5555555555555556,0.2222222222222222,niedrig,28.401,mittel,schlecht,zweifach,0.7222222222222222,0.4523364485981308,0.2698857736240914
+10100210,Marzahner Promenade,Marzahn Mitte,Marzahn-Hellersdorf,2930.0,12.0,0.40955631399317405,0.09658703071672355,niedrig,33.489,gering,schlecht,dreifach,0.5555555555555555,0.40186915887850466,0.1536863966770508

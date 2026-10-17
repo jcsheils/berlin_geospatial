@@ -1,0 +1,6 @@
+year,observed_complete_months,observed_planungsraeume,recorded_watering_events,recorded_litres,recorded_watered_tree_months,lor_months_with_recorded_activity,planungsraeume_with_recorded_activity,share_of_lor_months_with_recorded_activity,peak_recorded_event_month,peak_month_recorded_watering_events
+2021,12,542,8112,247570.0,2963,777,309,0.1194649446494465,2021-06-01,4106
+2022,12,542,18055,796940.0,7855,1644,393,0.25276752767527677,2022-08-01,4487
+2023,12,542,7117,386649.0,3615,1013,317,0.15575030750307503,2023-06-01,2337
+2024,12,542,3648,164837.0,1823,707,233,0.10870233702337023,2024-08-01,927
+2025,12,542,4574,168641.0,2452,745,261,0.11454489544895449,2025-06-01,1378

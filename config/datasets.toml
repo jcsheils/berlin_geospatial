@@ -1,0 +1,379 @@
+[manifest]
+version = 1
+updated = "2026-10-17"
+description = "Dataset registry for the October 2026 seminar proposal and existing preliminary evidence."
+
+[datasets.recorded_watering_events]
+label = "Gieß den Kiez recorded citizen-watering events"
+path = "data/giessdenkiez_bew\u00e4sserungsdaten (1).csv"
+format = "csv"
+delimiter = ";"
+availability = "current"
+required = true
+grain = "recorded_watering_event"
+expected_rows = 58847
+required_columns = [
+  "id",
+  "lng",
+  "lat",
+  "bezirk",
+  "art_dtsch",
+  "gattung_deutsch",
+  "strname",
+  "pflanzjahr",
+  "timestamp",
+  "bewaesserungsmenge_in_liter",
+]
+source = "Berlin Open Data / CityLAB Berlin"
+license = "CC0"
+snapshot_end = "2026-04-30"
+
+[datasets.tree_inventory]
+label = "Berlin tree inventory"
+path = "data/Berlin_trees.gpkg"
+format = "gpkg"
+availability = "optional-local"
+required = false
+grain = "tree"
+expected_layer = "Berlin_trees"
+required_layers = ["Berlin_trees"]
+expected_rows = 962545
+expected_srs_id = 4326
+analysis_srs_id = 25833
+known_warning = "Source metadata declares EPSG:4326 although the stored coordinates are EPSG:25833; analysis must override the metadata explicitly."
+required_columns = [
+  "pitid",
+  "bezirk",
+  "source_layer",
+  "pflanzjahr",
+  "standalter",
+  "art_dtsch",
+  "gattung_deutsch",
+]
+
+[datasets.lor_boundaries_2021]
+label = "Berlin LOR Planungsräume 2021"
+path = "data/spatial/lor_planungsraeume_2021.gpkg"
+format = "gpkg"
+availability = "current"
+required = true
+grain = "planungsraum"
+expected_layer = "a_lor_plr_2021"
+required_layers = ["a_lor_plr_2021"]
+expected_rows = 542
+expected_srs_id = 25833
+required_columns = [
+  "plr_id",
+  "plr_name",
+  "bzr_id",
+  "bzr_name",
+  "bez",
+]
+source = "Amt für Statistik Berlin-Brandenburg"
+license = "CC BY 3.0 DE"
+reference_date = "2021-01-01"
+
+[datasets.legacy_heat_borough_snapshot]
+label = "Legacy borough heat, population, birth, and death snapshot"
+path = "data/Berlin_heat_population_death_Birth_data.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = true
+grain = "mixed_admin_unit_year_season"
+expected_rows = 732
+required_columns = [
+  "District",
+  "fclass",
+  "Year",
+  "season",
+  "AirTemp_C",
+  "TreeCover_Pct",
+  "Landsat_LST_C",
+  "Gestorbene",
+]
+known_warning = "This is a preliminary 2015/2020/2025 mixed-administrative snapshot with undocumented derivation; mortality values are not heat-attributed outcomes."
+
+[datasets.lor_equity_environment_2024]
+label = "LOR social status and environmental justice indicators"
+path = "data/spatial/lor_equity_environment_2024.gpkg"
+format = "gpkg"
+availability = "current"
+required = false
+grain = "planungsraum"
+expected_layer = "mss2025_indizes_542"
+required_layers = [
+  "mss2025_indizes_542",
+  "mss2025_indexind_542",
+  "environmental_justice_2023_2024",
+]
+expected_rows = 542
+expected_srs_id = 25833
+required_columns = ["plr_id", "plr_name"]
+
+[datasets.lor_recorded_watering_metrics_current]
+label = "Current LOR recorded-watering metrics"
+path = "output/spatial/lor_watering_metrics_2020_2025.gpkg"
+format = "gpkg"
+availability = "current"
+required = true
+grain = "planungsraum"
+expected_layer = "lor_watering_metrics"
+required_layers = ["lor_watering_metrics"]
+expected_rows = 542
+expected_srs_id = 25833
+required_columns = [
+  "plr_id",
+  "inventory_trees",
+  "watered_trees",
+  "watering_events",
+  "total_litres",
+  "watering_reach_pct",
+]
+known_warning = "This legacy derived dataset is currently stored under output; future downstream analyses must consume a processed-data copy instead."
+
+[datasets.lor_recorded_watering_equity_current]
+label = "Current LOR recorded-watering and equity metrics"
+path = "output/equity/lor_watering_equity_2020_2025.gpkg"
+format = "gpkg"
+availability = "current"
+required = false
+grain = "planungsraum"
+expected_layer = "lor_watering_equity"
+required_layers = ["lor_watering_equity"]
+expected_rows = 542
+expected_srs_id = 25833
+required_columns = [
+  "plr_id",
+  "watering_reach_pct",
+  "social_status_score",
+  "thermal_burden",
+  "multiple_burden",
+]
+
+[datasets.lor_month_recorded_watering_foundation]
+label = "Canonical LOR-month recorded-watering foundation panel"
+path = "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "planungsraum_month"
+expected_rows = 36856
+required_columns = [
+  "month",
+  "plr_id",
+  "plr_name",
+  "district",
+  "platform_month_status",
+  "platform_live_days",
+  "current_inventory_trees",
+  "recorded_watered_trees",
+  "recorded_watering_events",
+  "recorded_litres",
+  "recorded_reach_pct_current_inventory",
+]
+known_warning = "Denominator-dependent fields use the current inventory rather than historical month-specific eligible-tree risk sets; see the adjacent metadata JSON."
+
+[datasets.recorded_tree_lor_crosswalk_2020_2025]
+label = "Recorded-tree to LOR crosswalk"
+path = "data/processed/foundation/recorded_tree_lor_crosswalk_2020_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "recorded_tree"
+expected_rows = 11127
+required_columns = [
+  "tree_id",
+  "plr_id",
+  "plr_name",
+  "bzr_id",
+  "bzr_name",
+  "district",
+]
+
+[datasets.recorded_tree_day_watering_2020_2025]
+label = "Positive recorded-watering tree-day panel"
+path = "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "recorded_tree_local_calendar_day_positive_exposure"
+expected_rows = 50259
+required_columns = [
+  "tree_id",
+  "local_date",
+  "recorded_watering_events",
+  "recorded_litres",
+  "recorded_events_tree_day",
+  "recorded_litres_tree_day",
+  "multiple_logs_tree_day",
+  "species",
+  "genus",
+  "planting_year",
+  "age_at_watering",
+  "age_band",
+  "plr_id",
+]
+known_warning = "This is an event-positive table for linked and LOR-assigned trees. An absent tree-day is not evidence of no municipal, private, or unlogged watering, and clock-time ordering is not reliable in the 2024-2025 export."
+
+[datasets.lor_calendar_month_recorded_watering_2021_2025]
+label = "Complete-year Planungsraum calendar-month recorded-watering climatology"
+path = "data/processed/temporal/lor_calendar_month_recorded_watering_2021_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "planungsraum_calendar_month_complete_year_mean"
+expected_rows = 6504
+required_columns = [
+  "calendar_month",
+  "plr_id",
+  "bzr_id",
+  "observed_complete_years",
+  "years_with_recorded_activity",
+  "recorded_activity_persistence_pct",
+  "current_inventory_trees",
+  "plr_area_ha",
+  "recorded_watering_events",
+  "recorded_litres",
+  "mean_monthly_recorded_events_per_1000_current_inventory_trees",
+  "mean_monthly_recorded_litres_per_ha",
+]
+known_warning = "The calendar-month values describe recorded platform activity in the five complete years 2021-2025. Current-inventory rates are not historical irrigation coverage, and a recorded zero does not imply no unlogged watering."
+
+[datasets.daily_weather]
+label = "Available DWD Tempelhof daily weather for the proposed behavioural panel"
+path = "output/watering_response/tables/dwd_00433_daily_2020_2025.csv"
+format = "csv"
+availability = "current"
+required = false
+grain = "single_station_day"
+expected_rows = 2192
+required_columns = ["date", "air_temperature_max_c", "rainfall_mm"]
+provider = "DWD Climate Data Center"
+license = "CC BY 4.0"
+known_warning = "Ten precipitation days are missing; dry spells, warnings and daily-model controls remain to be assembled. One station supplies temporal context, not neighbourhood climate."
+
+[datasets.dwd_tempelhof_exploratory_daily_2020_2025]
+label = "DWD Berlin-Tempelhof daily air temperature and rain: exploratory response context"
+path = "output/watering_response/tables/dwd_00433_daily_2020_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "single_station_day"
+expected_rows = 2192
+required_columns = ["date", "station_id", "air_temperature_mean_c", "air_temperature_max_c", "rainfall_mm", "quality_code_climate"]
+provider = "DWD Climate Data Center"
+source = "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/tageswerte_KL_00433_19480101_20251231_hist.zip"
+license = "CC BY 4.0"
+known_warning = "Single station shared temporal context, not local LST or district-specific weather. Ten rain days are missing in June/October 2023. QN_4=9 throughout."
+
+[datasets.supervisor_ortsteil_monthly_lst_rain]
+label = "Supervisor-supplied monthly Ortsteil LST and rain: unverified extraction metadata"
+path = "data/raw/supervisor/berlin_ortsteile_LST_rain_2018_2025_LNDSAT.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "source_polygon_month_with_ambiguous_Buckow_keys"
+expected_rows = 9312
+required_columns = ["ortsteil", "bezirk", "year", "month", "LST_C_mean", "LST_C_count", "rain_mm_mean"]
+known_warning = "192 Buckow rows have ambiguous duplicate month keys; 1,811 LST values are missing. Schlachtensee is absent and original boundaries, cloud filtering, count semantics and rainfall provenance are unverified. Does not replace valid-overpass Landsat outcomes."
+
+[datasets.ortsteil_monthly_watering_lst_provisional]
+label = "Current-Ortsteil monthly recorded watering and provisionally aligned local LST"
+path = "output/watering_response/ortsteil/tables/ortsteil_month_watering_lst_2020_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "current_ortsteil_month"
+expected_rows = 6596
+required_columns = ["ortsteil", "district", "month_date", "recorded_watering_events", "recorded_litres", "recorded_watered_trees", "comparison_eligible", "lst_c", "previous_month_lst_c", "next_month_lst_c"]
+known_warning = "97 areas × 68 months. Only 93 candidate areas enter provisional temperature comparisons; current polygon denominators and source alignment remain limitations. Missing LST is not zero. May 2020 is partial; recorded zero does not imply no other watering."
+
+[datasets.landsat_lst_time_series]
+label = "Cloud-audited Landsat surface-temperature time series"
+format = "planned"
+availability = "planned"
+required = false
+grain = "grid_observation"
+
+[datasets.sentinel_canopy_time_series]
+label = "Sentinel-2 greenness and vegetation-condition time series"
+format = "planned"
+availability = "planned"
+required = false
+grain = "grid_observation"
+known_warning = "NDVI is treated as vegetation greenness, not as ready-made canopy cover; contemporaneous and antecedent variants must be kept distinct."
+
+[datasets.hydrology_time_series]
+label = "ERA5 temporal weather controls and ESA CCI drought context"
+format = "planned"
+availability = "planned"
+required = false
+grain = "city_day_or_coarse_grid_day"
+providers = ["Copernicus Climate Data Store", "ESA Climate Office"]
+role = "Temporal drought anomalies for Part I and alternatives to station context; no within-city moisture gradient is inferred."
+era5_variables = [
+  "2m_temperature",
+  "2m_dewpoint_temperature_or_derived_relative_humidity",
+  "total_precipitation",
+  "10m_u_and_v_wind",
+  "surface_pressure",
+]
+antecedent_windows_days = [7, 14, 30]
+known_warning = "ERA5 and ESA CCI soil-moisture products are temporal modifiers and do not supply a defensible within-Berlin neighbourhood gradient."
+
+[datasets.lor_population_by_age]
+label = "LOR population by age"
+format = "planned"
+availability = "planned"
+required = false
+grain = "planungsraum_year"
+
+[datasets.area_day_behavioural_panel]
+label = "Balanced observed area-day panel with participation and calendar controls"
+format = "planned"
+availability = "planned"
+required = false
+grain = "planungsraum_day"
+
+[datasets.historical_young_tree_risk_set]
+label = "Historical street-tree age 5–19 denominator and eligible tree-seasons"
+format = "planned"
+availability = "planned"
+required = false
+grain = "tree_season_or_area_day"
+
+[datasets.vegetation_height_fractions]
+label = "Canopy and low-vegetation fractions from vegetation height 2020"
+format = "planned"
+availability = "planned"
+required = false
+grain = "analysis_grid_cell"
+
+[datasets.built_form_controls]
+label = "Imperviousness, built form, land use and distance to water"
+format = "planned"
+availability = "planned"
+required = false
+grain = "analysis_grid_cell_or_tree"
+
+[datasets.turnout_crosswalk]
+label = "Election turnout crosswalk to 2021 LOR planning areas"
+format = "planned"
+availability = "planned"
+required = false
+grain = "planungsraum_election"
+
+[datasets.heat_warning_calendar]
+label = "Daily heat warnings, school holidays and public holidays"
+format = "planned"
+availability = "planned"
+required = false
+grain = "city_day"

@@ -115,7 +115,7 @@ COLORS = {
     "red": "#b23a48",
 }
 
-print(f"Project root: {ROOT}")
+print(f"Project root discovered: {ROOT.name}")
 print(f"LOR polygons: {LOR_FILE.name}")
 print(f"Tree inventory: {TREE_FILE.name}")
 print(f"Watering records: {WATER_FILE.name}")
@@ -310,11 +310,11 @@ summary = pd.DataFrame(
     {
         "metric": [
             "Planungsräume",
-            "Planungsräume with inventoried trees",
-            "Planungsräume with any citizen watering",
-            "Median watering reach (%)",
-            "Maximum watering reach (%)",
-            "Median litres per inventory tree",
+            "Planungsräume with catalogued trees",
+            "Planungsräume with any recorded citizen watering",
+            "Median recorded watering reach (%)",
+            "Maximum recorded watering reach (%)",
+            "Median recorded litres per catalogued tree",
         ],
         "value": [
             len(lor_metrics),
@@ -385,8 +385,18 @@ districts = (
 map_specs = [
     ("Landsat_LST_C", "2025 summer land surface temperature", "inferno", "°C"),
     ("TreeCover_Pct", "2025 tree cover", "YlGn", "%"),
-    ("watering_reach_pct", "Trees watered at least once, 2020-2025", "YlGnBu", "%"),
-    ("litres_per_inventory_tree", "Logged litres per inventory tree, 2020-2025", "Blues", "litres"),
+    (
+        "watering_reach_pct",
+        "Catalogued trees with recorded watering, May 2020-December 2025",
+        "YlGnBu",
+        "%",
+    ),
+    (
+        "litres_per_inventory_tree",
+        "Recorded litres per catalogued tree, May 2020-December 2025",
+        "Blues",
+        "litres",
+    ),
 ]
 
 fig, axes = plt.subplots(2, 2, figsize=(15, 13))
@@ -443,10 +453,10 @@ lor_metrics.plot(
     edgecolor="#777777",
     linewidth=0.15,
     legend=True,
-    legend_kwds={"label": "Inventoried trees watered (%)", "shrink": 0.64},
+    legend_kwds={"label": "Catalogued trees with recorded watering (%)", "shrink": 0.64},
     ax=axes[0],
 )
-axes[0].set_title("Citizen watering reach by LOR Planungsraum")
+axes[0].set_title("Recorded watering reach by LOR Planungsraum")
 axes[0].set_axis_off()
 
 lor_metrics.plot(
@@ -457,15 +467,15 @@ lor_metrics.plot(
     edgecolor="#777777",
     linewidth=0.15,
     legend=True,
-    legend_kwds={"label": "Logged litres per inventoried tree", "shrink": 0.64},
+    legend_kwds={"label": "Recorded litres per catalogued tree", "shrink": 0.64},
     ax=axes[1],
 )
-axes[1].set_title("Citizen watering intensity by LOR Planungsraum")
+axes[1].set_title("Recorded watering intensity by LOR Planungsraum")
 axes[1].set_axis_off()
 
 fig.suptitle(
-    "Berlin citizen watering, complete years 2020-2025\\n"
-    "Color scales capped at the 95th percentile to preserve neighbourhood contrast",
+    "Berlin recorded citizen watering, May 2020-December 2025\\n"
+    "Complete calendar years: 2021-2025; color scales capped at the 95th percentile",
     fontsize=15,
     y=0.96,
 )
@@ -530,12 +540,12 @@ lor_indexed = lor_indexed.join(
 )
 lor_indexed["local_moran_cluster"] = lor_indexed[
     "local_moran_cluster"
-].fillna("No inventory")
+].fillna("No catalogued trees")
 lor_metrics = lor_indexed.reset_index()
 
 cluster_order = [
     "High-High", "Low-Low", "High-Low", "Low-High",
-    "Not significant", "No inventory",
+    "Not significant", "No catalogued trees",
 ]
 cluster_colors = [
     "#b2182b", "#2166ac", "#ef8a62", "#67a9cf", "#d9d9d9", "#ffffff",
@@ -566,8 +576,9 @@ handles = [
 ]
 ax.legend(handles=handles, title="Local Moran cluster", loc="lower left")
 ax.set_title(
-    "Local spatial clusters of citizen watering reach\\n"
-    "LOR Planungsräume, 2020-2025; permutation p < 0.05"
+    "Local spatial clusters of recorded watering reach among catalogued trees\\n"
+    "May 2020-December 2025 (complete calendar years 2021-2025)\\n"
+    "LOR Planungsräume; permutation p < 0.05"
 )
 ax.set_axis_off()
 plt.tight_layout()
@@ -633,15 +644,15 @@ tooltip_fields = [
     "local_moran_cluster",
 ]
 tooltip_aliases = [
-    "Planungsraum:", "Bezirksregion:", "District:", "Inventoried trees:",
-    "Watered trees:", "Watering reach (%):",
-    "Logged litres:", "Litres per inventory tree:",
+    "Planungsraum:", "Bezirksregion:", "District:", "Catalogued trees:",
+    "Trees with recorded watering:", "Recorded watering reach (%):",
+    "Recorded litres:", "Recorded litres per catalogued tree:",
     "Local Moran cluster:",
 ]
 
 folium.GeoJson(
     web_lor,
-    name="Watering reach",
+    name="Recorded watering reach",
     show=True,
     style_function=lambda feature: {
         "fillColor": reach_scale(
@@ -661,7 +672,7 @@ folium.GeoJson(
 
 folium.GeoJson(
     web_lor,
-    name="Litres per inventory tree",
+    name="Recorded litres per catalogued tree",
     show=False,
     style_function=lambda feature: {
         "fillColor": litres_scale(
@@ -682,18 +693,18 @@ folium.GeoJson(
     ),
 ).add_to(interactive_map)
 
-reach_scale.caption = "Trees watered at least once (%) - capped at 95th percentile"
+reach_scale.caption = "Catalogued trees with recorded watering (%) - capped at 95th percentile"
 reach_scale.add_to(interactive_map)
 folium.LayerControl(collapsed=False).add_to(interactive_map)
 
 map_file = MAPS / "lor_watering_interactive.html"
 interactive_map.save(map_file)
 
-print(f"Saved enriched polygons: {output_gpkg}")
-print(f"Saved interactive map: {map_file}")
+print(f"Saved enriched polygons: {output_gpkg.relative_to(ROOT)}")
+print(f"Saved interactive map: {map_file.relative_to(ROOT)}")
 display(
     HTML(
-        f'<a href="{map_file.resolve().as_uri()}" target="_blank">'
+        '<a href="../spatial/maps/lor_watering_interactive.html" target="_blank">'
         "Open the interactive LOR watering map</a>"
     )
 )

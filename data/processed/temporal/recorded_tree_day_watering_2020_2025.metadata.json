@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "dataset_id": "recorded_tree_day_watering_2020_2025",
+  "generated_at_utc": "2026-08-25T07:41:56.743486+00:00",
+  "grain": "recorded_tree_local_calendar_day_positive_exposure",
+  "coverage": {
+    "start_inclusive": "2020-05-18",
+    "end_exclusive": "2026-01-01",
+    "timezone": "Europe/Berlin",
+    "profile_complete_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "first_period_status": "partial_platform_start"
+  },
+  "inputs": {
+    "recorded_watering_events": {
+      "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
+      "sha256": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030"
+    },
+    "recorded_tree_lor_crosswalk": {
+      "path": "data/processed/foundation/recorded_tree_lor_crosswalk_2020_2025.csv",
+      "sha256": "554ab34a08cd3ee9a57bdc297435c83be2a28344f2b60c8004f46148c9bf506c"
+    }
+  },
+  "audit": {
+    "raw_source_rows": 58847,
+    "exact_duplicate_rows_removed": 111,
+    "invalid_timestamps_after_deduplication": 0,
+    "deduplicated_events_in_window": 58474,
+    "events_with_nonpositive_or_missing_litres_excluded": 0,
+    "positive_events_matched_to_assigned_trees": 57786,
+    "positive_litres_matched_to_assigned_trees": 2249502.0,
+    "unmatched_positive_events": 688,
+    "unmatched_positive_litres": 28485.0,
+    "unique_matched_trees": 11127,
+    "tree_day_rows": 50259,
+    "source_positive_tree_day_rows_before_matching": 50810,
+    "source_tree_days_with_multiple_events_before_matching": 5488,
+    "source_events_on_repeated_tree_days_before_matching": 13152,
+    "source_extra_events_on_repeated_tree_days_before_matching": 7664,
+    "tree_days_with_multiple_source_events": 5392,
+    "source_events_on_repeated_tree_days": 12919,
+    "extra_events_on_repeated_tree_days": 7527,
+    "maximum_events_on_one_tree_day": 16,
+    "coordinate_pairs_reversed": 55,
+    "events_with_invalid_or_missing_coordinate_after_repair": 121,
+    "tree_ids_with_multiple_valid_coordinate_pairs": 0,
+    "tree_days_without_a_valid_stable_coordinate": 120,
+    "stable_attribute_conflicting_tree_ids": {
+      "species": 0,
+      "genus": 0,
+      "planting_year": 0
+    },
+    "stable_attribute_missing_tree_ids": {
+      "species": 0,
+      "genus": 427,
+      "planting_year": 58
+    },
+    "timestamp_precision_by_local_year": [
+      {
+        "year": 2020,
+        "events": 16510,
+        "events_at_exact_utc_midnight": 0,
+        "share_at_exact_utc_midnight": 0.0
+      },
+      {
+        "year": 2021,
+        "events": 8235,
+        "events_at_exact_utc_midnight": 0,
+        "share_at_exact_utc_midnight": 0.0
+      },
+      {
+        "year": 2022,
+        "events": 18238,
+        "events_at_exact_utc_midnight": 0,
+        "share_at_exact_utc_midnight": 0.0
+      },
+      {
+        "year": 2023,
+        "events": 7211,
+        "events_at_exact_utc_midnight": 0,
+        "share_at_exact_utc_midnight": 0.0
+      },
+      {
+        "year": 2024,
+        "events": 3679,
+        "events_at_exact_utc_midnight": 3528,
+        "share_at_exact_utc_midnight": 0.9589562381081815
+      },
+      {
+        "year": 2025,
+        "events": 4601,
+        "events_at_exact_utc_midnight": 4601,
+        "share_at_exact_utc_midnight": 1.0
+      }
+    ],
+    "litre_outliers": {
+      "events_above_500_litres": 5,
+      "events_above_1000_litres": 1,
+      "minimum_litres": 1.0,
+      "median_litres": 30.0,
+      "p95_litres": 100.0,
+      "p99_litres": 150.0,
+      "maximum_litres": 4565.0
+    },
+    "profile_rows": {
+      "age_band_month": 72,
+      "genus_month": 612,
+      "genera": 51
+    }
+  },
+  "methods": {
+    "deduplication": "Exact source-row duplicates are removed before filtering.",
+    "tree_day": "Positive matched events are summed by assigned tree ID and Europe/Berlin local date.",
+    "stable_attributes": "Species, genus, planting year, and valid coordinates use the most frequent non-missing value per tree; ties are resolved lexically.",
+    "age": "Age at watering is local calendar year minus planting year; ages outside 0-250 and missing planting years yield unknown age.",
+    "age_bands": [
+      "0-9",
+      "10-19",
+      "20-39",
+      "40-59",
+      "60+",
+      "unknown"
+    ],
+    "metric_aliases": {
+      "recorded_events_tree_day": "recorded_watering_events",
+      "recorded_litres_tree_day": "recorded_litres"
+    },
+    "profiles": "Age and genus profiles contain every calendar month for complete years 2021-2025; means use five annual observations including zeros."
+  },
+  "semantics": {
+    "positive_rows_only": "Every tree-day row contains at least one positive recorded Gieß den Kiez event; structurally absent tree-days are not materialised as zero rows.",
+    "recorded_zero": "Absence from this positive-exposure table means no platform event is represented; it does not mean no municipal, private, or unlogged watering occurred.",
+    "watering_day": "A recorded watering day is one unique assigned tree ID by Europe/Berlin local calendar date, regardless of how many source events were logged that day.",
+    "claim_boundary": "The products describe timing and composition of recorded platform activity. They do not estimate irrigation coverage, volunteer behaviour, tree-level cooling, or causal temperature effects."
+  },
+  "outputs": {
+    "tree_day": "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv",
+    "age_summary": "data/processed/temporal/recorded_watering_timing_by_age_band_2021_2025.csv",
+    "genus_summary": "data/processed/temporal/recorded_watering_timing_by_genus_2021_2025.csv",
+    "metadata": "data/processed/temporal/recorded_tree_day_watering_2020_2025.metadata.json",
+    "figure": "output/03_spatial_equity_vulnerability/figures/02_recorded_watering_timing_by_tree_age_genus.png",
+    "human_facing_age_table": "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_age_band_2021_2025.csv",
+    "human_facing_genus_table": "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_genus_2021_2025.csv",
+    "sha256": {
+      "tree_day": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d",
+      "age_summary": "00cc634420e3d6a622608fd900ddb0a3bbd3505ed2f1cbcb56ad2fd24bf0c2dc",
+      "genus_summary": "ac0c492766d156e13a19d0040ef5897246f51bbf44024df0cd02d77229705220",
+      "figure": "4d3e1f07346521438dcdd5c5c9602f11aae29a6798848210322e1661b89e0ecc",
+      "human_facing_age_table": "00cc634420e3d6a622608fd900ddb0a3bbd3505ed2f1cbcb56ad2fd24bf0c2dc",
+      "human_facing_genus_table": "ac0c492766d156e13a19d0040ef5897246f51bbf44024df0cd02d77229705220"
+    }
+  }
+}

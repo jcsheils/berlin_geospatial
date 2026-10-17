@@ -1,0 +1,5 @@
+watering_age_group,age_group_label,events,unique_trees,total_litres,event_share,litre_share,median_age_at_watering
+young_lt10,<10 years from planting,13237,2382,582862.0,0.22906932474993943,0.25910712682184767,5.0
+mature_gt10,>10 years from planting,43047,8574,1597581.0,0.7449382203301838,0.7101931894259262,34.0
+age_10_exact,exactly 10 years,1292,339,58181.0,0.022358356695393346,0.02586394677577526,10.0
+unknown,unknown planting year,210,59,10878.0,0.003634098224483439,0.004835736976450788,

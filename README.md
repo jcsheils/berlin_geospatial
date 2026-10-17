@@ -1,64 +1,56 @@
-# Berlin Geospatial Analysis
+# Spatiotemporal Modeling of Citizen Tree Watering in Berlin
 
-Spatial analysis for a master's thesis on urban heat, Berlin's tree inventory,
-and citizen watering activity.
+**Weather Responses and Neighborhood Variation**
+Joseph Carpenter Sheils · Saarland University · M.Sc. Data Science and Artificial Intelligence
 
-The repository currently contains:
+This repository supports the Master's Seminar examination of a proposed thesis on logged citizen tree watering, heat, and neighbourhood differences in Berlin. It contains the October 2026 proposal, preliminary results, a map atlas, frozen input data, derived tables and spatial layers, and reproducible analysis code.
 
-- exploratory analysis of watering activity, tree coverage, and district heat;
-- LOR Planungsraum-level watering reach and intensity;
-- global and local Moran statistics for spatial clustering;
-- static figures, analysis tables, an interactive map, and enriched polygons;
-- reproducible notebook-builder scripts.
+## Start here
 
-## Main outputs
+**[Examination reading guide](examination/README.md)** · **[Examination brief](output/pdf/Berlin_Examination_Brief_October_2026.pdf)**
 
-- `output/jupyter-notebook/berlin-urban-heat-exploration.ipynb`
-- `output/jupyter-notebook/berlin-lor-spatial-watering.ipynb`
-- `output/spatial/maps/lor_watering_interactive.html`
-- `output/spatial/lor_watering_metrics_2020_2025.gpkg`
+| Material | Open |
+| --- | --- |
+| Current proposal and qualifications | [October proposal PDF](examination/proposal/Proposal_October_2026.pdf) · [version and count notes](examination/proposal/README.md) |
+| Seminar presentation | [Slides PDF](examination/proposal/Seminar_Slides_October_2026.pdf) · [editable Keynote](examination/proposal/Seminar_Slides_October_2026.key) |
+| Preliminary evidence | [Results and sample reconciliation](examination/preliminary_results.md) · [detailed HTML report](output/watering_response/report.html) · [workbook](examination/results/Berlin_watering_monthly_exploration.xlsx) |
+| Maps produced so far | [Twelve-plate PDF atlas](output/pdf/Berlin_Map_Atlas_October_2026.pdf) · [map catalogue with previews](examination/atlas/README.md) · [interactive LOR map](output/spatial/maps/lor_watering_interactive.html) |
+| Data and provenance | [Data guide](data/README.md) · [checksummed inventory](examination/data_inventory.csv) · [dictionary](examination/data_dictionary.md) |
+| Methods and feasibility | [Current analysis plan](docs/analysis_plan.md) · [readiness and next decisions](examination/readiness.md) · [literature context](docs/related_literature.md) |
+| Reproduction | [Reproduction guide](examination/reproducibility.md) · [validation record](examination/validation.md) |
 
-## Setup
+Download HTML files to view their rendered reports. The interactive map also requires internet access for its web resources. PDFs, PNGs, tables and the workbook provide static review routes.
 
-Create an environment with Python 3.12, then install the spatial dependencies:
+## Current scope
+
+The **October 2026 proposal** governs this package. **Part II is the core study**: daily civic heat response and its relationship to neighbourhood status and baseline participation. Part I investigates drought-related vegetation cooling loss; Part III explores allocation around expected logged care. The August conditional satellite test of watering-induced cooling is no longer the active design.
+
+Implemented work is **preliminary and descriptive**. The canonical May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 planning areas and 68 months**. Existing results show seasonal concentration, spatial clustering, social/environmental differences and exploratory monthly weather associations. They do not establish causal cooling, daily neighbourhood response slopes, or a validated allocation model.
+
+## Verify a checkout
+
+Use Python 3.12. The large inventory is included as a lossless compressed snapshot; no separately supplied tree file is needed.
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements-spatial.txt
+python tools/restore_tree_inventory.py
+PYTHONPATH=src python -m berlin_heat status
+PYTHONPATH=src python -m berlin_heat validate
+PYTHONPATH=src python -m unittest discover -s tests -v
+python tools/verify_examination.py
 ```
 
-Build and execute the notebooks:
+See the [reproduction guide](examination/reproducibility.md) for the ordered rebuild, optional PDF dependencies and exact scope of verification. Data sources retain their individual licences and caveats; the supplied monthly LST file and legacy district aggregates have unresolved provenance. Read [data/README.md](data/README.md) before reuse.
 
-```bash
-python analysis/build_exploratory_notebook.py
-jupyter nbconvert --to notebook --execute \
-  output/jupyter-notebook/berlin-urban-heat-exploration.ipynb \
-  --inplace
+## Repository layout
 
-python analysis/build_spatial_notebook.py
-jupyter nbconvert --to notebook --execute \
-  output/jupyter-notebook/berlin-lor-spatial-watering.ipynb \
-  --inplace
-```
+- `examination/`: examiner guide, proposal, presentation, results, atlas catalogue, inventories and validation.
+- `data/`: available source snapshots and processed shared panels.
+- `output/`: executed notebooks, figures, tables, geospatial products, reports and examination PDFs.
+- `src/berlin_heat/`, `pipelines/`, `analysis/`: reusable analysis code and builders.
+- `config/`, `tests/`: declared data contracts, research readiness and verification.
+- `docs/archive/`, `pillars/`: historical design material, explicitly superseded where applicable.
 
-## Data
-
-The official Berlin LOR Planungsraum polygons and smaller analysis datasets are
-versioned in `data/`.
-
-`data/Berlin_trees.gpkg` is intentionally excluded because it is approximately
-320 MB and exceeds GitHub's file-size limit. The notebook expects that file at
-that exact path. The GeoPackage's coordinates are EPSG:25833, although its
-source metadata incorrectly declares EPSG:4326; the spatial notebook validates
-and overrides that CRS before joining trees to LOR polygons.
-
-The LOR boundary source and license are documented in
-`data/spatial/README.md`.
-
-## Current spatial result
-
-For complete years 2020-2025, citizen watering reach is positively spatially
-clustered across Berlin's LOR Planungsräume. The executed notebook reports
-Moran's I and permutation-based local cluster classifications.
-
-These results are descriptive. They do not estimate a causal temperature effect
-of watering.
+**Interpretation:** logs record platform activity, not all irrigation. Current inventory counts are not historical risk sets. LST is surface temperature, not felt heat. Screening candidates are places for further validation, not recommendations to withdraw or redirect municipal care.

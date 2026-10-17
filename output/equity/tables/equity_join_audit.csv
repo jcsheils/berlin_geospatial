@@ -1,0 +1,5 @@
+source,lor_features,unique_lor_ids,crs,max_relative_area_difference_pct
+Watering metrics,542,542,EPSG:25833,0.0
+MSS 2025 status indices,542,542,EPSG:25833,0.0
+MSS 2025 component indicators,542,542,EPSG:25833,0.0
+Environmental Justice 2023/24,542,542,EPSG:25833,4.549923735477248
