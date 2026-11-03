@@ -3,24 +3,23 @@
 **Weather Responses and Neighborhood Variation**
 Joseph Carpenter Sheils · Saarland University · M.Sc. Data Science and Artificial Intelligence
 
-This repository supports a thesis on logged citizen tree watering, climate responses, vulnerability and municipal irrigation priorities in Berlin. The refined proposal of 26 October 2026 governs new work; the earlier seminar package remains a frozen record of preliminary evidence.
+This repository supports a thesis on logged citizen tree watering, climate responses, vulnerability and municipal irrigation priorities in Berlin. 
 
-**Latest update — 2 November 2026:** [Project status](docs/project_update_2026_11_02.md) · [Earth Engine demo atlas](earth_engine/README.md) · [RQ1 daily results](output/rq1_daily/report.md) · [active analysis plan](docs/analysis_plan.md).
+**latest update — 2 November 2026:** [Project status](docs/project_update_2026_11_02.md) · [Earth Engine demo atlas](earth_engine/README.md) · [RQ1 daily results](output/rq1_daily/report.md) · [active analysis plan](docs/analysis_plan.md).
 
-The first daily pilot contains **569,642 planning-area-days**, covering **55,634 linked April–September events** across 2020–2025. Citywide exploratory models find positive temperature/dry-spell associations and negative rainfall associations after calendar adjustment. These are log1p OLS descriptions, not the planned hierarchical count and volume models or causal effects.
+The initial daily event study contains **569,642 planning-area-days**, covering **55,634 linked April–September events** across 2020–2025. Citywide exploratory models find positive temperature/dry-spell associations and negative rainfall associations after calendar adjustment. Initial exploration includes linear regression analysis of log(1+watering_events) to weather and calender features.
 
-Rebuild the daily pilot using the existing environment:
+Rebuild the initial daily event study using the existing environment:
 
 ```bash
 MPLCONFIGDIR=/tmp/berlin-rq1-mpl PYTHONPATH=src python pipelines/08_build_rq1_daily.py
 PYTHONPATH=src python -m unittest tests.test_rq1_daily -v
 ```
 
-No new downloads or dependencies are required. Known unavailable platform dates can be supplied through `--unavailable-dates dates.csv`; see the protocol.
 
 ## Interactive Earth Engine demo
 
-Open the [launch guide](earth_engine/README.md), copy the complete [generated script](earth_engine/berlin_atlas_demo.js) into the [Earth Engine Code Editor](https://code.earthengine.google.com/), and press **Run** with an Earth Engine enabled account and Cloud project. The script embeds the project aggregates; no private asset upload is required.
+Open the [launch guide](earth_engine/README.md), copy the complete [generated script](earth_engine/berlin_atlas_demo.js) into the [Earth Engine Code Editor](https://code.earthengine.google.com/), and press **Run** with an Earth Engine enabled account and Cloud project. The script embeds the project aggregates so only a copy-paste lets you see the atlas + layer.
 
 Explore monthly watering across 542 neighbourhoods, click for area histories, compare social context, and inspect live Landsat surface temperature alongside valid-scene coverage. A separate daily RQ1 chart shows citywide events and station air temperature. Data totals and JavaScript syntax are checked; authenticated Earth Engine execution and App publication remain pending. The atlas is descriptive and does not estimate neighbourhood response slopes or allocation priorities.
 
@@ -40,9 +39,9 @@ Download HTML files to view their rendered reports. The interactive map also req
 
 ## Current scope
 
-The **[refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf)** governs active work. **Part II is the core study**: RQ1 climate response, RQ2 vulnerability/resource inequality and RQ3 additional spatial information. Part I supplies environmental context; Part III examines RQ4 allocation consequences. The [seminar package](examination/README.md) keeps the earlier proposal and its RQ numbering.
+The **[refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf)** governs active work. **Part II is the core study**: RQ1 climate response, RQ2 vulnerability/resource inequality and RQ3 additional spatial information. Part I supplies environmental context. Part III examines RQ4 allocation consequences. The [seminar package](examination/README.md) keeps the earlier proposal and its RQ numbering.
 
-Implemented work is **preliminary and descriptive**. The canonical all-month May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 planning areas and 68 months**. The daily RQ1 pilot uses the April–September subset. Existing results show seasonality, spatial clustering, social/environmental differences and exploratory monthly and daily weather associations. They do not establish causal cooling, daily neighbourhood response slopes, or a validated allocation model.
+Implemented work is at a preliminary and descriptive stage. The canonical all-month May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 Berlin planning areas and 68 months**. The daily RQ1 initial study uses an April–September subset. Existing results demonstrate seasonality, spatial clustering, social/environmental differences and exploratory monthly and daily weather associations. They do not establish causal cooling, daily neighbourhood response slopes, or a validated allocation model.
 
 ## Verify a checkout
 
@@ -71,4 +70,3 @@ See the [reproduction guide](examination/reproducibility.md) for the ordered reb
 - `earth_engine/`: self-contained demo script, editable UI, data builder and launch guide.
 - `config/`, `tests/`: declared data contracts, research readiness and verification.
 
-**Interpretation:** logs record platform activity, not all irrigation. Current inventory counts are not historical risk sets. LST is surface temperature, not felt heat. Screening candidates are places for further validation, not recommendations to withdraw or redirect municipal care.
