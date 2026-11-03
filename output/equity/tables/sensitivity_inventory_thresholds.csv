@@ -1,0 +1,13 @@
+minimum_inventory_trees,predictor,outcome,n,spearman_rho,p_value
+1,S4 child poverty (%),Watering reach (%),535,-0.12312424672524656,0.004343554342238679
+1,S4 child poverty (%),Litres per inventory tree,535,-0.17345424425109876,5.501396097980416e-05
+1,Environmental and social burden count,Watering reach (%),535,0.4858816027861374,4.801455326171155e-33
+1,Environmental and social burden count,Litres per inventory tree,535,0.4307486569294908,1.4022341240237694e-25
+100,S4 child poverty (%),Watering reach (%),533,-0.12044920070138483,0.005362671665059804
+100,S4 child poverty (%),Litres per inventory tree,533,-0.1711473276005043,7.148009948982565e-05
+100,Environmental and social burden count,Watering reach (%),533,0.49254642073983257,6.379694008159805e-34
+100,Environmental and social burden count,Litres per inventory tree,533,0.43700709698953566,2.87859496009077e-26
+500,S4 child poverty (%),Watering reach (%),475,-0.115514562053149,0.0117559325898712
+500,S4 child poverty (%),Litres per inventory tree,475,-0.17354600720922247,0.00014395958627760582
+500,Environmental and social burden count,Watering reach (%),475,0.4952299920058435,9.263348528256338e-31
+500,Environmental and social burden count,Litres per inventory tree,475,0.43800287275185223,1.0998369967916735e-23

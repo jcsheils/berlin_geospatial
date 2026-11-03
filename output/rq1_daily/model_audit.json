@@ -1,0 +1,265 @@
+[
+  {
+    "sample": "linked_baseline",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.845392372598035
+  },
+  {
+    "sample": "exclude_over_500l",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.845392372598035
+  },
+  {
+    "sample": "all_valid_source_logs",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.845392372598035
+  },
+  {
+    "sample": "exclude_2020",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 915,
+    "complete_days": 908,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 39.28435851531302
+  },
+  {
+    "sample": "exclude_2022",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 868,
+    "complete_days": 861,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.25457634056368
+  },
+  {
+    "sample": "linked_baseline",
+    "specification": "baseline",
+    "hac_lag_days": 7,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.845392372598035
+  },
+  {
+    "sample": "linked_baseline",
+    "specification": "baseline",
+    "hac_lag_days": 28,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 41.845392372598035
+  },
+  {
+    "sample": "linked_year_month",
+    "specification": "year_month",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 250.10567938369235
+  },
+  {
+    "sample": "linked_quadratic_temperature",
+    "specification": "quadratic_temperature",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1044,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 48.21293286022115
+  },
+  {
+    "sample": "linked_antecedent_rain",
+    "specification": "antecedent_rain",
+    "hac_lag_days": 14,
+    "candidate_days": 1051,
+    "complete_days": 1039,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22",
+      "2023-06-23",
+      "2023-06-24",
+      "2023-06-25",
+      "2023-06-26",
+      "2023-06-27"
+    ],
+    "design_condition_number": 42.330352645854134
+  },
+  {
+    "sample": "year_2020",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 136,
+    "complete_days": 136,
+    "excluded_dates": [],
+    "design_condition_number": 42.826231053170886
+  },
+  {
+    "sample": "year_2021",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 183,
+    "complete_days": 183,
+    "excluded_dates": [],
+    "design_condition_number": 44.39514950911263
+  },
+  {
+    "sample": "year_2022",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 183,
+    "complete_days": 183,
+    "excluded_dates": [],
+    "design_condition_number": 44.36227129604364
+  },
+  {
+    "sample": "year_2023",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 183,
+    "complete_days": 176,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 45.98793694731116
+  },
+  {
+    "sample": "year_2024",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 183,
+    "complete_days": 183,
+    "excluded_dates": [],
+    "design_condition_number": 38.424831327383
+  },
+  {
+    "sample": "year_2025",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 183,
+    "complete_days": 183,
+    "excluded_dates": [],
+    "design_condition_number": 37.7220171628246
+  },
+  {
+    "sample": "early_2020_2022",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 502,
+    "complete_days": 502,
+    "excluded_dates": [],
+    "design_condition_number": 47.48912426930581
+  },
+  {
+    "sample": "late_2023_2025",
+    "specification": "baseline",
+    "hac_lag_days": 14,
+    "candidate_days": 549,
+    "complete_days": 542,
+    "excluded_dates": [
+      "2023-06-16",
+      "2023-06-17",
+      "2023-06-18",
+      "2023-06-19",
+      "2023-06-20",
+      "2023-06-21",
+      "2023-06-22"
+    ],
+    "design_condition_number": 37.944607424174
+  }
+]

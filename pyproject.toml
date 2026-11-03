@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "berlin-heat-thesis"
+version = "0.1.0"
+description = "Reproducibility and validation tools for the Berlin urban heat thesis"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+spatial = [
+  "numpy==1.26.4",
+  "pandas==2.2.2",
+  "geopandas==1.0.1",
+  "matplotlib==3.9.2",
+]
+
+[project.scripts]
+berlin-heat = "berlin_heat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

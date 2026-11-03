@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-09-29T16:26:19.507021+00:00",
+  "weather_archive_retrieved_date": "2026-09-29",
+  "protocol": "docs/watering_response_exploratory_protocol.md",
+  "source_urls": {
+    "dwd_archive": "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/tageswerte_KL_00433_19480101_20251231_hist.zip",
+    "dwd_description": "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/DESCRIPTION_obsgermany-climate-daily-kl_en.pdf"
+  },
+  "inputs": {
+    "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv": "19d311afd703b13f88d9ddd3474515444d67d0c556ae524e24bb83f7573fbd93",
+    "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d",
+    "output/equity/tables/lor_watering_equity_metrics.csv": "35c502e75bdc095bf210ce12ab8dd8e17bd70cd96ae0548f4de143e7f86c1f27",
+    "data/raw/dwd/tageswerte_KL_00433_19480101_20251231_hist.zip": "33b26c7013fd3f592291f7544197c25b3cea88d1cfd33d07d015e2fbb0271785"
+  },
+  "code_and_protocol_sha256": {
+    "src/berlin_heat/watering_response.py": "db32f65b1f93ad3d9eb3eea4bd92735cd9c5ca1eb23a2b1929f006e6573b251c",
+    "docs/watering_response_exploratory_protocol.md": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986"
+  },
+  "weather_audit": {
+    "station_name": "Berlin-Tempelhof",
+    "station_id": "00433",
+    "daily_rows": 2192,
+    "monthly_rows": 72,
+    "missing_temperature_days": 0,
+    "missing_rainfall_days": 10,
+    "incomplete_rainfall_months": [
+      "2023-06",
+      "2023-10"
+    ],
+    "climate_quality_codes": {
+      "9": 2192
+    },
+    "station_geography_metadata": "Stations_id;Stationshoehe;Geogr.Breite;Geogr.Laenge;von_datum;bis_datum;Stationsname\n   433;   47.00; 52.4641; 13.4003;19180401;19351231;Berlin-Tempelhof\n   433;   48.00; 52.4776; 13.4035;19360101;19470630;Berlin-Tempelhof\n   433;   48.20; 52.4811; 13.3872;19470701;19510228;Berlin-Tempelhof\n   433;   48.00; 52.4830; 13.3914;19510301;19570430;Berlin-Tempelhof\n   433;   51.00; 52.4719; 13.4191;19570501;19700909;Berlin-Tempelhof\n   433;   47.72; 52.4675; 13.4021;19700910;20220912;Berlin-Tempelhof\n   433;   47.74; 52.4676; 13.4020;20220913;20250922;Berlin-Tempelhof\n   433;   47.74; 52.4676; 13.4020;20250923;        ;Berlin-Tempelhof\n",
+    "monthly_completeness_rule": "100% valid daily values, separately per variable"
+  },
+  "audit": {
+    "months": 68,
+    "districts": 12,
+    "district_months": 816,
+    "lor_months": 36856,
+    "events": 57786,
+    "litres": 2249502.0,
+    "unique_trees_entire_period": 11127,
+    "unclassified_lors": 7,
+    "model_eligible_months_before_weather_exclusions": 60
+  },
+  "table_rows": {
+    "berlin_month_weather_watering": 68,
+    "district_month_watering": 816,
+    "district_month_station_context": 816,
+    "lor_month_watering_social_context": 36856,
+    "social_status_month_watering": 340,
+    "berlin_year_watering": 6,
+    "berlin_june_september_comparison": 6,
+    "district_june_september_comparison": 72,
+    "dwd_00433_daily_2020_2025": 2192,
+    "dwd_00433_monthly_2020_2025": 72,
+    "monthly_adjusted_associations": 24,
+    "monthly_raw_correlations": 24
+  },
+  "output_sha256": {
+    "berlin_month_weather_watering": "0248f03013eb6b4474d5ded3fee66c47c364ab8170307d8379e55ae28217f603",
+    "district_month_watering": "fa294e4c04a4f44e8074eef05f4958b6fcef44c7f21f1859297084954d901289",
+    "district_month_station_context": "3c5328de59a135965a09359f28deaa53778800066c8b9a506d2fd9f6a860a64c",
+    "lor_month_watering_social_context": "7a31f3bb17c33c09e9837d11c7e0284ae55bb6f7d244760126f42c6fbdccf325",
+    "social_status_month_watering": "569d17c06eaac4f8e65ba953008680f5804a660b3e44c1b55a008477ff14d830",
+    "berlin_year_watering": "5ad80a7617b649d206019e43da7d3d309c17616f3d42ab14d220af381bda4c07",
+    "berlin_june_september_comparison": "7a0a352c996b0c91e0f619fd23760090167a9a530695fd2ccc87b43513aaf5f6",
+    "district_june_september_comparison": "54f0082ba682168c78ee383ada126cd491e2acf10be33b10b65c3f8698d5314f",
+    "dwd_00433_daily_2020_2025": "5543895ec2c1b2989bfe4e9258b965bd39f7c29543b10f44d1087b5c31415be0",
+    "dwd_00433_monthly_2020_2025": "30bd28e58024a0de52d7a0a94813965785f0c8c02b01d1c61d4d6bf2770f716e",
+    "monthly_adjusted_associations": "b75ff849b3e0b10c0a82aa0d8cfd3934120a525ede39ecb6366b939424cf955c",
+    "monthly_raw_correlations": "e63d75d251c9b354bbf587b67a7552bd6b74f8a31a5da37dc0c3aba18244acc8"
+  },
+  "limits": [
+    "Matched recorded activity only; unlogged and municipal watering unobserved.",
+    "Current tree inventory denominators are not historical coverage.",
+    "MSS 2025 categories refer to end-2024, not historical district income.",
+    "DWD station air temperature is shared temporal context, not Landsat LST.",
+    "No causal cooling or municipal allocation result is estimated.",
+    "Supplied Ortsteil LST/rainfall CSV is available; see the separately audited provisional extension."
+  ]
+}

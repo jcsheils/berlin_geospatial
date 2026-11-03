@@ -1,0 +1,2253 @@
+{
+  "data/Berlin_heat_population_data.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 846,
+    "columns": [
+      "district_id",
+      "District",
+      "fclass",
+      "Year",
+      "season",
+      "AirTemp_C",
+      "HeatIndex_C",
+      "WindChill_C",
+      "FeltDelta_C",
+      "RelativeHumidity",
+      "WindSpeed_ms",
+      "BuiltSurface_Pct",
+      "IndustrialCommercial_SurfaceDensity",
+      "TreeCover_Pct",
+      "TreeLossPct",
+      "Landsat_LST_C",
+      "Population",
+      "Change from Previous Year",
+      "Change from Previous Year (%)",
+      "Average Age",
+      "Women",
+      "Men",
+      "Women Share (%)",
+      "Men Share (%)",
+      "German Citizens",
+      "Foreign Residents",
+      "German Share (%)",
+      "Foreign Share (%)",
+      "Single Share (%)",
+      "PopulationDensity_per_km2",
+      "Youth Quotient",
+      "OldAgeQuotient"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/Berlin_heat_population_death_Birth_data.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 732,
+    "columns": [
+      "district_id",
+      "District",
+      "fclass",
+      "Year",
+      "season",
+      "AirTemp_C",
+      "HeatIndex_C",
+      "WindChill_C",
+      "FeltDelta_C",
+      "RelativeHumidity",
+      "WindSpeed_ms",
+      "BuiltSurface_Pct",
+      "IndustrialCommercial_SurfaceDensity",
+      "TreeCover_Pct",
+      "TreeLossPct",
+      "Landsat_LST_C",
+      "Population",
+      "Change from Previous Year",
+      "Change from Previous Year (%)",
+      "Average Age",
+      "Women",
+      "Men",
+      "Women Share (%)",
+      "Men Share (%)",
+      "German Citizens",
+      "Foreign Residents",
+      "German Share (%)",
+      "Foreign Share (%)",
+      "Single Share (%)",
+      "PopulationDensity_per_km2",
+      "Youth Quotient",
+      "OldAgeQuotient",
+      "Lebendgeborene je 1.000 der Bevölkerung",
+      "Lebendgeborene",
+      "Gestorbeneje1.000derBevölkerung",
+      "Gestorbene"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/Berlin_trees.gpkg": {
+    "format": "gpkg",
+    "tables": {
+      "Berlin_trees": {
+        "rows": 962545,
+        "declared_srs_id": 4326,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "POINT"
+          },
+          {
+            "name": "id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "gisid",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pitid",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "standortnr",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "kennzeich",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "namenr",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "art_dtsch",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "art_bot",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "gattung_deutsch",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "gattung",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "art_gruppe",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pflanzjahr",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "standalter",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "kronedurch",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "stammumfg",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "baumhoehe",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "eigentuemer",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bezirk",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "source_layer",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "strnr",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "strname",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "hausnr",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "zusatz",
+            "sqlite_type": "TEXT"
+          }
+        ]
+      }
+    }
+  },
+  "data/giessdenkiez_bewässerungsdaten (1).csv": {
+    "format": "csv",
+    "delimiter": ";",
+    "rows": 58847,
+    "columns": [
+      "id",
+      "lng",
+      "lat",
+      "bezirk",
+      "art_dtsch",
+      "gattung_deutsch",
+      "strname",
+      "pflanzjahr",
+      "timestamp",
+      "bewaesserungsmenge_in_liter"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 36856,
+    "columns": [
+      "month",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district",
+      "platform_month_status",
+      "platform_live_days",
+      "current_inventory_trees",
+      "recorded_watered_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_reach_pct_current_inventory",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/foundation/recorded_tree_lor_crosswalk_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 11127,
+    "columns": [
+      "tree_id",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/berlin_calendar_month_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "observed_complete_years",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_monthly_recorded_watered_trees",
+      "mean_monthly_recorded_watering_events",
+      "mean_monthly_recorded_litres",
+      "mean_monthly_planungsraeume_with_recorded_activity",
+      "mean_monthly_recorded_events_per_1000_current_inventory_trees",
+      "mean_monthly_recorded_litres_per_current_inventory_tree",
+      "mean_monthly_recorded_litres_per_ha",
+      "share_of_reference_period_recorded_events",
+      "share_of_reference_period_recorded_litres"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/berlin_month_recorded_watering_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 68,
+    "columns": [
+      "month",
+      "platform_month_status",
+      "platform_live_days",
+      "current_inventory_trees",
+      "recorded_watered_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "planungsraeume_with_recorded_activity",
+      "berlin_area_ha",
+      "recorded_reach_pct_current_inventory",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_litres_per_ha",
+      "year",
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "complete_reference_year",
+      "active_season"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/berlin_season_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "season",
+      "observed_complete_years",
+      "observed_complete_months",
+      "current_inventory_trees",
+      "berlin_area_ha",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_recorded_watering_events_per_observed_month",
+      "mean_recorded_litres_per_observed_month",
+      "mean_planungsraeume_with_recorded_activity",
+      "mean_recorded_events_per_1000_current_inventory_trees_per_observed_month",
+      "mean_recorded_litres_per_current_inventory_tree_per_observed_month",
+      "mean_recorded_litres_per_ha_per_observed_month",
+      "mean_annual_season_recorded_events_per_1000_current_inventory_trees",
+      "mean_annual_season_recorded_litres_per_current_inventory_tree",
+      "mean_annual_season_recorded_litres_per_ha",
+      "share_of_reference_period_recorded_events",
+      "share_of_reference_period_recorded_litres"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/berlin_year_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 5,
+    "columns": [
+      "year",
+      "observed_complete_months",
+      "observed_planungsraeume",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_tree_months",
+      "lor_months_with_recorded_activity",
+      "planungsraeume_with_recorded_activity",
+      "share_of_lor_months_with_recorded_activity",
+      "peak_recorded_event_month",
+      "peak_month_recorded_watering_events"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/lor_calendar_month_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6504,
+    "columns": [
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district",
+      "observed_complete_years",
+      "years_with_recorded_activity",
+      "recorded_activity_persistence_pct",
+      "current_inventory_trees",
+      "plr_area_ha",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_monthly_recorded_watered_trees",
+      "median_monthly_recorded_watered_trees",
+      "mean_monthly_recorded_watering_events",
+      "mean_monthly_recorded_litres",
+      "mean_monthly_recorded_reach_pct_current_inventory",
+      "median_monthly_recorded_reach_pct_current_inventory",
+      "mean_monthly_recorded_events_per_1000_current_inventory_trees",
+      "median_monthly_recorded_events_per_1000_current_inventory_trees",
+      "mean_monthly_recorded_litres_per_current_inventory_tree",
+      "median_monthly_recorded_litres_per_current_inventory_tree",
+      "mean_monthly_recorded_litres_per_ha",
+      "median_monthly_recorded_litres_per_ha"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 50259,
+    "columns": [
+      "tree_id",
+      "local_date",
+      "year",
+      "calendar_month",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_events_tree_day",
+      "recorded_litres_tree_day",
+      "multiple_logs_tree_day",
+      "recorded_exposure_semantics",
+      "longitude",
+      "latitude",
+      "species",
+      "genus",
+      "planting_year",
+      "age_at_watering",
+      "age_band",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/recorded_watering_timing_by_age_band_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 72,
+    "columns": [
+      "age_band",
+      "calendar_month",
+      "calendar_month_name",
+      "observed_complete_years",
+      "recorded_watering_days",
+      "recorded_watering_events",
+      "recorded_litres",
+      "unique_recorded_watered_trees",
+      "mean_recorded_watering_days_per_year",
+      "mean_recorded_watering_events_per_year",
+      "mean_recorded_litres_per_year",
+      "mean_unique_recorded_watered_trees_per_year",
+      "within_group_recorded_watering_day_share",
+      "within_group_recorded_watering_event_share",
+      "within_group_recorded_litre_share"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/processed/temporal/recorded_watering_timing_by_genus_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 612,
+    "columns": [
+      "genus",
+      "calendar_month",
+      "calendar_month_name",
+      "observed_complete_years",
+      "recorded_watering_days",
+      "recorded_watering_events",
+      "recorded_litres",
+      "unique_recorded_watered_trees",
+      "mean_recorded_watering_days_per_year",
+      "mean_recorded_watering_events_per_year",
+      "mean_recorded_litres_per_year",
+      "mean_unique_recorded_watered_trees_per_year",
+      "within_group_recorded_watering_day_share",
+      "within_group_recorded_watering_event_share",
+      "within_group_recorded_litre_share"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/raw/supervisor/berlin_ortsteile_LST_rain_2018_2025_LNDSAT.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 9312,
+    "columns": [
+      "ortsteil",
+      "bezirk",
+      "year",
+      "month",
+      "LST_C_mean",
+      "LST_C_count",
+      "rain_mm_mean"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "data/spatial/alkis_ortsteile_2026_09_29.geojson": {
+    "format": "geojson",
+    "rows": 97,
+    "properties": [
+      "uuid",
+      "sch",
+      "nam",
+      "gdf",
+      "bezeich"
+    ],
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::25833"
+      }
+    }
+  },
+  "data/spatial/lor_equity_environment_2024.gpkg": {
+    "format": "gpkg",
+    "tables": {
+      "mss2025_indizes_542": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bez_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "ew",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "di_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "di_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "sdi",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "sdi_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "sdi_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "si_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "si_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "zeit",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "kom",
+            "sqlite_type": "TEXT"
+          }
+        ]
+      },
+      "mss2025_indexind_542": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "zeit",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "ew",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "bez_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "d1",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "d1_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d1_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d2",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "d2_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d2_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d3",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "d3_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d3_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d4",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "d4_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "d4_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s1",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s1_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s1_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s2",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s2_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s2_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s3",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s3_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s3_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s4",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s4_ag_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "s4_sd_gr",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "kom",
+            "sqlite_type": "TEXT"
+          }
+        ]
+      },
+      "environmental_justice_2023_2024": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "kategorie",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bioklima",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "gruenvers",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "laerm",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "luft",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "status_ind",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "einwohner",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "wol_l_l",
+            "sqlite_type": "TEXT"
+          }
+        ]
+      }
+    }
+  },
+  "data/spatial/lor_planungsraeume_2021.gpkg": {
+    "format": "gpkg",
+    "tables": {
+      "a_lor_plr_2021": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bez",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "finhalt",
+            "sqlite_type": "DOUBLE"
+          },
+          {
+            "name": "stadtraum_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stadtraum_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stand",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          }
+        ]
+      }
+    }
+  },
+  "output/03_spatial_equity_vulnerability/tables/berlin_calendar_month_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "observed_complete_years",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_monthly_recorded_watered_trees",
+      "mean_monthly_recorded_watering_events",
+      "mean_monthly_recorded_litres",
+      "mean_monthly_planungsraeume_with_recorded_activity",
+      "mean_monthly_recorded_events_per_1000_current_inventory_trees",
+      "mean_monthly_recorded_litres_per_current_inventory_tree",
+      "mean_monthly_recorded_litres_per_ha",
+      "share_of_reference_period_recorded_events",
+      "share_of_reference_period_recorded_litres"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/berlin_month_recorded_watering_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 68,
+    "columns": [
+      "month",
+      "platform_month_status",
+      "platform_live_days",
+      "current_inventory_trees",
+      "recorded_watered_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "planungsraeume_with_recorded_activity",
+      "berlin_area_ha",
+      "recorded_reach_pct_current_inventory",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_litres_per_ha",
+      "year",
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "complete_reference_year",
+      "active_season"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/berlin_season_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "season",
+      "observed_complete_years",
+      "observed_complete_months",
+      "current_inventory_trees",
+      "berlin_area_ha",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_recorded_watering_events_per_observed_month",
+      "mean_recorded_litres_per_observed_month",
+      "mean_planungsraeume_with_recorded_activity",
+      "mean_recorded_events_per_1000_current_inventory_trees_per_observed_month",
+      "mean_recorded_litres_per_current_inventory_tree_per_observed_month",
+      "mean_recorded_litres_per_ha_per_observed_month",
+      "mean_annual_season_recorded_events_per_1000_current_inventory_trees",
+      "mean_annual_season_recorded_litres_per_current_inventory_tree",
+      "mean_annual_season_recorded_litres_per_ha",
+      "share_of_reference_period_recorded_events",
+      "share_of_reference_period_recorded_litres"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/berlin_year_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 5,
+    "columns": [
+      "year",
+      "observed_complete_months",
+      "observed_planungsraeume",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_tree_months",
+      "lor_months_with_recorded_activity",
+      "planungsraeume_with_recorded_activity",
+      "share_of_lor_months_with_recorded_activity",
+      "peak_recorded_event_month",
+      "peak_month_recorded_watering_events"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/lor_calendar_month_recorded_watering_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6504,
+    "columns": [
+      "calendar_month",
+      "calendar_month_name",
+      "season",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district",
+      "observed_complete_years",
+      "years_with_recorded_activity",
+      "recorded_activity_persistence_pct",
+      "current_inventory_trees",
+      "plr_area_ha",
+      "recorded_watered_tree_months",
+      "recorded_watering_events",
+      "recorded_litres",
+      "mean_monthly_recorded_watered_trees",
+      "median_monthly_recorded_watered_trees",
+      "mean_monthly_recorded_watering_events",
+      "mean_monthly_recorded_litres",
+      "mean_monthly_recorded_reach_pct_current_inventory",
+      "median_monthly_recorded_reach_pct_current_inventory",
+      "mean_monthly_recorded_events_per_1000_current_inventory_trees",
+      "median_monthly_recorded_events_per_1000_current_inventory_trees",
+      "mean_monthly_recorded_litres_per_current_inventory_tree",
+      "median_monthly_recorded_litres_per_current_inventory_tree",
+      "mean_monthly_recorded_litres_per_ha",
+      "median_monthly_recorded_litres_per_ha"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_age_band_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 72,
+    "columns": [
+      "age_band",
+      "calendar_month",
+      "calendar_month_name",
+      "observed_complete_years",
+      "recorded_watering_days",
+      "recorded_watering_events",
+      "recorded_litres",
+      "unique_recorded_watered_trees",
+      "mean_recorded_watering_days_per_year",
+      "mean_recorded_watering_events_per_year",
+      "mean_recorded_litres_per_year",
+      "mean_unique_recorded_watered_trees_per_year",
+      "within_group_recorded_watering_day_share",
+      "within_group_recorded_watering_event_share",
+      "within_group_recorded_litre_share"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/03_spatial_equity_vulnerability/tables/recorded_watering_timing_by_genus_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 612,
+    "columns": [
+      "genus",
+      "calendar_month",
+      "calendar_month_name",
+      "observed_complete_years",
+      "recorded_watering_days",
+      "recorded_watering_events",
+      "recorded_litres",
+      "unique_recorded_watered_trees",
+      "mean_recorded_watering_days_per_year",
+      "mean_recorded_watering_events_per_year",
+      "mean_recorded_litres_per_year",
+      "mean_unique_recorded_watered_trees_per_year",
+      "within_group_recorded_watering_day_share",
+      "within_group_recorded_watering_event_share",
+      "within_group_recorded_litre_share"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/lor_watering_equity_2020_2025.gpkg": {
+    "format": "gpkg",
+    "tables": {
+      "lor_watering_equity": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bez",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "finhalt",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "stadtraum_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stadtraum_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stand",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "District",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "inventory_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "street_inventory_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watered_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watering_events",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "total_litres",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watering_reach_pct",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "litres_per_inventory_tree",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "events_per_1000_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "litres_per_watered_tree",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "local_moran_cluster",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "local_moran_i",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "local_moran_p",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "cluster_code",
+            "sqlite_type": "SMALLINT"
+          },
+          {
+            "name": "mss_population",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "di_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "di_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "sdi",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "sdi_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "sdi_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "si_n",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "si_v",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "mss_reference_date",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "mss_validity",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "s1",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s2",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s3",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "s4",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "indicator_validity",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "multiple_burden",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "thermal_burden",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "green_provision",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "noise_burden",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "air_burden",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "ej_social_status",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "ej_population_class",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "simple_housing_noise_air",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "social_status_score",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "thermal_burden_score",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "green_deficit_score",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "multiple_burden_count",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "priority_candidate",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "need_index",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watering_supply_rank",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "priority_gap",
+            "sqlite_type": "REAL"
+          }
+        ]
+      }
+    }
+  },
+  "output/equity/tables/equity_associations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "predictor",
+      "outcome",
+      "n",
+      "spearman_rho",
+      "spearman_p",
+      "district_adjusted_rank_r",
+      "district_adjusted_p"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/equity_join_audit.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "source",
+      "lor_features",
+      "unique_lor_ids",
+      "crs",
+      "max_relative_area_difference_pct"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/lor_watering_equity_metrics.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 535,
+    "columns": [
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "District",
+      "inventory_trees",
+      "watered_trees",
+      "watering_events",
+      "total_litres",
+      "watering_reach_pct",
+      "litres_per_inventory_tree",
+      "mss_population",
+      "social_status_score",
+      "si_v",
+      "di_v",
+      "sdi_v",
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "thermal_burden",
+      "green_provision",
+      "noise_burden",
+      "air_burden",
+      "multiple_burden",
+      "multiple_burden_count",
+      "priority_candidate",
+      "need_index",
+      "watering_supply_rank",
+      "priority_gap"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/priority_gap_planungsraeume.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 10,
+    "columns": [
+      "plr_id",
+      "plr_name",
+      "bzr_name",
+      "District",
+      "inventory_trees",
+      "watered_trees",
+      "watering_reach_pct",
+      "litres_per_inventory_tree",
+      "si_v",
+      "s4",
+      "thermal_burden",
+      "green_provision",
+      "multiple_burden",
+      "need_index",
+      "watering_supply_rank",
+      "priority_gap"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/sensitivity_inventory_thresholds.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "minimum_inventory_trees",
+      "predictor",
+      "outcome",
+      "n",
+      "spearman_rho",
+      "p_value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/watering_by_environmental_need.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "category",
+      "n",
+      "mean",
+      "median",
+      "q25",
+      "q75",
+      "outcome",
+      "dimension"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/watering_by_social_status.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "si_v",
+      "n",
+      "mean",
+      "median",
+      "q25",
+      "q75",
+      "outcome"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/equity/tables/watering_group_tests.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "grouping",
+      "kruskal_h",
+      "p_value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/age_watering_temperature_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 18,
+    "columns": [
+      "temperature_metric",
+      "watering_age_metric",
+      "n",
+      "spearman_rho",
+      "p_value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/district_heat_watering_join.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "bezirk",
+      "inventory_trees",
+      "street_inventory_trees",
+      "events",
+      "unique_watered_trees",
+      "total_litres",
+      "watered_street_trees",
+      "reach_pct",
+      "street_reach_pct",
+      "litres_per_inventory_tree",
+      "events_per_1000_inventory",
+      "District",
+      "Landsat_LST_C",
+      "TreeCover_Pct",
+      "BuiltSurface_Pct",
+      "PopulationDensity_per_km2",
+      "OldAgeQuotient"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/district_spearman_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "heat_or_urban_metric",
+      "watering_metric",
+      "spearman_rho",
+      "p_value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/district_watering_metrics_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "bezirk",
+      "inventory_trees",
+      "street_inventory_trees",
+      "events",
+      "unique_watered_trees",
+      "total_litres",
+      "watered_street_trees",
+      "reach_pct",
+      "street_reach_pct",
+      "litres_per_inventory_tree",
+      "events_per_1000_inventory"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/district_year_age_watering_temperature_panel.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 24,
+    "columns": [
+      "District",
+      "Year",
+      "Landsat_LST_C",
+      "AirTemp_C",
+      "HeatIndex_C",
+      "TreeCover_Pct",
+      "BuiltSurface_Pct",
+      "PopulationDensity_per_km2",
+      "young_lt10_events",
+      "mature_gt10_events",
+      "young_lt10_total_litres",
+      "mature_gt10_total_litres",
+      "young_lt10_watered_trees",
+      "mature_gt10_watered_trees",
+      "young_lt10_inventory_trees",
+      "mature_gt10_inventory_trees",
+      "age_10_inventory_trees",
+      "unknown_or_future_inventory_trees",
+      "young_lt10_reach_pct",
+      "young_lt10_litres_per_inventory_tree",
+      "young_lt10_events_per_1000_inventory",
+      "mature_gt10_reach_pct",
+      "mature_gt10_litres_per_inventory_tree",
+      "mature_gt10_events_per_1000_inventory"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/heat_structure_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 3,
+    "columns": [
+      "urban_metric",
+      "outcome",
+      "spearman_rho",
+      "p_value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/mortality_field_audit.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/street_tree_age_selectivity.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 5,
+    "columns": [
+      "age_class",
+      "inventory_share",
+      "watered_share",
+      "representation_ratio"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/street_tree_genus_reach.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 18,
+    "columns": [
+      "gattung_deutsch",
+      "inventory_trees",
+      "watered_trees",
+      "reach_pct"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/supporting_dataset_inventory.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 15,
+    "columns": [
+      "priority",
+      "dataset",
+      "provider",
+      "spatial_resolution",
+      "temporal_coverage",
+      "research_use",
+      "url"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/tree_id_match_summary.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_age_calendar_month.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 24,
+    "columns": [
+      "watering_age_group",
+      "calendar_month",
+      "calendar_month_name",
+      "events",
+      "unique_trees",
+      "total_litres",
+      "event_share_within_group",
+      "litre_share_within_group"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_age_group_summary.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "watering_age_group",
+      "age_group_label",
+      "events",
+      "unique_trees",
+      "total_litres",
+      "event_share",
+      "litre_share",
+      "median_age_at_watering"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_age_yearly.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 12,
+    "columns": [
+      "watering_age_group",
+      "year",
+      "events",
+      "unique_trees",
+      "total_litres"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_by_year.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 7,
+    "columns": [
+      "year",
+      "events",
+      "unique_trees",
+      "total_litres",
+      "litres_per_event"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_concentration.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 3,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/exploratory/tables/watering_data_quality.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 9,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/spatial/lor_watering_metrics_2020_2025.gpkg": {
+    "format": "gpkg",
+    "tables": {
+      "lor_watering_metrics": {
+        "rows": 542,
+        "declared_srs_id": 25833,
+        "columns": [
+          {
+            "name": "fid",
+            "sqlite_type": "INTEGER"
+          },
+          {
+            "name": "geom",
+            "sqlite_type": "MULTIPOLYGON"
+          },
+          {
+            "name": "plr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "plr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bzr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "pgr_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "bez",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "finhalt",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "stadtraum_id",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stadtraum_name",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "stand",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "District",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "inventory_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "street_inventory_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watered_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watering_events",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "total_litres",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "watering_reach_pct",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "litres_per_inventory_tree",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "events_per_1000_trees",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "litres_per_watered_tree",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "local_moran_cluster",
+            "sqlite_type": "TEXT"
+          },
+          {
+            "name": "local_moran_i",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "local_moran_p",
+            "sqlite_type": "REAL"
+          },
+          {
+            "name": "cluster_code",
+            "sqlite_type": "SMALLINT"
+          }
+        ]
+      }
+    }
+  },
+  "output/spatial/tables/global_moran_watering_reach.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 4,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/spatial/tables/local_moran_watering_clusters.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 542,
+    "columns": [
+      "plr_id",
+      "plr_name",
+      "bzr_name",
+      "District",
+      "watering_reach_pct",
+      "local_moran_cluster",
+      "local_moran_i",
+      "local_moran_p"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/spatial/tables/lor_watering_metrics_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 542,
+    "columns": [
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "District",
+      "inventory_trees",
+      "street_inventory_trees",
+      "watered_trees",
+      "watering_events",
+      "total_litres",
+      "watering_reach_pct",
+      "litres_per_inventory_tree",
+      "events_per_1000_trees",
+      "litres_per_watered_tree"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/spatial/tables/spatial_join_audit.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 5,
+    "columns": [
+      "metric",
+      "value"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/ortsteil_geography_audit.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 97,
+    "columns": [
+      "ortsteil",
+      "district",
+      "official_area_id",
+      "current_boundary_area_ha",
+      "current_inventory_trees",
+      "comparison_exclusion_reason",
+      "comparison_eligible"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/ortsteil_month_watering_lst_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6596,
+    "columns": [
+      "ortsteil",
+      "district",
+      "official_area_id",
+      "current_boundary_area_ha",
+      "current_inventory_trees",
+      "comparison_exclusion_reason",
+      "comparison_eligible",
+      "month_date",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_trees",
+      "year",
+      "calendar_month",
+      "platform_month_status",
+      "recorded_watering_events_per_ha",
+      "recorded_litres_per_ha",
+      "recorded_watered_trees_per_ha",
+      "recorded_reach_pct_current_inventory",
+      "lst_c",
+      "source_lst_count",
+      "relative_source_count",
+      "source_rain_mm_mean_unverified",
+      "previous_month_lst_c",
+      "previous_month_source_lst_count",
+      "previous_month_relative_source_count",
+      "previous_month_source_rain_mm_mean_unverified",
+      "next_month_lst_c",
+      "next_month_source_lst_count",
+      "next_month_relative_source_count",
+      "next_month_source_rain_mm_mean_unverified",
+      "geography_status"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/provisional_pooled_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 54,
+    "columns": [
+      "sample",
+      "relationship",
+      "screen",
+      "exposure",
+      "outcome",
+      "n_area_months",
+      "n_areas",
+      "n_watering_months",
+      "raw_spearman_rho",
+      "area_and_yearmonth_residual_correlation",
+      "raw_pearson_log1p_exposure",
+      "exposure_transform_for_residual_correlation",
+      "claim"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/provisional_within_ortsteil_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 837,
+    "columns": [
+      "ortsteil",
+      "relationship",
+      "exposure",
+      "n_months",
+      "raw_spearman_rho",
+      "status"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/recorded_tree_ortsteil_crosswalk.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 11127,
+    "columns": [
+      "tree_id",
+      "ortsteil",
+      "district",
+      "official_area_id"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/source_excluded_rows.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 384,
+    "columns": [
+      "ortsteil",
+      "bezirk",
+      "year",
+      "month",
+      "LST_C_mean",
+      "LST_C_count",
+      "rain_mm_mean",
+      "source_row",
+      "date",
+      "comparison_exclusion_reason"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/source_monthly_availability.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 96,
+    "columns": [
+      "year",
+      "month",
+      "source_rows",
+      "valid_lst_rows",
+      "source_lst_count_total",
+      "valid_lst_pct"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/source_row_audit.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 9312,
+    "columns": [
+      "ortsteil",
+      "bezirk",
+      "year",
+      "month",
+      "LST_C_mean",
+      "LST_C_count",
+      "rain_mm_mean",
+      "source_row",
+      "date",
+      "comparison_exclusion_reason"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/ortsteil/tables/unassigned_recorded_tree_days.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 0,
+    "columns": [
+      "tree_id",
+      "local_date",
+      "year",
+      "calendar_month",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_events_tree_day",
+      "recorded_litres_tree_day",
+      "multiple_logs_tree_day",
+      "recorded_exposure_semantics",
+      "longitude",
+      "latitude",
+      "species",
+      "genus",
+      "planting_year",
+      "age_at_watering",
+      "age_band",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "foundation_district",
+      "ortsteil",
+      "district",
+      "official_area_id"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/berlin_june_september_comparison.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6,
+    "columns": [
+      "year",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_trees",
+      "mean_air_temperature_c",
+      "valid_temperature_days",
+      "rainfall_mm",
+      "valid_rainfall_days",
+      "hot_days_ge_30c",
+      "valid_max_temperature_days"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/berlin_month_weather_watering.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 68,
+    "columns": [
+      "month",
+      "city",
+      "current_inventory_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "platform_month_status",
+      "platform_live_days",
+      "recorded_watered_trees",
+      "year",
+      "calendar_month",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_reach_pct_current_inventory",
+      "station_id",
+      "expected_days",
+      "valid_temperature_days",
+      "valid_rainfall_days",
+      "valid_max_temperature_days",
+      "air_temperature_mean_c",
+      "rainfall_mm",
+      "days_max_temperature_ge_30c",
+      "previous_month_air_temperature_mean_c",
+      "previous_month_rainfall_mm"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/berlin_year_watering.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 6,
+    "columns": [
+      "year",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_trees",
+      "period"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/district_june_september_comparison.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 72,
+    "columns": [
+      "district",
+      "year",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_watered_trees"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/district_month_station_context.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 816,
+    "columns": [
+      "month",
+      "district",
+      "current_inventory_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "platform_month_status",
+      "platform_live_days",
+      "recorded_watered_trees",
+      "year",
+      "calendar_month",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_reach_pct_current_inventory",
+      "station_id",
+      "expected_days",
+      "valid_temperature_days",
+      "valid_rainfall_days",
+      "valid_max_temperature_days",
+      "air_temperature_mean_c",
+      "rainfall_mm",
+      "days_max_temperature_ge_30c",
+      "previous_month_air_temperature_mean_c",
+      "previous_month_rainfall_mm",
+      "weather_scope"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/district_month_watering.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 816,
+    "columns": [
+      "month",
+      "district",
+      "current_inventory_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "platform_month_status",
+      "platform_live_days",
+      "recorded_watered_trees",
+      "year",
+      "calendar_month",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_reach_pct_current_inventory"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/dwd_00433_daily_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 2192,
+    "columns": [
+      "date",
+      "air_temperature_mean_c",
+      "air_temperature_max_c",
+      "rainfall_mm",
+      "quality_code_wind",
+      "quality_code_climate",
+      "station_id",
+      "month"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/dwd_00433_monthly_2020_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 72,
+    "columns": [
+      "month",
+      "station_id",
+      "expected_days",
+      "valid_temperature_days",
+      "valid_rainfall_days",
+      "valid_max_temperature_days",
+      "air_temperature_mean_c",
+      "rainfall_mm",
+      "days_max_temperature_ge_30c",
+      "previous_month_air_temperature_mean_c",
+      "previous_month_rainfall_mm"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/lor_month_watering_social_context.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 36856,
+    "columns": [
+      "month",
+      "plr_id",
+      "plr_name",
+      "bzr_id",
+      "bzr_name",
+      "district",
+      "platform_month_status",
+      "platform_live_days",
+      "current_inventory_trees",
+      "recorded_watered_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "recorded_reach_pct_current_inventory",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "child_poverty_pct_2024",
+      "thermal_burden_2023_24",
+      "social_status_2024"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/monthly_adjusted_associations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 24,
+    "columns": [
+      "sample",
+      "timing",
+      "outcome",
+      "term",
+      "n_months",
+      "n_parameters",
+      "coefficient_log1p",
+      "standard_error_hac3",
+      "approx_95_low",
+      "approx_95_high",
+      "month_controls",
+      "year_controls",
+      "interpretation"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/monthly_raw_correlations.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 24,
+    "columns": [
+      "sample",
+      "timing",
+      "outcome",
+      "weather_variable",
+      "n_months",
+      "spearman_rho"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/social_status_month_watering.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 340,
+    "columns": [
+      "month",
+      "social_status_2024",
+      "current_inventory_trees",
+      "recorded_watering_events",
+      "recorded_litres",
+      "platform_month_status",
+      "platform_live_days",
+      "recorded_watered_trees",
+      "year",
+      "calendar_month",
+      "recorded_events_per_1000_current_inventory_trees",
+      "recorded_litres_per_current_inventory_tree",
+      "recorded_reach_pct_current_inventory"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  },
+  "output/watering_response/tables/social_status_summary_2021_2025.csv": {
+    "format": "csv",
+    "delimiter": ",",
+    "rows": 5,
+    "columns": [
+      "social_status_2024",
+      "current_inventory_trees",
+      "mean_monthly_events_per_1000_trees",
+      "mean_monthly_litres_per_tree",
+      "mean_monthly_reach_pct",
+      "neighbourhoods"
+    ],
+    "types": "CSV fields are textual; use data_dictionary.md and builders for semantic types. Preserve identifiers as strings."
+  }
+}

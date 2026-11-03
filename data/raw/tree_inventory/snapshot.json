@@ -1,0 +1,17 @@
+{
+  "packaged_date": "2026-10-17",
+  "archive": "data/raw/tree_inventory/Berlin_trees.gpkg.gz",
+  "archive_bytes": 61291950,
+  "archive_sha256": "99cd7d38834946be2686dcdea5ce7b19a9cfeb3404e30238e0c376757f176a39",
+  "restore_to": "data/Berlin_trees.gpkg",
+  "uncompressed_bytes": 335425536,
+  "uncompressed_sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+  "rows": 962545,
+  "unique_non_null_tree_ids": 956347,
+  "source": "https://daten.berlin.de/datensaetze/baumbestand-berlin-wfs-48ad3a23",
+  "source_license": "Datenlizenz Deutschland - Zero - Version 2.0",
+  "provenance_limit": "Existing project snapshot; original acquisition date and export procedure not recorded. Layer values identify official baumbestand street and park tree sources. Source licence checked 2026-10-17.",
+  "declared_crs": "EPSG:4326",
+  "coordinate_crs": "EPSG:25833",
+  "compression": "gzip level 6, no embedded filename, mtime 0; lossless frozen input"
+}

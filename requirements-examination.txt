@@ -1,0 +1,3 @@
+# Optional: build the PDF examination brief and map atlas.
+reportlab==4.4.9
+Pillow==12.3.0

@@ -1,0 +1,102 @@
+[project]
+title = "Citizen Water, Vegetation Cooling, and Spatial Justice"
+analysis_crs = "EPSG:25833"
+web_crs = "EPSG:4326"
+timezone = "Europe/Berlin"
+lor_vintage = "2021-01-01"
+recorded_watering_start = "2020-05-18"
+complete_recorded_watering_end_exclusive = "2026-01-01"
+random_seed = 42
+scope_version = "latest-supervisor-feedback-aligned-2026-08-12"
+guaranteed_deliverable = "03_spatial_equity_vulnerability"
+
+[project.exploratory_response]
+agreement_date = "2026-09-29"
+protocol = "docs/watering_response_exploratory_protocol.md"
+report = "output/watering_response/report.html"
+rq2 = "Does logged citizen watering respond to heat and dryness, and does its association vary with neighbourhood vulnerability?"
+temperature_scope = "DWD Berlin-Tempelhof station air temperature; supplied monthly Ortsteil LST provisionally aligned, extraction metadata and source boundary vintage unverified"
+claim = "Exploratory station associations and provisional local LST correlations; causal cooling and vulnerability interactions not estimated"
+
+[project.part_ii_gate]
+primary_exposure = "recorded_litres_per_1000l_ha_preceding_30_days"
+support_area_ha = 1.0
+smallest_effect_k_per_1000l_ha = -0.03
+equivalent_effect_k = -0.10
+equivalent_dose_litres_per_ha = 3500
+alpha_two_sided = 0.05
+minimum_simulated_power = 0.80
+variance_source = "outcome-only nuisance model fit without recorded-watering exposure"
+decision_timing = "end-month-2"
+
+[project.schedule_triggers]
+part_i_checkpoint = "end-month-2"
+part_i_fallback = "descriptive LST and greenness outputs plus data audit; Environmental Justice Atlas thermal layer supplies Part III"
+part_iii_checkpoint = "end-month-3"
+part_iii_minimum_core = "Planungsraum analysis plus district sensitivity; three recorded-care measures; MSS and Environmental Justice Atlas components; denominator sensitivity; screening atlas"
+part_ii_pause_rule = "Pause Part II modelling if the Part III minimum core is incomplete, even when the detectability gate passes"
+
+[pillars.00_foundation]
+label = "Shared spatial and data foundation"
+status = "partial-ready"
+reason = "Tree linkage, LOR assignment, spatial summaries, a canonical LOR-month panel, and an audited positive-exposure tree-day panel exist; historical eligible-tree denominators and full run manifests remain incomplete."
+datasets = [
+  "recorded_watering_events",
+  "tree_inventory",
+  "lor_boundaries_2021",
+  "lor_recorded_watering_metrics_current",
+  "lor_month_recorded_watering_foundation",
+  "recorded_tree_lor_crosswalk_2020_2025",
+  "recorded_tree_day_watering_2020_2025",
+]
+
+[pillars.01_urban_heat_vegetation_drought]
+label = "Part I — Urban heat, vegetation, and drought"
+status = "preliminary-only"
+reason = "The repository contains a preliminary borough snapshot, but not the required valid-overpass Landsat/Sentinel panel, built-form controls, or temporal drought record."
+datasets = [
+  "legacy_heat_borough_snapshot",
+  "daily_weather",
+  "landsat_lst_time_series",
+  "sentinel_canopy_time_series",
+  "hydrology_time_series",
+]
+
+[pillars.02_citizen_watering_thermal_association]
+label = "Part II — Citizen watering and thermal association"
+status = "blocked-planned"
+reason = "Recorded events plus LOR-month and positive tree-day exposure panels exist, but the pre-outcome detectability gate, valid satellite outcomes, weather controls, and logging-coverage diagnostics are not implemented."
+datasets = [
+  "recorded_watering_events",
+  "lor_month_recorded_watering_foundation",
+  "recorded_tree_day_watering_2020_2025",
+  "daily_weather",
+  "landsat_lst_time_series",
+  "sentinel_canopy_time_series",
+]
+
+[pillars.03_spatial_equity_vulnerability]
+label = "Part III — Spatial equity and vulnerability"
+status = "partial-ready"
+reason = "The guaranteed core has LOR social-status, environmental-justice, recorded-watering, and complete-year calendar-month atlas inputs; multi-scale MAUP tests, population-by-age, registry-coverage sensitivity, and validated heat exposure remain incomplete."
+datasets = [
+  "lor_equity_environment_2024",
+  "lor_recorded_watering_equity_current",
+  "lor_month_recorded_watering_foundation",
+  "lor_calendar_month_recorded_watering_2021_2025",
+  "lor_population_by_age",
+  "landsat_lst_time_series",
+]
+
+[pillars.99_synthesis]
+label = "Three-part synthesis and care-gap atlas"
+status = "blocked-planned"
+reason = "The fixed-scale temporal recorded-care atlas exists, but synthesis still depends on Part III robustness and either a validated Part I thermal layer or the declared Environmental Justice Atlas fallback; Part II remains a separate conditional evidence layer."
+datasets = [
+  "landsat_lst_time_series",
+  "sentinel_canopy_time_series",
+  "hydrology_time_series",
+  "lor_population_by_age",
+  "lor_recorded_watering_equity_current",
+  "lor_calendar_month_recorded_watering_2021_2025",
+]

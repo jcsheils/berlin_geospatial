@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this repository when using its code, preliminary analyses, or examination materials; also retain the source data attributions."
+title: "Spatiotemporal Modeling of Citizen Tree Watering in Berlin: Weather Responses and Neighborhood Variation"
+authors:
+  - family-names: "Sheils"
+    given-names: "Joseph Carpenter"
+version: "0.1.0-seminar"
+date-released: 2026-10-17
+url: "https://github.com/jcsheils/berlin_geospatial"
+repository-code: "https://github.com/jcsheils/berlin_geospatial"
+keywords:
+  - Berlin
+  - citizen tree watering
+  - urban heat
+  - geospatial analysis
+  - preliminary research

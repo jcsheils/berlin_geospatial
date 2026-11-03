@@ -1,0 +1,168 @@
+{
+  "schema_version": 2,
+  "dataset_id": "watering_temporal_atlas_2020_2025",
+  "generated_at_utc": "2026-09-21T06:07:35.404129+00:00",
+  "grains": {
+    "city_month": "berlin_month",
+    "calendar_climatology": "planungsraum_calendar_month_complete_year_mean",
+    "season_summary": "berlin_meteorological_season_pooled_2021_2025",
+    "year_summary": "berlin_calendar_year",
+    "yearly_atlas": "planungsraum_actual_year_month"
+  },
+  "coverage": {
+    "observed_start": "2020-05-01",
+    "observed_end": "2025-12-31",
+    "calendar_timezone": "Europe/Berlin",
+    "climatology_complete_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "active_season_months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "yearly_atlas_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "yearly_atlas_months_per_year": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "partial_month_retained_in_timeline": "2020-05",
+    "partial_month_excluded_from_climatology": true
+  },
+  "inputs": {
+    "lor_month_panel": {
+      "path": "data/processed/foundation/lor_month_recorded_watering_2020_2025.csv",
+      "sha256": "19d311afd703b13f88d9ddd3474515444d67d0c556ae524e24bb83f7573fbd93"
+    },
+    "lor_boundaries": {
+      "path": "data/spatial/lor_planungsraeume_2021.gpkg",
+      "sha256": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624",
+      "analysis_crs": "EPSG:25833"
+    }
+  },
+  "audit": {
+    "source_lor_month_rows": 36856,
+    "calendar_lor_rows": 6504,
+    "city_month_rows": 68,
+    "yearly_atlas_panels": 60,
+    "yearly_atlas_lor_months": 32520,
+    "matched_recorded_events": 57786,
+    "matched_recorded_litres": 2249502.0,
+    "reference_period_recorded_events": 41506,
+    "reference_period_recorded_litres": 1764637.0,
+    "share_of_events_june_august": 0.7161250129789223,
+    "share_of_litres_june_august": 0.7268470977131828,
+    "share_of_events_may_september": 0.9219707195514485,
+    "share_of_litres_may_september": 0.9385695144969864,
+    "share_of_events_april_september": 0.9627591458138649,
+    "share_of_litres_april_september": 0.9741120479110488,
+    "zero_recorded_event_lor_months": 30854,
+    "planungsraeume_never_recording_an_event": 80,
+    "planungsraeume_without_current_inventory_denominator": 2
+  },
+  "map_scale": {
+    "metric": "recorded_events_per_1000_current_inventory_trees",
+    "reference": "Positive Planungsraum-month observations in April-September 2021-2025",
+    "positive_break_quantiles": [
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      0.975
+    ],
+    "positive_break_values": [
+      1.5360983102918586,
+      3.8240917782026767,
+      9.703703703703702,
+      21.63289856907686,
+      46.357871787260606
+    ],
+    "class_labels": [
+      "No recorded activity",
+      ">0 to 1.5",
+      ">1.5 to 3.8",
+      ">3.8 to 9.7",
+      ">9.7 to 22",
+      ">22 to 46",
+      ">46",
+      "No current-inventory denominator"
+    ],
+    "class_colors": [
+      "#f2f2f2",
+      "#edf8fb",
+      "#ccece6",
+      "#99d8c9",
+      "#66c2a4",
+      "#2ca25f",
+      "#006d2c",
+      "#9b9b9b"
+    ],
+    "fixed_across_all_panels": true,
+    "zero_class": "No recorded platform activity",
+    "missing_class": "No current-inventory denominator"
+  },
+  "semantics": {
+    "recorded_zero": "No Gieß den Kiez platform activity was recorded for that Planungsraum-month; municipal, private, and unlogged watering remain unobserved.",
+    "denominator_caveat": "Current-inventory-normalised rates do not use a historical monthly eligible-tree risk set.",
+    "area_density_definition": "Recorded litres per hectare divide logged litres by the full Planungsraum or Berlin polygon area in EPSG:25833. This is a spatial density for description, not an irrigation application dose to watered soil or canopy.",
+    "climatology": "A five-year calendar-month summary of recorded activity, not a climate normal.",
+    "yearly_atlas": "Each plate uses only the twelve actual months in its labelled year. Values are not averaged or summed across years; all sixty panels use the same classification scale.",
+    "temporal_alignment": "Cooling analysis must join spatial support to actual acquisition dates and strictly preceding dated watering windows. Never join exposure and outcomes by calendar month alone or substitute pooled climatology for dated exposure.",
+    "year_selection": "Year summaries describe recorded exposure availability, not logging completeness or thermal detectability. Choose eligible years using pre-outcome rules for usable imagery, weather, logging coverage and dose variation; do not select a year because it produces an effect.",
+    "watered_tree_months": "Distinct trees may recur across months or years; seasonal and multi-year sums are tree-month counts, not distinct-tree reach.",
+    "claim_boundary": "These products describe temporal and spatial concentration of recorded activity. They do not estimate cooling, irrigation coverage, or causal effects."
+  },
+  "outputs": {
+    "calendar_lor": "data/processed/temporal/lor_calendar_month_recorded_watering_2021_2025.csv",
+    "city_month": "data/processed/temporal/berlin_month_recorded_watering_2020_2025.csv",
+    "city_calendar": "data/processed/temporal/berlin_calendar_month_recorded_watering_2021_2025.csv",
+    "season_summary": "data/processed/temporal/berlin_season_recorded_watering_2021_2025.csv",
+    "year_summary": "data/processed/temporal/berlin_year_recorded_watering_2021_2025.csv",
+    "timing_figure": "output/03_spatial_equity_vulnerability/figures/01_recorded_watering_monthly_timing.png",
+    "calendar_atlas": "output/03_spatial_equity_vulnerability/maps/01_calendar_month_recorded_watering_atlas.png",
+    "active_season_atlas": "output/03_spatial_equity_vulnerability/maps/02_active_season_recorded_watering_atlas.png",
+    "yearly_atlas_2021": "output/03_spatial_equity_vulnerability/maps/yearly/2021_monthly_recorded_watering_atlas.png",
+    "yearly_atlas_2022": "output/03_spatial_equity_vulnerability/maps/yearly/2022_monthly_recorded_watering_atlas.png",
+    "yearly_atlas_2023": "output/03_spatial_equity_vulnerability/maps/yearly/2023_monthly_recorded_watering_atlas.png",
+    "yearly_atlas_2024": "output/03_spatial_equity_vulnerability/maps/yearly/2024_monthly_recorded_watering_atlas.png",
+    "yearly_atlas_2025": "output/03_spatial_equity_vulnerability/maps/yearly/2025_monthly_recorded_watering_atlas.png",
+    "sha256": {
+      "calendar_lor": "673fa4449824e7422d799717ac57e7dc07bd2d714fe542ceb6fffb966cbb7666",
+      "city_month": "dbb9301415a40cc9604ffc97d0efea987d9f1ffc9297bdefe9a701d006176ca4",
+      "city_calendar": "252415c5ba7440d4738124a64c9f6a5cf5ac72f6eb69b0bfab7ddea9a370878c",
+      "season_summary": "e4ed9515a5560a65d7ce2359801fec9d5cb5438ef6abe5c75ef8e58b578aef97",
+      "year_summary": "29d83d3bd7f8cc1e23265b4ba566d5b6a07940a9b2437ce2755205e9c5e4cfe5",
+      "timing_figure": "643660e0467f622650c2569e317b9ab30e44f21c4ec1598be55d2b4a8a298a40",
+      "calendar_atlas": "0a839c60d9f60764aa5e5b98d39f3d591f4b8f8d6f98bf6737d8a545fe2b0425",
+      "active_season_atlas": "3216235b945c7ab43050e5717ff7d02b9fec6bc0ce0183877ccca0e402efe9ee",
+      "yearly_atlas_2021": "cc327174f2629f43a4650c3c14955dea87982513122a2d506c13835caf50ad26",
+      "yearly_atlas_2022": "384c8d765d2d67cf0c16089dfe12bb628f4d9b93661428d1fc67657bfdb66877",
+      "yearly_atlas_2023": "0914380163e67223d7e0bf828ab45f4da8074ff846c6b6880b103598a1c41ddc",
+      "yearly_atlas_2024": "64ecfbe3d07983fb1a0edea21590a07ffc6224dac8de8f6dd426b0bfcaefd1f8",
+      "yearly_atlas_2025": "62da5e586ea38943cb150f39883fcd655afca706b7dcf966c9c88341bd3d27bf"
+    }
+  }
+}
