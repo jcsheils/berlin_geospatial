@@ -26,24 +26,21 @@ Explore monthly watering across 542 neighbourhoods, click for area histories, co
 
 ## Start here
 
-**[Examination reading guide](examination/README.md)** · **[Examination brief](output/pdf/Berlin_Examination_Brief_October_2026.pdf)**
-
 | Material | Open |
 | --- | --- |
-| Active refined proposal | [Refined October proposal PDF](docs/proposal/Proposal_Refined_October_2026.pdf) · [version notes](docs/proposal/README.md) |
-| Seminar proposal and qualifications | [October proposal PDF](examination/proposal/Proposal_October_2026.pdf) · [version and count notes](examination/proposal/README.md) |
-| Seminar presentation | [Slides PDF](examination/proposal/Seminar_Slides_October_2026.pdf) · [editable Keynote](examination/proposal/Seminar_Slides_October_2026.key) |
-| Preliminary evidence | [Results and sample reconciliation](examination/preliminary_results.md) · [detailed HTML report](output/watering_response/report.html) · [workbook](examination/results/Berlin_watering_monthly_exploration.xlsx) |
-| Maps produced so far | [Twelve-plate PDF atlas](output/pdf/Berlin_Map_Atlas_October_2026.pdf) · [map catalogue with previews](examination/atlas/README.md) · [interactive LOR map](output/spatial/maps/lor_watering_interactive.html) |
+| Proposal | [Refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf) · [version notes](docs/proposal/README.md) |
+| Plan and methods | [Active analysis plan](docs/analysis_plan.md) · [RQ1 daily protocol](docs/rq1_daily_exploratory_protocol.md) · [literature context](docs/related_literature.md) |
+| Latest results | [RQ1 daily results](output/rq1_daily/report.md) · [project status, 2 November 2026](docs/project_update_2026_11_02.md) |
+| Earlier exploratory results | [Monthly weather report](output/watering_response/report.html) · [map catalogue with previews](examination/atlas/README.md) · [interactive LOR map](output/spatial/maps/lor_watering_interactive.html) |
 | Data and provenance | [Data guide](data/README.md) · [checksummed inventory](examination/data_inventory.csv) · [dictionary](examination/data_dictionary.md) |
-| Methods and feasibility | [Current analysis plan](docs/analysis_plan.md) · [readiness and next decisions](examination/readiness.md) · [literature context](docs/related_literature.md) |
 | Reproduction | [Reproduction guide](examination/reproducibility.md) · [validation record](examination/validation.md) |
+| Seminar examination, October 2026 | [Seminar package](examination/README.md): proposal, slides, plan, brief, atlas and preliminary results |
 
 Download HTML files to view their rendered reports. The interactive map also requires internet access for its web resources. PDFs, PNGs, tables and the workbook provide static review routes.
 
 ## Current scope
 
-The **[refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf)** governs active work. **Part II is the core study**: RQ1 climate response, RQ2 vulnerability/resource inequality and RQ3 additional spatial information. Part I supplies environmental context; Part III examines RQ4 allocation consequences. The examination documents retain the earlier proposal and numbering. The August conditional satellite test of watering-induced cooling is no longer the active design.
+The **[refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf)** governs active work. **Part II is the core study**: RQ1 climate response, RQ2 vulnerability/resource inequality and RQ3 additional spatial information. Part I supplies environmental context; Part III examines RQ4 allocation consequences. The [seminar package](examination/README.md) keeps the earlier proposal and its RQ numbering.
 
 Implemented work is **preliminary and descriptive**. The canonical all-month May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 planning areas and 68 months**. The daily RQ1 pilot uses the April–September subset. Existing results show seasonality, spatial clustering, social/environmental differences and exploratory monthly and daily weather associations. They do not establish causal cooling, daily neighbourhood response slopes, or a validated allocation model.
 
@@ -66,12 +63,12 @@ See the [reproduction guide](examination/reproducibility.md) for the ordered reb
 
 ## Repository layout
 
-- `examination/`: examiner guide, proposal, presentation, results, atlas catalogue, inventories and validation.
+- `docs/`: refined proposal, active analysis plan, protocols and literature context.
+- `examination/`: the October 2026 seminar package (proposal, slides, plan, brief, atlas, preliminary results), plus the data inventories and validation record.
 - `data/`: available source snapshots and processed shared panels.
-- `output/`: executed notebooks, figures, tables, geospatial products, reports and examination PDFs.
+- `output/`: executed notebooks, figures, tables, geospatial products and reports.
 - `src/berlin_heat/`, `pipelines/`, `analysis/`: reusable analysis code and builders.
 - `earth_engine/`: self-contained demo script, editable UI, data builder and launch guide.
 - `config/`, `tests/`: declared data contracts, research readiness and verification.
-- `docs/archive/`, `pillars/`: historical design material, explicitly superseded where applicable.
 
 **Interpretation:** logs record platform activity, not all irrigation. Current inventory counts are not historical risk sets. LST is surface temperature, not felt heat. Screening candidates are places for further validation, not recommendations to withdraw or redirect municipal care.

@@ -1,22 +1,11 @@
-> **October 2026 scope update:** historical design context is retained below. The active design is the October proposal: Part II civic heat response (core), Part I vegetation cooling loss (supporting), and Part III allocation (exploratory). See `docs/analysis_plan.md` and `examination/README.md`. Existing descriptive products remain valid within their stated limits.
-
 # Temporal Analysis Protocol
 
 ## Purpose and status
 
-This protocol adds a temporal layer to the study without overstating what the
-current data can identify. The analysis has two distinct aims:
-
-1. describe when and where **recorded** citizen watering occurred; and
-2. conditionally test whether antecedent recorded watering intensity is
-   associated with subsequent satellite-supported land-surface temperature
-   (LST).
-
-The temporal atlas is feasible with the current repository. A post-watering
-thermal analysis is not yet feasible because event-aligned outcomes, weather
-controls, logging-coverage diagnostics, and the pre-specified detectability
-gate are not complete. Monthly maps are therefore exposure descriptions, not
-evidence of cooling.
+This protocol documents the descriptive temporal layer: when and where
+**recorded** citizen watering occurred. Monthly maps are exposure descriptions,
+not evidence of cooling. Individual watering-induced satellite cooling is
+outside the active design; see the [analysis plan](analysis_plan.md).
 
 ## Data scope and provenance
 
@@ -104,16 +93,6 @@ metric separately in each year and then report:
 May 2020 and partial 2026 are excluded. "Climatology" here denotes a recurring
 calendar-month pattern in recorded activity, not a climate normal.
 
-### Imagery-support/overpass
-
-Future thermal analysis will use one observation per non-overlapping,
-approximately 1 ha imagery-support unit and valid satellite overpass. Tree-day
-records feed exposure sums within the support. The outcome is support-mean LST,
-not an individual-tree temperature and not an independent value for every
-resampled 30 m Landsat product cell. The spatial support, overlap rule, edge
-treatment, CRS, and tree-to-support crosswalk must be frozen before outcome
-modelling.
-
 ## Descriptive temporal atlas
 
 The atlas will present:
@@ -140,45 +119,15 @@ panel. Raw totals and normalised rates use separate, clearly labelled legends;
 their colours are not interpreted as comparable magnitudes. Boundaries,
 projection, missing-data colour, and layout remain constant across panels.
 
-## Temporal alignment and choice of years
+## Temporal alignment
 
 A pooled May map may combine neighbourhoods watered only in May 2021 with
 others watered only in May 2024. It describes where May activity occurred
 across the study period; it cannot identify the exposure preceding a May 2024
 temperature observation. Joining those data on calendar month alone would
 assign watering to the wrong observation dates and could distort an association
-in either direction, including obscuring it. It would not establish that a
-null result is biological.
-
-Thermal analysis must retain spatial support and the actual acquisition date
-as keys. For example, the primary window for an overpass on 20 May 2024 sums
-recorded watering from 20 April through 19 May 2024. May observations from
-2021--2023 or 2025 contribute nothing to that exposure. Windows follow real
-calendar dates, so a legitimate 30-day window in January may extend into the
-preceding December; the rule is date alignment, not a blanket prohibition on
-crossing 1 January. The climatology is never substituted for these dated sums.
-
-Keeping several years does not itself create temporal misalignment. Retain
-all years satisfying pre-specified eligibility rules, with actual overpass-date
-controls and year-specific diagnostics. Restricting the analysis to one year
-is justified only when the data support that restriction, and may reduce
-available variation and precision. Assess, before inspecting cooling estimates:
-
-- dated imagery availability, cloud quality, and pre/post exposure coverage;
-- antecedent weather and compatible spatial support;
-- logging coverage and the change in timestamp precision during 2024;
-- within-year dose variation, common support, spatial concentration, and
-  independent support/date information; and
-- the existing detectability gate for the proposed sample.
-
-The exposure summary alone cannot determine a preferred year. In particular,
-the largest event total need not provide the most informative thermal sample.
-Record the year-selection rule before estimating cooling associations; do not
-choose a year based on which produces a significant or larger apparent effect.
-Where feasible, compare year-specific estimates and leave-one-year-out results
-as pre-specified sensitivity analyses after the pooled eligible sample passes
-the gate. The current repository still lacks the dated thermal panel needed
-to make this year-selection decision.
+in either direction, including obscuring it.
+Weather and outcome joins therefore use actual dates, never calendar month alone.
 
 ## Empirical exposure audit
 
@@ -194,8 +143,7 @@ regenerated if that snapshot changes:
 - Clock-time precision changes during April 2024. All 2020--2023 records have a
   non-midnight time; 3,528/3,679 records in 2024 and all 4,601 records in 2025
   are stamped exactly at 00:00 UTC. From May 2024 onward, the data preserve a
-  date but not credible within-day ordering. Primary exposure windows therefore
-  end on the day before an overpass.
+  date but not credible within-day ordering.
 - Before inventory or LOR matching, the 58,474 in-window source events form
   50,818 tree-days. Of these, 5,484 have multiple logs, accounting for 13,140
   source event rows; the maximum is 16 logs for one tree-day. Analyses aggregate
@@ -225,149 +173,7 @@ regenerated if that snapshot changes:
 These counts describe rows and recorded doses, not independent observations or
 effective sample size.
 
-## Tiered post-watering cooling design
+## Claim limits
 
-### Tier 1: exposure-only description
-
-The temporal atlas and tree-type/age timing summaries are the guaranteed
-deliverables. Permitted conclusions concern timing, concentration, recurrence,
-and spatial distribution of recorded care.
-
-### Tier 2: event-aligned descriptive outcomes
-
-After a cloud-audited outcome panel exists, plot support-level LST and
-vegetation-condition trajectories around pre-defined recorded-watering bursts.
-Burst thresholds and washout periods must be fixed before examining outcomes.
-Use strictly antecedent whole-day exposure for the cross-year analysis; any
-same-day timing analysis is restricted to periods with validated clock times
-and remains secondary. Lead patterns, observation availability, and the weather
-distribution of clear-sky overpasses are reported. These results remain
-descriptive because watering is likely to respond to heat and drought.
-
-### Tier 3: qualified observational association
-
-The primary exposure for support unit \(s\) and overpass date \(t\) is:
-
-\[
-W^{30}_{st} = \frac{1}{1{,}000 A_s}
-\sum_{d=t-30}^{t-1}\text{recorded litres}_{sd},
-\]
-
-where \(A_s\) is support area in hectares. The coefficient unit is K per
-additional 1,000 recorded L/ha during the preceding 30 complete local dates.
-Seven- and 14-day windows are secondary; season-to-date dose is exploratory.
-Same-day dose is excluded from the primary definition.
-
-Subject to the detectability gate, the primary model is:
-
-\[
-Y_{st} = \alpha_s + \delta_t + \beta W^{30}_{st}
-       + \rho Y_{s,pre} + X_{st}'\gamma + \varepsilon_{st},
-\]
-
-where \(Y_{st}\) is support-mean LST, \(\alpha_s\) are support fixed effects,
-and \(\delta_t\) are overpass-date or scene fixed effects. The pre-period
-outcome and all covariates in the primary adjustment set must precede the
-exposure window or be demonstrably unaffected by watering.
-
-The adjustment set includes antecedent LST and Sentinel-2 greenness; dated tree
-density and composition; imperviousness, built form, building height/shade, and
-water proximity; acquisition sensor, quality, cloud, view, and emissivity
-information; and acquisition-day plus 7-, 14-, and 30-day weather summaries for
-temperature, humidity/dew point, precipitation, wind, radiation, and drought
-context. Time-invariant support characteristics are absorbed by support fixed
-effects. Contemporaneous greenness, which may mediate watering effects, is not
-used as a primary confounder control.
-
-The primary sample is restricted to support units and periods satisfying a
-logging-coverage rule fixed without reference to LST. Recorded-zero units are
-not assumed unwatered. No-record matching is, at most, a secondary diagnostic.
-
-## Detectability gate and diagnostics
-
-Before estimating or viewing the H2 exposure coefficient, an outcome-only
-nuisance model estimates residual LST variance and spatial covariance. Power
-simulations preserve the observed continuous-dose distribution, clustering,
-effective sample size, and plausible exposure-measurement error. Confirmatory
-H2 proceeds only when simulated power is at least 80% at two-sided
-\(\alpha=0.05\) for \(\beta=-0.03\) K per additional 1,000 recorded L/ha/30
-days and the simulated minimum detectable effect is no larger in magnitude than
-0.03 K. Failure of the gate returns the analysis to Tiers 1--2; it is not
-evidence of no physiological effect.
-
-Required diagnostics are:
-
-- usable-overpass counts, dose density, positivity, leverage, and effective
-  sample size;
-- covariate balance and common-support plots;
-- residual spatial dependence and uncertainty robust to support and date
-  clustering, using spatial block bootstrap or another justified alternative;
-- negative leads and pre-trend plots;
-- shifted-date and shifted-location placebos;
-- spillover exclusions and alternative support radii;
-- 7-/14-day timing, carryover, washout, nonlinear-dose, and influential-dose
-  sensitivities;
-- comparison of observed clear-sky weather with all summer days; and
-- missingness, sensor, cloud-mask, exposure-outlier, and timestamp-era
-  sensitivities.
-
-## Age and genus heterogeneity
-
-Age and genus are secondary effect-modification analyses at the imagery-support
-level. They do not create individual-tree temperature outcomes.
-
-Tree age at watering is local calendar year minus planting year. The preferred
-specification uses continuous age with a pre-specified spline. A categorical
-sensitivity uses exhaustive, non-overlapping bands of 0--9, 10--19, 20--39,
-40--59, 60+ years, and unknown; no exact age is dropped. Age-specific dose or a
-total-dose-by-age-composition interaction is estimated only where within-support
-variation and common support are adequate.
-
-Taxonomy is standardised from the tree inventory before modelling. Genus, not
-the sparse named-species field, is the default level. Genera are collapsed using
-a rule fixed from exposure counts and biological relevance before outcome
-inspection, with explicit `other` and `unknown` groups. Hierarchical partial
-pooling is preferred to separate unregularised coefficients. Interaction
-estimates include uncertainty intervals and multiplicity control, and are
-omitted where dose components are collinear or unsupported. Because age and
-genus covary with canopy size, location, and watering selection, estimates are
-described as heterogeneous adjusted associations.
-
-## Inputs required before Tier 2 or Tier 3
-
-- Cloud-audited Landsat 8/9 LST with acquisition timestamps, sensor metadata,
-  QA bands, native-resolution limitations, and repeated pre-period outcomes.
-- Sentinel-2 antecedent greenness/vegetation-condition observations.
-- ERA5 harmonised temporal controls and DWD station sensitivity data, including
-  precipitation and heat before each overpass.
-- Dated imperviousness, built form, shade/building height, water proximity, and
-  relevant hydrological context.
-- A complete tree-to-imagery-support crosswalk with canonical taxonomy,
-  planting year, source layer, crown diameter, height, and historical
-  eligibility diagnostics.
-- A pre-outcome logging-coverage score and, where obtainable, municipal and
-  otherwise unlogged watering information or defensible proxies.
-- A version-locked run manifest and the completed detectability record.
-
-Individual-tree or near-ground cooling claims would additionally require local
-canopy, soil, or air-temperature sensors and a design with exogenous watering
-assignment or timing.
-
-## Claim ladder
-
-1. **Data audit:** completeness, timestamp precision, linkage, sparsity, and
-   measurement limitations.
-2. **Descriptive temporal/spatial pattern:** when and where recorded care is
-   concentrated.
-3. **Event-aligned descriptive outcome:** observed LST or greenness trajectories
-   around recorded watering without an effect claim.
-4. **Qualified observational association:** adjusted support-level association
-   after the gate, with diagnostics and explicit identifying assumptions.
-5. **Quasi-experimental or causal estimate:** permitted only if watering timing
-   or dose is credibly exogenous, with supported exchangeability, positivity,
-   consistency, interference, and missing-observation assumptions.
-
-Absent a randomized or defensibly quasi-random watering schedule, Tier 3 is the
-highest warranted claim. LST is not air temperature or felt heat, a platform
-zero is not no watering, and a polished temporal map does not strengthen the
-identification design.
+LST is not air temperature or felt heat, a platform zero is not no watering,
+and a polished temporal map does not strengthen an identification design.

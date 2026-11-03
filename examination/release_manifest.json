@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7014,
-      "sha256": "5a569e6ba3273c5a8154102c4cef7f30e0a22863e29949f9ef5673d7b2a7dab6"
+      "bytes": 6503,
+      "sha256": "46d65a9bcf15cfe60aaad8a6bafca6766c5fbb33d66fa6415c611e52f28a2fa1"
     },
     {
       "path": "analysis/build_equity_notebook.py",
@@ -76,8 +76,8 @@
     },
     {
       "path": "data/README.md",
-      "bytes": 4060,
-      "sha256": "0fa0c903b3e2fcaab8dd29f87502d167d681a723abc29b7917318b4464cce53d"
+      "bytes": 4061,
+      "sha256": "3008f1329cbc559cc634c577009f5a0f36224526c9b1f23cc03085839c9cc81e"
     },
     {
       "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
@@ -211,28 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 5839,
-      "sha256": "4ce5e1504171939840cbea1c30141bf5478cd2c85f15547091d7d62bf7b236ce"
-    },
-    {
-      "path": "docs/archive/analysis_plan_august_2026.md",
-      "bytes": 13484,
-      "sha256": "0a6c75025f722d88c5f9cd9b8f270dd31f4ac926480e5f42e441ec886dd06c24"
-    },
-    {
-      "path": "docs/archive/analysis_plan_october_2026_seminar.md",
-      "bytes": 4260,
-      "sha256": "bc6fdb139a7e06e2b18bdfdca1fe5083518d82d4a08abef80896260766f2682e"
-    },
-    {
-      "path": "docs/archive/project_august_2026.toml",
-      "bytes": 4832,
-      "sha256": "9dc85513a2429ccd88260fc92ec659ad5cdd18a5c1cd3bbb10b3fa6f74327e4d"
-    },
-    {
-      "path": "docs/archive/repository_architecture_august_2026.md",
-      "bytes": 9091,
-      "sha256": "d600b83f50cf0eac4d7fdfda9ffaa3c03cac1df60d4d6effc69a5900e7f84099"
+      "bytes": 5711,
+      "sha256": "e26fcec2980684278ac97f1ad61fadfca2987827fad659ff797c9b720f5ab6fe"
     },
     {
       "path": "docs/project_update_2026_11_02.md",
@@ -251,13 +231,13 @@
     },
     {
       "path": "docs/related_literature.md",
-      "bytes": 17500,
-      "sha256": "93160898cb2d6e860482f2c0594385ae3a60becd2c882b8c1caa26d9ca336224"
+      "bytes": 16734,
+      "sha256": "479ae6095e94c509e1d9644f34ff4ba555996ba12c521491a816439945592a10"
     },
     {
       "path": "docs/repository_architecture.md",
-      "bytes": 2610,
-      "sha256": "da935a1c39f850e46057f80f37619fbddfc13e913920697ab2aff35b7fca1f00"
+      "bytes": 2543,
+      "sha256": "ae6b5bfe454142c24c9b7b6d396aff7d4bf195eba4691a9f56d382c25ae2093a"
     },
     {
       "path": "docs/rq1_daily_exploratory_protocol.md",
@@ -271,8 +251,8 @@
     },
     {
       "path": "docs/temporal_analysis_protocol.md",
-      "bytes": 19833,
-      "sha256": "19f585ba926dd4afaa06184f87d17ab3b4285ec0f3b31f8dc593a2f8c1c371bb"
+      "bytes": 9355,
+      "sha256": "afdca8f73ad049ff497a7dc0ffed5bdd961e92dd1636da381a50bfb596e6f40e"
     },
     {
       "path": "docs/watering_response_exploratory_protocol.md",
@@ -300,14 +280,29 @@
       "sha256": "f002cddd3d9fba4553e2666c55df84e298f483cd69073c2efa2d3a13ba0fd956"
     },
     {
+      "path": "examination/Berlin_Examination_Brief_October_2026.pdf",
+      "bytes": 112477,
+      "sha256": "e6eeccd6849d96a717281f4cd81abd6fb5e59b93a84e823b2548fff83a3b5c00"
+    },
+    {
       "path": "examination/README.md",
-      "bytes": 3369,
-      "sha256": "0d6b1aa17e3748566e11cac9d399f27ee49db3706bea776146d721c5bcbe0a37"
+      "bytes": 3727,
+      "sha256": "718c8ffeef02c44db33dce9e88f552fa4fed86915ec5d8f18b40e02f8caf80e5"
+    },
+    {
+      "path": "examination/analysis_plan_october_2026.md",
+      "bytes": 4071,
+      "sha256": "73ade54fc972b999ffcbeaaf60121d6dde5f3916481f7352df64c7ad481fe68b"
+    },
+    {
+      "path": "examination/atlas/Berlin_Map_Atlas_October_2026.pdf",
+      "bytes": 17165211,
+      "sha256": "f19dc0a23af3e9efbfa148e30c2a03250e334a65dee32cec76568973c4d977ff"
     },
     {
       "path": "examination/atlas/README.md",
-      "bytes": 10189,
-      "sha256": "759e38c569672c585492a4d76f974b42998efe79e64c100885ebd4d23c5b40e6"
+      "bytes": 10172,
+      "sha256": "e40535f511445a3a2e81e862023571ab473080502b300c6aa7b3a84c713b2f7a"
     },
     {
       "path": "examination/atlas/catalogue.csv",
@@ -341,8 +336,8 @@
     },
     {
       "path": "examination/proposal/README.md",
-      "bytes": 3672,
-      "sha256": "ad2812b07adbec69df5b5648c34c8f8ad90858a3fa7d91ec9f5e7e038e656c1e"
+      "bytes": 3607,
+      "sha256": "67c39767943734e3b1b01e2666a91a25a872382f3c88601ccd60b2196034ca66"
     },
     {
       "path": "examination/proposal/Seminar_Slides_October_2026.key",
@@ -361,8 +356,8 @@
     },
     {
       "path": "examination/reproducibility.md",
-      "bytes": 5128,
-      "sha256": "4f09ca4573ffa1e627ee1380ccf3daf8a61be12134bfc081c3740ebb13f49cba"
+      "bytes": 4852,
+      "sha256": "5a2239a4d930aced16cf383bb865302a5190776f6b85065321ab173174be2b9d"
     },
     {
       "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",
@@ -650,16 +645,6 @@
       "sha256": "4258d6048f554d6c8c090459ecc92aca77d7c799ce863c68ddc5450859003110"
     },
     {
-      "path": "output/pdf/Berlin_Examination_Brief_October_2026.pdf",
-      "bytes": 112477,
-      "sha256": "e6eeccd6849d96a717281f4cd81abd6fb5e59b93a84e823b2548fff83a3b5c00"
-    },
-    {
-      "path": "output/pdf/Berlin_Map_Atlas_October_2026.pdf",
-      "bytes": 17165211,
-      "sha256": "f19dc0a23af3e9efbfa148e30c2a03250e334a65dee32cec76568973c4d977ff"
-    },
-    {
       "path": "output/rq1_daily/annual_associations.png",
       "bytes": 65068,
       "sha256": "517a30dd61002298d56d001fac219f5b25708f524e1f28d33c1629c03a119f3c"
@@ -667,7 +652,7 @@
     {
       "path": "output/rq1_daily/metadata.json",
       "bytes": 3134,
-      "sha256": "b72c33f8fb4cc3ef3ebf05198cd2e58287e04b4f369811f40d2bdf646f58a2f4"
+      "sha256": "fc054903852ae85ff999f89bdff7cd668cb09033f16e3911be369f079b8c98b5"
     },
     {
       "path": "output/rq1_daily/model_audit.json",
@@ -930,41 +915,6 @@
       "sha256": "3ddd8a5a9070553abc20ae67722558fcb4a020003fcf68e5fdc3a8e7af46f2ea"
     },
     {
-      "path": "pillars/00_foundation/README.md",
-      "bytes": 2028,
-      "sha256": "84e72e6606346d2e004b301db35649ff77db072077bfaa6e26abb2f692ec6ca5"
-    },
-    {
-      "path": "pillars/01_heat_dynamics/README.md",
-      "bytes": 2135,
-      "sha256": "522d808f377e34e97c46def8e07129f81cbef06215c801dbdd596c01aad644ba"
-    },
-    {
-      "path": "pillars/02_canopy_cooling_drought/README.md",
-      "bytes": 1558,
-      "sha256": "f21936f79a7940877918768924e069dae58625a92ea0d230b64c658ce617f15b"
-    },
-    {
-      "path": "pillars/03_citizen_water_intervention/README.md",
-      "bytes": 2748,
-      "sha256": "dd4e95aec1abd44bf7d4b13460aa109009c64be7d359171207fca1847006d286"
-    },
-    {
-      "path": "pillars/04_spatial_justice_vulnerability/README.md",
-      "bytes": 2794,
-      "sha256": "fa861d62be24786063489469cb6dbc538cf913f80680e86dbd9d8bcf77cdf07a"
-    },
-    {
-      "path": "pillars/05_policy_economics/README.md",
-      "bytes": 1111,
-      "sha256": "7f3cf779b9417ca8a4b93df57e92863f73bbcbffa5661b0246db59ecb43f9ea5"
-    },
-    {
-      "path": "pillars/99_synthesis/README.md",
-      "bytes": 2286,
-      "sha256": "00de8de2c20e4baeedbd34c555d75c180220434f8f5801904f1442f806a74418"
-    },
-    {
       "path": "pipelines/03_build_lor_month_panel.py",
       "bytes": 1101,
       "sha256": "316a50933b966107ac33616fd4c2df686f3fb0a87fe234339100f697cb6b5a2d"
@@ -1130,34 +1080,14 @@
       "sha256": "bf0f506b2c802338370209afa942591efb2c3e59e43c41c92cc48f05fcf555e1"
     },
     {
-      "path": "tools/apply_latest_feedback_to_proposal.py",
-      "bytes": 13399,
-      "sha256": "b271e89985415f0bd5b21d62a44814baac2195a216be362efb64572d924e41aa"
-    },
-    {
-      "path": "tools/apply_supervisor_feedback_minimal.py",
-      "bytes": 22236,
-      "sha256": "23288e0b73a77bee3aea4b9530853c55c474981b832dc3648b75ffc0ffbb1ecb"
-    },
-    {
       "path": "tools/build_examination.py",
-      "bytes": 33676,
-      "sha256": "276d2db21fc5931ad96e6f0934aae60f06a2030cc38aab88712cdeb64c4a42e4"
-    },
-    {
-      "path": "tools/build_feedback_integrated_proposal.py",
-      "bytes": 56742,
-      "sha256": "9056827a294cedca04898f724a9b464c04d7983e35676ab12553e0c44de27b77"
+      "bytes": 33661,
+      "sha256": "64ec14f85934191bed883220f4608e7ecea3e92d2106c1f8528f0685ef77f38c"
     },
     {
       "path": "tools/restore_tree_inventory.py",
       "bytes": 1842,
       "sha256": "61a4d29d228332803e68976461dc01b3592fc53b0f121ecca9b2d46252692572"
-    },
-    {
-      "path": "tools/revise_proposal_must_cites.py",
-      "bytes": 9745,
-      "sha256": "1bd8872d8e0222c77dfdb2693ea52815bf5e5c8dc8529ee276a5093a83879d58"
     },
     {
       "path": "tools/verify_examination.py",

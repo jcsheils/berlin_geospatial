@@ -1,32 +1,24 @@
-> **October 2026 scope update:** historical design context is retained below. The active design is the October proposal: Part II civic heat response (core), Part I vegetation cooling loss (supporting), and Part III allocation (exploratory). See `docs/analysis_plan.md` and `examination/README.md`. Existing descriptive products remain valid within their stated limits.
-
 # Related Literature and Project Differentiation
 
 ## Scope used for this review
 
-This memo now follows the feedback-incorporated three-part thesis design while
-distinguishing it from work that is already implemented. The current design is:
+This memo positions the thesis as defined by the
+[refined October 2026 proposal](proposal/Proposal_Refined_October_2026.pdf):
 
-- Part I: Landsat LST, Sentinel-2 vegetation greenness, built form, and
-  temporal drought;
-- Part II: a detectability-gated cumulative recorded-watering/LST association;
-- Part III: the guaranteed multi-scale spatial-equity and vulnerability core.
+- Part I (supporting): drought-related vegetation cooling loss from Landsat
+  LST, vegetation and built-form data;
+- Part II (core): RQ1 civic climate response, RQ2 vulnerability and resource
+  inequality, and RQ3 the added spatial information in logged care;
+- Part III (exploratory): RQ4 allocation consequences of need-only and
+  civic-informed rules.
 
-The repository currently implements:
-
-- 58,474 deduplicated citizen-watering events from May 2020-December 2025;
-- tree-level linkage to Berlin's tree cadastre;
-- inventory-normalized watering reach and intensity;
-- analysis at 542 LOR Planungsräume rather than only 12 districts;
-- global and local Moran analysis of watering reach;
-- comparison with MSS 2025 social indicators and the Berlin Environmental
-  Justice Atlas 2023/24;
-- identification of neighbourhoods with high need relative to recorded
-  watering.
-
-The implemented analysis is descriptive. Part II, if adequately powered, is
-planned as a qualified observational association rather than a promised causal
-effect. The project does not observe municipal or unlogged private watering.
+The repository currently implements tree-linked Gieß den Kiez logs for May
+2020–December 2025 at 542 LOR Planungsräume, global and local Moran analysis
+of watering reach, comparison with MSS 2025 social indicators and the Berlin
+Environmental Justice Atlas 2023/24, exploratory monthly weather associations
+and the RQ1 daily pilot. The implemented analysis is descriptive. The project
+does not observe municipal or unlogged private watering, and individual
+watering-induced satellite cooling is outside the active design.
 
 ## Five must-cites plus Egerer
 
@@ -38,14 +30,14 @@ effect. The project does not observe municipal or unlogged private watering.
    irrigation mechanism that motivates the drought and water hypotheses.
 3. **Baró et al. (2019),**
    https://doi.org/10.1016/j.envsci.2019.08.016 — the distributional-
-   environmental-justice anchor for street-tree benefits; Part III shifts the
+   environmental-justice anchor for street-tree benefits; RQ2 shifts the
    outcome from benefit stocks to recorded care flows.
 4. **Moskell et al. (2016),** https://doi.org/10.48044/jauf.2016.027 — the
    closest empirical precedent on resident street-tree watering and
    participation selection.
 5. **Lachmund (2022),** https://doi.org/10.1177/23996544211070204 — the key
    Berlin-specific account of civic stewardship and citizenship around tree
-   pits, grounding Part III's interpretation of recorded care.
+   pits, grounding the interpretation of recorded care.
 
 Egerer et al. (2024) is the sixth retained reference and the strongest
 platform-specific source
@@ -138,7 +130,7 @@ must-cites for spatial cross-validation and MAUP, respectively.
    a potential mechanism behind unequal realized benefits: the geography of
    volunteer maintenance effort.
 
-### New Part I method paper
+### Part I method paper
 
 **Su, Y., Makowski, D., Zhang, X., et al. (2026).** A remote sensing-based
 assessment of the cooling effects of urban trees in European cities.
@@ -147,8 +139,7 @@ https://doi.org/10.1038/s42949-026-00399-w
 
 This new paper analyses mixed 100 m by 100 m urban units rather than only
 homogeneous tree-covered and impervious surfaces. Its support-aware LST design
-is particularly relevant to Part I and to the Part II dilution calculation,
-although it does not study citizen watering or Berlin specifically.
+is particularly relevant to Part I, although it does not study citizen watering or Berlin specifically.
 
 ### Distributional environmental justice
 
@@ -270,7 +261,7 @@ that could have been watered, and compared with both social vulnerability and
 environmental burden.
 
 The following preliminary, descriptive differentiators are
-hypothesis-generating rather than independent confirmation of H3:
+hypothesis-generating rather than confirmatory:
 
 - **Observed action rather than environmental stock.** The outcome is logged
   watering behaviour, not canopy cover, greenness, or modelled ecosystem
@@ -313,7 +304,7 @@ watering by the local tree inventory, testing its spatial clustering across 542
 Planungsräume, and comparing the resulting patterns with official social and
 environmental-justice indicators.
 
-## Claims that should be revised in the proposal
+## Claim and citation checks
 
 - Do not claim that the current analysis estimates the causal cooling effect of
   citizen watering. The implemented results are descriptive.
@@ -325,8 +316,5 @@ environmental-justice indicators.
   appears in published Berlin stewardship literature. A narrower claim is more
   defensible: **a citywide, multi-year, inventory-normalized spatial equity
   analysis of the public watering logs**.
-- The proposal's "Yang et al. (2024)" global tree-cooling citation should be
-  replaced by McDonald et al. (2026), DOI
-  `10.1038/s41467-026-71825-x`.
 - The Berlin heat-mortality reference should begin with Schuster, not Burkart:
   Schuster, Burkart, and Lakes (2014).

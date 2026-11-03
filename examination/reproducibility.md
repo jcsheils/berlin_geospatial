@@ -70,7 +70,7 @@ After a deliberate documentation-only change, refresh the exact-file manifest wi
 
 The included workbook is directly readable in Excel or LibreOffice. It is a frozen presentation copy, not a pipeline output, and is not rebuilt by the Python scientific pipeline. All underlying analysis tables and JSON workbook inputs are included independently.
 
-`tools/apply_*proposal*.py`, `tools/revise_proposal_must_cites.py` and `tools/build_feedback_integrated_proposal.py` are historical August authoring utilities. They do not rebuild the October proposal and may require local feedback files. Do not use them for this submission. The portable verification suite does not require private files from Downloads.
+The portable verification suite does not require private files from Downloads.
 
 ## What is not reproduced
 

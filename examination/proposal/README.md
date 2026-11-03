@@ -4,9 +4,9 @@ The authoritative proposal for this package is [Proposal_October_2026.pdf](Propo
 
 ## Version precedence
 
-1. **October 2026:** daily civic heat response is the core study; vegetation cooling loss is supporting work; allocation is exploratory. A satellite test of the temperature effect of citizen watering is not attempted.
-2. **29 September 2026:** the monthly exploratory response protocol and report provide implemented preliminary evidence.
-3. **August 2026:** older proposal documents, slide builders, and workstream notes describe a different design, including a conditional watering-to-LST detectability gate. They are historical background, not the current approval request.
+1. **26 October 2026:** the [refined proposal](../../docs/proposal/Proposal_Refined_October_2026.pdf) supersedes this package's proposal and now governs the thesis.
+2. **October 2026 seminar:** daily civic heat response is the core study; vegetation cooling loss is supporting work; allocation is exploratory. A satellite test of the temperature effect of citizen watering is not attempted.
+3. **29 September 2026:** the monthly exploratory response protocol and report provide implemented preliminary evidence.
 
 ## Qualifications to read with the supplied proposal
 

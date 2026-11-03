@@ -2,7 +2,7 @@
 
 Prepared 17 October 2026. Twelve existing analytical map plates, reproduced without changing their values or classifications.
 
-[Download the PDF atlas](../../output/pdf/Berlin_Map_Atlas_October_2026.pdf) · [Machine-readable catalogue](catalogue.csv) · [Interactive LOR map](../../output/spatial/maps/lor_watering_interactive.html)
+[Download the PDF atlas](Berlin_Map_Atlas_October_2026.pdf) · [Machine-readable catalogue](catalogue.csv) · [Interactive LOR map](../../output/spatial/maps/lor_watering_interactive.html)
 
 The PDF uses large pages to preserve small-multiple maps; zoom for labels or open the original PNG. For each plate, the source table and builder are linked below. Geometry is analysed in EPSG:25833; the web map displays EPSG:4326. LOR geometry: Amt für Statistik Berlin-Brandenburg, CC BY 3.0 DE. See [source attribution](../../data/spatial/README.md) and the [tree inventory note](../../data/raw/tree_inventory/README.md).
 

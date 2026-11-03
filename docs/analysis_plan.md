@@ -1,10 +1,9 @@
 # Active analysis plan — refined proposal, 26 October 2026
 
 The [refined October proposal](proposal/Proposal_Refined_October_2026.pdf)
-governs new analyses. The frozen [seminar proposal](../examination/proposal/Proposal_October_2026.pdf),
-[seminar analysis plan](archive/analysis_plan_october_2026_seminar.md) and September
-reports document earlier work; their RQ numbering and sampling commitments are
-superseded. The refined proposal has four questions, with Part II as the core.
+governs new analyses. The [seminar package](../examination/README.md) documents
+earlier work; its RQ numbering and sampling commitments are superseded. The
+refined proposal has four questions, with Part II as the core.
 
 | Question | Evidence sought | Current status and next step |
 | --- | --- | --- |

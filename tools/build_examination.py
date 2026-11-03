@@ -24,7 +24,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 
 ROOT = Path(__file__).resolve().parents[1]
 EXAM = ROOT / "examination"
-PDF = ROOT / "output/pdf"
+ATLAS = EXAM / "atlas"
 DATE = "17 October 2026"
 
 
@@ -83,7 +83,7 @@ def write_catalogue(records):
     with (folder/"catalogue.csv").open("w",newline="",encoding="utf-8") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(records[0]));writer.writeheader();writer.writerows(records)
     text=["# Atlas of maps produced so far\n",f"Prepared {DATE}. Twelve existing analytical map plates, reproduced without changing their values or classifications.\n",
-          "[Download the PDF atlas](../../output/pdf/Berlin_Map_Atlas_October_2026.pdf) · [Machine-readable catalogue](catalogue.csv) · [Interactive LOR map](../../output/spatial/maps/lor_watering_interactive.html)\n",
+          "[Download the PDF atlas](Berlin_Map_Atlas_October_2026.pdf) · [Machine-readable catalogue](catalogue.csv) · [Interactive LOR map](../../output/spatial/maps/lor_watering_interactive.html)\n",
           "The PDF uses large pages to preserve small-multiple maps; zoom for labels or open the original PNG. For each plate, the source table and builder are linked below. Geometry is analysed in EPSG:25833; the web map displays EPSG:4326. LOR geometry: Amt für Statistik Berlin-Brandenburg, CC BY 3.0 DE. See [source attribution](../../data/spatial/README.md) and the [tree inventory note](../../data/raw/tree_inventory/README.md).\n",
           "The atlas covers saved analytical maps in `output/`. Earlier slide-only colour mockups and duplicated presentation images are not separate analytical results. Supporting charts remain in the [results guide](../preliminary_results.md). Cooling-loss maps, daily response slopes with uncertainty, and allocation rankings are planned.\n"]
     for r in records:
@@ -189,7 +189,7 @@ def build_brief(f):
     s=f['same'];p=f['previous']
     story += [para('Weather response and source limits','TitleExam'),para(f"The same-month event association is {float(s['coefficient_log1p']):.3f} log(1 + events) units per +5 degrees C, with approximate 95% interval [{float(s['approx_95_low']):.3f}, {float(s['approx_95_high']):.3f}]. The previous-month estimate is {float(p['coefficient_log1p']):.3f} [{float(p['approx_95_low']):.3f}, {float(p['approx_95_high']):.3f}]. These are exploratory monthly associations, not daily response slopes or causal effects."),Image(str(ROOT/'output/watering_response/figures/03_weather_associations.png'),width=width,height=width*848/1920),Spacer(1,8),para('The model jointly includes temperature and rainfall with calendar-month and year adjustment. It uses 58 of 60 months in 2021-2025; June and October 2023 lack complete rainfall. HAC(3) uncertainty preserves calendar gaps. Intervals are not multiplicity-adjusted.','SmallExam'),para('Two temperature measurements','HeadExam'),para('DWD Berlin-Tempelhof provides shared station air-temperature context. The supplied monthly Ortsteil file describes surface temperature, with different support and unresolved processing. These measurements are not interchangeable.'),para('The Ortsteil extension has 6,596 area-months and 93 provisionally comparable areas. Of 9,312 source rows, 1,811 have missing LST. Buckow components and changed boundaries require resolution. Scene dates, cloud filtering, compositing, rainfall provenance and count semantics were not supplied.'),para('The next-month litres/LST residual correlation changes sign under sensitivity checks (-0.024 overall seasonal sample, +0.005 without 2022, +0.075 over all months). It provides no stable descriptive cooling pattern and does not validate a causal mechanism.'),para('Sources: output/watering_response/report.html; tables/monthly_adjusted_associations.csv; ortsteil/tables/provisional_pooled_correlations.csv. The report supplies all exploratory specifications, not only selected associations.','SmallExam'),PageBreak()]
     story += [para('Feasibility and next decisions','TitleExam'),para('The October proposal sets a six-month programme, relative to an agreed thesis start. Prioritise the core behavioural study, then the supporting physical analysis, then the exploratory decision layer.'),grid([['Period','Planned output or decision'],['Month 1','Literature and data audit; source requests; offsets and participation proxies; prospective registration with prior exploration disclosed'],['Months 1-2','Balanced behavioural area-day panel and satellite/vegetation panel'],['Months 2-4','Core response model, participation explanations and temporal stability'],['Months 3-4','Cooling-loss model; end-Month-4 decision on full versus descriptive allocation analysis'],['Month 5','Validated prediction and allocation comparison if feasible'],['Month 6','Bridge test where both layers exist, scale checks, writing and code release']],[105,width-105]),Spacer(1,12),para('Issues to resolve before substantive inference','HeadExam'),para('Build historical young-tree denominators and observed zero days; complete daily weather, calendar and participation controls; clarify the supplied LST extraction; disclose already-inspected outcomes in any registration; validate prediction and calibration before ranking areas.'),para('Source access and reproducibility','HeadExam'),para('The package provides hashes, CSV schemas, source attribution, a tree-inventory restore command, and tests. The supplied monthly LST and legacy borough inputs have unresolved provenance or licence metadata. Proposed satellite, vegetation-height, population-age, turnout and other control layers are not presented as already available.'),para('Read examination/README.md for the entry point, examination/reproducibility.md for ordered commands, and examination/validation.md for the actual verification performed. The supplied proposal is preserved unchanged and has a separate qualification note.','SmallExam'),para('This evidence supports an early feasibility review. It does not certify institutional approval or completion of the planned models.','SmallExam')]
-    doc=SimpleDocTemplate(str(PDF/'Berlin_Examination_Brief_October_2026.pdf'),pagesize=A4,rightMargin=45,leftMargin=45,topMargin=45,bottomMargin=44,title='Berlin citizen watering - examination brief',author='Joseph Carpenter Sheils')
+    doc=SimpleDocTemplate(str(EXAM/'Berlin_Examination_Brief_October_2026.pdf'),pagesize=A4,rightMargin=45,leftMargin=45,topMargin=45,bottomMargin=44,title='Berlin citizen watering - examination brief',author='Joseph Carpenter Sheils')
     doc.build(story,onFirstPage=pdf_footer,onLaterPages=pdf_footer)
 
 
@@ -198,7 +198,7 @@ def cparagraph(c,text,x,y,width,style='BodyExam'):
 
 
 def build_atlas(records):
-    w,h=landscape(A3);c=canvas.Canvas(str(PDF/'Berlin_Map_Atlas_October_2026.pdf'),pagesize=(w,h),invariant=1)
+    w,h=landscape(A3);c=canvas.Canvas(str(ATLAS/'Berlin_Map_Atlas_October_2026.pdf'),pagesize=(w,h),invariant=1)
     c.setTitle('Berlin recorded citizen watering - map atlas, October 2026');c.setAuthor('Joseph Carpenter Sheils')
     cparagraph(c,'Berlin citizen watering<br/>Atlas of preliminary maps',48,h-55,w-96,'TitleExam')
     cparagraph(c,'Master\'s Seminar examination | Joseph Carpenter Sheils | '+DATE,48,h-142,w-96)
@@ -288,7 +288,7 @@ if __name__=='__main__':
     parser.add_argument('--manifest-only',action='store_true',help='Refresh exact-file manifest after documentation or validation changes')
     args=parser.parse_args()
     if not args.manifest_only:
-        PDF.mkdir(exist_ok=True);EXAM.mkdir(exist_ok=True)
+        EXAM.mkdir(exist_ok=True);ATLAS.mkdir(exist_ok=True)
         f=facts();maps=catalogue();write_results(f);write_catalogue(maps);build_atlas(maps);build_brief(f)
         print(f'Built {len(maps)} map plates, examination brief and results; inventoried {inventories()} data files.')
     print(f'Release manifest: {release_manifest()} files.')

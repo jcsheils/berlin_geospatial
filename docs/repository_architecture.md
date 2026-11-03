@@ -1,6 +1,6 @@
 # Repository architecture
 
-The repository keeps original analysis locations stable and adds an examiner-facing entry point in `examination/`. The active research scope is defined by the October proposal and `config/project.toml`. The [August architecture](archive/repository_architecture_august_2026.md) is retained for history.
+The repository keeps original analysis locations stable. The active research scope is defined by the [refined proposal](proposal/Proposal_Refined_October_2026.pdf) and `config/project.toml`. Everything from the October 2026 seminar examination is in `examination/`.
 
 ## Source and product flow
 
@@ -18,6 +18,6 @@ All analysis paths resolve from the repository root. Source files remain unchang
 
 `data/raw/tree_inventory/` holds the frozen compressed input and restoration manifest. The decompressed `data/Berlin_trees.gpkg` is ignored. `examination/data_inventory.csv` records files, sizes, hashes and row counts; `config/datasets.toml` records logical datasets and prospective inputs. A missing planned input must never be labelled available merely because a related aggregate exists.
 
-`output/03_spatial_equity_vulnerability/` and `pillars/` retain historical names. The former contains valid descriptive temporal products; it does not mean the October allocation study is complete. Earlier Office drafts and local QA renders are excluded from publication in favour of the canonical examination copies.
+`output/03_spatial_equity_vulnerability/` retains an earlier name. It contains valid descriptive temporal products; it does not mean the allocation study is complete. Earlier Office drafts and local QA renders are excluded from publication in favour of the canonical examination copies.
 
 Existing rebuilds may change timestamps or container-level GeoPackage bytes. Reproduction should compare scientific tables and audits; the release manifest instead verifies the exact packaged snapshot before rebuilding.

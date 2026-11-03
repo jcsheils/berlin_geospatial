@@ -20,7 +20,7 @@ The package includes all existing analysis input datasets and saved tabular/geos
 - `../output/exploratory/`: original source audits and district/tree summaries.
 - `../output/spatial/`: LOR metrics, spatial-join audit, Moran results and enriched polygons.
 - `../output/equity/`: social/environmental joins, associations, screening candidates and enriched polygons.
-- `../output/03_spatial_equity_vulnerability/`: descriptive temporal atlas and duplicate presentation tables; the folder name reflects the August design.
+- `../output/03_spatial_equity_vulnerability/`: descriptive temporal atlas and duplicate presentation tables; the folder name predates the current design.
 - `../output/watering_response/`: monthly station-weather associations and the separately qualified Ortsteil-LST extension.
 
 Derived files inherit source-specific attribution and any unresolved source restrictions. No blanket open-data licence is assigned to all contents. Source licence statements above are metadata, not a legal assessment; the supplied and legacy data require provenance clarification before downstream redistribution under an open licence.

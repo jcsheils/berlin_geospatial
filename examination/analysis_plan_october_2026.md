@@ -1,8 +1,8 @@
-> Historical seminar plan, superseded on 26 October 2026 by [the active plan](../analysis_plan.md). RQ numbering below is retained as historical context.
+> Seminar analysis plan of October 2026, superseded on 26 October 2026 by [the active plan](../docs/analysis_plan.md). Its RQ numbering follows the seminar proposal.
 
-# Active analysis plan — October 2026
+# Seminar analysis plan — October 2026
 
-The [October proposal](../../examination/proposal/Proposal_October_2026.pdf) is authoritative. Read its [qualifications](../../examination/proposal/README.md) alongside it. The [August plan](analysis_plan_august_2026.md) is retained as historical context; its conditional watering-to-LST gate is not an active requirement.
+The [seminar proposal](proposal/Proposal_October_2026.pdf) governed this plan. Read its [qualifications](proposal/README.md) alongside it.
 
 ## Part II — Daily civic heat response (core)
 
@@ -28,4 +28,4 @@ This is a normative decision-support comparison, not a causal effect or an optim
 
 The H4 bridge relates posterior civic-response slopes to cooling-loss estimates only when both exist. Keep behaviour and need as separate layers; giving less public service to places because residents volunteer requires an explicit policy justification.
 
-Prioritise Part II, then supporting Part I, then exploratory Part III. The [readiness assessment](../../examination/readiness.md) records missing inputs, decisions and the six-month schedule. No current output estimates causal cooling, heat-mortality effects, or an economically optimal allocation.
+Prioritise Part II, then supporting Part I, then exploratory Part III. The [readiness assessment](readiness.md) records missing inputs, decisions and the six-month schedule. No current output estimates causal cooling, heat-mortality effects, or an economically optimal allocation.
