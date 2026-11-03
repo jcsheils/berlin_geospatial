@@ -21,7 +21,7 @@ PYTHONPATH=src python -m unittest tests.test_rq1_daily -v
 
 Open the [launch guide](earth_engine/README.md), copy the complete [generated script](earth_engine/berlin_atlas_demo.js) into the [Earth Engine Code Editor](https://code.earthengine.google.com/), and press **Run** with an Earth Engine enabled account and Cloud project. The script embeds the project aggregates so only a copy-paste lets you see the atlas + layer.
 
-Explore monthly watering across 542 neighbourhoods, click for area histories, compare social context, and inspect live Landsat surface temperature alongside valid-scene coverage. A separate daily RQ1 chart shows citywide events and station air temperature. Data totals and JavaScript syntax are checked; authenticated Earth Engine execution and App publication remain pending. The atlas is descriptive and does not estimate neighbourhood response slopes or allocation priorities.
+Explore monthly watering across 542 neighbourhoods, click for area histories, compare social context, and inspect live Landsat surface temperature alongside valid-scene coverage. A separate daily RQ1 chart shows citywide events and station air temperature. 
 
 ## Start here
 
