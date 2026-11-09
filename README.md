@@ -3,9 +3,9 @@
 **Weather Responses and Neighborhood Variation**
 Joseph Carpenter Sheils · Saarland University · M.Sc. Data Science and Artificial Intelligence
 
-This repository supports a thesis on logged citizen tree watering, climate responses, vulnerability and municipal irrigation priorities in Berlin. 
+This repository supports a thesis on citizen tree watering in Berlin as co-produced climate adaptation: its response to drought, the public levers that steer it, the trees and neighbourhoods it reaches, and its outcomes for young street trees.
 
-**latest update — 2 November 2026:** [Project status](docs/project_update_2026_11_02.md) · [Earth Engine demo atlas](earth_engine/README.md) · [RQ1 daily results](output/rq1_daily/report.md) · [active analysis plan](docs/analysis_plan.md).
+**latest update — 9 November 2026:** [Revised research questions](docs/revised_research_design_2026_11.md) · [policy-relevance memo](docs/policy_feedback_2026_11.md) · [active analysis plan](docs/analysis_plan.md) · [RQ1 daily results](output/rq1_daily/report.md) · [Earth Engine demo atlas](earth_engine/README.md).
 
 The initial daily event study contains **569,642 planning-area-days**, covering **55,634 linked April–September events** across 2020–2025. Citywide exploratory models find positive temperature/dry-spell associations and negative rainfall associations after calendar adjustment. Initial exploration includes linear regression analysis of log(1+watering_events) to weather and calender features.
 
@@ -28,8 +28,8 @@ Explore monthly watering across 542 neighbourhoods, click for area histories, co
 | Material | Open |
 | --- | --- |
 | Proposal | [Refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf) · [version notes](docs/proposal/README.md) |
-| Plan and methods | [Active analysis plan](docs/analysis_plan.md) · [RQ1 daily protocol](docs/rq1_daily_exploratory_protocol.md) · [literature context](docs/related_literature.md) |
-| Latest results | [RQ1 daily results](output/rq1_daily/report.md) · [project status, 2 November 2026](docs/project_update_2026_11_02.md) |
+| Plan and methods | [Active analysis plan](docs/analysis_plan.md) · [revised research questions](docs/revised_research_design_2026_11.md) · [RQ1 daily protocol](docs/rq1_daily_exploratory_protocol.md) · [literature context](docs/related_literature.md) |
+| Latest results | [Policy-relevance benchmarks](docs/policy_feedback_2026_11.md) · [RQ1 daily results](output/rq1_daily/report.md) · [project status, 2 November 2026](docs/project_update_2026_11_02.md) |
 | Earlier exploratory results | [Monthly weather report](output/watering_response/report.html) · [map catalogue with previews](examination/atlas/README.md) · [interactive LOR map](output/spatial/maps/lor_watering_interactive.html) |
 | Data and provenance | [Data guide](data/README.md) · [checksummed inventory](examination/data_inventory.csv) · [dictionary](examination/data_dictionary.md) |
 | Reproduction | [Reproduction guide](examination/reproducibility.md) · [validation record](examination/validation.md) |
@@ -39,9 +39,15 @@ Download HTML files to view their rendered reports. The interactive map also req
 
 ## Current scope
 
-The **[refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf)** governs active work. **Part II is the core study**: RQ1 climate response, RQ2 vulnerability/resource inequality and RQ3 additional spatial information. Part I supplies environmental context. Part III examines RQ4 allocation consequences. The [seminar package](examination/README.md) keeps the earlier proposal and its RQ numbering.
+The **[active analysis plan](docs/analysis_plan.md)** governs active work. It applies the [refined October 2026 proposal](docs/proposal/Proposal_Refined_October_2026.pdf) as amended by the [November 2026 revision](docs/revised_research_design_2026_11.md), which evaluates citizen watering as co-produced climate adaptation. The four questions are:
+- RQ1: civic drought response;
+- RQ2: public levers (street pumps, municipal-care age limits) and reach;
+- RQ3: survival and condition of young street trees;
+- RQ4: policy scenarios for scaling, targeting and funding.
 
-Implemented work is at a preliminary and descriptive stage. The canonical all-month May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 Berlin planning areas and 68 months**. The daily RQ1 initial study uses an April–September subset. Existing results demonstrate seasonality, spatial clustering, social/environmental differences and exploratory monthly and daily weather associations. They do not establish causal cooling, daily neighbourhood response slopes, or a validated allocation model.
+Part I's cooling evidence supports the scenarios. The [seminar package](examination/README.md) keeps the earlier proposal and its RQ numbering.
+
+Implemented work is at a preliminary and descriptive stage. The canonical all-month May 2020–December 2025 panel has **57,786 linked events, 11,127 distinct trees and 2,249,502 recorded litres**, covering **542 Berlin planning areas and 68 months**. The daily RQ1 initial study uses an April–September subset. Existing results demonstrate seasonality, spatial clustering, social/environmental differences and exploratory monthly and daily weather associations. They do not establish causal cooling, effects on tree survival or condition, daily neighbourhood response slopes, or a validated allocation model.
 
 ## Verify a checkout
 
@@ -62,7 +68,7 @@ See the [reproduction guide](examination/reproducibility.md) for the ordered reb
 
 ## Repository layout
 
-- `docs/`: refined proposal, active analysis plan, protocols and literature context.
+- `docs/`: refined proposal, revised research design, active analysis plan, policy-relevance memo, protocols and literature context.
 - `examination/`: the October 2026 seminar package (proposal, slides, plan, brief, atlas, preliminary results), plus the data inventories and validation record.
 - `data/`: available source snapshots and processed shared panels.
 - `output/`: executed notebooks, figures, tables, geospatial products and reports.

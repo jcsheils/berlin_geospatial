@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6503,
-      "sha256": "46d65a9bcf15cfe60aaad8a6bafca6766c5fbb33d66fa6415c611e52f28a2fa1"
+      "bytes": 6472,
+      "sha256": "accedb2ae156984ee0de55c6218ac4c3353af18b36dc146d33c966a3bdc9b289"
     },
     {
       "path": "analysis/build_equity_notebook.py",
@@ -211,8 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 5711,
-      "sha256": "e26fcec2980684278ac97f1ad61fadfca2987827fad659ff797c9b720f5ab6fe"
+      "bytes": 10968,
+      "sha256": "44037b57e9cdf842ea972930d57c51b91f6a0c309b90c151069fa0c454ab7134"
     },
     {
       "path": "docs/project_update_2026_11_02.md",
@@ -231,8 +231,8 @@
     },
     {
       "path": "docs/related_literature.md",
-      "bytes": 16734,
-      "sha256": "479ae6095e94c509e1d9644f34ff4ba555996ba12c521491a816439945592a10"
+      "bytes": 17139,
+      "sha256": "4018a70ce521b3f8d0871c821c87cceea77938f01fa057c1bb7d2b20c561dcd4"
     },
     {
       "path": "docs/repository_architecture.md",

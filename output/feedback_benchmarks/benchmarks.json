@@ -1,0 +1,449 @@
+{
+ "inventory": {
+  "catalogued_unique_ids": 956347,
+  "street_trees": 433176,
+  "green_space_trees": 523171,
+  "street_planting_year_coverage": 1.0,
+  "street_crown_diameter_coverage": 0.716,
+  "green_space_crown_diameter_coverage": 0.648,
+  "street_age_le10_2025": 32744,
+  "street_age_le15_2025": 50180,
+  "recorded_crown_area_km2": {
+   "street": 16.71,
+   "street_age_le15": 0.29,
+   "green_space": 19.83
+  }
+ },
+ "reach_2020_2025": {
+  "distinct_watered_trees": 11127,
+  "pct_of_catalogued": 1.16,
+  "street_watered": 10299,
+  "pct_of_street": 2.38,
+  "green_space_watered": 828,
+  "pct_of_green_space": 0.158,
+  "litres_share_top10pct_trees": 0.578,
+  "pct_of_street_by_district": {
+   "Friedrichshain-Kreuzberg": 8.4,
+   "Mitte": 5.94,
+   "Tempelhof-Schöneberg": 3.92,
+   "Neukölln": 3.46,
+   "Charlottenburg-Wilmersdorf": 3.25,
+   "Pankow": 2.96,
+   "Lichtenberg": 1.75,
+   "Steglitz-Zehlendorf": 1.35,
+   "Treptow-Köpenick": 1.34,
+   "Reinickendorf": 0.88,
+   "Spandau": 0.54,
+   "Marzahn-Hellersdorf": 0.27
+  },
+  "share_of_season_watered_trees_in_one_season_only": 0.779
+ },
+ "per_season_apr_sep": {
+  "2020": {
+   "watered_trees": 4343,
+   "litres": 479740.0,
+   "pct_of_catalogued": 0.454,
+   "pct_of_street": 0.922,
+   "pct_of_street_age_le15": 1.54,
+   "pct_of_street_by_age_band": {
+    "0-3": 1.58,
+    "4-10": 2.38,
+    "11-20": 1.31,
+    "21-40": 0.97,
+    "41+": 0.63
+   }
+  },
+  "2021": {
+   "watered_trees": 2112,
+   "litres": 241480.0,
+   "pct_of_catalogued": 0.221,
+   "pct_of_street": 0.448,
+   "pct_of_street_age_le15": 0.81,
+   "pct_of_street_by_age_band": {
+    "0-3": 0.49,
+    "4-10": 1.48,
+    "11-20": 0.67,
+    "21-40": 0.46,
+    "41+": 0.3
+   }
+  },
+  "2022": {
+   "watered_trees": 3912,
+   "litres": 763651.0,
+   "pct_of_catalogued": 0.409,
+   "pct_of_street": 0.855,
+   "pct_of_street_age_le15": 1.9,
+   "pct_of_street_by_age_band": {
+    "0-3": 2.39,
+    "4-10": 2.59,
+    "11-20": 1.36,
+    "21-40": 0.85,
+    "41+": 0.52
+   }
+  },
+  "2023": {
+   "watered_trees": 2050,
+   "litres": 380770.0,
+   "pct_of_catalogued": 0.214,
+   "pct_of_street": 0.451,
+   "pct_of_street_age_le15": 1.14,
+   "pct_of_street_by_age_band": {
+    "0-3": 0.86,
+    "4-10": 1.71,
+    "11-20": 0.82,
+    "21-40": 0.42,
+    "41+": 0.27
+   }
+  },
+  "2024": {
+   "watered_trees": 1018,
+   "litres": 160261.0,
+   "pct_of_catalogued": 0.106,
+   "pct_of_street": 0.215,
+   "pct_of_street_age_le15": 0.87,
+   "pct_of_street_by_age_band": {
+    "0-3": 0.37,
+    "4-10": 1.65,
+    "11-20": 0.3,
+    "21-40": 0.15,
+    "41+": 0.1
+   }
+  },
+  "2025": {
+   "watered_trees": 1349,
+   "litres": 165365.0,
+   "pct_of_catalogued": 0.141,
+   "pct_of_street": 0.301,
+   "pct_of_street_age_le15": 1.32,
+   "pct_of_street_by_age_band": {
+    "0-3": 0.53,
+    "4-10": 2.38,
+    "11-20": 0.41,
+    "21-40": 0.18,
+    "41+": 0.15
+   }
+  }
+ },
+ "dose_per_watered_tree_season": {
+  "tree_seasons": 14784,
+  "median_l": 60.0,
+  "mean_l": 148.2,
+  "p90_l": 350.0,
+  "share_ge_100_l": 0.419,
+  "share_ge_250_l": 0.159,
+  "share_ge_500_l": 0.062,
+  "share_ge_1000_l": 0.017,
+  "share_with_one_logged_day": 0.49,
+  "median_l_age_le15": 90.0,
+  "share_ge_500_l_age_le15": 0.081,
+  "tree_season_share_by_age_band": {
+   "0-3": 0.059,
+   "4-10": 0.184,
+   "11-20": 0.156,
+   "21-40": 0.319,
+   "41+": 0.283
+  },
+  "litres_share_by_age_band": {
+   "0-3": 0.07,
+   "4-10": 0.217,
+   "11-20": 0.166,
+   "21-40": 0.307,
+   "41+": 0.236
+  },
+  "median_l_by_age_band": {
+   "0-3": 80.0,
+   "4-10": 100.0,
+   "11-20": 75.0,
+   "21-40": 60.0,
+   "41+": 50.0
+  }
+ },
+ "weather_apr_sep": {
+  "by_year": {
+   "2020": {
+    "rain_mm": 235.0,
+    "rain_missing_days": 0,
+    "et0_hargreaves_mm": 694.0,
+    "et0_turc_wendling_mm": 595.0,
+    "sunshine_missing_days": 0,
+    "deficit_hargreaves_mm": 459.0,
+    "deficit_turc_wendling_mm": 361.0
+   },
+   "2021": {
+    "rain_mm": 295.0,
+    "rain_missing_days": 0,
+    "et0_hargreaves_mm": 640.0,
+    "et0_turc_wendling_mm": 527.0,
+    "sunshine_missing_days": 0,
+    "deficit_hargreaves_mm": 345.0,
+    "deficit_turc_wendling_mm": 232.0
+   },
+   "2022": {
+    "rain_mm": 221.0,
+    "rain_missing_days": 0,
+    "et0_hargreaves_mm": 703.0,
+    "et0_turc_wendling_mm": 558.0,
+    "sunshine_missing_days": 20,
+    "deficit_hargreaves_mm": 482.0,
+    "deficit_turc_wendling_mm": 337.0
+   },
+   "2023": {
+    "rain_mm": 292.0,
+    "rain_missing_days": 3,
+    "et0_hargreaves_mm": 691.0,
+    "et0_turc_wendling_mm": null,
+    "sunshine_missing_days": 183,
+    "deficit_hargreaves_mm": 399.0,
+    "deficit_turc_wendling_mm": null
+   },
+   "2024": {
+    "rain_mm": 284.0,
+    "rain_missing_days": 0,
+    "et0_hargreaves_mm": 710.0,
+    "et0_turc_wendling_mm": null,
+    "sunshine_missing_days": 183,
+    "deficit_hargreaves_mm": 425.0,
+    "deficit_turc_wendling_mm": null
+   },
+   "2025": {
+    "rain_mm": 277.0,
+    "rain_missing_days": 0,
+    "et0_hargreaves_mm": 691.0,
+    "et0_turc_wendling_mm": null,
+    "sunshine_missing_days": 183,
+    "deficit_hargreaves_mm": 413.0,
+    "deficit_turc_wendling_mm": null
+   }
+  },
+  "mean_1991_2020": {
+   "rain_mm": 315.0,
+   "et0_hargreaves_mm": 648.0,
+   "et0_turc_wendling_mm": 562.0
+  },
+  "note": "Turc-Wendling needs sunshine duration, missing at the station from 2023; Hargreaves overstates humid-climate ET0 and is an upper bound."
+ },
+ "logged_vs_rain_and_demand": {
+  "tree_seasons_with_crown_diameter": 10836,
+  "median_crown_m2": 28.3,
+  "median_crown_m2_age_le15": 7.1,
+  "median_pct_of_rain_on_own_crown": 1.1,
+  "median_pct_of_hargreaves_deficit_on_own_crown": 0.6,
+  "median_pct_of_hargreaves_deficit_on_own_crown_age_le15": 3.2,
+  "rain_on_6m2_tree_pit_l_by_year": {
+   "2020": 1408,
+   "2021": 1768,
+   "2022": 1326,
+   "2023": 1750,
+   "2024": 1706,
+   "2025": 1663
+  }
+ },
+ "water_budget": {
+  "guidance_season_need_per_young_tree_l": [
+   1400,
+   2600
+  ],
+  "street_age_le15_season_need_million_l": [
+   70.3,
+   130.5
+  ],
+  "logged_season_million_l": {
+   "2020": 0.48,
+   "2021": 0.241,
+   "2022": 0.764,
+   "2023": 0.381,
+   "2024": 0.16,
+   "2025": 0.165
+  },
+  "municipal_programme_million_l_per_season": {
+   "Lichtenberg: ~4,000 young trees, 10-12 rounds, 80-100 L": [
+    3.2,
+    4.8
+   ],
+   "Tempelhof-Schöneberg 2023: 1,500 trees x 10-12 + 2,600 x 6-8 rounds, 100-150 L": [
+    3.06,
+    5.82
+   ],
+   "Reinickendorf 2021: 25,764 watering passes, 100-150 L": [
+    2.58,
+    3.86
+   ]
+  },
+  "municipal_cost_per_tree_watering_eur": {
+   "Lichtenberg (EUR 101,000 / 1,093 trees x 13 rounds)": 7.11,
+   "Reinickendorf 2021 (EUR 240,120 / 25,764 passes)": 9.32,
+   "Tempelhof-Schöneberg (stated)": "9-12"
+  },
+  "logged_contractor_value_keur": {
+   "2020": [
+    24,
+    72
+   ],
+   "2021": [
+    12,
+    36
+   ],
+   "2022": [
+    38,
+    115
+   ],
+   "2023": [
+    19,
+    57
+   ],
+   "2024": [
+    8,
+    24
+   ],
+   "2025": [
+    8,
+    25
+   ]
+  },
+  "logged_pct_of_bwb_2021_water_sold": {
+   "2020": 0.00022,
+   "2021": 0.00011,
+   "2022": 0.00036,
+   "2023": 0.00018,
+   "2024": 7e-05,
+   "2025": 8e-05
+  }
+ },
+ "heat_response_in_litres": {
+  "pilot_log1p_litres_per_5c": 0.645,
+  "mean_logged_l_per_season_day": 2085,
+  "approx_extra_l_on_5c_warmer_day": 1890,
+  "street_age_le15_need_l_per_day": [
+   501800,
+   716857
+  ]
+ },
+ "detectability": {
+  "lor_seasons_with_50plus_street_trees": 3210,
+  "lor_season_watered_street_share_pct": {
+   "median": 0.14,
+   "p90": 2.21,
+   "max": 13.85,
+   "share_of_lor_seasons_with_none": 0.44
+  },
+  "lor_mde_per_watered_tree_pixel_ndvi_one_season": {
+   "0.01": 0.084,
+   "0.02": 0.167,
+   "0.03": 0.251
+  },
+  "tree_mde_pixel_ndvi": {
+   "n_watered=1000,sd=0.03,design_effect=1": 0.0029,
+   "n_watered=1000,sd=0.03,design_effect=3": 0.005,
+   "n_watered=1000,sd=0.08,design_effect=1": 0.0078,
+   "n_watered=1000,sd=0.08,design_effect=3": 0.0134,
+   "n_watered=4000,sd=0.03,design_effect=1": 0.0015,
+   "n_watered=4000,sd=0.03,design_effect=3": 0.0025,
+   "n_watered=4000,sd=0.08,design_effect=1": 0.0039,
+   "n_watered=4000,sd=0.08,design_effect=3": 0.0067
+  },
+  "young_crown_fraction_of_10m_pixel": {
+   "p25": 0.031,
+   "median": 0.071,
+   "p75": 0.139
+  },
+  "assumptions": "Area model: one season, 542 areas, outcome is the mean NDVI change of street-tree pixels; tree model: five matched controls per watered tree. The standard deviations are placeholders to be replaced by pre-2020 Sentinel-2 estimates."
+ },
+ "design_feasibility": {
+  "street_trees_by_municipal_care_limit": {
+   "10 years": 180958,
+   "not stated": 138396,
+   "15 years": 61131,
+   "12 years": 52691
+  },
+  "difference_in_discontinuities_at_10_years": {
+   "tree_season_cells": {
+    "limit_10_ages_9_10": 19075,
+    "limit_10_ages_11_12": 21746,
+    "limit_12_ages_9_10": 4536,
+    "limit_12_ages_11_12": 5519
+   },
+   "seasonal_watered_share_age_le15_pct": {
+    "min": 0.81,
+    "median": 1.23,
+    "max": 1.9
+   },
+   "mde_pp": {
+    "share_min,design_effect_1": 0.56,
+    "share_min,design_effect_2": 0.79,
+    "share_median,design_effect_1": 0.69,
+    "share_median,design_effect_2": 0.98,
+    "share_max,design_effect_1": 0.86,
+    "share_max,design_effect_2": 1.21
+   }
+  },
+  "median_crown_share_of_10m_pixel_by_age_2025": {
+   "3-5": 0.03,
+   "6-8": 0.03,
+   "9-10": 0.07,
+   "11-12": 0.07,
+   "13-15": 0.13,
+   "16-20": 0.13,
+   "21-30": 0.2
+  },
+  "young_street_trees_with_logged_watering": {
+   "any_log": 3247,
+   "ge_500_l_in_a_season": 283
+  },
+  "survival_mde_4yr_mortality_pp": {
+   "any_log,annual_0.035": [
+    1.8,
+    2.6
+   ],
+   "any_log,annual_0.051": [
+    2.1,
+    3.0
+   ],
+   "ge_500_l_in_a_season,annual_0.035": [
+    6.2,
+    8.8
+   ],
+   "ge_500_l_in_a_season,annual_0.051": [
+    7.1,
+    10.1
+   ]
+  },
+  "assumptions": "Discontinuity cells are street tree-seasons 2020-2025 from the current inventory (trees removed earlier are missing), ages 9-10 against 11-12 in districts with 10- and 12-year limits; watered shares are the seasonal ranges for all street trees aged <=15. Survival: four-year cumulative mortality implied by the annual range, five matched controls per young tree with an April-September log, design effect 1 or 2 (pairs of values)."
+ },
+ "population_density": {
+  "areas": 531,
+  "spearman_with_watered_per_100_street": {
+   "density": 0.56,
+   "residents_per_street_tree": 0.36,
+   "social_status_score": 0.01
+  },
+  "by_density_quintile": {
+   "Q1": {
+    "median_residents_per_km2": 1628.82,
+    "median_watered_per_100_street": 0.38
+   },
+   "Q2": {
+    "median_residents_per_km2": 4437.3,
+    "median_watered_per_100_street": 1.06
+   },
+   "Q3": {
+    "median_residents_per_km2": 8957.56,
+    "median_watered_per_100_street": 1.25
+   },
+   "Q4": {
+    "median_residents_per_km2": 13854.22,
+    "median_watered_per_100_street": 2.74
+   },
+   "Q5": {
+    "median_residents_per_km2": 20905.61,
+    "median_watered_per_100_street": 7.71
+   }
+  }
+ },
+ "metadata": {
+  "grain": "tree-season (April-September) unless stated; planning area for density comparisons",
+  "period": "2020-05-18 to 2025-12-31 logs; 2020 is a partial season",
+  "zero_semantics": "no logged watering, not no watering",
+  "denominators": "current catalogued inventory (not historical stock); watered_trees in area tables include green-space trees",
+  "inventory_sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0"
+ }
+}

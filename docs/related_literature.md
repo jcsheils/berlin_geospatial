@@ -12,6 +12,13 @@ This memo positions the thesis as defined by the
 - Part III (exploratory): RQ4 allocation consequences of need-only and
   civic-informed rules.
 
+The [November 2026 revision](revised_research_design_2026_11.md) changes three
+of these questions. It keeps RQ1, turns RQ2 towards public levers and reach,
+replaces RQ3 with tree outcomes and widens RQ4 to policy scenarios. That
+document lists the additional references on co-production, stewardship,
+young-tree survival and quasi-experimental methods. This memo has not yet been
+extended to cover them.
+
 The repository currently implements tree-linked Gieß den Kiez logs for May
 2020–December 2025 at 542 LOR Planungsräume, global and local Moran analysis
 of watering reach, comparison with MSS 2025 social indicators and the Berlin
