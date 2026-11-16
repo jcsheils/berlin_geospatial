@@ -4,7 +4,7 @@
 
 The October 2026 proposal treats logged watering as the outcome: when and where citizens water, and how that record could inform municipal priorities. This revision evaluates watering as part of the city's tree care. It keeps the four questions, the RQ1 pipeline and the allocation scenarios, and adds two links: the public levers that steer citizen care, and the tree outcomes that give it value. The [analysis plan](analysis_plan.md) adopted it on 9 November 2026.
 
-Figures come from the [benchmarks memo](policy_feedback_2026_11.md) and the `design_feasibility` section of `output/feedback_benchmarks/benchmarks.json` (rebuild with `python analysis/build_feedback_benchmarks.py`). Feasibility counts cover trees and treated units only; nobody has examined outcomes of the new designs.
+Figures come from the [benchmarks memo](policy_feedback_2026_11.md) and the `design_feasibility` section of `output/feedback_benchmarks/benchmarks.json` (rebuild with `python analysis/build_feedback_benchmarks.py`). Feasibility counts cover trees and treated units only; nobody has examined outcomes of the new designs. Removals between the 2025 and 2026 inventories have been counted for all trees, never by watering status.
 
 ## 1. Purpose
 
@@ -99,12 +99,14 @@ RQ1 and RQ2 cover the links into citizen care, RQ3 the link to tree outcomes, an
   - **Pumps.** Survival by distance to a working pump captures unlogged pump water.
   - **Municipal limit.** Survival at ages 11–13 in the 10-year districts against the 12-year districts shows what two more years of municipal watering are worth.
 - **Detectability.** There are 3,247 young street trees logged in April–September. With five matched controls each, four-year mortality differences of 1.8–3.0 percentage points are detectable. The baselines are 13–19%, implied by annual mortality of 3.5–5.1% (Roman and Scatena, 2011). For the 283 trees that received at least 500 L in a season, only differences of 6–10 points are detectable.
+- **Observed removals, 2025–2026.** A 2025 inventory is now in the repository. Of its street-tree identifiers, 98.5% persist into 2026 and 0.04% were re-keyed, so a missing identifier marks a removal from the cadastre. Among street trees aged 15 or younger, 709 of 47,069 were removed (1.51%), from 0.57% in Neukölln to 3.26% in Friedrichshain-Kreuzberg. That is well below the literature range, though it covers one year and felling reasons are unknown. If the rate persisted, the four-year baseline would be about 6% and detectable differences 1.3–1.8 points, a fifth to a third of the baseline.
+- **One season is not enough.** The 2025 inventory supports the 2025 season only: 661 young street trees with logs and about 10 expected removals. Detecting a halving would need about 2,000 watered trees, so this window gives descriptions and bounds, not a test.
 - **Smallest effect of interest (proposed).** This is the mortality reduction whose avoided replacements would cover the platform's running costs over the same period, once those costs are known. As a placeholder, 2 points over four years corresponds to about 65 avoided replacements among 3,247 trees, roughly €195,000.
 - **Inference.** Results are tested for equivalence against that threshold (Lakens et al., 2018), so a null result states which effects are ruled out.
 - **Secondary outcomes.**
   - Sentinel-2 condition for trees older than 20, whose median crown covers 20% of a pixel at ages 21–30.
   - The Senate's colour-infrared vitality survey for mature inner-city trees.
-- **Requirement.** An earlier full inventory (2019–2021) is needed. Tree IDs in the logs that are missing from the current inventory hint at removals, but they lack a denominator.
+- **Requirement.** Inventories for 2020–2024 are needed to cover the earlier seasons, including the 2022 drought; the 2025 inventory covers one season. Tree IDs in the logs that are missing from the current inventory hint at removals, but they lack a denominator.
 
 ### RQ4: policy scenarios
 
@@ -140,7 +142,7 @@ The drought cooling-loss estimates stay, as the conversion from canopy to coolin
    - Sensitivity analyses vary the assumed share of unlogged care.
 5. **Scale.** Behaviour is modelled at planning-area and Bezirksregion scale with partial pooling. Tree outcomes are analysed only at tree level.
 6. **Population.** The population is catalogued street trees, especially those aged 4–20. Forest covers 17.7% of Berlin's area but lies outside both the platform and the inventory, so conclusions concern street trees.
-7. **Disclosure.** The registration discloses the pilots and every summary already examined. The outcomes of the new designs have not been examined.
+7. **Disclosure.** The registration discloses the pilots and every summary already examined. The outcomes of the new designs have not been examined. Removals between the 2025 and 2026 inventories were summarised for all trees by district and age band, without reference to watering.
 
 ## 7. Contributions
 
@@ -166,7 +168,7 @@ Planned effort is RQ1 20%, RQ2 25%, RQ3 25%, RQ4 15%, Part I 5% and synthesis 10
 
 | Data | Needed for | Source and status |
 | --- | --- | --- |
-| Earlier full tree inventory (2019–2021) | RQ3 survival; historical stock for RQ1–RQ2 | Request: the platform's tree tables (CityLAB); archived open-data releases |
+| Earlier tree inventories (2020–2024) | RQ3 survival; historical stock for RQ1–RQ2 | 2025 in the repository, from a third-party archive. Request for earlier years: the platform's tree tables (CityLAB); archived open-data releases |
 | Felling records with reasons (GRIS) | Separating deaths from planned removals | Request: districts |
 | Pump status history | RQ2 pumps; RQ3 lever version | Public: OpenStreetMap history; repair records on request |
 | Municipal age limits by year; watering lists | RQ2 limit test; municipal confounding | Drucksache 19/16001; district requests |
@@ -181,7 +183,7 @@ Planned effort is RQ1 20%, RQ2 25%, RQ3 25%, RQ4 15%, Part I 5% and synthesis 10
 
 | Risk | Consequence | Fallback |
 | --- | --- | --- |
-| No earlier inventory | No survival outcome | Sentinel-2 condition for older trees and bounds; the RQ2 lever designs on logged care continue |
+| No inventory before 2025 | Survival limited to the 2025 season, with too few removals for a test | Sentinel-2 condition for older trees and bounds; the RQ2 lever designs on logged care continue |
 | Pump status edits follow use | Mistimed events | Dated repairs where available; lagged edits; sensitivity analyses |
 | Age limits applied loosely | Diluted contrast | Treat the district rule as intention to treat; check against watering lists |
 | Watering chosen by visible tree condition | Biased survival contrast | Matching within planning area, genus and planting year; exposure starting after a snapshot; pre-watering negative controls; sensitivity analysis |

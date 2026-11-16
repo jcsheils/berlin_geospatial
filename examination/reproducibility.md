@@ -93,7 +93,7 @@ To mask a known outage calendar, pass `--unavailable-dates path/to/dates.csv` wi
 
 ## 6. Other builders
 
-- **Benchmarks:** `python analysis/build_feedback_benchmarks.py` writes `output/feedback_benchmarks/benchmarks.json`.
+- **Benchmarks:** `python analysis/build_feedback_benchmarks.py` writes `output/feedback_benchmarks/benchmarks.json`. It reads the versioned 2025 inventory extract; `python tools/extract_tree_inventory_2025.py` rebuilds that extract from its pinned archive and needs network access.
 - **Earth Engine atlas:** `python earth_engine/build_demo.py` regenerates `earth_engine/berlin_atlas_demo.js`; see the [launch guide](../earth_engine/README.md).
 - **Examination PDFs:** `python -m pip install -r requirements-examination.txt`, then `python tools/build_examination.py`. It rebuilt the October atlas, brief, results page and inventories from saved images and tables. It fits no models and leaves the proposal, slides and workbook untouched. Running it now would also rewrite the release manifest's scope, so do not use it for routine updates.
 

@@ -1,0 +1,26 @@
+{
+  "extracted_date": "2026-11-16",
+  "file": "data/raw/tree_inventory/trees_2025_gbif.csv.gz",
+  "file_bytes": 12837272,
+  "file_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+  "rows": 927914,
+  "street_trees": 431883,
+  "green_space_trees": 496031,
+  "columns": [
+    "tree_id",
+    "district",
+    "genus",
+    "planting_year",
+    "x_25833",
+    "y_25833"
+  ],
+  "source": "https://doi.org/10.15468/75ssj5",
+  "source_archive": "https://hosted-datasets.gbif.org/datasets/berlin-trees.zip",
+  "source_archive_sha256": "42042faaec9b091edc9ec5e4269c4f8f82d0447d2392bbe7892263dcd187c9f6",
+  "source_archive_bytes": 72703401,
+  "source_published": "2025-12-19",
+  "source_license": "CC0 1.0 (originally Datenlizenz Deutschland - Zero - Version 2.0)",
+  "coordinate_crs": "EPSG:25833",
+  "provenance_limit": "Third-party export of the official cadastre, not an official release. It holds about 39,500 fewer trees than the platform's 2025 import. Coordinates are rounded to 0.01 m.",
+  "compression": "gzip level 6, no embedded filename, mtime 0"
+}

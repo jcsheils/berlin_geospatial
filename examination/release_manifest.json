@@ -56,8 +56,8 @@
     },
     {
       "path": "config/datasets.toml",
-      "bytes": 13258,
-      "sha256": "7c0e95cd29b92c56ae363b3aeb51e5644ee98e2c61a56304edb6d55c078b32fc"
+      "bytes": 13941,
+      "sha256": "380290d6ba892ffeb55bae1d75d8d7b72556aed98ec318314a98e67b51328c0d"
     },
     {
       "path": "config/project.toml",
@@ -76,8 +76,8 @@
     },
     {
       "path": "data/README.md",
-      "bytes": 3540,
-      "sha256": "997047ade1762f5eec1437ecbb655d807185090ff4fcda6193a8d4fe9763350d"
+      "bytes": 3926,
+      "sha256": "0f10d4b746f5ef186638868175bb2f5ed1559462b4a9d2bdd714401be0654bf7"
     },
     {
       "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
@@ -181,8 +181,8 @@
     },
     {
       "path": "data/raw/tree_inventory/README.md",
-      "bytes": 1716,
-      "sha256": "cc9db009cde5c7b15df851e5d134652cd0b5061c812d88f0cfb7958b2bfd5921"
+      "bytes": 3387,
+      "sha256": "6d63a6be02b91ba5bc7d4244c8718cbc9540fce01069aadcfb5f110c1a0b3579"
     },
     {
       "path": "data/raw/tree_inventory/snapshot.json",
@@ -211,8 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 9403,
-      "sha256": "a69560ac9c26feb2c5970e6497f73135184d69f80a5ef335bfb9a61f2bb30c56"
+      "bytes": 9599,
+      "sha256": "d29300c2950ce0dbd88cbf4384649416f58e7f1d33e08ed7bd63c9701263c30a"
     },
     {
       "path": "docs/proposal/Proposal_Refined_October_2026.pdf",
@@ -341,8 +341,8 @@
     },
     {
       "path": "examination/reproducibility.md",
-      "bytes": 7574,
-      "sha256": "19346bb5772258fbb5df7825df0b8c9c284dbcdeda010d5ff07456df4d8a2479"
+      "bytes": 7739,
+      "sha256": "28dad36037dece8c126ac1a87cb1412b8706d2362aae9b6be532b6a549697a41"
     },
     {
       "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",

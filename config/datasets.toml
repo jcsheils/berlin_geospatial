@@ -51,6 +51,27 @@ required_columns = [
   "gattung_deutsch",
 ]
 
+[datasets.tree_inventory_2025]
+label = "Berlin tree inventory 2025, identifier extract"
+path = "data/raw/tree_inventory/trees_2025_gbif.csv.gz"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "tree"
+expected_rows = 927914
+required_columns = [
+  "tree_id",
+  "district",
+  "genus",
+  "planting_year",
+  "x_25833",
+  "y_25833",
+]
+source = "https://doi.org/10.15468/75ssj5"
+license = "CC0"
+known_warning = "Third-party archive of the 2025 cadastre with about 39,500 fewer trees than the platform's 2025 import. It supports identifier comparisons with the 2026 inventory only; an absent identifier is a removal from the cadastre, not a recorded death."
+
 [datasets.lor_boundaries_2021]
 label = "Berlin LOR Planungsräume 2021"
 path = "data/spatial/lor_planungsraeume_2021.gpkg"

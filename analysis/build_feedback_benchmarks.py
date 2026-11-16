@@ -12,7 +12,9 @@ district statements in parliamentary answers and serve as illustrations; the
 evapotranspiration estimates are simple temperature/radiation approximations.
 The design-feasibility section counts trees and treated units only. It never
 tabulates watering by age near the municipal-care limits, so that comparison
-can still be registered before it is examined.
+can still be registered before it is examined. The identifier comparison
+between the 2025 and 2026 inventories reports removals for all trees and never
+by watering status, so the survival comparison also stays unexamined.
 """
 from __future__ import annotations
 
@@ -27,6 +29,7 @@ import zipfile
 import numpy as np
 import pandas as pd
 import pyogrio
+from scipy.spatial import cKDTree
 from scipy.stats import spearmanr
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -58,6 +61,8 @@ MUNICIPAL_CARE_LIMIT_YEARS = {
     "Friedrichshain-Kreuzberg": 12, "Tempelhof-Schöneberg": 12, "Steglitz-Zehlendorf": 15,
 }
 ANNUAL_STREET_TREE_MORTALITY = (0.035, 0.051)  # meta-analysis range, Roman and Scatena (2011)
+INVENTORY_2025 = ROOT / "data/raw/tree_inventory/trees_2025_gbif.csv.gz"
+SAME_SPOT_M = 1.0  # a 2026 tree with a new identifier this close to a vanished one occupies its site
 
 
 def sha256(path: Path) -> str:
@@ -158,6 +163,108 @@ def design_feasibility(street: pd.DataFrame, ts: pd.DataFrame, per_season: dict)
                         "seasonal ranges for all street trees aged <=15. Survival: four-year cumulative mortality implied by "
                         "the annual range, five matched controls per young tree with an April-September log, design effect 1 "
                         "or 2 (pairs of values)."),
+    }
+
+
+def treated_needed(p0: float, relative_reduction: float, controls: int = 5) -> int:
+    """Treated trees needed to detect a relative fall in removal risk (two-sided 5%, power 80%)."""
+    p1 = p0 * (1 - relative_reduction)
+    pooled = (p1 + controls * p0) / (1 + controls)
+    spread = 1.959964 * math.sqrt(pooled * (1 - pooled) * (1 + 1 / controls)) + 0.841621 * math.sqrt(p1 * (1 - p1) + p0 * (1 - p0) / controls)
+    return math.ceil(spread ** 2 / (p0 - p1) ** 2)
+
+
+def compare_identifiers(before: pd.DataFrame, after: pd.DataFrame) -> pd.DataFrame:
+    """Flag each earlier tree whose identifier is absent later, and what now stands on its site.
+
+    Both frames need tree_id, genus, planting_year, x and y. `gone` trees are `rekeyed`
+    when a later tree with a new identifier has the same site, genus and planting year,
+    and `replanted` when a later tree planted in the last two years stands on the site.
+    """
+    out = before.copy()
+    out["gone"] = ~out["tree_id"].isin(after["tree_id"])
+    added = after[~after["tree_id"].isin(before["tree_id"]) & after["x"].notna()]
+    out["rekeyed"] = out["replanted"] = False
+    if out["gone"].any() and len(added):
+        gone = out[out["gone"]]
+        distance, index = cKDTree(added[["x", "y"]].to_numpy()).query(gone[["x", "y"]].to_numpy())
+        nearest = added.iloc[index]
+        same_site = distance <= SAME_SPOT_M
+        same_tree = (gone["genus"].str.upper().to_numpy() == nearest["genus"].str.upper().to_numpy()) & (gone["planting_year"].to_numpy() == nearest["planting_year"].to_numpy())
+        recent = nearest["planting_year"].to_numpy() >= after["planting_year"].max() - 2
+        out.loc[gone.index, "rekeyed"] = same_site & same_tree
+        out.loc[gone.index, "replanted"] = same_site & ~same_tree & recent
+    return out
+
+
+def inventory_id_stability(inventory_path: Path, ts: pd.DataFrame, treated_all_seasons: int) -> dict:
+    """Whether a tree identifier missing from the 2026 inventory can stand for a removed tree.
+
+    Compares the 2025 inventory with the 2026 one for all trees. Watering enters only as
+    the count of treated trees in the 2025 season; removals are never split by watering.
+    """
+    before = pd.read_csv(INVENTORY_2025, dtype={"tree_id": str}).rename(columns={"x_25833": "x", "y_25833": "y"})
+    after = pyogrio.read_dataframe(inventory_path, layer="Berlin_trees", columns=["id", "gattung", "pflanzjahr"])
+    after = pd.DataFrame({"tree_id": after["id"], "genus": after["gattung"], "planting_year": pd.to_numeric(after["pflanzjahr"], errors="coerce"),
+                          "x": after.geometry.x, "y": after.geometry.y})
+    for frame in (before, after):
+        frame.loc[(frame["planting_year"] < 1700) | (frame["planting_year"] > 2026), "planting_year"] = np.nan
+        frame["street"] = frame["tree_id"].str.startswith("strassenbaeume.")
+    trees = compare_identifiers(before, after)
+    matched = trees[~trees["gone"]].merge(after, on="tree_id", suffixes=("", "_2026"))
+    both_years = matched["planting_year"].notna() & matched["planting_year_2026"].notna()
+    street = trees[trees["street"]].copy()
+    street["removed"] = street["gone"] & ~street["rekeyed"]
+    age = 2025 - street["planting_year"]
+    street["band"] = pd.cut(age, [-np.inf, 15, 40, np.inf], labels=["le15", "16-40", "41+"]).astype(object).where(age.notna(), "unknown")
+    young = street[street["band"] == "le15"]
+    by_district = young.groupby("district")["removed"].agg(["size", "mean"])
+    by_district = (by_district.loc[by_district["size"] >= 1000, "mean"] * 100).round(2).sort_values()
+    street_after = after[after["street"]]
+    risk = float(young["removed"].mean())
+    treated = int(ts.loc[(ts["layer"] == "strassenbaeume") & (ts["age"] <= 15) & (ts["year"] == 2025), "tree_id"].nunique())
+    four_year_risk = 1 - (1 - risk) ** 4
+    return {
+        "trees_2025": int(len(trees)),
+        "ids_present_in_2026_pct": pct((~trees["gone"]).sum(), len(trees)),
+        "ids_gone": {"all": int(trees["gone"].sum()), "street": int(street["gone"].sum()), "green_space": int((trees["gone"] & ~trees["street"]).sum())},
+        "matched_trees_changed_pct": {
+            "planting_year": pct((matched.loc[both_years, "planting_year"] != matched.loc[both_years, "planting_year_2026"]).sum(), both_years.sum()),
+            "genus": pct((matched["genus"].str.upper() != matched["genus_2026"].str.upper()).sum(), len(matched)),
+            "moved_over_1_m": pct((np.hypot(matched["x"] - matched["x_2026"], matched["y"] - matched["y_2026"]) > 1).sum(), len(matched)),
+        },
+        "street": {
+            "trees_2025": int(len(street)), "ids_gone_pct": pct(street["gone"].sum(), len(street)),
+            "rekeyed": int(street["rekeyed"].sum()), "replanted_on_site": int(street["replanted"].sum()),
+            "removed_pct": pct(street["removed"].sum(), len(street)),
+            "removed_pct_by_age_2025": {band: pct(group["removed"].sum(), len(group)) for band, group in street.groupby("band")},
+            "trees_by_age_2025": street["band"].value_counts().sort_index().to_dict(),
+        },
+        "young_street_age_le15": {
+            "trees_2025": int(len(young)), "removed": int(young["removed"].sum()), "removed_pct": pct(young["removed"].sum(), len(young)),
+            "replanted_on_site": int(young["replanted"].sum()),
+            "removed_pct_by_district_1000plus_trees": by_district.to_dict(),
+        },
+        "archive_vintage_and_coverage": {
+            "street_trees_planted_2025": {"archive_2025": int((street["planting_year"] == 2025).sum()), "inventory_2026": int((street_after["planting_year"] == 2025).sum())},
+            "street_trees_2026_planted_le2022_with_ids_absent_from_archive": int((~street_after["tree_id"].isin(before["tree_id"]) & (street_after["planting_year"] <= 2022)).sum()),
+        },
+        "one_year_survival_2025_season": {
+            "young_street_trees_with_logged_watering": treated,
+            "expected_removals_at_overall_rate": round(treated * risk, 1),
+            "mde_pp_design_effect_1_and_2": [round(100 * Z_80 * math.sqrt(d * risk * (1 - risk) * (1 / treated + 1 / (5 * treated))), 2) for d in (1, 2)],
+            "treated_trees_needed_to_detect_halving": treated_needed(risk, 0.5),
+        },
+        "four_year_design_if_this_rate_persists": {
+            "young_street_trees_with_logged_watering": treated_all_seasons,
+            "baseline_removed_pct": round(100 * four_year_risk, 1),
+            "mde_pp_design_effect_1_and_2": [round(100 * Z_80 * math.sqrt(d * four_year_risk * (1 - four_year_risk) * (1 / treated_all_seasons + 1 / (5 * treated_all_seasons))), 1) for d in (1, 2)],
+        },
+        "assumptions": ("2025 inventory: third-party archive of the official cadastre (data/raw/tree_inventory/snapshot_2025.json), which predates "
+                        "the 2025 season and omits some trees. Removed: identifier absent from the 2026 inventory and not re-keyed. Re-keyed: a "
+                        "2026 tree with a new identifier within 1 m, same genus and planting year. Replanted: such a tree planted 2024 or later. "
+                        "Ages are 2025 minus planting year. A removal is not a death: felling reasons are unknown and removal can lag death. "
+                        "Detectability uses five matched controls per watered tree, as in the four-year design."),
     }
 
 
@@ -295,6 +402,8 @@ def build(inventory_path: Path) -> dict:
         "assumptions": "Area model: one season, 542 areas, outcome is the mean NDVI change of street-tree pixels; tree model: five matched controls per watered tree. The standard deviations are placeholders to be replaced by pre-2020 Sentinel-2 estimates.",
     }
     out["design_feasibility"] = design_feasibility(street, ts, per_season)
+    out["design_feasibility"]["inventory_ids_2025_to_2026"] = inventory_id_stability(
+        inventory_path, ts, out["design_feasibility"]["young_street_trees_with_logged_watering"]["any_log"])
 
     equity = pd.read_csv(ROOT / "output/equity/tables/lor_watering_equity_metrics.csv", dtype={"plr_id": str})
     geometry = pyogrio.read_dataframe(ROOT / "data/spatial/lor_planungsraeume_2021.gpkg")
@@ -316,6 +425,7 @@ def build(inventory_path: Path) -> dict:
         "zero_semantics": "no logged watering, not no watering",
         "denominators": "current catalogued inventory (not historical stock); watered_trees in area tables include green-space trees",
         "inventory_sha256": sha256(inventory_path),
+        "inventory_2025_sha256": sha256(INVENTORY_2025),
     }
     return out
 

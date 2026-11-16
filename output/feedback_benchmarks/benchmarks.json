@@ -407,7 +407,85 @@
     10.1
    ]
   },
-  "assumptions": "Discontinuity cells are street tree-seasons 2020-2025 from the current inventory (trees removed earlier are missing), ages 9-10 against 11-12 in districts with 10- and 12-year limits; watered shares are the seasonal ranges for all street trees aged <=15. Survival: four-year cumulative mortality implied by the annual range, five matched controls per young tree with an April-September log, design effect 1 or 2 (pairs of values)."
+  "assumptions": "Discontinuity cells are street tree-seasons 2020-2025 from the current inventory (trees removed earlier are missing), ages 9-10 against 11-12 in districts with 10- and 12-year limits; watered shares are the seasonal ranges for all street trees aged <=15. Survival: four-year cumulative mortality implied by the annual range, five matched controls per young tree with an April-September log, design effect 1 or 2 (pairs of values).",
+  "inventory_ids_2025_to_2026": {
+   "trees_2025": 927914,
+   "ids_present_in_2026_pct": 98.1,
+   "ids_gone": {
+    "all": 17612,
+    "street": 6389,
+    "green_space": 11223
+   },
+   "matched_trees_changed_pct": {
+    "planting_year": 0.33,
+    "genus": 0.19,
+    "moved_over_1_m": 1.83
+   },
+   "street": {
+    "trees_2025": 431883,
+    "ids_gone_pct": 1.48,
+    "rekeyed": 193,
+    "replanted_on_site": 168,
+    "removed_pct": 1.43,
+    "removed_pct_by_age_2025": {
+     "16-40": 1.58,
+     "41+": 1.31,
+     "le15": 1.51,
+     "unknown": 11.76
+    },
+    "trees_by_age_2025": {
+     "16-40": 159598,
+     "41+": 225012,
+     "le15": 47069,
+     "unknown": 204
+    }
+   },
+   "young_street_age_le15": {
+    "trees_2025": 47069,
+    "removed": 709,
+    "removed_pct": 1.51,
+    "replanted_on_site": 85,
+    "removed_pct_by_district_1000plus_trees": {
+     "Neukölln": 0.57,
+     "Tempelhof-Schöneberg": 0.73,
+     "Pankow": 0.88,
+     "Charlottenburg-Wilmersdorf": 1.03,
+     "Steglitz-Zehlendorf": 1.04,
+     "Lichtenberg": 1.63,
+     "Treptow-Köpenick": 1.65,
+     "Reinickendorf": 1.68,
+     "Mitte": 1.84,
+     "Spandau": 2.15,
+     "Marzahn-Hellersdorf": 2.77,
+     "Friedrichshain-Kreuzberg": 3.26
+    }
+   },
+   "archive_vintage_and_coverage": {
+    "street_trees_planted_2025": {
+     "archive_2025": 67,
+     "inventory_2026": 2714
+    },
+    "street_trees_2026_planted_le2022_with_ids_absent_from_archive": 4446
+   },
+   "one_year_survival_2025_season": {
+    "young_street_trees_with_logged_watering": 661,
+    "expected_removals_at_overall_rate": 10.0,
+    "mde_pp_design_effect_1_and_2": [
+     1.45,
+     2.06
+    ],
+    "treated_trees_needed_to_detect_halving": 1997
+   },
+   "four_year_design_if_this_rate_persists": {
+    "young_street_trees_with_logged_watering": 3247,
+    "baseline_removed_pct": 5.9,
+    "mde_pp_design_effect_1_and_2": [
+     1.3,
+     1.8
+    ]
+   },
+   "assumptions": "2025 inventory: third-party archive of the official cadastre (data/raw/tree_inventory/snapshot_2025.json), which predates the 2025 season and omits some trees. Removed: identifier absent from the 2026 inventory and not re-keyed. Re-keyed: a 2026 tree with a new identifier within 1 m, same genus and planting year. Replanted: such a tree planted 2024 or later. Ages are 2025 minus planting year. A removal is not a death: felling reasons are unknown and removal can lag death. Detectability uses five matched controls per watered tree, as in the four-year design."
+  }
  },
  "population_density": {
   "areas": 531,
@@ -444,6 +522,7 @@
   "period": "2020-05-18 to 2025-12-31 logs; 2020 is a partial season",
   "zero_semantics": "no logged watering, not no watering",
   "denominators": "current catalogued inventory (not historical stock); watered_trees in area tables include green-space trees",
-  "inventory_sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0"
+  "inventory_sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+  "inventory_2025_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
  }
 }
