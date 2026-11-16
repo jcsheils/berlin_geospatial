@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T16:26:22.370831+00:00",
+  "generated_at_utc": "2026-11-16T13:04:23.993726+00:00",
   "source_audit": {
     "rows": 9312,
     "distinct_ortsteil_names": 96,
@@ -75,7 +75,7 @@
     "provisional_pooled_correlations": "e288bcb079c72be459258c48a065288f9e4ac047ada6b5788debc8b80ca243e5",
     "provisional_within_ortsteil_correlations": "b2d687bc6f618a3bbc0006b23c00e69e87665661a550357fab211fdf35a586ba"
   },
-  "protocol_sha256": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986",
+  "protocol_sha256": "e2449c1f1b04e2defbb1f90b173dd5abfd25a75a7b63881cdf0c8ed4294398ab",
   "code_sha256": "8b6415572ada95e1a6494ad1aa03d7f23bdcf837cbc4f0aba27ac4e2e17b19ba",
   "claims": "Provisional descriptive correlations only. Source metadata and original polygon alignment remain unresolved. No causal or confirmatory cooling analysis."
 }

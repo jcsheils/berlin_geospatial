@@ -1,31 +1,41 @@
-> Seminar analysis plan of October 2026, superseded on 26 October 2026 by [the active plan](../docs/analysis_plan.md). Its RQ numbering follows the seminar proposal.
+# Seminar analysis plan, October 2026
 
-# Seminar analysis plan — October 2026
+> Superseded on 26 October 2026 by the [current analysis plan](../docs/analysis_plan.md). RQ numbers here follow the [seminar proposal](proposal/Proposal_October_2026.pdf); read its [qualifications](proposal/README.md) alongside.
 
-The [seminar proposal](proposal/Proposal_October_2026.pdf) governed this plan. Read its [qualifications](proposal/README.md) alongside it.
+## Part II: daily civic heat response (core)
 
-## Part II — Daily civic heat response (core)
+RQ2 asks whether recorded watering responds to daily heat and dryness, and whether the response varies with neighbourhood social status once baseline participation is accounted for.
 
-RQ2 asks whether recorded citizen watering responds to daily heat and dryness and whether response varies with neighbourhood social status after accounting for baseline participation. Build a balanced area-day panel, explicitly distinguishing unavailable periods, observed zeros and missing weather. Model whether an area ever participates, then use a hierarchical negative-binomial model for daily event counts among participating areas. Litres and distinct trees provide secondary descriptions and sensitivity analyses.
+- **Panel.** Build a balanced area-day panel that separates unavailable periods, observed zeros and missing weather.
+- **Model.** Model whether an area ever participates, then fit a hierarchical negative-binomial model for daily events among participating areas. Litres and distinct trees serve as secondary descriptions and sensitivities.
+- **Offset.** The proposed offset is the historical eligible street-tree population aged 5–19. The current all-tree inventory is a sensitivity denominator, not an unqualified substitute.
+- **Covariates.** Tmax, antecedent dry spells, precipitation, heat-warning days, weekday, holidays, year and season, plus status, age composition and turnout as area predictors.
+- **Checks.** Partial pooling, uncertainty intervals, temporal stability and scale sensitivity.
+- **Participation.** User IDs would separate breadth of participation from a few very active contributors; without them, report tree-based proxies and their limits.
 
-The proposed primary offset is the historical eligible street-tree population aged 5–19; the current all-tree inventory is a sensitivity denominator, not a substitute without qualification. Planned controls include Tmax, antecedent dry spells, precipitation, heat-warning days, weekday, holidays, year and season, with status, age composition and turnout as area predictors. Use partial pooling, uncertainty intervals, temporal stability checks and scale sensitivity. Optional user IDs would distinguish participation breadth from highly active contributors; without them, report tree-based proxies with limits.
+Existing evidence: monthly weather associations, spatial and equity context, the LOR-month panel and the positive tree-day table. The daily panel and model do not exist yet. Any registration must disclose prior examination of these outcomes, and no inspected period counts as untouched.
 
-Current evidence: monthly weather associations, spatial/equity context, the LOR-month panel and positive tree-day table. The daily model and balanced daily panel are not implemented. Any registration must disclose prior examination of these outcomes; no already-inspected data period should be labelled untouched.
+## Part I: vegetation cooling loss (supporting)
 
-## Part I — Vegetation cooling loss (supporting)
+RQ1 asks how the relationship between vegetation and morning LST weakens on dry clear-sky days, and how that loss is distributed across planning areas. The main period is 2017–2024.
 
-RQ1 concerns the weakening of the vegetation–morning-LST relationship on dry clear-sky days and its distribution across planning areas. The intended main period is 2017–2024. Build a valid-overpass Landsat panel with canopy and low-vegetation fractions, dated Sentinel-2 greenness, temporal drought anomalies and built-form controls. Fit one hierarchical model with date effects and vegetation × drought × status terms. Distinguish per-unit loss from total area loss; propagate uncertainty, check sealed-cell placebos, spatial dependence and blocked validation.
+- **Panel.** Build a valid-overpass Landsat panel with canopy and low-vegetation fractions, dated Sentinel-2 greenness, drought anomalies and built-form controls.
+- **Model.** Fit one hierarchical model with date effects and vegetation × drought × status terms. Separate per-unit loss from total area loss.
+- **Checks.** Propagate uncertainty; run sealed-cell placebos, spatial dependence checks and blocked validation.
 
-The provisional monthly Ortsteil file is not this panel. Cloud filtering, original boundaries, count semantics and acquisition dates remain unverified. Existing borough maps are descriptive legacy context.
+The monthly Ortsteil file cannot serve as this panel: its cloud filtering, boundaries, count meaning and acquisition dates are unverified. The borough maps are legacy context.
 
-## Part III — Allocation comparison (exploratory)
+## Part III: allocation comparison (exploratory)
 
-RQ3 predicts logged care for eligible young street-tree seasons with regularised logistic regression and gradient boosting, followed by spatial/temporal validation and calibration. Features must be constructed inside training folds; previous-season neighbourhood care must not leak held-out labels. Compare need-only and complement-based rankings using expected unmet water, with full sensitivity to assumed doses and weights.
+RQ3 predicts logged care for eligible young street-tree seasons with regularised logistic regression and gradient boosting, validated spatially and temporally and calibrated.
 
-This is a normative decision-support comparison, not a causal effect or an optimised public service rule. Existing equity screening maps are contextual groundwork; they are not completed predictions or allocation rankings. At the end of Month 4, reduce this part to descriptive comparison if supporting data or valid predictions are delayed.
+- **Leakage.** Build features inside training folds; previous-season neighbourhood care must not leak held-out labels.
+- **Comparison.** Compare need-only and complement-based rankings by expected unmet water, with full sensitivity to assumed doses and weights.
+- **Status.** This is normative decision support, not a causal effect or an optimised service rule. The equity screening maps are groundwork, not predictions or rankings.
+- **Fallback.** If supporting data or valid predictions are late at the end of Month 4, reduce this part to a descriptive comparison.
 
-## Integration and feasibility
+## Integration and priorities
 
-The H4 bridge relates posterior civic-response slopes to cooling-loss estimates only when both exist. Keep behaviour and need as separate layers; giving less public service to places because residents volunteer requires an explicit policy justification.
+The H4 bridge relates posterior response slopes to cooling-loss estimates, and only once both exist. Keep behaviour and need as separate layers; reducing public service where residents volunteer needs an explicit policy justification.
 
-Prioritise Part II, then supporting Part I, then exploratory Part III. The [readiness assessment](readiness.md) records missing inputs, decisions and the six-month schedule. No current output estimates causal cooling, heat-mortality effects, or an economically optimal allocation.
+Priority order: Part II, then Part I, then Part III. The [readiness assessment](readiness.md) lists missing inputs, open decisions and the six-month schedule. No output estimates causal cooling, heat-mortality effects or an optimal allocation.

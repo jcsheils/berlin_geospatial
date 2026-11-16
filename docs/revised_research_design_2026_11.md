@@ -2,24 +2,24 @@
 
 *Gieß den Kiez citizen tree watering in Berlin · revision of the October 2026 proposal, adopted 9 November 2026*
 
-The October 2026 proposal treats logged watering as the outcome: it asks when and where citizens water and how that record could inform municipal priorities. This revision widens the purpose from describing a behaviour to evaluating it as part of the city's tree care. It keeps the four-question structure, the RQ1 pipeline and the allocation scenarios, and adds the two missing links: the public levers that steer citizen care, and the tree outcomes that would give it value. The [active analysis plan](analysis_plan.md) adopted this revision on 9 November 2026.
+The October 2026 proposal treats logged watering as the outcome: when and where citizens water, and how that record could inform municipal priorities. This revision evaluates watering as part of the city's tree care. It keeps the four questions, the RQ1 pipeline and the allocation scenarios, and adds two links: the public levers that steer citizen care, and the tree outcomes that give it value. The [analysis plan](analysis_plan.md) adopted it on 9 November 2026.
 
-Figures come from the [policy-relevance memo](policy_feedback_2026_11.md) and from the `design_feasibility` section of `output/feedback_benchmarks/benchmarks.json`, rebuilt by `python analysis/build_feedback_benchmarks.py`. The feasibility counts cover trees and treated units only. Outcomes of the new designs have not been examined.
+Figures come from the [benchmarks memo](policy_feedback_2026_11.md) and the `design_feasibility` section of `output/feedback_benchmarks/benchmarks.json` (rebuild with `python analysis/build_feedback_benchmarks.py`). Feasibility counts cover trees and treated units only; nobody has examined outcomes of the new designs.
 
 ## 1. Purpose
 
 The thesis evaluates citizen tree watering as **co-produced climate adaptation**: a public service that residents and the city deliver together (Ostrom, 1996). In case studies, stewardship was essential to whether young urban trees establish (Roman et al., 2015), and urban tree mortality is highest in the first years after planting (Hilbert et al., 2019).
 
-- **Outcome.** The outcome moves closer to a healthy city: the survival and condition of young street trees, and through them future canopy, shade and cooling where residents are most exposed to heat.
-- **Treatments.** The treatments move closer to policy: conditions the city controls, such as pump maintenance and how long districts water young trees.
-- **Questions.** The thesis asks how much care citizens add relative to tree water need and municipal watering, and how that care responds to drought and to public levers. It also asks whether the care reaches the trees that need it, and whether it goes with better survival and condition.
-- **Use.** The answers feed scenarios for scaling, targeting and funding the platform.
+- **Outcome:** survival and condition of young street trees, and through them future canopy, shade and cooling where residents face the most heat.
+- **Treatments:** conditions the city controls, such as pump maintenance and how long districts water young trees.
+- **Questions:** how much care citizens add relative to tree water need and municipal watering; how that care responds to drought and public levers; whether it reaches the trees that need it; whether it goes with better survival and condition.
+- **Use:** scenarios for scaling, targeting and funding the platform.
 
 **Fundamental question.** *To what extent does citizen watering help Berlin's street trees through heat and drought, which trees and neighbourhoods does it reach, and which levers under public control could make it more effective and more equitable?*
 
-The October version asked how citizen watering responses can complement conventional vulnerability assessments, identify unmet adaptation needs and inform a more equitable allocation of municipal irrigation. Allocation remains one of the policy scenarios. Effectiveness and levers become the centre.
+The October version asked how citizen watering could complement vulnerability assessments, identify unmet adaptation needs and inform a fairer allocation of municipal irrigation. Allocation stays as one scenario; effectiveness and levers move to the centre.
 
-**Title.** The main title stays and only the subtitle changes, to *Spatiotemporal Modeling of Citizen Tree Watering for Equitable Climate Adaptation in Berlin: Drought Response, Public Levers and Tree Outcomes*. The October subtitle was *Climate Responses and Municipal Irrigation Priorities*.
+**Title.** The main title stays. The subtitle becomes *Spatiotemporal Modeling of Citizen Tree Watering for Equitable Climate Adaptation in Berlin: Drought Response, Public Levers and Tree Outcomes*. The October subtitle was *Climate Responses and Municipal Irrigation Priorities*.
 
 ## 2. What the October design cannot answer
 
@@ -29,9 +29,9 @@ The October version asked how citizen watering responses can complement conventi
   - Half of watered tree-seasons have only one logged day, and 78% of watered trees appear in a single season.
   - 10% of watered trees receive 58% of logged litres.
   - 60% of watered tree-seasons involve trees older than 20. Only 16% involve trees aged 11–20, which in most districts no longer receive municipal watering.
-  - Any effect on trees should therefore come from the minority that receive sustained care.
-- **Area-level greenness cannot test effects.** A median of 0.14% of an area's street trees is watered per season. An area NDVI analysis could therefore detect only per-tree effects of 0.08–0.25 NDVI.
-- **The city's levers appear only as covariates.** Pump maintenance, the age at which municipal care ends, watering appeals and platform funding are all policy choices. The October design includes pump access as an association and leaves the other levers out.
+  - Any effect on trees must come from the minority that receive sustained care.
+- **Area-level greenness cannot test effects.** In a median season 0.14% of an area's street trees get water, so an area NDVI analysis could detect only per-tree effects of 0.08–0.25 NDVI.
+- **City levers appear only as covariates.** Pump maintenance, the age at which municipal care ends, watering appeals and platform funding are all policy choices. The October design treats pump access as an association and omits the rest.
 
 ## 3. Logic model
 
@@ -43,7 +43,7 @@ Public levers ───► Citizen care ────► Water a tree ───�
       RQ2              RQ1, RQ2                                RQ3              RQ4, Part I
 ```
 
-RQ1 and RQ2 cover the links into citizen care, RQ3 the link to tree outcomes, and RQ4 the chain as a whole. In the scenarios, Part I's drought cooling-loss estimates supply the last link.
+RQ1 and RQ2 cover the links into citizen care, RQ3 the link to tree outcomes, and RQ4 the whole chain, with Part I's cooling-loss estimates as the last link.
 
 ## 4. Revised research questions
 
@@ -58,7 +58,7 @@ RQ1 and RQ2 cover the links into citizen care, RQ3 the link to tree outcomes, an
 
 ### RQ1: civic drought response
 
-- **Models.** These are unchanged: hierarchical negative-binomial event models and two-part volume models on the planning-area-day panel, with matched street-tree stock (Appendix B).
+- **Models.** Unchanged: hierarchical negative-binomial event models and two-part volume models on the planning-area-day panel, with matched street-tree stock (Appendix B).
 - **Additions.**
   - Express responses as litres per 1,000 young street trees and as shares of daily guidance need.
   - Separate first and repeat watering of the same tree to measure persistence.
@@ -76,26 +76,26 @@ RQ1 and RQ2 cover the links into citizen care, RQ3 the link to tree outcomes, an
    - **Context.** Pankow, Neukölln, Treptow-Köpenick, Lichtenberg and Reinickendorf water young trees until 10 years after planting. Friedrichshain-Kreuzberg and Tempelhof-Schöneberg water them until 12 years (Drucksache 19/16001).
    - **Design.** Take the change in citizen watering between ages 9–10 and 11–12 in the 10-year districts, and subtract the same change in the 12-year districts. The result shows whether citizens step in when municipal care stops (Grembi et al., 2016). Because ages are whole years, inference follows Kolesár and Rothe (2018).
    - **Feasibility.** The cells hold 19,075 and 21,746 tree-seasons in the 10-year districts, and 4,536 and 5,519 in the 12-year districts. Seasonal watered shares are 0.81–1.9%, so the minimum detectable effect is 0.56–1.21 percentage points. That is about half to all of the baseline share, so only strong compensation is detectable.
-   - **Registration.** Watering by age near the limits has not been examined, so this test can be registered before it is run.
+   - **Registration.** Nobody has tabulated watering by age near the limits, so the test can be registered before it runs.
 3. **Appeals (optional).** Dated appeals from the Senate and districts enter the RQ1 daily panel as events, with weather held fixed. Identification is weak because appeals follow heat.
 4. **Reach and equity.**
    - **Comparison.** Reach weighted by need (young age, sealed tree pits, heat exposure, age beyond municipal care) is compared across population density, social status, residents per street tree and turnout.
    - **Turnout data.** Turnout comes from a precinct-to-planning-area crosswalk that handles postal votes. The overlay also becomes a layer in the atlas. Inference stays at area level.
-   - **Pattern so far.** Reach rises steeply with density (Spearman 0.56) and shows no association with social status (0.01). The equity analysis has to explain this pattern rather than assume a direction.
+   - **Pattern so far.** Reach rises with density (Spearman 0.56) and shows no association with social status (0.01). The equity analysis must explain this pattern, not assume a direction.
 
 **Primary estimands.** For pumps, the change in logged litres per tree-season near a pump after it is repaired or fails. For the municipal limit, the difference in discontinuities in the share of trees watered at the 10-year limit.
 
 ### RQ3: tree outcomes
 
 - **Primary outcome: survival.** The outcome is whether a young street tree is removed between two inventory snapshots.
-  - **Why not satellite condition.** Young crowns are too small for it. The median crown covers 3% of a 10 m Sentinel-2 pixel at ages 3–8, 7% at ages 9–12 and 13% at ages 13–20.
+  - **Why not satellite condition.** Young crowns are too small: the median crown covers 3% of a 10 m Sentinel-2 pixel at ages 3–8, 7% at ages 9–12 and 13% at ages 13–20.
   - **Cost.** Survival also has a direct price: a new street tree with about three years of establishment care costs about €3,000 (Drucksache 19/13426).
 - **Design.**
   - **Comparison.** Young street trees with sustained logged care (for example three or more watering days, or 500 L in a season) are compared with unwatered trees in the same planning area, genus group and planting year that were alive at the same date. Both groups are followed until the latest inventory.
   - **Timing.** Exposure starts only after a snapshot that shows both groups alive, so watering cannot be credited with survival that had to happen before it. Annual snapshots allow a new cohort each season. With only two snapshots, exposure is limited to the first season after the earlier one.
   - **Extensions.** Dose-response (any log, three or more days, 500 L or more) and dry-season contrasts (2022 against 2021 and 2023) follow.
   - **Removal reasons.** Felling records with reasons separate deaths from removals for construction.
-- **Lever versions.** Two versions of the design do not depend on logging at all.
+- **Lever versions.** Two variants need no logs at all.
   - **Pumps.** Survival by distance to a working pump captures unlogged pump water.
   - **Municipal limit.** Survival at ages 11–13 in the 10-year districts against the 12-year districts shows what two more years of municipal watering are worth.
 - **Detectability.** There are 3,247 young street trees logged in April–September. With five matched controls each, four-year mortality differences of 1.8–3.0 percentage points are detectable. The baselines are 13–19%, implied by annual mortality of 3.5–5.1% (Roman and Scatena, 2011). For the 283 trees that received at least 500 L in a season, only differences of 6–10 points are detectable.
@@ -155,10 +155,10 @@ The drought cooling-loss estimates stay, as the conversion from canopy to coolin
 | Phase | Period | Work | Decision |
 | --- | --- | --- | --- |
 | 1 | Month 1 | Literature on co-production, stewardship, establishment and irrigation dose; data requests; pump status panel; pre-period Sentinel-2 noise; register thresholds and designs | **Gate A:** are survival data, pump history and the history of municipal age limits usable? Fix the RQ3 primary outcome and the RQ2 designs. |
-| 2 | Months 2–3 | RQ1 main models in need units; RQ2 pump design, municipal-limit test, reach and equity | — |
+| 2 | Months 2–3 | RQ1 main models in need units; RQ2 pump design, municipal-limit test, reach and equity | |
 | 3 | Months 3–4 | RQ3 survival and condition; lever versions | **Gate B:** where the minimum detectable effect exceeds the threshold, RQ3 reports bounds and RQ4 uses ranges. |
-| 4 | Month 5 | RQ4 scale-up, retargeting, allocation and funding scenarios | — |
-| 5 | Month 6 | Synthesis, writing, code release | — |
+| 4 | Month 5 | RQ4 scale-up, retargeting, allocation and funding scenarios | |
+| 5 | Month 6 | Synthesis, writing, code release | |
 
 Planned effort is RQ1 20%, RQ2 25%, RQ3 25%, RQ4 15%, Part I 5% and synthesis 10%. The October split was Part II 50%, Part I 25%, Part III 15% and integration 10%.
 
@@ -187,21 +187,11 @@ Planned effort is RQ1 20%, RQ2 25%, RQ3 25%, RQ4 15%, Part I 5% and synthesis 10
 | Watering chosen by visible tree condition | Biased survival contrast | Matching within planning area, genus and planting year; exposure starting after a snapshot; pre-watering negative controls; sensitivity analysis |
 | Time overrun | Incomplete chapters | Drop the appeals design and keep Part I minimal |
 
-## 11. What stays, what changes, what goes
+## 11. Summary of changes
 
-- **Stays.** These carry over from the October design:
-  - the RQ1 pipeline and models;
-  - the planning-area and Bezirksregion structure;
-  - the vulnerability and inequality comparisons, now in RQ2;
-  - the allocation comparison and fairness safeguards, now in RQ4;
-  - registration with disclosure, and the claim limits on logged care.
-- **Changes.** These are new or reworked:
-  - a tree-outcome question (RQ3);
-  - levers analysed as designs (RQ2);
-  - practical-relevance units throughout;
-  - the added-information analysis folded into RQ4;
-  - Part I reduced to the cooling conversion.
-- **Goes.** Area-level greenness regressions are dropped. The satellite test of watering-induced cooling remains excluded (Appendix A).
+- **Kept:** the RQ1 pipeline and models; the planning-area and Bezirksregion structure; the vulnerability comparisons (now RQ2); the allocation comparison and its safeguards (now RQ4); registration with disclosure; the claim limits on logged care.
+- **New or reworked:** the tree-outcome question (RQ3); levers as designs (RQ2); policy units throughout; the added-information analysis inside RQ4; Part I reduced to the cooling conversion.
+- **Dropped:** area-level greenness regressions. The satellite test of watering-induced cooling stays excluded (Appendix A).
 
 ## References
 

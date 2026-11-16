@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-29T16:26:19.507021+00:00",
+  "generated_at_utc": "2026-11-16T13:04:21.065838+00:00",
   "weather_archive_retrieved_date": "2026-09-29",
   "protocol": "docs/watering_response_exploratory_protocol.md",
   "source_urls": {
@@ -13,8 +13,8 @@
     "data/raw/dwd/tageswerte_KL_00433_19480101_20251231_hist.zip": "33b26c7013fd3f592291f7544197c25b3cea88d1cfd33d07d015e2fbb0271785"
   },
   "code_and_protocol_sha256": {
-    "src/berlin_heat/watering_response.py": "db32f65b1f93ad3d9eb3eea4bd92735cd9c5ca1eb23a2b1929f006e6573b251c",
-    "docs/watering_response_exploratory_protocol.md": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986"
+    "src/berlin_heat/watering_response.py": "35018cac977dd3b62223736472bfb357e20c6e29378725dc7695e4ba78a14b69",
+    "docs/watering_response_exploratory_protocol.md": "e2449c1f1b04e2defbb1f90b173dd5abfd25a75a7b63881cdf0c8ed4294398ab"
   },
   "weather_audit": {
     "station_name": "Berlin-Tempelhof",

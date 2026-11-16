@@ -1,18 +1,18 @@
 # Policy relevance: first numbers and design options
 
-*Gieß den Kiez citizen tree watering in Berlin · discussion draft · November 2026*
+*Gieß den Kiez citizen tree watering in Berlin · November 2026*
 
-Ideally, the design pairs **an outcome tied to a healthy city with treatment variables the city can control**. This note sets out the policy questions that follow from that aim, gives first order-of-magnitude answers from data already in the repository and compares design options. The [active analysis plan](analysis_plan.md) stays unchanged until a framing is chosen.
+The ideal design pairs **an outcome tied to a healthy city with treatment variables the city controls**. This memo lists the policy questions that follow, gives order-of-magnitude answers from data already in the repository and compares design options. Option B (Section 5) became the [revised research design](revised_research_design_2026_11.md) on 9 November 2026.
 
-Numbers come from [`analysis/build_feedback_benchmarks.py`](../analysis/build_feedback_benchmarks.py) and are written to `output/feedback_benchmarks/benchmarks.json`. To rebuild, run `python tools/restore_tree_inventory.py`, then `python analysis/build_feedback_benchmarks.py`. Figures attributed to districts are taken from parliamentary answers and serve as illustrations, not a citywide audit. Logs record platform activity only, and the current inventory is not a historical stock.
+[`analysis/build_feedback_benchmarks.py`](../analysis/build_feedback_benchmarks.py) computes every number and writes `output/feedback_benchmarks/benchmarks.json`. To rebuild, run `python tools/restore_tree_inventory.py`, then `python analysis/build_feedback_benchmarks.py`. District figures come from parliamentary answers and illustrate orders of magnitude; they are not a citywide audit. Logs record platform activity only, and the current inventory is not a historical stock.
 
 ## Summary
 
-1. **A healthy-city outcome reverses the direction of the design.** At present, logged care is the outcome. In the ideal design, a city lever changes the water trees receive, and tree condition is the outcome. RQ1 remains useful as the first stage: it describes when logged care happens.
+1. **A healthy-city outcome reverses the design.** In the October design, logged care is the outcome. In the ideal design, a city lever changes the water trees receive, and tree condition is the outcome. RQ1 stays as the first stage: it describes when logged care happens.
 2. **Logged watering is small in every comparison.** Since 2020, 1.2% of catalogued trees have been watered at least once, and 0.1–0.45% per season. The median watered tree receives 60 L per season, about 1% of the rain falling on its own crown. A single district's young-tree programme delivers 3–36 times the platform's citywide volume. Platform water is below 0.0004% of public supply.
 3. **Area-level greenness analyses cannot detect plausible effects.** In a typical planning area, 0.14% of street trees are watered in a season. A per-tree effect would therefore have to be 0.08–0.25 NDVI to show at area level. Tree-level designs have enough trees; their binding constraints are pixel size for young trees and selection of watered trees.
-4. **Street pumps are the most promising city lever.** Location and repair history are under city control, and a pump → tree-condition design captures logged and unlogged pump water together.
-5. **City-wide green cover is the wrong scale-up outcome.** Street trees aged 15 or younger hold about 2% of recorded street-tree crown area. Scaling participation would pay off through young-tree survival and later canopy growth, so a survival or vitality dose-response is the missing link.
+4. **Street pumps are the most promising city lever.** The city controls their location and repair, and a design from pump to tree condition captures logged and unlogged pump water together.
+5. **Citywide green cover is the wrong scale-up outcome.** Street trees aged 15 or younger hold about 2% of recorded street-tree crown area. More participation would pay off through young-tree survival and later canopy growth, so the missing link is a survival or vitality dose-response.
 
 ## 1. How the design changes
 
@@ -24,7 +24,7 @@ City levers ──► water a tree receives ────────────
  planting)
 ```
 
-The refined proposal covers the arrow into *logged* watering (RQ1–RQ2) and simulated allocation (RQ4). It has no tree-condition outcome, and Appendix A rules out only the satellite-cooling version of that question.
+The refined proposal covers the arrow into *logged* watering (RQ1–RQ2) and simulated allocation (RQ4). It has no tree-condition outcome; Appendix A rules out only the satellite-cooling version of that question.
 
 ## 2. First numbers
 
@@ -81,11 +81,11 @@ ET₀ uses Turc–Wendling with sunshine duration where available (2020–2022) 
 - Contracted watering costs about **€7–12 per tree-watering**. Lichtenberg paid €101,000 for 1,093 trees × 13 rounds; Reinickendorf €240,120 for 25,764 waterings in 2021; Tempelhof-Schöneberg states €9–12. At 80–150 L per watering, that is ≈ €0.05–0.15 per litre.
 - At these rates, logged volunteer water was worth **€38k–115k in 2022** and €8k–25k in 2024–2025. This is an upper bound, because small doses may be worth less per litre.
 - A new street tree with about three years of establishment care costs **≈ €3,000** (Stadtbaumkampagne, autumn 2022 tender). Each young-tree loss avoided therefore saves at least this amount.
-- The funding question becomes a break-even comparison: platform and campaign costs against the water's replacement value, avoided losses × €3,000 and non-water benefits such as damage reports. The thesis can estimate the first two benefit terms with uncertainty. Platform costs must come from CityLAB.
+- Funding becomes a break-even comparison: platform and campaign costs against the water's replacement value, avoided losses × €3,000, and benefits beyond water such as damage reports. The thesis can estimate the first two terms with uncertainty; platform costs must come from CityLAB.
 
 ### Statistical significance versus practical relevance
 
-In the RQ1 pilot, logged litres rise by 0.645 log1p units per +5 °C (95% interval 0.53–0.76), which is statistically clear. At the season mean of about 2,100 logged L per day, a 5 °C warmer day adds roughly **1,900 L citywide**. That is about 0.3% of the daily guidance need of street trees aged ≤ 15 (0.50–0.72 million L). Proposal: report every effect in policy units (litres, trees reached, share of need, euros). Also pre-specify a smallest effect of interest for each question, and use equivalence bounds so that a null result states which effects it rules out.
+In the RQ1 pilot, logged litres rise by 0.645 log1p units per +5 °C (95% interval 0.53–0.76), a clear statistical signal. At the season mean of about 2,100 logged L per day, a 5 °C warmer day adds about **1,900 L citywide**: 0.3% of the daily guidance need of street trees aged ≤ 15 (0.50–0.72 million L). Every effect should therefore appear in policy units (litres, trees reached, share of need, euros), with a prespecified smallest effect of interest and equivalence bounds so a null result states what it rules out.
 
 ### Population density
 
@@ -103,11 +103,11 @@ Across 531 planning areas, Spearman correlations with this reach measure are 0.5
 
 All minimum detectable effects (MDE) below assume 80% power at α = 0.05. The standard deviations are placeholders to be replaced by pre-2020 Sentinel-2 estimates.
 
-- **Planning areas (542).** An area-mean NDVI change dilutes a per-tree effect by the watered share, which has a median of 0.14%. For one season, the MDE per watered tree is **0.08, 0.17 or 0.25 NDVI** for area-level residual SDs of 0.01, 0.02 or 0.03. Pooling six seasons lowers this by at most √6. Young crowns cover about 7% of a 10 m pixel (IQR 3–14%), so the required crown-level effect would exceed 1 NDVI. Area-level greenness regressions can only produce uninformative nulls or spurious associations, so they should not be run.
-- **Single trees, Sentinel-2.** With 1,000–4,000 watered trees per season and five matched controls each, the MDE in pixel NDVI change is about **0.0015–0.013** (SD 0.03–0.08; design effect 1–3 for clustering by street or volunteer). Mature crowns roughly fill a pixel and this precision suffices, but their median seasonal dose of 50–60 L is negligible against their water use. For young trees, the crown-level MDE is about 0.02–0.2, so finer imagery is needed. Options are 20 cm RGBI orthophotos, whose flight dates must be checked (catalogue entries found so far: 22 February 2021 and 22 April 2023, both before full leaf-out), PlanetScope at 3 m, or the Senate's summer colour-infrared flights. At tree level, the binding problem is selection of watered trees, not sample size.
+- **Planning areas (542).** An area-mean NDVI change dilutes a per-tree effect by the watered share, median 0.14%. For one season, the MDE per watered tree is **0.08, 0.17 or 0.25 NDVI** for area-level residual SDs of 0.01, 0.02 or 0.03. Pooling six seasons lowers this by at most √6. Young crowns cover about 7% of a 10 m pixel (IQR 3–14%), so the crown-level effect would have to exceed 1 NDVI. Area-level greenness regressions can only yield uninformative nulls or spurious associations; the plan drops them.
+- **Single trees, Sentinel-2.** With 1,000–4,000 watered trees per season and five matched controls each, the MDE in pixel NDVI change is about **0.0015–0.013** (SD 0.03–0.08; design effect 1–3 for clustering by street or volunteer). Mature crowns roughly fill a pixel, so this precision suffices, but their median seasonal dose of 50–60 L is negligible against their water use. For young trees the crown-level MDE is about 0.02–0.2, which needs finer imagery: 20 cm RGBI orthophotos (catalogue flight dates so far are 22 February 2021 and 22 April 2023, both before full leaf-out), PlanetScope at 3 m, or the Senate's summer colour-infrared flights. At tree level, selection of watered trees binds before sample size does.
 - **Senate vitality survey.** The colour-infrared survey covers inner-city street trees planted before 1990, in 2020 and 2025, with about 5,000 trees reported. If 2–5% of surveyed trees were watered, the MDE for a difference in the share whose vitality declined is about **7–13 percentage points**. The survey covers mature trees only, and tree-level data would have to be requested.
 
-Cross-sectional comparisons ("higher NDVI where more is watered") are not interpretable. Volunteers may favour visibly stressed trees, which biases the comparison negatively. They may also favour well-kept streets, which biases it positively. Watering also comes bundled with other care.
+Cross-sectional comparisons ("higher NDVI where more is watered") cannot be interpreted. Volunteers may favour visibly stressed trees (negative bias) or well-kept streets (positive bias), and watering comes bundled with other care.
 
 ## 4. Question by question
 
@@ -121,7 +121,7 @@ Cross-sectional comparisons ("higher NDVI where more is watered") are not interp
 | Statistical significance against practical relevance | Section 2: heat response is significant but equals ≈ 0.3% of young-tree daily need | Smallest effects of interest and equivalence bounds in the registered plan | All RQs |
 | How watering matters for tree health | Districts water young trees for about 10 years because they depend on it. Older trees should mostly supply themselves. Logged doses are mostly far below guidance, so effects should concentrate in ages 4–20 in dry seasons. | Literature review on establishment, irrigation and mortality; QTrees and district moisture-sensor data | Background and tree-condition RQ |
 | Tree health as outcome; effect size given sample size | Section 3 | Pre-2020 Sentinel-2 extraction to fix the noise SD and clustering | Tree-condition RQ |
-| Share of trees reached | Section 2: 1.2% of catalogued trees cumulatively, 0.1–0.45% per season | — | Descriptive chapter |
+| Share of trees reached | Section 2: 1.2% of catalogued trees cumulatively, 0.1–0.45% per season | | Descriptive chapter |
 | Most trees are in forests and parks | Forest is 17.7% of the city's area and uncatalogued; the green-space layer is incomplete | Express effects relative to street trees in dense areas, not city green cover | Framing |
 | Drinking-water trade-off at scale | Annual volumes are negligible against supply. Binding constraints are likely heat-wave peak demand, pump availability (street pumps draw groundwater), groundwater in dry years and volunteer time. | BWB peak-demand and groundwater context | Scenario RQ |
 | Overlay voting areas in Earth Engine | Feasible. Build the precinct-to-LOR crosswalk in Python (area- or population-weighted) and embed the results as LOR attributes in the existing atlas. Postal votes are counted in larger postal districts, so polling-station turnout alone misstates local turnout. | Precinct and postal-district geometries and results, 2021, 2023, 2025 | RQ2 covariates; atlas layer |
@@ -133,10 +133,10 @@ Cross-sectional comparisons ("higher NDVI where more is watered") are not interp
 | Option | Content | Risk |
 | --- | --- | --- |
 | A. Keep the design and add a policy chapter | Sections 2–3, extended and sourced | Low; still no healthy-city outcome |
-| **B. Reframe (recommended)** | RQ1 unchanged (first stage, pilot done). RQ2: levers and access (pumps, municipal-care age, density and participation context). RQ3: tree condition at tree level with registered detectability. RQ4: scale-up and funding scenarios, with need-only against citizen-informed allocation as one scenario. Part I cooling loss shrinks to context. | Medium; depends on imagery and data access |
+| **B. Reframe (adopted)** | RQ1 unchanged (first stage, pilot done). RQ2: levers and access (pumps, municipal-care age, density and participation context). RQ3: tree condition at tree level with registered detectability. RQ4: scale-up and funding scenarios, with need-only against citizen-informed allocation as one scenario. Part I cooling loss shrinks to context. | Medium; depends on imagery and data access |
 | C. Full pivot | Tree condition as the only outcome; RQ1 becomes background | High; selection, imagery access and likely nulls |
 
-Under option B, a go/no-go decision would follow two steps: the pre-period Sentinel-2 extraction, which sets the MDE, and the replies to the data requests below.
+Under option B, Gate A in the [analysis plan](analysis_plan.md) follows the pre-period Sentinel-2 extraction, which sets the MDE, and the replies to the data requests below.
 
 ## 6. Data requests
 
@@ -145,15 +145,6 @@ Under option B, a go/no-go decision would follow two steps: the pre-period Senti
 - **Senate environment department:** tree-level colour-infrared vitality data for 2020 and 2025; moisture-sensor series.
 - **BWB and districts:** street-pump status history and repair dates.
 - **State election office / Statistik Berlin-Brandenburg:** precinct and postal-district geometries and results.
-
-## 7. Next steps
-
-1. Choose a design option (Section 5).
-2. Extract 2017–2025 Sentinel-2 NDVI for watered trees and matched controls in Earth Engine. Estimate noise and clustering, then replace the placeholder MDEs.
-3. Build a pump layer (OSM, BWB) with status history and describe logged watering against distance to a working pump.
-4. Crosswalk turnout to planning areas, handling postal votes.
-5. Review the literature on irrigation dose-response for young urban trees.
-6. Specify a smallest effect of interest for each RQ in the registered plan.
 
 ## Sources
 

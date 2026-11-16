@@ -1,6 +1,6 @@
 # Data definitions and analytical units
 
-The [schema inventory](data_schema.json) lists every field in the included CSV and GeoPackage tables. The [file inventory](data_inventory.csv) records hashes, sizes, row counts, and access status. This guide defines the main analytical quantities; consult each builder for less common diagnostics.
+The [schema inventory](data_schema.json) lists every field in the CSV and GeoPackage tables, and the [file inventory](data_inventory.csv) records hashes, sizes, row counts and access status. This page defines the main quantities; see each builder for rarer diagnostics.
 
 | Field or quantity | Definition and unit | Caution |
 | --- | --- | --- |
@@ -27,4 +27,4 @@ The [schema inventory](data_schema.json) lists every field in the included CSV a
 | `comparison_eligible` | Area is retained in the provisional LST comparison | Does not establish validated geography |
 | Moran's I / local cluster | Spatial dependence under row-standardised queen contiguity | 999 permutations; local p < .05 is unadjusted and exploratory |
 
-CSV empty cells and `NaN` represent unavailable values unless a source documents otherwise. Recorded zeros in balanced panels represent no linked platform event during an observed period. They do not represent unobserved months, missing temperatures, or absence of all irrigation.
+Empty CSV cells and `NaN` mean unavailable unless a source says otherwise. A recorded zero in a balanced panel means no linked platform event in an observed period. It does not mean an unobserved month, a missing temperature or an absence of all irrigation.

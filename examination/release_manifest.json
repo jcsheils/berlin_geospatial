@@ -2,7 +2,7 @@
   "schema_version": 1,
   "prepared_date": "2026-11-02",
   "scope": "Refined October proposal; RQ1 daily pilot, Earth Engine demo and preserved seminar evidence",
-  "selection": "Prior release plus explicitly selected RQ1 and Earth Engine files and project update; local authoring caches excluded; refined proposal PDF added 2 November 2026",
+  "selection": "Prior release plus explicitly selected RQ1 and Earth Engine files; local authoring caches excluded; refined proposal PDF added 2 November 2026",
   "files": [
     {
       "path": ".gitattributes",
@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6472,
-      "sha256": "accedb2ae156984ee0de55c6218ac4c3353af18b36dc146d33c966a3bdc9b289"
+      "bytes": 5119,
+      "sha256": "b320aaaa15d09dd00882d5e79179bacd72579afd3570b1106071f2d41e1126f3"
     },
     {
       "path": "analysis/build_equity_notebook.py",
@@ -76,8 +76,8 @@
     },
     {
       "path": "data/README.md",
-      "bytes": 4061,
-      "sha256": "3008f1329cbc559cc634c577009f5a0f36224526c9b1f23cc03085839c9cc81e"
+      "bytes": 3540,
+      "sha256": "997047ade1762f5eec1437ecbb655d807185090ff4fcda6193a8d4fe9763350d"
     },
     {
       "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
@@ -156,8 +156,8 @@
     },
     {
       "path": "data/raw/dwd/README.md",
-      "bytes": 1831,
-      "sha256": "ef2834e2c1e07c54833618bcbd40ff7b32eab07e226e1924688264c63398396a"
+      "bytes": 1464,
+      "sha256": "01abd0fae95ddb747a0e9d146e7c4f267bed4831a070bf1452d658e8640a2725"
     },
     {
       "path": "data/raw/dwd/tageswerte_KL_00433_19480101_20251231_hist.zip",
@@ -166,8 +166,8 @@
     },
     {
       "path": "data/raw/supervisor/README.md",
-      "bytes": 1880,
-      "sha256": "57a361be5658c3a9111627523ee0660a4d4991044a5c97e87403df7fd76849dd"
+      "bytes": 1769,
+      "sha256": "95ac4593fbb88d544f59d02dab5a0a1fcf2c8f379d1a2ab33e4606793fc1eff7"
     },
     {
       "path": "data/raw/supervisor/berlin_ortsteile_LST_rain_2018_2025_LNDSAT.csv",
@@ -181,8 +181,8 @@
     },
     {
       "path": "data/raw/tree_inventory/README.md",
-      "bytes": 1873,
-      "sha256": "2cff98c5b20836ab531d6e54781328f33c14128e2fcb4fdee9181595e1142da5"
+      "bytes": 1716,
+      "sha256": "cc9db009cde5c7b15df851e5d134652cd0b5061c812d88f0cfb7958b2bfd5921"
     },
     {
       "path": "data/raw/tree_inventory/snapshot.json",
@@ -191,8 +191,8 @@
     },
     {
       "path": "data/spatial/README.md",
-      "bytes": 2864,
-      "sha256": "db87571684d8b59e8d1a4cad503ca0453f66b409c5d5e9c63c86b19649b72344"
+      "bytes": 2712,
+      "sha256": "ef9f9739f27c6857286da7a9f035cc84ff19682ddb7a800e2cc74128a9061d01"
     },
     {
       "path": "data/spatial/alkis_ortsteile_2026_09_29.geojson",
@@ -211,13 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 10968,
-      "sha256": "44037b57e9cdf842ea972930d57c51b91f6a0c309b90c151069fa0c454ab7134"
-    },
-    {
-      "path": "docs/project_update_2026_11_02.md",
-      "bytes": 4025,
-      "sha256": "11f477c515d329ccc15c73f3550c5b82ad036676382b951c8728fc3e3973a91a"
+      "bytes": 9403,
+      "sha256": "a69560ac9c26feb2c5970e6497f73135184d69f80a5ef335bfb9a61f2bb30c56"
     },
     {
       "path": "docs/proposal/Proposal_Refined_October_2026.pdf",
@@ -226,43 +221,33 @@
     },
     {
       "path": "docs/proposal/README.md",
-      "bytes": 1990,
-      "sha256": "df73bc6e1718c377f860487c9cf244e2a8f84ff0d0caedccf70a73535ab33bc3"
+      "bytes": 1652,
+      "sha256": "92b122e00c2566f24e97d0ff90efe7a5040a52a07686732ecd3ec081fc6b9529"
     },
     {
       "path": "docs/related_literature.md",
-      "bytes": 17139,
-      "sha256": "4018a70ce521b3f8d0871c821c87cceea77938f01fa057c1bb7d2b20c561dcd4"
-    },
-    {
-      "path": "docs/repository_architecture.md",
-      "bytes": 2543,
-      "sha256": "ae6b5bfe454142c24c9b7b6d396aff7d4bf195eba4691a9f56d382c25ae2093a"
+      "bytes": 12591,
+      "sha256": "8f9a842e0ec937d283551f74d5f6ad53d3201d62260fd26aaefd72316a6ba2df"
     },
     {
       "path": "docs/rq1_daily_exploratory_protocol.md",
-      "bytes": 5226,
-      "sha256": "4e494593f63a961cd2b38c6e53f2baab5d672448874b3e2faa64090676182497"
-    },
-    {
-      "path": "docs/rq1_daily_reproduction.md",
-      "bytes": 3578,
-      "sha256": "a5eebda9e54d290cf33c8e374096172d84732c31fa6632c2890984779c271f49"
+      "bytes": 4878,
+      "sha256": "532def846bf8d3ac638cafb2aa7bdea04b3b68f7674752d816ca61d23cabc3d5"
     },
     {
       "path": "docs/temporal_analysis_protocol.md",
-      "bytes": 9355,
-      "sha256": "afdca8f73ad049ff497a7dc0ffed5bdd961e92dd1636da381a50bfb596e6f40e"
+      "bytes": 7043,
+      "sha256": "852daee592c919cb333048496bc4aec5ceb7ff85ba6362f3c484e7bf5e51aaa9"
     },
     {
       "path": "docs/watering_response_exploratory_protocol.md",
-      "bytes": 8941,
-      "sha256": "bc6586e23a2a9115bbb21af24d681978ce8b94c6e551f46483db6a0a752f7986"
+      "bytes": 7507,
+      "sha256": "e2449c1f1b04e2defbb1f90b173dd5abfd25a75a7b63881cdf0c8ed4294398ab"
     },
     {
       "path": "earth_engine/README.md",
-      "bytes": 5062,
-      "sha256": "397b01249433febf2ba00b94d7b7cce2d17564a02379c0e39ef6b897e79eaa99"
+      "bytes": 4205,
+      "sha256": "3ec413dc281884217d60f6b62e73098a3037b9a1e1526954d4adb8e3278eee1e"
     },
     {
       "path": "earth_engine/atlas_ui.js",
@@ -286,13 +271,13 @@
     },
     {
       "path": "examination/README.md",
-      "bytes": 3727,
-      "sha256": "718c8ffeef02c44db33dce9e88f552fa4fed86915ec5d8f18b40e02f8caf80e5"
+      "bytes": 3254,
+      "sha256": "165e55f382aa061352c63ac4830e26396f03a57579fba803fbb41ee00e940b2b"
     },
     {
       "path": "examination/analysis_plan_october_2026.md",
-      "bytes": 4071,
-      "sha256": "73ade54fc972b999ffcbeaaf60121d6dde5f3916481f7352df64c7ad481fe68b"
+      "bytes": 3895,
+      "sha256": "9b445001af3e1c7a2399f886efd789550463675b2f38895183830f43c18f0811"
     },
     {
       "path": "examination/atlas/Berlin_Map_Atlas_October_2026.pdf",
@@ -311,8 +296,8 @@
     },
     {
       "path": "examination/data_dictionary.md",
-      "bytes": 3660,
-      "sha256": "3c9ca84442c611a4647b4645ef320297d10c4fe8066d95fdbfe38254e7b6db10"
+      "bytes": 3609,
+      "sha256": "52d7e1c17fe8f2aeac863e40788a512c17e60246dcf5ef97c6990b0e6dee9018"
     },
     {
       "path": "examination/data_inventory.csv",
@@ -336,8 +321,8 @@
     },
     {
       "path": "examination/proposal/README.md",
-      "bytes": 3607,
-      "sha256": "67c39767943734e3b1b01e2666a91a25a872382f3c88601ccd60b2196034ca66"
+      "bytes": 2916,
+      "sha256": "ec097c1d8ad7bceaf7433c8bd9684a60ba47bcd1ada9f448ad767136035f888a"
     },
     {
       "path": "examination/proposal/Seminar_Slides_October_2026.key",
@@ -351,13 +336,13 @@
     },
     {
       "path": "examination/readiness.md",
-      "bytes": 3804,
-      "sha256": "7074f162245cc86c27c5b0326e52d8cef051b9681c22cf57fc11ef85f63ca44b"
+      "bytes": 3320,
+      "sha256": "2c1bcc50ac91ac187f791503220699eedcaeeccc1ec1d4b00e63a5366f85d8f5"
     },
     {
       "path": "examination/reproducibility.md",
-      "bytes": 4852,
-      "sha256": "5a2239a4d930aced16cf383bb865302a5190776f6b85065321ab173174be2b9d"
+      "bytes": 7574,
+      "sha256": "19346bb5772258fbb5df7825df0b8c9c284dbcdeda010d5ff07456df4d8a2479"
     },
     {
       "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",
@@ -371,8 +356,8 @@
     },
     {
       "path": "examination/validation.md",
-      "bytes": 3012,
-      "sha256": "c536a169ed1c16a75bd788d604ee45022605b6deec143ebdea873e14a2b231bd"
+      "bytes": 2433,
+      "sha256": "1e832ebf888928fba9b8abfc1d10d1c600c87fa462677f843eb66466e19fc6e5"
     },
     {
       "path": "output/03_spatial_equity_vulnerability/figures/01_recorded_watering_monthly_timing.png",
@@ -652,7 +637,7 @@
     {
       "path": "output/rq1_daily/metadata.json",
       "bytes": 3134,
-      "sha256": "fc054903852ae85ff999f89bdff7cd668cb09033f16e3911be369f079b8c98b5"
+      "sha256": "1c3ff02d44579ae5fff1b78a947015a4781820aae7691708dbc53693ce3d8314"
     },
     {
       "path": "output/rq1_daily/model_audit.json",
@@ -767,7 +752,7 @@
     {
       "path": "output/watering_response/metadata.json",
       "bytes": 5031,
-      "sha256": "d7b6179abd315fc44a665518dba756d0483975f695f172756adcd758433706be"
+      "sha256": "4be55450cf268d0580696b44ff2f8f12317d1ac4cc9e6ab3a3eb4dd0639f3f1e"
     },
     {
       "path": "output/watering_response/ortsteil/figures/01_lst_availability.png",
@@ -782,7 +767,7 @@
     {
       "path": "output/watering_response/ortsteil/metadata.json",
       "bytes": 4104,
-      "sha256": "e7420c57fd29d5fec2bf7588a78b5c26b02f91489d1ff8e564021c8a9c495427"
+      "sha256": "e8b05acb895acc46d3a1d07e0395f272f26653f33a2cfef951317d52892f4a7a"
     },
     {
       "path": "output/watering_response/ortsteil/tables/ortsteil_geography_audit.csv",
@@ -832,7 +817,7 @@
     {
       "path": "output/watering_response/ortsteil/workbook_data.json",
       "bytes": 7908679,
-      "sha256": "c509ffaeb6c64eaa7a55f3b8a045372d6c05140ff9c265ff2d17b62d9cbbb33d"
+      "sha256": "2deb846f29b0603c9ff1a86f3aaa81ea29f90f526577ad111b2ec0c8b8c362e8"
     },
     {
       "path": "output/watering_response/report.html",
@@ -912,7 +897,7 @@
     {
       "path": "output/watering_response/workbook_data.json",
       "bytes": 610420,
-      "sha256": "3ddd8a5a9070553abc20ae67722558fcb4a020003fcf68e5fdc3a8e7af46f2ea"
+      "sha256": "de4e3a99ab2373af679a56e2029d85d5edcd5ce49f4a213af167a86460ae6d73"
     },
     {
       "path": "pipelines/03_build_lor_month_panel.py",
@@ -1091,8 +1076,8 @@
     },
     {
       "path": "tools/verify_examination.py",
-      "bytes": 1921,
-      "sha256": "3d5ec2e82e49afc9011be2789488857b7300bf918b6a13c9271a9c60a87b6c74"
+      "bytes": 2905,
+      "sha256": "ba184b7285ae5df40497506844f26b7d0e2726bcf36a2ec8713c1afa3cfeb7f5"
     }
   ]
 }
