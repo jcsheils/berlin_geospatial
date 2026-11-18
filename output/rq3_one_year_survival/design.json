@@ -1,0 +1,83 @@
+{
+ "stage": "design (no outcome data opened)",
+ "cohort": {
+  "street_trees_age_0_40_2025": 206667,
+  "street_trees_age_0_15_2025": 47069,
+  "outside_planning_areas": 28,
+  "age_0_15_watered_2020_2024": 2158,
+  "age_0_15_500_l_or_more": 217,
+  "age_16_40_watered_2020_2024": 3836,
+  "genus_groups": [
+   "ACER",
+   "AESCULUS",
+   "CARPINUS",
+   "CORYLUS",
+   "FRAXINUS",
+   "LIQUIDAMBAR",
+   "OTHER",
+   "PRUNUS",
+   "QUERCUS",
+   "TILIA",
+   "ULMUS"
+  ]
+ },
+ "analyses": {
+  "primary_any_log_2020_2024_age_0_15": {
+   "treated": 2145,
+   "treated_without_matching_control": 13,
+   "controls": 25655,
+   "effective_controls": 8138.5,
+   "strata": 558,
+   "planning_areas": 505,
+   "mde_pp_design_effect_1_and_2": [
+    0.83,
+    1.17
+   ]
+  },
+  "s2_500_l_or_more_in_a_season": {
+   "treated": 217,
+   "treated_without_matching_control": 0,
+   "controls": 7757,
+   "effective_controls": 2432.5,
+   "strata": 134,
+   "planning_areas": 399,
+   "mde_pp_design_effect_1_and_2": [
+    2.42,
+    3.42
+   ]
+  },
+  "s3_placebo_age_16_40": {
+   "treated": 3820,
+   "treated_without_matching_control": 16,
+   "controls": 98506,
+   "effective_controls": 32067.8,
+   "strata": 987,
+   "planning_areas": 538,
+   "mde_pp_design_effect_1_and_2": [
+    0.6,
+    0.85
+   ]
+  },
+  "s4_matched_within_planning_area": {
+   "treated": 1974,
+   "treated_without_matching_control": 184,
+   "controls": 12882,
+   "effective_controls": 3256.8,
+   "strata": 822,
+   "planning_areas": 315,
+   "mde_pp_design_effect_1_and_2": [
+    0.97,
+    1.38
+   ]
+  }
+ },
+ "baseline_risks_used_for_detectability": {
+  "young": 0.0151,
+  "placebo": 0.0158
+ },
+ "inputs_sha256": {
+  "inventory_2025": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+  "tree_day": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d",
+  "lor": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624"
+ }
+}

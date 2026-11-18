@@ -31,6 +31,14 @@ rq2 = "Does logged citizen watering respond to daily heat and dryness, and how d
 temperature_scope = "DWD Berlin-Tempelhof air temperature; supplied monthly Ortsteil LST is provisional and is not the Part I overpass panel."
 claim = "Monthly associations are exploratory; no causal cooling or daily vulnerability interaction has been estimated."
 
+[project.rq3_one_year_survival]
+registered = "2026-11-17"
+protocol = "docs/rq3_one_year_survival_protocol.md"
+protocol_sha256 = "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a"
+builder = "analysis/rq3_one_year_survival.py"
+design = "output/rq3_one_year_survival/design.json"
+claim = "Registered preliminary test; design stage only. No removal has been compared by watering status."
+
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"
 part_iii_checkpoint = "end-month-4"
