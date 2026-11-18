@@ -1,4 +1,4 @@
-"""Registered one-year test for RQ3: logged citizen watering and street-tree removal, 2025 to 2026.
+"""Pre-specified one-year test for RQ3: logged citizen watering and street-tree removal, 2025 to 2026.
 
 Two stages, run in order:
 
@@ -6,15 +6,15 @@ Two stages, run in order:
   2025 inventory and the 2020-2024 logs. It never opens the 2026 inventory, so it
   sees no outcome.
 - `outcome` runs the analysis fixed in docs/rq3_one_year_survival_protocol.md. It
-  refuses to run unless the protocol's SHA-256 equals the registered hash in
+  refuses to run unless the plan's SHA-256 equals the hash recorded in
   config/project.toml and the cohort matches the saved design exactly.
 - `corrected` is a disclosed deviation (docs/rq3_one_year_survival_deviation.md).
-  The registered run took exposure from the tree-day table, which keeps only trees
+  The first run took exposure from the tree-day table, which keeps only trees
   still in the 2026 inventory, so every removed tree counted as unwatered. This
   stage takes exposure from the raw log export and adds a cluster-bootstrap interval.
 
 Results are pooled over ages: nothing is tabulated by single year of age or by
-municipal-care limit, which belong to a separately registered test.
+municipal-care limit, which belong to a separately planned test.
 """
 from __future__ import annotations
 
@@ -220,7 +220,7 @@ def design() -> dict:
     }
 
 
-def registered_hash() -> str | None:
+def plan_hash() -> str | None:
     return tomllib.loads(CONFIG.read_text()).get("project", {}).get("rq3_one_year_survival", {}).get("protocol_sha256")
 
 
@@ -242,9 +242,9 @@ def read_tree_day() -> pd.DataFrame:
 
 
 def outcome(inventory_path: Path) -> dict:
-    expected = registered_hash()
+    expected = plan_hash()
     if not expected or sha256(PROTOCOL) != expected:
-        raise SystemExit("Protocol hash does not match the registered hash in config/project.toml; not running the outcome stage.")
+        raise SystemExit("Plan hash does not match the hash recorded in config/project.toml; not running the outcome stage.")
     saved = json.loads((OUT / "design.json").read_text())
     cohort = attach_outcomes(add_exposure(load_cohort(), read_tree_day()), inventory_path)
     result = analyses(cohort, "removed", "absent")
@@ -256,16 +256,16 @@ def outcome(inventory_path: Path) -> dict:
 
 
 def corrected(inventory_path: Path) -> dict:
-    """The registered analysis with exposure from the raw export and a cluster-bootstrap interval."""
+    """The planned analysis with exposure from the raw export and a cluster-bootstrap interval."""
     base = load_cohort()
     cohort = attach_outcomes(add_exposure(base, load_raw_logs()), inventory_path)
-    registered = add_exposure(base, read_tree_day())
+    planned = add_exposure(base, read_tree_day())
     young = cohort["age"].between(*YOUNG_AGES)
     return {
         "stage": "corrected (disclosed deviation; see docs/rq3_one_year_survival_deviation.md)",
-        "protocol_sha256": registered_hash(),
+        "protocol_sha256": plan_hash(),
         "exposure_source": str(RAW_LOGS.relative_to(ROOT)),
-        "watered_age_0_15_raw_export_vs_tree_day": [int(cohort.loc[young, "watered"].sum()), int(registered.loc[young, "watered"].sum())],
+        "watered_age_0_15_raw_export_vs_tree_day": [int(cohort.loc[young, "watered"].sum()), int(planned.loc[young, "watered"].sum())],
         "analyses": analyses(cohort, "removed", "absent", BOOTSTRAP_REPS),
         "bootstrap": {"reps": BOOTSTRAP_REPS, "unit": "planning area", "interval": "percentile"},
         "inputs_sha256": {"inventory_2025": sha256(INVENTORY_2025), "raw_logs": sha256(RAW_LOGS), "lor": sha256(LOR),

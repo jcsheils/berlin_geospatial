@@ -1,12 +1,12 @@
-# RQ3 one-year survival test: deviation and result, 18 November 2026
+# RQ3 one-year survival test: changes from the plan and result, 18 November 2026
 
-This note reports how the analysis departed from the [registered protocol](rq3_one_year_survival_protocol.md), which stays unchanged. The protocol was pushed to the repository as commit `81c19a4` at 09:26 on 18 November 2026, before the outcome stage ran.
+This note reports how the analysis departed from the [pre-specified plan](rq3_one_year_survival_protocol.md), whose analysis content stays unchanged. The plan was pushed to the repository as commit `81c19a4` at 09:26 on 18 November 2026, before the outcome stage ran.
 
-## The registered run is void
+## The first run is void
 
-The registered run found zero removals among 2,145 watered trees aged 0–15 and among 3,820 aged 16–40. At the overall rate of about 1.5% a year, about 32 and 57 removals were expected.
+The first run found zero removals among 2,145 watered trees aged 0–15 and among 3,820 aged 16–40. At the overall rate of about 1.5% a year, about 32 and 57 removals were expected.
 
-The cause is the exposure source the protocol names, `data/processed/temporal/recorded_tree_day_watering_2020_2025.csv`. That table kept only logged trees still present in the 2026 inventory. Every watered tree that was removed therefore counted as unwatered. The raw log export keeps these trees. The registered result (`output/rq3_one_year_survival/outcome.json`) is an artefact and is not evidence.
+The cause is the exposure source the plan names, `data/processed/temporal/recorded_tree_day_watering_2020_2025.csv`. That table kept only logged trees still present in the 2026 inventory. Every watered tree that was removed therefore counted as unwatered. The raw log export keeps these trees. The first run's result (`output/rq3_one_year_survival/outcome.json`) is an artefact and is not evidence.
 
 ## Seen before the corrected run
 
@@ -15,9 +15,9 @@ Diagnosing the fault meant comparing logged trees with the 2026 inventory. Of th
 ## Changes
 
 1. **Exposure** comes from the raw export (`data/giessdenkiez_bewässerungsdaten (1).csv`). It is cleaned as for the tree-day table (exact duplicates removed, Europe/Berlin dates, 18 May 2020 to 31 December 2025, positive litres) but not matched to any inventory. This adds 23 watered trees aged 0–15 (2,181 against 2,158) and 43 aged 16–40. No tree watered in the tree-day table loses its exposure.
-2. **The interval** comes from a cluster bootstrap over planning areas (2,000 resamples, seed 42, percentile interval). The registered linearised variance gets nothing from strata with one control and gave S4 an interval of zero width. On synthetic data with well-filled strata the two intervals agree. Both are reported; the bootstrap interval is primary.
+2. **The interval** comes from a cluster bootstrap over planning areas (2,000 resamples, seed 42, percentile interval). The planned linearised variance gets nothing from strata with one control and gave S4 an interval of zero width. On synthetic data with well-filled strata the two intervals agree. Both are reported; the bootstrap interval is primary.
 
-Cohort, strata, outcome, analyses and interpretation rules are as registered.
+Cohort, strata, outcome, analyses and interpretation rules are as planned.
 
 ## Result
 
@@ -31,10 +31,10 @@ Cohort, strata, outcome, analyses and interpretation rules are as registered.
 
 Full output: `output/rq3_one_year_survival/corrected.json`.
 
-## Interpretation under the registered rules
+## Interpretation under the planned rules
 
 - **Primary: inconclusive.** The interval includes zero. It does not exclude a fall in removal risk of up to 0.86 points (70% of the control risk), nor a rise of up to 0.40 points.
-- **Older trees show a gap of the same size** (−0.30 against −0.21 points). The protocol reads this as pointing to selection or to the data rather than to watering. Residents may water trees on streets that see less felling.
+- **Older trees show a gap of the same size** (−0.30 against −0.21 points). The plan reads this as pointing to selection or to the data rather than to watering. Residents may water trees on streets that see less felling.
 - **Dose:** one removal among 218 heavily watered trees. Too few trees for any conclusion.
 
 ## Consequences

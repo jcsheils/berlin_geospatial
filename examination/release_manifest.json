@@ -61,8 +61,8 @@
     },
     {
       "path": "config/project.toml",
-      "bytes": 5172,
-      "sha256": "b07800f6c07092bd06b004a13ceb9a7e1dca208e99793e9ebfd6c707c58770b7"
+      "bytes": 5433,
+      "sha256": "c221ed5b2ad6b460f212b468ac62ff9ccea978f50bdc333b3fed904137948853"
     },
     {
       "path": "data/Berlin_heat_population_data.csv",
@@ -211,8 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 9951,
-      "sha256": "071cb943e4c9d5537265de9e3f77006e0de091cfe2c70e5d3b333ad910eae7c7"
+      "bytes": 9949,
+      "sha256": "52956569ea26562494c2f0d22980f100ce81fc7bbe7babf98c428b67702400f4"
     },
     {
       "path": "docs/proposal/Proposal_Refined_October_2026.pdf",

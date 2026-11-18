@@ -32,14 +32,16 @@ temperature_scope = "DWD Berlin-Tempelhof air temperature; supplied monthly Orts
 claim = "Monthly associations are exploratory; no causal cooling or daily vulnerability interaction has been estimated."
 
 [project.rq3_one_year_survival]
-registered = "2026-11-17"
+plan_written = "2026-11-17"
+plan_pushed = "81c19a4, 2026-11-18 09:26"
 protocol = "docs/rq3_one_year_survival_protocol.md"
-protocol_sha256 = "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a"
+protocol_sha256 = "56b6653712fab0a81fff9d2359d3128d60b6596a2ded22e0f2ef990851b02ef9"
+protocol_sha256_at_run = "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a"  # before the wording change; recorded in outcome.json and corrected.json
 builder = "analysis/rq3_one_year_survival.py"
 design = "output/rq3_one_year_survival/design.json"
 deviation = "docs/rq3_one_year_survival_deviation.md"
 corrected = "output/rq3_one_year_survival/corrected.json"
-claim = "Registered run void (exposure table dropped removed trees). Corrected run, a disclosed deviation: inconclusive, -0.21 pp (95% bootstrap -0.86 to 0.40); older trees show a gap of similar size."
+claim = "Pre-specified plan, not a formal preregistration. First run void (exposure table dropped removed trees). Corrected run, which departs from the plan: inconclusive, -0.21 pp (95% bootstrap -0.86 to 0.40); older trees show a gap of similar size."
 
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"

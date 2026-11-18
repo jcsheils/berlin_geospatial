@@ -1,10 +1,12 @@
-# RQ3 one-year survival test: registration, 17 November 2026
+# RQ3 one-year survival test: pre-specified plan, 17 November 2026
 
-This protocol was fixed before any tree removal was compared by watering status. Its SHA-256 is recorded in `config/project.toml`, and the outcome stage of [`analysis/rq3_one_year_survival.py`](../analysis/rq3_one_year_survival.py) refuses to run unless the file is unchanged. The registration date is that of the commit that adds the protocol to the public repository.
+This plan was written before any tree removal was compared by watering status, and pushed to the repository as commit `81c19a4` at 09:26 on 18 November 2026, before the test ran. It is not a formal preregistration: it has not been lodged with a registry. Its SHA-256 is recorded in `config/project.toml`, and the outcome stage of [`analysis/rq3_one_year_survival.py`](../analysis/rq3_one_year_survival.py) refuses to run unless the file is unchanged.
 
-It is a preliminary test on one year of data. The four-year survival design in the [analysis plan](analysis_plan.md) remains the main RQ3 test and is registered separately once the 2020–2024 inventories are available. If that design ends with the 2025 inventory, the two tests share no outcomes.
+On 18 November, after the run, the wording changed from "registration" to "pre-specified plan". The analysis is unchanged. The version that ran is the one in commit `81c19a4`.
 
-## Already seen before registration
+It is a preliminary test on one year of data. The four-year survival design in the [analysis plan](analysis_plan.md) remains the main RQ3 test and gets its own plan once the 2020–2024 inventories are available. If that design ends with the 2025 inventory, the two tests share no outcomes.
+
+## Already seen before the plan was written
 
 - Removal rates for all street trees from 2025 to 2026, overall, by age band and by district ([benchmarks](../output/feedback_benchmarks/benchmarks.json), `inventory_ids_2025_to_2026`). None is split by watering.
 - The design-stage output below, which uses the 2025 inventory and the logs, but not the 2026 inventory.
@@ -62,7 +64,7 @@ These are reported with intervals and without significance claims.
 
 ## Not done
 
-- No table of watering or removal by single year of age or by municipal-care limit. Those belong to the age-limit test, registered separately.
+- No table of watering or removal by single year of age or by municipal-care limit. Those belong to the age-limit test, planned separately.
 - No covariates, outcome definitions or subgroups chosen after seeing results. Any further analysis is labelled exploratory.
 
 ## Limits

@@ -98,13 +98,13 @@ class CorrectionTests(unittest.TestCase):
         self.assertGreaterEqual(*saved["watered_age_0_15_raw_export_vs_tree_day"])
 
 
-class RegistrationTests(unittest.TestCase):
-    def test_outcome_stage_refuses_an_unregistered_protocol(self):
-        with mock.patch.object(rq3, "registered_hash", return_value="0" * 64), self.assertRaises(SystemExit):
+class PlanTests(unittest.TestCase):
+    def test_outcome_stage_refuses_a_changed_plan(self):
+        with mock.patch.object(rq3, "plan_hash", return_value="0" * 64), self.assertRaises(SystemExit):
             rq3.outcome(ROOT / "missing.gpkg")
 
-    def test_registered_hash_matches_the_protocol(self):
-        self.assertEqual(rq3.registered_hash(), rq3.sha256(rq3.PROTOCOL))
+    def test_recorded_hash_matches_the_plan(self):
+        self.assertEqual(rq3.plan_hash(), rq3.sha256(rq3.PROTOCOL))
 
     def test_saved_design_holds_no_outcomes(self):
         design = json.loads((ROOT / "output/rq3_one_year_survival/design.json").read_text())
