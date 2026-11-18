@@ -1,0 +1,147 @@
+{
+ "stage": "corrected (disclosed deviation; see docs/rq3_one_year_survival_deviation.md)",
+ "protocol_sha256": "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a",
+ "exposure_source": "data/giessdenkiez_bewässerungsdaten (1).csv",
+ "watered_age_0_15_raw_export_vs_tree_day": [
+  2181,
+  2158
+ ],
+ "analyses": {
+  "primary_any_log_2020_2024_age_0_15": {
+   "treated": 2167,
+   "treated_without_matching_control": 14,
+   "controls": 25735,
+   "effective_controls": 8161.1,
+   "strata": 561,
+   "planning_areas": 505,
+   "mde_pp_design_effect_1_and_2": [
+    0.83,
+    1.17
+   ],
+   "removals_treated": 22,
+   "risk_treated_pct": 1.02,
+   "risk_matched_control_pct": 1.23,
+   "risk_difference_pp": -0.21,
+   "ci95_pp": [
+    -0.54,
+    0.11
+   ],
+   "p_two_sided": 0.2041,
+   "ci95_pp_cluster_bootstrap": [
+    -0.86,
+    0.4
+   ]
+  },
+  "s1_identifier_absent_without_rekey_correction": {
+   "treated": 2167,
+   "treated_without_matching_control": 14,
+   "controls": 25735,
+   "effective_controls": 8161.1,
+   "strata": 561,
+   "planning_areas": 505,
+   "mde_pp_design_effect_1_and_2": [
+    0.83,
+    1.17
+   ],
+   "removals_treated": 22,
+   "risk_treated_pct": 1.02,
+   "risk_matched_control_pct": 1.23,
+   "risk_difference_pp": -0.22,
+   "ci95_pp": [
+    -0.54,
+    0.11
+   ],
+   "p_two_sided": 0.1953,
+   "ci95_pp_cluster_bootstrap": [
+    -0.86,
+    0.4
+   ]
+  },
+  "s2_500_l_or_more_in_a_season": {
+   "treated": 218,
+   "treated_without_matching_control": 0,
+   "controls": 7833,
+   "effective_controls": 2453.2,
+   "strata": 135,
+   "planning_areas": 400,
+   "mde_pp_design_effect_1_and_2": [
+    2.41,
+    3.41
+   ],
+   "removals_treated": 1,
+   "risk_treated_pct": 0.46,
+   "risk_matched_control_pct": 1.13,
+   "risk_difference_pp": -0.67,
+   "ci95_pp": [
+    -1.1,
+    -0.24
+   ],
+   "p_two_sided": 0.002,
+   "ci95_pp_cluster_bootstrap": [
+    -1.67,
+    0.64
+   ]
+  },
+  "s3_placebo_age_16_40": {
+   "treated": 3863,
+   "treated_without_matching_control": 16,
+   "controls": 98693,
+   "effective_controls": 31998.6,
+   "strata": 993,
+   "planning_areas": 538,
+   "mde_pp_design_effect_1_and_2": [
+    0.6,
+    0.84
+   ],
+   "removals_treated": 43,
+   "risk_treated_pct": 1.11,
+   "risk_matched_control_pct": 1.42,
+   "risk_difference_pp": -0.3,
+   "ci95_pp": [
+    -0.62,
+    0.01
+   ],
+   "p_two_sided": 0.0568,
+   "ci95_pp_cluster_bootstrap": [
+    -0.69,
+    0.12
+   ]
+  },
+  "s4_matched_within_planning_area": {
+   "treated": 1994,
+   "treated_without_matching_control": 187,
+   "controls": 12877,
+   "effective_controls": 3235.3,
+   "strata": 823,
+   "planning_areas": 315,
+   "mde_pp_design_effect_1_and_2": [
+    0.97,
+    1.38
+   ],
+   "removals_treated": 21,
+   "risk_treated_pct": 1.05,
+   "risk_matched_control_pct": 1.19,
+   "risk_difference_pp": -0.13,
+   "ci95_pp": [
+    -0.13,
+    -0.13
+   ],
+   "p_two_sided": 0.0,
+   "ci95_pp_cluster_bootstrap": [
+    -0.86,
+    0.54
+   ]
+  }
+ },
+ "bootstrap": {
+  "reps": 2000,
+  "unit": "planning area",
+  "interval": "percentile"
+ },
+ "inputs_sha256": {
+  "inventory_2025": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+  "raw_logs": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030",
+  "lor": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624",
+  "inventory_2026": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0"
+ }
+}

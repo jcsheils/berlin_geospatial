@@ -37,7 +37,9 @@ protocol = "docs/rq3_one_year_survival_protocol.md"
 protocol_sha256 = "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a"
 builder = "analysis/rq3_one_year_survival.py"
 design = "output/rq3_one_year_survival/design.json"
-claim = "Registered preliminary test; design stage only. No removal has been compared by watering status."
+deviation = "docs/rq3_one_year_survival_deviation.md"
+corrected = "output/rq3_one_year_survival/corrected.json"
+claim = "Registered run void (exposure table dropped removed trees). Corrected run, a disclosed deviation: inconclusive, -0.21 pp (95% bootstrap -0.86 to 0.40); older trees show a gap of similar size."
 
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"

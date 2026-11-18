@@ -1,0 +1,117 @@
+{
+ "stage": "outcome",
+ "protocol_sha256": "590deab40a2a6572d09ff40407a5d9bde3dd96537d8da8f1c0b48315ce413a8a",
+ "analyses": {
+  "primary_any_log_2020_2024_age_0_15": {
+   "treated": 2145,
+   "treated_without_matching_control": 13,
+   "controls": 25655,
+   "effective_controls": 8138.5,
+   "strata": 558,
+   "planning_areas": 505,
+   "mde_pp_design_effect_1_and_2": [
+    0.83,
+    1.17
+   ],
+   "removals_treated": 0,
+   "risk_treated_pct": 0.0,
+   "risk_matched_control_pct": 1.26,
+   "risk_difference_pp": -1.26,
+   "ci95_pp": [
+    -1.5,
+    -1.03
+   ],
+   "p_two_sided": 0.0
+  },
+  "s1_identifier_absent_without_rekey_correction": {
+   "treated": 2145,
+   "treated_without_matching_control": 13,
+   "controls": 25655,
+   "effective_controls": 8138.5,
+   "strata": 558,
+   "planning_areas": 505,
+   "mde_pp_design_effect_1_and_2": [
+    0.83,
+    1.17
+   ],
+   "removals_treated": 0,
+   "risk_treated_pct": 0.0,
+   "risk_matched_control_pct": 1.27,
+   "risk_difference_pp": -1.27,
+   "ci95_pp": [
+    -1.5,
+    -1.03
+   ],
+   "p_two_sided": 0.0
+  },
+  "s2_500_l_or_more_in_a_season": {
+   "treated": 217,
+   "treated_without_matching_control": 0,
+   "controls": 7757,
+   "effective_controls": 2432.5,
+   "strata": 134,
+   "planning_areas": 399,
+   "mde_pp_design_effect_1_and_2": [
+    2.42,
+    3.42
+   ],
+   "removals_treated": 0,
+   "risk_treated_pct": 0.0,
+   "risk_matched_control_pct": 1.16,
+   "risk_difference_pp": -1.16,
+   "ci95_pp": [
+    -1.59,
+    -0.73
+   ],
+   "p_two_sided": 0.0
+  },
+  "s3_placebo_age_16_40": {
+   "treated": 3820,
+   "treated_without_matching_control": 16,
+   "controls": 98506,
+   "effective_controls": 32067.8,
+   "strata": 987,
+   "planning_areas": 538,
+   "mde_pp_design_effect_1_and_2": [
+    0.6,
+    0.85
+   ],
+   "removals_treated": 0,
+   "risk_treated_pct": 0.0,
+   "risk_matched_control_pct": 1.49,
+   "risk_difference_pp": -1.49,
+   "ci95_pp": [
+    -1.72,
+    -1.26
+   ],
+   "p_two_sided": 0.0
+  },
+  "s4_matched_within_planning_area": {
+   "treated": 1974,
+   "treated_without_matching_control": 184,
+   "controls": 12882,
+   "effective_controls": 3256.8,
+   "strata": 822,
+   "planning_areas": 315,
+   "mde_pp_design_effect_1_and_2": [
+    0.97,
+    1.38
+   ],
+   "removals_treated": 0,
+   "risk_treated_pct": 0.0,
+   "risk_matched_control_pct": 1.49,
+   "risk_difference_pp": -1.49,
+   "ci95_pp": [
+    -1.49,
+    -1.49
+   ],
+   "p_two_sided": 0.0
+  }
+ },
+ "inputs_sha256": {
+  "inventory_2025": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+  "tree_day": "6776cd7caffff6404a5b64b50018d5bd17551ebb8dc8f487d1e1d82adac9324d",
+  "lor": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624",
+  "inventory_2026": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0"
+ }
+}

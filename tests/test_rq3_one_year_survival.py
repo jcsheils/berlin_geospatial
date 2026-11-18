@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import tempfile
 import unittest
 from unittest import mock
 
@@ -65,6 +66,36 @@ class ExposureTests(unittest.TestCase):
     def test_inventory_identifier_maps_to_log_identifier(self):
         ids = pd.Series(["strassenbaeume.00008100_0012abcd"])
         self.assertEqual(rq3.pitid(ids).tolist(), ["00008100:0012abcd"])
+
+
+class CorrectionTests(unittest.TestCase):
+    def test_raw_logs_are_deduplicated_windowed_and_positive(self):
+        text = (
+            "id;timestamp;bewaesserungsmenge_in_liter\n"
+            "a;2021-06-01 10:00:00+00:00;50\n"
+            "a;2021-06-01 10:00:00+00:00;50\n"  # exact duplicate
+            "b;2020-05-17 10:00:00+00:00;50\n"  # before the platform window
+            "c;2026-01-02 10:00:00+00:00;50\n"  # after the analysis window
+            "d;2022-07-01 00:00:00+00:00;0\n"  # no volume
+            "e;2024-09-30 22:30:00+00:00;80\n"  # 1 October in Berlin
+        )
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "logs.csv"
+            path.write_text(text, encoding="utf-8")
+            logs = rq3.load_raw_logs(path)
+        self.assertEqual(logs["tree_id"].tolist(), ["a", "e"])
+        self.assertEqual(logs["calendar_month"].tolist(), [6, 10])
+
+    def test_bootstrap_interval_collapses_without_removals(self):
+        frame = trees([("A", 2015, f"p{i}", i % 2 == 0, False) for i in range(40)])
+        self.assertEqual(rq3.att(frame, "watered", "removed", bootstrap=200)["ci95_pp_cluster_bootstrap"], [0.0, 0.0])
+
+    def test_corrected_run_reports_both_intervals(self):
+        saved = json.loads((ROOT / "output/rq3_one_year_survival/corrected.json").read_text())
+        primary = saved["analyses"]["primary_any_log_2020_2024_age_0_15"]
+        self.assertIn("ci95_pp_cluster_bootstrap", primary)
+        self.assertGreater(primary["removals_treated"], 0)
+        self.assertGreaterEqual(*saved["watered_age_0_15_raw_export_vs_tree_day"])
 
 
 class RegistrationTests(unittest.TestCase):

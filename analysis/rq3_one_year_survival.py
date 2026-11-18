@@ -8,6 +8,10 @@ Two stages, run in order:
 - `outcome` runs the analysis fixed in docs/rq3_one_year_survival_protocol.md. It
   refuses to run unless the protocol's SHA-256 equals the registered hash in
   config/project.toml and the cohort matches the saved design exactly.
+- `corrected` is a disclosed deviation (docs/rq3_one_year_survival_deviation.md).
+  The registered run took exposure from the tree-day table, which keeps only trees
+  still in the 2026 inventory, so every removed tree counted as unwatered. This
+  stage takes exposure from the raw log export and adds a cluster-bootstrap interval.
 
 Results are pooled over ages: nothing is tabulated by single year of age or by
 municipal-care limit, which belong to a separately registered test.
@@ -33,6 +37,7 @@ PROTOCOL = ROOT / "docs/rq3_one_year_survival_protocol.md"
 CONFIG = ROOT / "config/project.toml"
 OUT = ROOT / "output/rq3_one_year_survival"
 TREE_DAY = ROOT / "data/processed/temporal/recorded_tree_day_watering_2020_2025.csv"
+RAW_LOGS = ROOT / "data/giessdenkiez_bewässerungsdaten (1).csv"
 LOR = ROOT / "data/spatial/lor_planungsraeume_2021.gpkg"
 BENCHMARKS = ROOT / "output/feedback_benchmarks/benchmarks.json"
 
@@ -43,6 +48,7 @@ YOUNG_AGES = (0, 15)
 PLACEBO_AGES = (16, 40)
 HIGH_DOSE_L = 500
 TOP_GENERA = 10
+BOOTSTRAP_REPS = 2000
 STRATUM = ["district", "planting_year", "genus_group"]
 LOCAL_STRATUM = ["plr_id", "planting_year"]
 
@@ -84,8 +90,43 @@ def add_exposure(cohort: pd.DataFrame, tree_day: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def load_raw_logs(path: Path = RAW_LOGS) -> pd.DataFrame:
+    """Logs from the platform export, cleaned as for the tree-day table but not matched to any inventory."""
+    project = tomllib.loads(CONFIG.read_text())["project"]
+    raw = pd.read_csv(path, sep=";", dtype=str).drop_duplicates()
+    time = pd.to_datetime(raw["timestamp"], format="mixed", utc=True, errors="coerce").dt.tz_convert(project["timezone"])
+    start = pd.Timestamp(project["recorded_watering_start"], tz=project["timezone"])
+    end = pd.Timestamp(project["complete_recorded_watering_end_exclusive"], tz=project["timezone"])
+    logs = pd.DataFrame({"tree_id": raw["id"].str.strip(), "year": time.dt.year, "calendar_month": time.dt.month,
+                         "recorded_litres": pd.to_numeric(raw["bewaesserungsmenge_in_liter"], errors="coerce")})
+    keep = time.ge(start) & time.lt(end) & logs["recorded_litres"].gt(0) & logs["tree_id"].fillna("").ne("")
+    return logs[keep.fillna(False)]
+
+
+def cluster_bootstrap(data: pd.DataFrame, treat: str, y: np.ndarray, strata: list[str], reps: int, seed: int) -> list[float]:
+    """95% percentile interval for the risk difference, resampling planning areas with replacement."""
+    cell = pd.DataFrame({"area": data["plr_id"].to_numpy(), "stratum": data.groupby(strata).ngroup().to_numpy(),
+                         "treated": data[treat].to_numpy(), "y": y})
+    areas = pd.Index(cell["area"].unique())
+    k = cell["stratum"].max() + 1
+    column = cell["stratum"].to_numpy() + k * cell["treated"].to_numpy()
+    rows = areas.get_indexer(cell["area"])
+    count = np.zeros((len(areas), 2 * k))
+    events = np.zeros((len(areas), 2 * k))
+    np.add.at(count, (rows, column), 1)
+    np.add.at(events, (rows, column), cell["y"].to_numpy())
+    draws = np.random.default_rng(seed).multinomial(len(areas), np.full(len(areas), 1 / len(areas)), size=reps)
+    n, e = draws @ count, draws @ events
+    n0, n1, e0, e1 = n[:, :k], n[:, k:], e[:, :k], e[:, k:]
+    both = (n0 > 0) & (n1 > 0)
+    treated = np.where(both, n1, 0).sum(axis=1)
+    control_risk = np.where(both, n1 * e0 / np.where(n0 > 0, n0, 1), 0).sum(axis=1) / treated
+    difference = np.where(both, e1, 0).sum(axis=1) / treated - control_risk
+    return [round(100 * float(q), 2) for q in np.quantile(difference, [0.025, 0.975])]
+
+
 def att(frame: pd.DataFrame, treat: str, outcome: str | None = None, p0: float | None = None,
-        strata: list[str] = STRATUM) -> dict:
+        strata: list[str] = STRATUM, bootstrap: int = 0) -> dict:
     """Exact-stratum estimate of the risk difference for treated trees (treated minus matched controls).
 
     Strata without a control or without a treated tree drop out. Controls are weighted
@@ -132,6 +173,9 @@ def att(frame: pd.DataFrame, treat: str, outcome: str | None = None, p0: float |
         "ci95_pp": [round(100 * (difference - 1.959964 * se), 2), round(100 * (difference + 1.959964 * se), 2)],
         "p_two_sided": round(math.erfc(abs(difference / se) / math.sqrt(2)), 4) if se > 0 else None,
     })
+    if bootstrap:
+        seed = tomllib.loads(CONFIG.read_text())["project"]["random_seed"]
+        out["ci95_pp_cluster_bootstrap"] = cluster_bootstrap(data, treat, y, strata, bootstrap, seed)
     return out
 
 
@@ -142,21 +186,21 @@ def baseline_risks() -> dict:
             "placebo": street["street"]["removed_pct_by_age_2025"]["16-40"] / 100}
 
 
-def analyses(cohort: pd.DataFrame, outcome: str | None = None, outcome_any_absent: str | None = None) -> dict:
+def analyses(cohort: pd.DataFrame, outcome: str | None = None, outcome_any_absent: str | None = None, bootstrap: int = 0) -> dict:
     risk = baseline_risks()
     young = cohort[cohort["age"].between(*YOUNG_AGES)]
     placebo = cohort[cohort["age"].between(*PLACEBO_AGES)]
     return {
-        "primary_any_log_2020_2024_age_0_15": att(young, "watered", outcome, risk["young"]),
-        "s1_identifier_absent_without_rekey_correction": att(young, "watered", outcome_any_absent, risk["young"]) if outcome_any_absent else None,
-        "s2_500_l_or_more_in_a_season": att(young.loc[young["watered"] == young["high_dose"]], "high_dose", outcome, risk["young"]),
-        "s3_placebo_age_16_40": att(placebo, "watered", outcome, risk["placebo"]),
-        "s4_matched_within_planning_area": att(young, "watered", outcome, risk["young"], LOCAL_STRATUM),
+        "primary_any_log_2020_2024_age_0_15": att(young, "watered", outcome, risk["young"], bootstrap=bootstrap),
+        "s1_identifier_absent_without_rekey_correction": att(young, "watered", outcome_any_absent, risk["young"], bootstrap=bootstrap) if outcome_any_absent else None,
+        "s2_500_l_or_more_in_a_season": att(young.loc[young["watered"] == young["high_dose"]], "high_dose", outcome, risk["young"], bootstrap=bootstrap),
+        "s3_placebo_age_16_40": att(placebo, "watered", outcome, risk["placebo"], bootstrap=bootstrap),
+        "s4_matched_within_planning_area": att(young, "watered", outcome, risk["young"], LOCAL_STRATUM, bootstrap),
     }
 
 
 def design() -> dict:
-    cohort = add_exposure(load_cohort(), pd.read_csv(TREE_DAY, dtype={"tree_id": str}, usecols=["tree_id", "year", "calendar_month", "recorded_litres"]))
+    cohort = add_exposure(load_cohort(), read_tree_day())
     result = {k: v for k, v in analyses(cohort).items() if v is not None}
     young = cohort[cohort["age"].between(*YOUNG_AGES)]
     return {
@@ -180,19 +224,29 @@ def registered_hash() -> str | None:
     return tomllib.loads(CONFIG.read_text()).get("project", {}).get("rq3_one_year_survival", {}).get("protocol_sha256")
 
 
-def outcome(inventory_path: Path) -> dict:
-    expected = registered_hash()
-    if not expected or sha256(PROTOCOL) != expected:
-        raise SystemExit("Protocol hash does not match the registered hash in config/project.toml; not running the outcome stage.")
-    saved = json.loads((OUT / "design.json").read_text())
-    cohort = add_exposure(load_cohort(), pd.read_csv(TREE_DAY, dtype={"tree_id": str}, usecols=["tree_id", "year", "calendar_month", "recorded_litres"]))
+def attach_outcomes(cohort: pd.DataFrame, inventory_path: Path) -> pd.DataFrame:
+    """Removed: identifier absent from the 2026 inventory and not re-keyed. Absent: identifier absent."""
     before = pd.read_csv(INVENTORY_2025, dtype={"tree_id": str}).rename(columns={"x_25833": "x", "y_25833": "y"})
     after = pyogrio.read_dataframe(inventory_path, layer="Berlin_trees", columns=["id", "gattung", "pflanzjahr"])
     after = pd.DataFrame({"tree_id": after["id"], "genus": after["gattung"], "planting_year": pd.to_numeric(after["pflanzjahr"], errors="coerce"),
                           "x": after.geometry.x, "y": after.geometry.y})
     status = compare_identifiers(before, after).set_index("tree_id")
-    cohort["removed"] = (status["gone"] & ~status["rekeyed"]).loc[cohort["tree_id"]].to_numpy()
-    cohort["absent"] = status["gone"].loc[cohort["tree_id"]].to_numpy()
+    out = cohort.copy()
+    out["removed"] = (status["gone"] & ~status["rekeyed"]).loc[out["tree_id"]].to_numpy()
+    out["absent"] = status["gone"].loc[out["tree_id"]].to_numpy()
+    return out
+
+
+def read_tree_day() -> pd.DataFrame:
+    return pd.read_csv(TREE_DAY, dtype={"tree_id": str}, usecols=["tree_id", "year", "calendar_month", "recorded_litres"])
+
+
+def outcome(inventory_path: Path) -> dict:
+    expected = registered_hash()
+    if not expected or sha256(PROTOCOL) != expected:
+        raise SystemExit("Protocol hash does not match the registered hash in config/project.toml; not running the outcome stage.")
+    saved = json.loads((OUT / "design.json").read_text())
+    cohort = attach_outcomes(add_exposure(load_cohort(), read_tree_day()), inventory_path)
     result = analyses(cohort, "removed", "absent")
     for name, values in saved["analyses"].items():
         if any(result[name][k] != values[k] for k in ("treated", "controls", "strata")):
@@ -201,12 +255,30 @@ def outcome(inventory_path: Path) -> dict:
             "inputs_sha256": {**saved["inputs_sha256"], "inventory_2026": sha256(inventory_path)}}
 
 
+def corrected(inventory_path: Path) -> dict:
+    """The registered analysis with exposure from the raw export and a cluster-bootstrap interval."""
+    base = load_cohort()
+    cohort = attach_outcomes(add_exposure(base, load_raw_logs()), inventory_path)
+    registered = add_exposure(base, read_tree_day())
+    young = cohort["age"].between(*YOUNG_AGES)
+    return {
+        "stage": "corrected (disclosed deviation; see docs/rq3_one_year_survival_deviation.md)",
+        "protocol_sha256": registered_hash(),
+        "exposure_source": str(RAW_LOGS.relative_to(ROOT)),
+        "watered_age_0_15_raw_export_vs_tree_day": [int(cohort.loc[young, "watered"].sum()), int(registered.loc[young, "watered"].sum())],
+        "analyses": analyses(cohort, "removed", "absent", BOOTSTRAP_REPS),
+        "bootstrap": {"reps": BOOTSTRAP_REPS, "unit": "planning area", "interval": "percentile"},
+        "inputs_sha256": {"inventory_2025": sha256(INVENTORY_2025), "raw_logs": sha256(RAW_LOGS), "lor": sha256(LOR),
+                          "inventory_2026": sha256(inventory_path)},
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("stage", choices=["design", "outcome"])
-    parser.add_argument("--inventory", type=Path, default=ROOT / "data/Berlin_trees.gpkg", help="2026 inventory (outcome stage only)")
+    parser.add_argument("stage", choices=["design", "outcome", "corrected"])
+    parser.add_argument("--inventory", type=Path, default=ROOT / "data/Berlin_trees.gpkg", help="2026 inventory (outcome and corrected stages)")
     args = parser.parse_args()
-    result = design() if args.stage == "design" else outcome(args.inventory)
+    result = {"design": design, "outcome": outcome, "corrected": corrected}[args.stage](*([] if args.stage == "design" else [args.inventory]))
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"{args.stage}.json"
     path.write_text(json.dumps(result, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
