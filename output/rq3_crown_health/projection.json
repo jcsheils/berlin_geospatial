@@ -1,0 +1,65 @@
+{
+  "note": "Projection from the 2025 inventory and the open log export; no image opened, no outcome.",
+  "inputs_sha256": {
+    "inventory_2025": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+    "log_export": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030"
+  },
+  "young_street_trees_age_1_15_in_2020": 51375,
+  "young_watered_before_the_2020_flight": 958,
+  "analyses": {
+    "primary_watered_between_flights": {
+      "treated": 1972,
+      "controls": 48441,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.068,
+        0.096
+      ],
+      "exact_strata_treated_without_matching_control": 384
+    },
+    "s_dose_three_log_days_in_a_season": {
+      "treated": 737,
+      "controls": 48441,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.108,
+        0.152
+      ],
+      "exact_strata_treated_without_matching_control": 162
+    },
+    "s_dose_two_or_more_seasons": {
+      "treated": 492,
+      "controls": 48441,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.132,
+        0.187
+      ],
+      "exact_strata_treated_without_matching_control": 119
+    },
+    "s_dose_500_l_or_more_in_a_season": {
+      "treated": 167,
+      "controls": 48441,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.221,
+        0.313
+      ],
+      "exact_strata_treated_without_matching_control": 45
+    },
+    "placebo_2015_2020_planted_by_2014": {
+      "treated": 1039,
+      "controls": 36120,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.093,
+        0.131
+      ],
+      "exact_strata_treated_without_matching_control": 176
+    },
+    "negative_control_age_16_40": {
+      "treated": 2523,
+      "controls": 176742,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.057,
+        0.081
+      ],
+      "exact_strata_treated_without_matching_control": 299
+    }
+  }
+}

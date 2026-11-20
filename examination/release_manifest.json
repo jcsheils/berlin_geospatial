@@ -61,8 +61,8 @@
     },
     {
       "path": "config/project.toml",
-      "bytes": 5433,
-      "sha256": "c221ed5b2ad6b460f212b468ac62ff9ccea978f50bdc333b3fed904137948853"
+      "bytes": 6163,
+      "sha256": "35021ee0bbe65eef7852b21ea91bc2b3e92856fd363277d194d6b8a6ee8c1a4f"
     },
     {
       "path": "data/Berlin_heat_population_data.csv",
@@ -211,8 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 9949,
-      "sha256": "52956569ea26562494c2f0d22980f100ce81fc7bbe7babf98c428b67702400f4"
+      "bytes": 10779,
+      "sha256": "1d9e99eb3f8560a58d0e6ac78ce7bf5a077f59a2734bc46a625b7662ebc33ea7"
     },
     {
       "path": "docs/proposal/Proposal_Refined_October_2026.pdf",
@@ -341,8 +341,8 @@
     },
     {
       "path": "examination/reproducibility.md",
-      "bytes": 8071,
-      "sha256": "2a9149d17e1bd847e9f3292b78fd51c8e2b8075c1c3f33648bfcc65da590f319"
+      "bytes": 8573,
+      "sha256": "cb0334297d672096b3e3a8bbedaef43748c43570418b50a057621bd7fb923f05"
     },
     {
       "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",

@@ -43,6 +43,21 @@ deviation = "docs/rq3_one_year_survival_deviation.md"
 corrected = "output/rq3_one_year_survival/corrected.json"
 claim = "Pre-specified plan, not a formal preregistration. First run void (exposure table dropped removed trees). Corrected run, which departs from the plan: inconclusive, -0.21 pp (95% bootstrap -0.86 to 0.40); older trees show a gap of similar size."
 
+[project.rq3_four_year_survival]
+status = "draft; freeze (hash here, lodged on OSF) before the 2020-2024 tables arrive"
+protocol = "docs/rq3_four_year_survival_protocol.md"
+smallest_effect_pp_per_year = 0.5
+projection = "output/rq3_four_year_survival/projection.json"
+projection_builder = "analysis/rq3_four_year_projection.py"
+
+[project.rq3_crown_health]
+status = "draft; freeze (hash here) before any aerial image is downloaded"
+protocol = "docs/rq3_crown_health_protocol.md"
+flights = ["2015-08-02/03 DOP20RGBI", "2020-08-01/08/12/16 TrueDOP20RGBI", "2025-08-11/12 TrueDOP20RGBI Sommer"]
+disc_radius_m = 2.0
+projection = "output/rq3_crown_health/projection.json"
+projection_builder = "analysis/rq3_crown_health_projection.py"
+
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"
 part_iii_checkpoint = "end-month-4"

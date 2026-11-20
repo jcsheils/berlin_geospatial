@@ -98,7 +98,7 @@ def load_raw_logs(path: Path = RAW_LOGS) -> pd.DataFrame:
     start = pd.Timestamp(project["recorded_watering_start"], tz=project["timezone"])
     end = pd.Timestamp(project["complete_recorded_watering_end_exclusive"], tz=project["timezone"])
     logs = pd.DataFrame({"tree_id": raw["id"].str.strip(), "year": time.dt.year, "calendar_month": time.dt.month,
-                         "recorded_litres": pd.to_numeric(raw["bewaesserungsmenge_in_liter"], errors="coerce")})
+                         "date": time.dt.date, "recorded_litres": pd.to_numeric(raw["bewaesserungsmenge_in_liter"], errors="coerce")})
     keep = time.ge(start) & time.lt(end) & logs["recorded_litres"].gt(0) & logs["tree_id"].fillna("").ne("")
     return logs[keep.fillna(False)]
 

@@ -1,0 +1,196 @@
+{
+  "note": "Projection from the 2025 inventory and the open log export; lower bounds. No removal data opened.",
+  "inputs_sha256": {
+    "inventory_2025": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad",
+    "log_export": "ba529100146dea90ee33700780da54ca296f9f23ab7b328f6f1a53fc4c136030"
+  },
+  "landmarks": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "baseline_removal_risk_per_year": {
+    "young": 0.0151,
+    "placebo": 0.0158
+  },
+  "smallest_effect_pp_per_year": 0.5,
+  "young_trees_by_landmark": {
+    "2021": 53965,
+    "2022": 51807,
+    "2023": 51600,
+    "2024": 50321
+  },
+  "young_watered_by_landmark": {
+    "2021": 1030,
+    "2022": 1300,
+    "2023": 2063,
+    "2024": 2162
+  },
+  "analyses": {
+    "primary_any_earlier_log_district": {
+      "treated": 6516,
+      "treated_without_matching_control": 39,
+      "controls": 94537,
+      "effective_controls": 29820.0,
+      "strata": 1880,
+      "planning_areas": 505,
+      "mde_pp_design_effect_1_and_2": [
+        0.47,
+        0.66
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        84.6,
+        56.5
+      ],
+      "power_pct_test_b_if_no_difference": [
+        90.9,
+        68.4
+      ]
+    },
+    "s2_three_log_days_in_a_season": {
+      "treated": 2460,
+      "treated_without_matching_control": 0,
+      "controls": 64614,
+      "effective_controls": 23852.3,
+      "strata": 1158,
+      "planning_areas": 482,
+      "mde_pp_design_effect_1_and_2": [
+        0.72,
+        1.02
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        49.4,
+        27.9
+      ],
+      "power_pct_test_b_if_no_difference": [
+        61.8,
+        39.3
+      ]
+    },
+    "s2_two_or_more_seasons": {
+      "treated": 1034,
+      "treated_without_matching_control": 10,
+      "controls": 30753,
+      "effective_controls": 9230.3,
+      "strata": 539,
+      "planning_areas": 466,
+      "mde_pp_design_effect_1_and_2": [
+        1.12,
+        1.58
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        23.9,
+        14.2
+      ],
+      "power_pct_test_b_if_no_difference": [
+        34.7,
+        22.4
+      ]
+    },
+    "s2_500_l_or_more_in_a_season": {
+      "treated": 552,
+      "treated_without_matching_control": 0,
+      "controls": 21846,
+      "effective_controls": 7630.1,
+      "strata": 360,
+      "planning_areas": 412,
+      "mde_pp_design_effect_1_and_2": [
+        1.51,
+        2.13
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        15.1,
+        9.6
+      ],
+      "power_pct_test_b_if_no_difference": [
+        23.7,
+        16.2
+      ]
+    },
+    "s3_older_trees_16_40": {
+      "treated": 11166,
+      "treated_without_matching_control": 54,
+      "controls": 372355,
+      "effective_controls": 118518.5,
+      "strata": 3322,
+      "planning_areas": 538,
+      "mde_pp_design_effect_1_and_2": [
+        0.35,
+        0.49
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        97.9,
+        81.6
+      ],
+      "power_pct_test_b_if_no_difference": [
+        99.1,
+        88.8
+      ]
+    },
+    "s4_bezirksregion_strata": {
+      "treated": 6076,
+      "treated_without_matching_control": 479,
+      "controls": 36668,
+      "effective_controls": 6932.7,
+      "strata": 2759,
+      "planning_areas": 394,
+      "mde_pp_design_effect_1_and_2": [
+        0.6,
+        0.85
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        64.6,
+        37.8
+      ],
+      "power_pct_test_b_if_no_difference": [
+        75.5,
+        50.1
+      ]
+    },
+    "s5_planning_area_strata": {
+      "treated": 5408,
+      "treated_without_matching_control": 1147,
+      "controls": 24755,
+      "effective_controls": 6042.8,
+      "strata": 2914,
+      "planning_areas": 312,
+      "mde_pp_design_effect_1_and_2": [
+        0.64,
+        0.9
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        59.0,
+        34.3
+      ],
+      "power_pct_test_b_if_no_difference": [
+        70.7,
+        46.5
+      ]
+    },
+    "s6_logged_in_the_last_season": {
+      "treated": 3245,
+      "treated_without_matching_control": 21,
+      "controls": 72863,
+      "effective_controls": 21606.6,
+      "strata": 1302,
+      "planning_areas": 505,
+      "mde_pp_design_effect_1_and_2": [
+        0.64,
+        0.91
+      ],
+      "power_pct_test_a_if_reduction_equals_delta": [
+        59.0,
+        33.7
+      ],
+      "power_pct_test_b_if_no_difference": [
+        70.7,
+        45.8
+      ]
+    }
+  },
+  "s3_young_minus_older_mde_pp": [
+    0.59,
+    0.82
+  ]
+}

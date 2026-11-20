@@ -95,6 +95,8 @@ To mask a known outage calendar, pass `--unavailable-dates path/to/dates.csv` wi
 
 - **Benchmarks:** `python analysis/build_feedback_benchmarks.py` writes `output/feedback_benchmarks/benchmarks.json`. It reads the versioned 2025 inventory extract; `python tools/extract_tree_inventory_2025.py` rebuilds that extract from its pinned archive and needs network access.
 - **RQ3 one-year survival test:** `python -m analysis.rq3_one_year_survival design` writes the sample and detectability without opening outcome data. The `outcome` stage needs the 2026 inventory (`--inventory`) and runs only while the [protocol](../docs/rq3_one_year_survival_protocol.md) matches its hash in `config/project.toml`.
+- **RQ3 four-year projection:** `python -m analysis.rq3_four_year_projection` projects the sample and detectability of the [draft four-year plan](../docs/rq3_four_year_survival_protocol.md) from the 2025 inventory and the open log export, without opening removal data.
+- **RQ3 crown-health projection:** `python -m analysis.rq3_crown_health_projection` counts the trees and detectable differences of the [draft crown-health plan](../docs/rq3_crown_health_protocol.md) without opening any aerial image.
 - **Earth Engine atlas:** `python earth_engine/build_demo.py` regenerates `earth_engine/berlin_atlas_demo.js`; see the [launch guide](../earth_engine/README.md).
 - **Examination PDFs:** `python -m pip install -r requirements-examination.txt`, then `python tools/build_examination.py`. It rebuilt the October atlas, brief, results page and inventories from saved images and tables. It fits no models and leaves the proposal, slides and workbook untouched. Running it now would also rewrite the release manifest's scope, so do not use it for routine updates.
 
