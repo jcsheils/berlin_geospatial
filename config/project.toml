@@ -60,6 +60,8 @@ projection = "output/rq3_crown_health/projection.json"
 projection_builder = "analysis/rq3_crown_health_projection.py"
 extraction_builder = "analysis/rq3_crown_health_extract.py"
 extraction_workflow = ".github/workflows/rq3-crown-health.yml"
+stages_builder = "analysis/rq3_crown_health_test.py"
+extracted_tables = "data/processed/rq3_crown_health/"
 
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"

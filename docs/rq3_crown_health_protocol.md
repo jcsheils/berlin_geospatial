@@ -22,7 +22,7 @@ No aerial image has been opened and no NDVI computed for any tree.
   - 1, 8, 12 and 16 August 2020 (TrueDOP20RGBI 2020), the baseline;
   - 11–12 August 2025 (TrueDOP20RGBI Sommer 2025), the outcome.
 
-  All three are read through Berlin's map service (WMS, `https://gdi.berlin.de/services/wms/`) from each flight's colour-infrared layer (near-infrared, red, green), as lossless PNG on the native 20 cm grid. The bulk downloads deliver 2015 and 2020 only as ECW files, which open-source software cannot read, so the map service is the one route that reads every flight the same way. A summer flight from 2023 serves one secondary analysis through its colour layer: the catalogue labels it both RGB and RGBI, and the map service offers no infrared layer for it. Every other year was flown in spring, before full leaf-out.
+  All three are read through Berlin's map service (WMS, `https://gdi.berlin.de/services/wms/`) from each flight's colour-infrared layer (near-infrared, red, green), as lossless PNG on the native 20 cm grid. The bulk downloads deliver 2015 and 2020 only as ECW files, which open-source software cannot read, so the map service is the one route that reads every flight the same way. S7 compares the 2020 colour layer with that of a summer flight on 14–15 August 2023. The catalogue labels the 2023 flight both RGB and RGBI, but the map service has no infrared layer for it, so S7 uses colour either way. Other years were flown in spring, before full leaf-out.
 - **Trees.** Positions (EPSG:25833), planting year and genus from the [2025 inventory](../data/raw/tree_inventory/snapshot_2025.json).
 - **Logs.** The open export, cleaned as for the one-year test. It keeps the logs of every tree in the 2025 inventory.
 - **Areas.** The 2021 planning areas (542).
@@ -102,7 +102,7 @@ These are reported with intervals and without significance claims.
 - **S4.** Trees watered before the 2020 flight added to the watered group.
 - **S5. Exact matching** within planning area × planting year × genus group.
 - **S6. Adjusted level:** the 2025 value, adjusted for the 2020 value.
-- **S7. After the 2022 drought:** the 2020-to-2023 change in the green share of the disc, G / (R + G + B), from the colour-only 2023 flight.
+- **S7. After the 2022 drought:** the 2020-to-2023 change in the green share of the disc, G / (R + G + B), from the two colour layers. Watered means a first log between 17 August 2020 and 13 August 2023; the controls are the never-watered trees of the primary analysis.
 - **S8. Without survivor selection**, once CityLAB's 2020 tree table and full log history arrive: all trees standing in 2020, including those removed by 2025, whose discs then show the loss.
 - **S9. Crowns over the tree pit:** trees planted by 2014, whose crowns had at least six seasons to grow over the pit by 2020. These are the placebo trees, so S9 and the placebo compare the same trees in two periods.
 
@@ -138,7 +138,7 @@ This writes `output/rq3_crown_health/projection.json` and opens no image.
 
 - **Windows.** Each cohort tree falls in one 50 m cell; the request for a cell covers the 3 m circles of its trees, snapped outward to the 20 cm grid. Street trees planted from 1980 to 2019 (about 232,000) fill about 65,000 windows, roughly 3 GB per flight.
 - **Load on the service.** Six shards, at most two at once, each at most three requests a second.
-- **Kept.** For each tree, the pixel count, the count inside the image and the mean NDVI (or green share for 2023) within 1, 2 and 3 m; for each window, the SHA-256 of the response. No image is stored.
+- **Kept.** For each tree, the pixel count, the count inside the image and the mean NDVI (or green share for the colour layers) within 1, 2 and 3 m; for each window, the SHA-256 of the response. No image is stored.
 - **Blind.** The extraction holds no watering data. The tables it writes are joined to the logs only in the outcome stage.
 - **Freeze guard.** It refuses to start unless this plan matches its hash in `config/project.toml`.
 
@@ -146,6 +146,16 @@ This writes `output/rq3_crown_health/projection.json` and opens no image.
 python -m analysis.rq3_crown_health_extract plan
 ```
 
-This counts the windows without network access. The extraction code is written and tested on synthetic images before the freeze. The check, design and outcome stages are written after the freeze and before the extraction runs. A fix to any of them after the freeze goes into a dated deviation note.
+This counts the windows without network access. The workflow has three tasks: `extract` reads the three infrared layers and, for S7, the 2020 and 2023 colour layers; `crosscheck` compares the layers of each infrared flight; `chips` draws the eye-check sample. The combined tables go into `data/processed/rq3_crown_health/`, with the eye-check sheet filled in by hand (`on_tree`: yes or no).
+
+**Stages.** These run locally on the combined tables, a few megabytes per flight:
+
+```bash
+python -m analysis.rq3_crown_health_test check
+python -m analysis.rq3_crown_health_test design
+python -m analysis.rq3_crown_health_test outcome
+```
+
+They write `check.json`, `design.json` and `outcome.json` to `output/rq3_crown_health/`. Each stage runs only after the one before it, and the outcome stage stops if the plan or any sample changed since the design stage. The extraction and the stages were written and tested on synthetic data before the freeze; any later fix goes into a dated deviation note.
 
 Lakens, D., Scheel, A. M., and Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. *Advances in Methods and Practices in Psychological Science*, 1(2), 259–269. https://doi.org/10.1177/2515245918770963

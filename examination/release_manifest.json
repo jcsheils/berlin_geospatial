@@ -61,8 +61,8 @@
     },
     {
       "path": "config/project.toml",
-      "bytes": 6467,
-      "sha256": "05d8a6dc743c20150bb24062e8e1f8de4a2a744a2bd942c12878fe818d423260"
+      "bytes": 6574,
+      "sha256": "3c6f75f30afd1630951d9013317069a7d8942da0d6239fc44df75c8f4de5e909"
     },
     {
       "path": "data/Berlin_heat_population_data.csv",
@@ -341,8 +341,8 @@
     },
     {
       "path": "examination/reproducibility.md",
-      "bytes": 8947,
-      "sha256": "0b72f415e041b57784f400b11276752e5ee701bc4ca34c4957d8497333d9b9db"
+      "bytes": 9121,
+      "sha256": "3dedc5d11bd61e8ab964893b972964dcba1708103f1d2d2fb1ba122a8f2892f9"
     },
     {
       "path": "examination/results/Berlin_watering_monthly_exploration.xlsx",

@@ -13,10 +13,10 @@ on:
         type: choice
         options: [extract, crosscheck, chips]
       flight:
-        description: "Flight year"
+        description: "Flight (2020rgb is the 2020 colour layer, the baseline for the 2023 comparison)"
         required: true
         type: choice
-        options: ["2020", "2025", "2015", "2023"]
+        options: ["2020", "2025", "2015", "2023", "2020rgb"]
 
 permissions:
   contents: read

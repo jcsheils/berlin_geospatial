@@ -58,6 +58,7 @@ USER_AGENT = "berlin-street-tree-crown-study/1.0"
 FLIGHTS = {
     "2015": {"service": "dop_2015", "layer": "dop_2015_cir", "rgb": "dop_2015_rgb", "index": "ndvi"},
     "2020": {"service": "truedop_2020_sommer", "layer": "truedop_2020_sommer_cir", "rgb": "truedop_2020_sommer_rgb", "index": "ndvi"},
+    "2020rgb": {"service": "truedop_2020_sommer", "layer": "truedop_2020_sommer_rgb", "rgb": "truedop_2020_sommer_rgb", "index": "gcc"},  # baseline for S7
     "2023": {"service": "truedop_2023_sommer", "layer": "truedop_2023_senweb", "rgb": "truedop_2023_senweb", "index": "gcc"},
     "2025": {"service": "truedop_2025_sommer", "layer": "truedop_2025_sommer_cir", "rgb": "truedop_2025_sommer_rgb", "index": "ndvi"},
 }
