@@ -54,9 +54,12 @@ projection_builder = "analysis/rq3_four_year_projection.py"
 status = "draft; freeze (hash here) before any aerial image is downloaded"
 protocol = "docs/rq3_crown_health_protocol.md"
 flights = ["2015-08-02/03 DOP20RGBI", "2020-08-01/08/12/16 TrueDOP20RGBI", "2025-08-11/12 TrueDOP20RGBI Sommer"]
+image_route = "Berlin WMS colour-infrared layers (dop_2015_cir, truedop_2020_sommer_cir, truedop_2025_sommer_cir) as PNG on the 20 cm grid; downloads of 2015 and 2020 are ECW only"
 disc_radius_m = 2.0
 projection = "output/rq3_crown_health/projection.json"
 projection_builder = "analysis/rq3_crown_health_projection.py"
+extraction_builder = "analysis/rq3_crown_health_extract.py"
+extraction_workflow = ".github/workflows/rq3-crown-health.yml"
 
 [project.schedule_triggers]
 core_priority = "Part II daily civic heat response"

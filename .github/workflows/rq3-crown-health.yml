@@ -1,0 +1,105 @@
+# Reads the aerial images for the RQ3 crown-health test (docs/rq3_crown_health_protocol.md)
+# through Berlin's map service and keeps only per-tree circle means. Started by hand, one
+# flight at a time. Every step refuses to read an image unless the plan matches its hash
+# in config/project.toml.
+name: RQ3 crown-health extraction
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "extract (circle means), crosscheck (layer check) or chips (eye check, 2025 only)"
+        required: true
+        type: choice
+        options: [extract, crosscheck, chips]
+      flight:
+        description: "Flight year"
+        required: true
+        type: choice
+        options: ["2020", "2025", "2015", "2023"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rq3-crown-health
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    if: inputs.task == 'extract'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 2  # at most two shards, each at most three requests a second
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]  # keep in step with SHARDS in the extraction module
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install numpy==1.26.4 pandas==2.2.2 Pillow==12.3.0
+      - name: Extract circle means
+        env:
+          FLIGHT: ${{ inputs.flight }}
+          SHARD: ${{ matrix.shard }}
+        run: python -m analysis.rq3_crown_health_extract run --flight "$FLIGHT" --shard "$SHARD" --shards 6 --out shards
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crown-health-${{ inputs.flight }}-shard-${{ matrix.shard }}
+          path: shards/
+          retention-days: 90
+
+  combine:
+    needs: extract
+    if: inputs.task == 'extract'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install numpy==1.26.4 pandas==2.2.2 Pillow==12.3.0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: crown-health-${{ inputs.flight }}-shard-*
+          merge-multiple: true
+          path: shards/
+      - name: Combine shards
+        env:
+          FLIGHT: ${{ inputs.flight }}
+        run: python -m analysis.rq3_crown_health_extract combine --flight "$FLIGHT" --folder shards --out combined
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crown-health-${{ inputs.flight }}
+          path: combined/
+          retention-days: 90
+
+  single:
+    if: inputs.task != 'extract'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install numpy==1.26.4 pandas==2.2.2 Pillow==12.3.0
+      - name: Run ${{ inputs.task }}
+        env:
+          TASK: ${{ inputs.task }}
+          FLIGHT: ${{ inputs.flight }}
+        run: |
+          if [ "$TASK" = chips ]; then
+            python -m analysis.rq3_crown_health_extract chips --out result
+          else
+            python -m analysis.rq3_crown_health_extract crosscheck --flight "$FLIGHT" --out result
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crown-health-${{ inputs.task }}-${{ inputs.flight }}
+          path: result/
+          retention-days: 90

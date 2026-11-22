@@ -10,19 +10,19 @@ Did the crowns of young street trees first watered between August 2020 and Augus
 
 - All logs from 2020 to 2025, and the 2025 and 2026 inventories.
 - The one-year removal test ([deviation note](rq3_one_year_survival_deviation.md)).
-- Catalogue metadata for the aerial flights: dates, bands and download sizes.
+- Catalogue metadata for the aerial flights: dates, bands, file formats and download sizes, and the layers and output formats of the map service.
 - The projection below, built from the logs and the 2025 inventory.
 
 No aerial image has been opened and no NDVI computed for any tree.
 
 ## Data
 
-- **Images.** Three leaf-on flights with red, green, blue and near-infrared bands at 20 cm, from the Berlin geodata catalogue (2 km tiles, JPEG 2000):
+- **Images.** Three leaf-on flights at 20 cm with a near-infrared band, from the Berlin geodata catalogue:
   - 2–3 August 2015 (DOP20RGBI 2015), for the placebo test;
-  - 1, 8, 12 and 16 August 2020 (TrueDOP20RGBI 2020, about 7 GB), the baseline;
-  - 11–12 August 2025 (TrueDOP20RGBI Sommer 2025, about 19 GB), the outcome.
+  - 1, 8, 12 and 16 August 2020 (TrueDOP20RGBI 2020), the baseline;
+  - 11–12 August 2025 (TrueDOP20RGBI Sommer 2025), the outcome.
 
-  A colour-only summer flight from 2023 (TrueDOP20RGB) serves one secondary analysis. Every other year was flown in spring, before full leaf-out.
+  All three are read through Berlin's map service (WMS, `https://gdi.berlin.de/services/wms/`) from each flight's colour-infrared layer (near-infrared, red, green), as lossless PNG on the native 20 cm grid. The bulk downloads deliver 2015 and 2020 only as ECW files, which open-source software cannot read, so the map service is the one route that reads every flight the same way. A summer flight from 2023 serves one secondary analysis through its colour layer: the catalogue labels it both RGB and RGBI, and the map service offers no infrared layer for it. Every other year was flown in spring, before full leaf-out.
 - **Trees.** Positions (EPSG:25833), planting year and genus from the [2025 inventory](../data/raw/tree_inventory/snapshot_2025.json).
 - **Logs.** The open export, cleaned as for the one-year test. It keeps the logs of every tree in the 2025 inventory.
 - **Areas.** The 2021 planning areas (542).
@@ -33,7 +33,7 @@ No aerial image has been opened and no NDVI computed for any tree.
 - **Watered.** At least one log between 17 August 2020 and 10 August 2025, and none before 17 August 2020.
 - **Control.** No log before 11 August 2025.
 - **Watered before the 2020 flight.** Excluded from the primary analysis, because their baseline already reflects some watering; added back in S4.
-- **Outcome.** For each tree and flight, the mean NDVI of the pixels within 2 m of the inventory position, with NDVI = (near-infrared − red) / (near-infrared + red) from the delivered values. The primary outcome is the 2025 value minus the 2020 value.
+- **Outcome.** For each tree and flight, the mean NDVI of the pixels within 2 m of the inventory position, with NDVI = (near-infrared − red) / (near-infrared + red) from the served values. Pixels with all three bands at zero lie outside the image and are left out. The primary outcome is the 2025 value minus the 2020 value.
 
 **Why a fixed 2 m disc.** It holds a median young crown (7 m², a radius of 1.5 m) plus position error, and needs no crown diameter, which is missing for 28% of street trees. Its change reflects growth, vigour and loss of the crown together. A tree removed between the 2025 inventory and the August flight stays in, with whatever its disc shows.
 
@@ -77,7 +77,7 @@ Projected from the 2025 inventory and the open export ([projection](../output/rq
 | S3: three or more log days in a season | 737 | 48,441 | 0.11–0.15 |
 | S3: logs in two or more seasons | 492 | 48,441 | 0.13–0.19 |
 | S3: 500 L or more in a season | 167 | 48,441 | 0.22–0.31 |
-| Placebo, planted by 2014 | 1,039 | 36,120 | 0.09–0.13 |
+| Placebo (2015–2020) and S9 (2020–2025): planted by 2014 | 1,039 | 36,120 | 0.09–0.13 |
 | Older trees, 16–40 | 2,523 | 176,742 | 0.06–0.08 |
 
 Another 958 young trees were logged before the 2020 flight.
@@ -85,8 +85,9 @@ Another 958 young trees were logged before the 2020 flight.
 ## Stages
 
 1. **Check.** Runs without any comparison by watering. The test stops if any check fails:
-   - each flight has four bands and the stated dates;
-   - at least 98% of cohort discs lie inside both the 2020 and 2025 images;
+   - every response is a three-band image of the requested size;
+   - in 50 windows per infrared flight drawn with seed 42, the red and green bands of the colour-infrared layer match those of the colour layer (median absolute difference of at most 2 on the 0–255 scale), which confirms the band order and shows that neither layer was stretched on its own;
+   - at least 98% of cohort discs lie fully inside both the 2020 and 2025 images;
    - in 200 discs drawn with seed 42 regardless of watering, at most 10% miss the tree by eye in the 2025 image.
 2. **Design.** Builds the cohort and exposure, and writes Δ, the pooled standard deviation of the change, the detectable differences and the power of both tests.
 3. **Outcome.** Runs only while this plan matches its recorded hash and the sample matches the design stage.
@@ -103,6 +104,7 @@ These are reported with intervals and without significance claims.
 - **S6. Adjusted level:** the 2025 value, adjusted for the 2020 value.
 - **S7. After the 2022 drought:** the 2020-to-2023 change in the green share of the disc, G / (R + G + B), from the colour-only 2023 flight.
 - **S8. Without survivor selection**, once CityLAB's 2020 tree table and full log history arrive: all trees standing in 2020, including those removed by 2025, whose discs then show the loss.
+- **S9. Crowns over the tree pit:** trees planted by 2014, whose crowns had at least six seasons to grow over the pit by 2020. These are the placebo trees, so S9 and the placebo compare the same trees in two periods.
 
 ## Not done
 
@@ -118,6 +120,8 @@ These are reported with intervals and without significance claims.
 - **Survivors only.** Trees removed before early 2025 are missing from the cohort. If watering saves weak trees, this biases the difference towards zero; S8 measures it.
 - **Unlogged watering.** District crews, contractors and residents who do not log also water. This biases the difference towards zero.
 - **Uncalibrated images.** The flights used different cameras and days. Fixed effects and the change design absorb shifts common to a planning area, not a flight-line boundary that crosses one.
+- **Served images.** The map service may render values that differ from the delivered files. The check confirms the band order and equal values across its two layers; it cannot detect a stretch applied to both. Planning-area effects absorb a shift common to an area.
+- **Tree-pit vegetation.** Grass and weeds in the pit look green in the image too. If residents water the pit, that vegetation stays green in a dry August, and part of a gain may come from the ground under the tree rather than from the crown. The bias is largest for the newest trees, whose crowns do not yet cover the pit; S9 leaves them out.
 - **The 2015 image is not a true orthophoto.** Crowns lean slightly away from the image centre; young trees are short, so the shift is small.
 - **Small doses.** The median watered tree receives 60 L a season, about 1% of the rain on its crown ([benchmarks memo](policy_feedback_2026_11.md)).
 - **Greenness is not survival.** A crown-health gain does not convert into avoided replacements by itself. RQ4 uses it to check whether the survival bounds are plausible.
@@ -128,6 +132,20 @@ These are reported with intervals and without significance claims.
 python -m analysis.rq3_crown_health_projection
 ```
 
-This writes `output/rq3_crown_health/projection.json` and opens no image. The check, design and outcome stages are written after the freeze, before any image is opened.
+This writes `output/rq3_crown_health/projection.json` and opens no image.
+
+**Extraction.** The images are read on GitHub Actions ([workflow](../.github/workflows/rq3-crown-health.yml)), started by hand for one flight at a time, so no image passes through a local machine.
+
+- **Windows.** Each cohort tree falls in one 50 m cell; the request for a cell covers the 3 m circles of its trees, snapped outward to the 20 cm grid. Street trees planted from 1980 to 2019 (about 232,000) fill about 65,000 windows, roughly 3 GB per flight.
+- **Load on the service.** Six shards, at most two at once, each at most three requests a second.
+- **Kept.** For each tree, the pixel count, the count inside the image and the mean NDVI (or green share for 2023) within 1, 2 and 3 m; for each window, the SHA-256 of the response. No image is stored.
+- **Blind.** The extraction holds no watering data. The tables it writes are joined to the logs only in the outcome stage.
+- **Freeze guard.** It refuses to start unless this plan matches its hash in `config/project.toml`.
+
+```bash
+python -m analysis.rq3_crown_health_extract plan
+```
+
+This counts the windows without network access. The extraction code is written and tested on synthetic images before the freeze. The check, design and outcome stages are written after the freeze and before the extraction runs. A fix to any of them after the freeze goes into a dated deviation note.
 
 Lakens, D., Scheel, A. M., and Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. *Advances in Methods and Practices in Psychological Science*, 1(2), 259–269. https://doi.org/10.1177/2515245918770963
