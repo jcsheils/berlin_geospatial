@@ -39,29 +39,31 @@ class FakeClient:
         return png(np.broadcast_to(np.array(self.bands), (height, width, 3)))
 
 
-def brute_force_count(window, x, y, radius):
+def brute_force_count(window, x, y, radius, inner=None):
     count = 0
     for r in range(window.height):
         for c in range(window.width):
             px = (window.ix0 + c + 0.5) * extract.PIXEL_M
             py = (window.iy1 - r - 0.5) * extract.PIXEL_M
-            count += (px - x) ** 2 + (py - y) ** 2 <= radius ** 2 + extract.EDGE_M2
+            d2 = (px - x) ** 2 + (py - y) ** 2
+            count += d2 <= radius ** 2 + extract.EDGE_M2 and (inner is None or d2 > inner ** 2 + extract.EDGE_M2)
     return count
 
 
 class WindowTests(unittest.TestCase):
-    def test_windows_hold_every_circle_on_the_pixel_grid(self):
+    def test_windows_hold_every_ring_on_the_pixel_grid(self):
         rng = np.random.default_rng(1)
         frame = trees([(f"t{i}", 390000 + rng.uniform(0, 400), 5810000 + rng.uniform(0, 400)) for i in range(300)])
         cells, membership = extract.windows(frame)
         self.assertEqual(int(cells["trees"].sum()), len(frame))
+        reach = extract.RING_M[1]
         for tree, key in zip(frame.itertuples(), membership):
             cell = cells.loc[key]
-            self.assertLessEqual(cell.ix0 * extract.PIXEL_M, tree.x - 3 + 1e-9)
-            self.assertGreaterEqual(cell.ix1 * extract.PIXEL_M, tree.x + 3 - 1e-9)
-            self.assertLessEqual(cell.iy0 * extract.PIXEL_M, tree.y - 3 + 1e-9)
-            self.assertGreaterEqual(cell.iy1 * extract.PIXEL_M, tree.y + 3 - 1e-9)
-        self.assertTrue((cells["width"] <= (extract.CELL_M + 6) / extract.PIXEL_M + 1).all())
+            self.assertLessEqual(cell.ix0 * extract.PIXEL_M, tree.x - reach + 1e-9)
+            self.assertGreaterEqual(cell.ix1 * extract.PIXEL_M, tree.x + reach - 1e-9)
+            self.assertLessEqual(cell.iy0 * extract.PIXEL_M, tree.y - reach + 1e-9)
+            self.assertGreaterEqual(cell.iy1 * extract.PIXEL_M, tree.y + reach - 1e-9)
+        self.assertTrue((cells["width"] <= (extract.CELL_M + 2 * reach) / extract.PIXEL_M + 1).all())
 
     def test_shards_split_the_windows_once(self):
         frame = trees([(f"t{i}", 390000 + 60 * i, 5810000.0) for i in range(20)])
@@ -110,6 +112,73 @@ class CircleTests(unittest.TestCase):
         stats = extract.circle_stats(self.bands, self.window, self.frame, "gcc").set_index("tree_id")
         self.assertAlmostEqual(stats.loc["inside", "gcc_2m"], 50 / 330)
 
+    def test_ring_lies_between_three_and_five_metres(self):
+        stats = extract.circle_stats(self.bands, self.window, self.frame, "ndvi").set_index("tree_id")
+        expected = brute_force_count(self.window, 390010.3, 5810010.7, 5.0, inner=3.0)
+        self.assertEqual(stats.loc["inside", "pixels_ring"], expected)
+        self.assertAlmostEqual(expected, np.pi * (25 - 9) / extract.PIXEL_M ** 2, delta=25)
+
+
+class CanopyTests(unittest.TestCase):
+    """West of the tree: vegetation (NDVI 0.6), with a shaded strip; east: paving (NDVI 0)."""
+
+    def setUp(self):
+        self.frame = trees([("t", 390010.1, 5810010.1)])  # on a pixel centre
+        cells, _ = extract.windows(self.frame, cell=100.0)
+        self.window = next(cells.itertuples())
+        bands = np.zeros((self.window.height, self.window.width, 3))
+        tree_col = int(round(390010.1 / extract.PIXEL_M - 0.5)) - self.window.ix0
+        bands[:, :tree_col] = (200, 50, 80)
+        bands[:, tree_col:] = (100, 100, 100)
+        tree_row = self.window.iy1 - int(round(5810010.1 / extract.PIXEL_M - 0.5)) - 1
+        bands[:tree_row - 5, :tree_col] = (20, 10, 10)  # dark, NDVI 1/3: vegetated but in shadow
+        self.bands = bands.astype(np.uint8)
+        self.thresholds = {"vegetation": 0.3, "shadow": 40.0}
+
+    def test_canopy_fraction_greenness_and_shadow(self):
+        stats = extract.circle_stats(self.bands, self.window, self.frame, "ndvi", self.thresholds).iloc[0]
+        self.assertAlmostEqual(stats["veg_frac_2m"], 0.5, delta=0.06)
+        self.assertAlmostEqual(stats["veg_ndvi_2m"], 0.6)  # shaded vegetation left out
+        self.assertGreater(stats["shadow_frac_3m"], 0.05)
+        self.assertLess(stats["ndvi_2m"], 0.6)  # the old disc mean mixes in paving
+        self.assertEqual(set(extract.region_columns("ndvi")) - set(stats.index), set())
+
+    def test_stable_surfaces_are_sunlit_and_without_vegetation(self):
+        stable = extract.stable_surfaces(self.bands, "ndvi", self.thresholds)
+        self.assertEqual((stable["stable_nir"], stable["stable_red"], stable["stable_ndvi"]), (100.0, 100.0, 0.0))
+        self.assertTrue(np.isnan(extract.stable_surfaces(self.bands, "gcc", self.thresholds)["stable_ndvi"]))
+
+
+class CalibrationTests(unittest.TestCase):
+    def test_otsu_splits_two_classes(self):
+        values = np.concatenate([np.random.default_rng(0).normal(0.05, 0.05, 5000), np.random.default_rng(1).normal(0.55, 0.05, 5000)])
+        edges = np.linspace(-1, 1, extract.OTSU_BINS + 1)
+        split = extract.otsu(np.histogram(values, bins=edges)[0], edges)
+        self.assertGreater(split, 0.15)
+        self.assertLess(split, 0.45)
+
+    def test_calibration_uses_the_same_sample_on_every_shard(self):
+        class Half(FakeClient):
+            def get(self, url):
+                self.urls.append(url)
+                query = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+                width, height = int(query["WIDTH"][0]), int(query["HEIGHT"][0])
+                array = np.zeros((height, width, 3))
+                array[:, : width // 2] = (200, 50, 80)
+                array[:, width // 2:] = (100, 100, 100)
+                return png(array)
+        frame = trees([(f"t{i}", 390000 + 70 * i + 10, 5810010.0) for i in range(8)])
+        cells, _ = extract.windows(frame)
+        first, second = Half(), Half()
+        a = extract.calibrate(extract.FLIGHTS["2025"], cells, first)
+        b = extract.calibrate(extract.FLIGHTS["2025"], cells, second)
+        self.assertEqual(a, b)
+        self.assertEqual(first.urls, second.urls)
+        self.assertGreater(a["vegetation"], 0.0)
+        self.assertLess(a["vegetation"], 0.6)
+        self.assertGreaterEqual(a["shadow"], 0.5 * 100)  # half the median brightness; halves are 100 and 110
+        self.assertLessEqual(a["shadow"], 0.5 * 111)
+
 
 class DecodeTests(unittest.TestCase):
     def test_full_colour_png_of_the_requested_size(self):
@@ -153,8 +222,20 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual((summary["trees"], summary["windows"], summary["failed_windows"]), (5, 5, 0))
         self.assertEqual(sorted(table["tree_id"]), sorted(frame["tree_id"]))
         self.assertTrue(np.allclose(table["ndvi_2m"], 0.6))
+        self.assertTrue(np.allclose(table["veg_ndvi_ring"], 0.6))
+        self.assertTrue(np.allclose(table["shadow_frac_2m"], 0.0))
+        self.assertEqual(summary["thresholds"]["windows"], 5)
         self.assertTrue((log["sha256"].str.len() == 64).all())
         self.assertFalse({"watered", "never", "litres"} & set(table.columns))
+
+    def test_combine_refuses_shards_with_different_thresholds(self):
+        frame = trees([(f"t{i}", 390000 + 70 * i + 10, 5810010.0) for i in range(4)])
+        with mock.patch.object(extract, "require_freeze"), tempfile.TemporaryDirectory() as folder:
+            folder = Path(folder)
+            extract.run("2020", 0, 2, folder / "shards", client=FakeClient(), trees=frame)
+            extract.run("2020", 1, 2, folder / "shards", client=FakeClient((180, 60, 80)), trees=frame)
+            with self.assertRaises(SystemExit):
+                extract.combine("2020", folder / "shards", folder / "out")
 
     def test_crosscheck_passes_when_layers_agree(self):
         class Layers(FakeClient):

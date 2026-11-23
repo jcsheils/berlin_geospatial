@@ -41,6 +41,22 @@ class ExposureTests(unittest.TestCase):
         self.assertEqual(out["two_seasons"].to_dict(), {"a": False, "b": True})
 
 
+class LevelTests(unittest.TestCase):
+    def test_levels_of_care(self):
+        cohort = pd.DataFrame({"pitid": ["none", "once", "three_days", "two_seasons", "three_seasons", "early"]})
+        out = crown.exposure(cohort, logs([
+            ("once", dt.date(2021, 6, 1), 30.0),
+            ("three_days", dt.date(2022, 6, 1), 30.0), ("three_days", dt.date(2022, 6, 2), 30.0), ("three_days", dt.date(2022, 6, 3), 30.0),
+            ("two_seasons", dt.date(2021, 6, 1), 30.0), ("two_seasons", dt.date(2023, 6, 1), 30.0),
+            ("three_seasons", dt.date(2021, 6, 1), 30.0), ("three_seasons", dt.date(2022, 6, 1), 30.0), ("three_seasons", dt.date(2024, 6, 1), 30.0),
+            ("early", dt.date(2020, 6, 1), 30.0), ("early", dt.date(2022, 6, 1), 30.0),
+        ])).set_index("pitid")
+        self.assertEqual(out["dose"].fillna(-1).to_dict(),
+                         {"none": 0, "once": 1, "three_days": 2, "two_seasons": 2, "three_seasons": 3, "early": -1})
+        self.assertEqual(out["dry_2022"].to_dict(),
+                         {"none": False, "once": False, "three_days": True, "two_seasons": False, "three_seasons": True, "early": False})
+
+
 class DetectabilityTests(unittest.TestCase):
     def test_more_watered_trees_lower_the_detectable_difference(self):
         def frame(n_watered):
@@ -52,7 +68,8 @@ class DetectabilityTests(unittest.TestCase):
         saved = json.loads((ROOT / "output/rq3_crown_health/projection.json").read_text())
         for analysis in saved["analyses"].values():
             self.assertFalse({key for key in analysis if key.startswith(("ndvi", "difference", "ci95", "p_"))})
-        self.assertGreater(saved["analyses"]["primary_watered_between_flights"]["treated"], 0)
+        levels = saved["analyses"]["primary_dose_trend"]["trees_by_level"]
+        self.assertTrue(all(levels[name] > 0 for name in ("never", "occasional", "repeated", "sustained")))
 
 
 if __name__ == "__main__":

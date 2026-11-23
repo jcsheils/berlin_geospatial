@@ -26,7 +26,7 @@ The [analysis plan](docs/analysis_plan.md) governs current work. It applies the 
 - **RQ1, drought response:** how logged watering responds to heat, rain and dry spells;
 - **RQ2, levers and reach:** how street pumps and municipal-care age limits shift citizen watering, and whom it reaches;
 - **RQ3, tree outcomes:** survival and condition of young street trees;
-- **RQ4, scenarios:** scaling, targeting and funding the platform.
+- **RQ4, priorities:** where support for volunteer watering should go first under a fixed budget, with scaling and funding as supporting scenarios.
 
 Part I's vegetation cooling estimates feed the RQ4 scenarios. The seminar package keeps its own earlier RQ numbering.
 

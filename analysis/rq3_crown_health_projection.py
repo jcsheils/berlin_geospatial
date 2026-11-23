@@ -1,10 +1,10 @@
 """Projected sample for the RQ3 crown-health test (docs/rq3_crown_health_protocol.md).
 
-The test compares the change in crown NDVI between the August 2020 and August 2025
-aerial images for young street trees first watered after the 2020 flight and for trees
-never watered. This script counts those trees and the detectable difference in units
-of the outcome's residual standard deviation. It uses the 2025 inventory and the open
-log export only and opens no image.
+The test relates the change in crown greenness between the August 2020 and August 2025
+aerial images to the level of logged care between the flights (none, occasional,
+repeated, sustained) for young street trees. This script counts those trees and the
+detectable differences in units of the outcome's residual standard deviation. It uses
+the 2025 inventory and the open log export only and opens no image.
 """
 from __future__ import annotations
 
@@ -28,10 +28,24 @@ OLDER_AGES = (16, 40)
 PLACEBO_LAST_PLANTING = 2014  # standing at the August 2015 flight
 FIXED_EFFECTS = [["plr_id"], ["planting_year", "genus_group"]]
 EXACT_STRATA = ["plr_id", "planting_year", "genus_group"]
+REPEATED_DAYS = 3  # log days in one season that make care repeated
+SUSTAINED_SEASONS = 3  # seasons with logs that make care sustained
+TOP_LEVEL = 3  # sustained; the primary estimate is the trend's gain from none to sustained
+DRY_SEASON = 2022
+
+
+def dose_level(watered: pd.Series, days: pd.Series, seasons: pd.Series) -> pd.Series:
+    """0 never, 1 occasional, 2 repeated (three or more log days in a season, or two seasons),
+    3 sustained (three or more seasons). Missing for trees watered before the first flight."""
+    level = pd.Series(np.where(watered, 1.0, 0.0), index=watered.index)
+    level[watered & ((days >= REPEATED_DAYS) | (seasons >= 2))] = 2.0
+    level[watered & (seasons >= SUSTAINED_SEASONS)] = 3.0
+    return level
 
 
 def exposure(cohort: pd.DataFrame, logs: pd.DataFrame) -> pd.DataFrame:
-    """Flag trees watered between the two flights, before the first, or never before the second."""
+    """Flag trees watered between the two flights, before the first, or never before the second,
+    and the level of care between the flights."""
     window = logs[logs["date"] < OUTCOME_FLIGHT_START]
     early = window["date"] <= BASELINE_FLIGHT_END
     between = window[~early]
@@ -45,6 +59,11 @@ def exposure(cohort: pd.DataFrame, logs: pd.DataFrame) -> pd.DataFrame:
     out["three_days"] = out["watered"] & (tree(seasons["days"]).fillna(0) >= 3)
     out["two_seasons"] = out["watered"] & (tree(seasons["seasons"]).fillna(0) >= 2)
     out["high_dose"] = out["watered"] & (tree(seasons["litres"]).fillna(0) >= one_year.HIGH_DOSE_L)
+    level = dose_level(out["watered"], tree(seasons["days"]).fillna(0), tree(seasons["seasons"]).fillna(0))
+    out["dose"] = level.where(out["watered"] | out["never"])
+    for value, name in ((1, "occasional"), (2, "repeated"), (3, "sustained")):
+        out[name] = out["dose"].eq(value)
+    out["dry_2022"] = out["watered"] & cohort["pitid"].isin(set(between.loc[between["year"] == DRY_SEASON, "tree_id"]))
     return out
 
 
@@ -75,6 +94,16 @@ def describe(frame: pd.DataFrame, treat: str) -> dict:
     }
 
 
+def describe_trend(frame: pd.DataFrame) -> dict:
+    """Trees per level of care and the detectable gain from none to sustained implied by a linear trend."""
+    sample = frame[frame["dose"].notna()].dropna(subset=["plr_id"])
+    per_step = standardised_mde(sample, "dose")
+    return {
+        "trees_by_level": {name: int(sample["dose"].eq(v).sum()) for v, name in enumerate(("never", "occasional", "repeated", "sustained"))},
+        "mde_residual_sd_design_effect_1_and_2": [round(TOP_LEVEL * m, 3) for m in per_step],
+    }
+
+
 def project() -> dict:
     trees = four_year.load_trees()
     trees = trees[trees["planting_year"] < BASELINE_YEAR].copy()
@@ -89,12 +118,15 @@ def project() -> dict:
         "young_street_trees_age_1_15_in_2020": int(len(young)),
         "young_watered_before_the_2020_flight": int(young["watered_before_baseline"].sum()),
         "analyses": {
-            "primary_watered_between_flights": describe(young, "watered"),
-            "s_dose_three_log_days_in_a_season": describe(young, "three_days"),
-            "s_dose_two_or_more_seasons": describe(young, "two_seasons"),
+            "primary_dose_trend": describe_trend(young),
+            "s_any_log_between_flights": describe(young, "watered"),
+            "s_level_occasional": describe(young, "occasional"),
+            "s_level_repeated": describe(young, "repeated"),
+            "s_level_sustained": describe(young, "sustained"),
+            "s_timing_logs_in_dry_2022": describe(young, "dry_2022"),
             "s_dose_500_l_or_more_in_a_season": describe(young, "high_dose"),
-            "placebo_2015_2020_planted_by_2014": describe(placebo, "watered"),
-            "negative_control_age_16_40": describe(older, "watered"),
+            "placebo_2015_2020_planted_by_2014": describe_trend(placebo),
+            "negative_control_age_16_40": describe_trend(older),
         },
     }
 
@@ -103,9 +135,9 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     result = project()
     (OUT / "projection.json").write_text(json.dumps(result, indent=2) + "\n")
-    primary = result["analyses"]["primary_watered_between_flights"]
-    print(f"primary: {primary['treated']} watered, {primary['controls']} never watered, "
-          f"detectable {primary['mde_residual_sd_design_effect_1_and_2']} residual SD")
+    primary = result["analyses"]["primary_dose_trend"]
+    print(f"primary: {primary['trees_by_level']}, detectable gain at sustained care "
+          f"{primary['mde_residual_sd_design_effect_1_and_2']} residual SD")
 
 
 if __name__ == "__main__":

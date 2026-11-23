@@ -51,8 +51,13 @@ projection = "output/rq3_four_year_survival/projection.json"
 projection_builder = "analysis/rq3_four_year_projection.py"
 
 [project.rq3_crown_health]
-status = "draft; freeze (hash here) before any aerial image is downloaded"
+status = "draft, revised 2026-11-23; freeze (hash here) before any aerial image is downloaded"
 protocol = "docs/rq3_crown_health_protocol.md"
+primary_outcome = "change 2020-2025 in mean NDVI of sunlit vegetation pixels in the 2 m disc (greenness)"
+primary_exposure = "level of care between the flights: 0 never, 1 occasional, 2 repeated, 3 sustained; estimate = 3 x trend"
+background_ring_m = [3.0, 5.0]
+thresholds = "per flight from 200 sampled windows: vegetation = Otsu split of NDVI; shadow = half the median brightness"
+validity_gate = "design stage: greenness change must predict removal by the 2026 inventory, else results read as greenness only"
 flights = ["2015-08-02/03 DOP20RGBI", "2020-08-01/08/12/16 TrueDOP20RGBI", "2025-08-11/12 TrueDOP20RGBI Sommer"]
 image_route = "Berlin WMS colour-infrared layers (dop_2015_cir, truedop_2020_sommer_cir, truedop_2025_sommer_cir) as PNG on the 20 cm grid; downloads of 2015 and 2020 are ECW only"
 disc_radius_m = 2.0

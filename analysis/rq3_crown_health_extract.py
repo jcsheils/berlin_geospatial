@@ -2,9 +2,13 @@
 
 See docs/rq3_crown_health_protocol.md. Each flight is read through Berlin's map service
 (WMS) as lossless PNG on the native 20 cm grid, one window around a cluster of trees at a
-time. Only the pixel counts and mean values inside circles of 1, 2 and 3 m around each
-tree are kept, with the SHA-256 of every response; no image is stored. The extraction
-holds no watering data.
+time. Before its windows, every shard reads the same 200 sampled windows to set the
+flight's thresholds: vegetation is NDVI at or above the Otsu split of the sample, shadow
+is brightness below half the sample's median. For circles of 1, 2 and 3 m around each
+tree and a background ring of 3-5 m, only pixel counts and summaries are kept (mean
+index, canopy fraction, greenness of sunlit vegetation, shadow share); for each window,
+the SHA-256 of the response and the median values of its stable surfaces (sunlit pixels
+without vegetation). No image is stored. The extraction holds no watering data.
 
 Commands:
   plan        count trees and windows (no network access, no freeze needed)
@@ -40,6 +44,12 @@ INVENTORY_2025 = ROOT / "data/raw/tree_inventory/trees_2025_gbif.csv.gz"
 
 PIXEL_M = 0.2
 RADII_M = (1.0, 2.0, 3.0)
+RING_M = (3.0, 5.0)  # background ring: beyond the widest circle, inside the neighbouring crowns
+PAD_M = RING_M[1]
+REGIONS = tuple(f"{r:g}m" for r in RADII_M) + ("ring",)
+CALIBRATION_WINDOWS = 200
+OTSU_BINS = 200  # NDVI histogram over [-1, 1]
+SHADOW_SHARE_OF_MEDIAN = 0.5
 EDGE_M2 = 1e-6  # a pixel centre on the circle counts as inside, whatever the rounding
 CELL_M = 50.0
 PLANTED = (1980, 2019)  # ages 1-40 in 2020: young cohort, placebo and older trees
@@ -88,11 +98,11 @@ def cohort(path: Path = INVENTORY_2025) -> pd.DataFrame:
     return out.sort_values("tree_id").reset_index(drop=True)
 
 
-def windows(trees: pd.DataFrame, cell: float = CELL_M, pad: float = max(RADII_M)) -> tuple[pd.DataFrame, pd.Series]:
+def windows(trees: pd.DataFrame, cell: float = CELL_M, pad: float = PAD_M) -> tuple[pd.DataFrame, pd.Series]:
     """One request window per occupied cell, and the window of each tree.
 
     Edges are integer pixel indices (coordinate = index * PIXEL_M), snapped outward so
-    that the window holds every tree's widest circle.
+    that the window holds every tree's background ring.
     """
     key = (np.floor(trees["x"] / cell).astype(np.int64).astype(str) + "_"
            + np.floor(trees["y"] / cell).astype(np.int64).astype(str))
@@ -175,17 +185,86 @@ def index_values(bands: np.ndarray, index: str) -> np.ndarray:
     raise ValueError(index)
 
 
-def circle_stats(bands: np.ndarray, window, trees: pd.DataFrame, index: str) -> pd.DataFrame:
-    """Pixel count, count inside the image and mean index within each radius of each tree.
+def brightness(bands: np.ndarray) -> np.ndarray:
+    """Mean of the three served bands, 0-255."""
+    return bands.astype(np.float64).mean(axis=2)
+
+
+def otsu(histogram: np.ndarray, edges: np.ndarray) -> float:
+    """The split of a histogram that maximises the variance between the two classes (Otsu, 1979)."""
+    centres = (edges[:-1] + edges[1:]) / 2
+    weight = histogram.astype(np.float64)
+    w0 = np.cumsum(weight)
+    w1 = w0[-1] - w0
+    m0 = np.cumsum(weight * centres)
+    with np.errstate(invalid="ignore", divide="ignore"):
+        between = w0 * w1 * (m0 / w0 - (m0[-1] - m0) / w1) ** 2
+    between[~np.isfinite(between)] = -1
+    return float(edges[int(np.argmax(between)) + 1])
+
+
+def histogram_median(histogram: np.ndarray, edges: np.ndarray) -> float:
+    cumulative = np.cumsum(histogram)
+    return float(edges[int(np.searchsorted(cumulative, cumulative[-1] / 2)) + 1])
+
+
+def calibrate(spec: dict, frame: pd.DataFrame, client) -> dict:
+    """Thresholds of one flight from a fixed sample of windows, before any tree is summarised.
+
+    Every shard draws the same sample (seed 42 over all windows), so all shards of a
+    flight use the same thresholds; combine confirms it.
+    """
+    sample = frame.sample(n=min(CALIBRATION_WINDOWS, len(frame)), random_state=SEED)
+    ndvi_edges = np.linspace(-1.0, 1.0, OTSU_BINS + 1)
+    light_edges = np.arange(0.0, 257.0, 1.0)
+    ndvi_hist = np.zeros(OTSU_BINS, dtype=np.int64)
+    light_hist = np.zeros(len(light_edges) - 1, dtype=np.int64)
+    for window in sample.itertuples():
+        bands = decode(client.get(getmap_url(spec["service"], spec["layer"], window)), window.width, window.height)
+        inside = bands.any(axis=2)
+        light_hist += np.histogram(brightness(bands)[inside], bins=light_edges)[0]
+        if spec["index"] == "ndvi":
+            values = index_values(bands, "ndvi")[inside]
+            ndvi_hist += np.histogram(values[~np.isnan(values)], bins=ndvi_edges)[0]
+    result = {"windows": int(len(sample)), "pixels": int(light_hist.sum()), "seed": SEED,
+              "shadow": SHADOW_SHARE_OF_MEDIAN * histogram_median(light_hist, light_edges)}
+    result["vegetation"] = otsu(ndvi_hist, ndvi_edges) if spec["index"] == "ndvi" else None
+    return result
+
+
+def stable_surfaces(bands: np.ndarray, index: str, thresholds: dict) -> dict:
+    """Median values of the window's sunlit pixels without vegetation (roofs, paving)."""
+    empty = {"stable_pixels": 0, "stable_nir": np.nan, "stable_red": np.nan, "stable_ndvi": np.nan}
+    if index != "ndvi":
+        return empty
+    values = index_values(bands, "ndvi")
+    stable = bands.any(axis=2) & ~np.isnan(values) & (values < thresholds["vegetation"]) & (brightness(bands) >= thresholds["shadow"])
+    if not stable.any():
+        return empty
+    return {"stable_pixels": int(stable.sum()), "stable_nir": float(np.median(bands[:, :, 0][stable])),
+            "stable_red": float(np.median(bands[:, :, 1][stable])), "stable_ndvi": float(np.median(values[stable]))}
+
+
+def region_columns(index: str) -> list[str]:
+    kinds = ["pixels", "in_image", index, "shadow_frac"] + (["veg_frac", "veg_ndvi"] if index == "ndvi" else [])
+    return [f"{kind}_{region}" for region in REGIONS for kind in kinds]
+
+
+def circle_stats(bands: np.ndarray, window, trees: pd.DataFrame, index: str, thresholds: dict | None = None) -> pd.DataFrame:
+    """Pixel counts and summaries within each circle and the background ring of each tree.
 
     Pixel (row r, column c) has its centre at x = (ix0 + c + 0.5) * PIXEL_M and
     y = (iy1 - r - 0.5) * PIXEL_M. A pixel with all three bands at zero lies outside
-    the image.
+    the image. With thresholds, each region also gets its shadow share and, for NDVI,
+    its canopy fraction (share of pixels at or above the vegetation threshold) and the
+    mean NDVI of its sunlit vegetation pixels.
     """
     height, width = bands.shape[:2]
     values = index_values(bands, index)
     inside = bands.any(axis=2)
-    reach = int(np.ceil(max(RADII_M) / PIXEL_M)) + 1
+    light = brightness(bands)
+    reach = int(np.ceil(PAD_M / PIXEL_M)) + 1
+    regions = {f"{r:g}m": (None, r) for r in RADII_M} | {"ring": RING_M}
     records = []
     for tree in trees.itertuples():
         col = tree.x / PIXEL_M - window.ix0 - 0.5
@@ -198,16 +277,30 @@ def circle_stats(bands: np.ndarray, window, trees: pd.DataFrame, index: str) -> 
         rr_c, cc_c = np.clip(rr, 0, height - 1), np.clip(cc, 0, width - 1)
         present = inside[rr_c, cc_c] & in_array
         local = values[rr_c, cc_c]
+        dark = light[rr_c, cc_c] < thresholds["shadow"] if thresholds else None
         record = {"tree_id": tree.tree_id}
-        for radius in RADII_M:
-            label = f"{radius:g}m"
-            within = distance2 <= radius ** 2 + EDGE_M2
+        for label, (inner, outer) in regions.items():
+            within = distance2 <= outer ** 2 + EDGE_M2
+            if inner is not None:
+                within &= distance2 > inner ** 2 + EDGE_M2
             usable = within & present & ~np.isnan(local)
             record[f"pixels_{label}"] = int(within.sum())
             record[f"in_image_{label}"] = int((within & present).sum())
             record[f"{index}_{label}"] = float(local[usable].mean()) if usable.any() else np.nan
+            if thresholds is None:
+                continue
+            seen = within & present
+            record[f"shadow_frac_{label}"] = float((dark & seen).sum() / seen.sum()) if seen.any() else np.nan
+            if index == "ndvi":
+                vegetated = usable & (local >= thresholds["vegetation"])
+                sunlit = vegetated & ~dark
+                record[f"veg_frac_{label}"] = float(vegetated.sum() / usable.sum()) if usable.any() else np.nan
+                record[f"veg_ndvi_{label}"] = float(local[sunlit].mean()) if sunlit.any() else np.nan
         records.append(record)
     return pd.DataFrame(records)
+
+
+WINDOW_COLUMNS = ["window", "sha256", "bytes", "error", "stable_pixels", "stable_nir", "stable_red", "stable_ndvi"]
 
 
 def code_hash() -> str:
@@ -225,6 +318,7 @@ def run(flight: str, shard: int, shards: int, out: Path, client: Client | None =
     part = frame.iloc[shard::shards]
     client = client or Client()
     started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    thresholds = calibrate(spec, frame, client)
     tables, log = [], []
     for window in part.itertuples():
         try:
@@ -233,16 +327,18 @@ def run(flight: str, shard: int, shards: int, out: Path, client: Client | None =
         except (RuntimeError, ValueError) as error:
             log.append({"window": window.Index, "sha256": "", "bytes": 0, "error": str(error)[:300]})
             continue
-        log.append({"window": window.Index, "sha256": sha256(body), "bytes": len(body), "error": ""})
-        tables.append(circle_stats(bands, window, by_window.get_group(window.Index), spec["index"]).assign(window=window.Index))
+        log.append({"window": window.Index, "sha256": sha256(body), "bytes": len(body), "error": "",
+                    **stable_surfaces(bands, spec["index"], thresholds)})
+        tables.append(circle_stats(bands, window, by_window.get_group(window.Index), spec["index"], thresholds).assign(window=window.Index))
     out.mkdir(parents=True, exist_ok=True)
     stem = f"{flight}_shard{shard}"
-    columns = ["tree_id", "window"] + [f"{kind}_{r:g}m" for r in RADII_M for kind in ("pixels", "in_image", spec["index"])]
+    columns = ["tree_id", "window"] + region_columns(spec["index"])
     table = pd.concat(tables, ignore_index=True)[columns] if tables else pd.DataFrame(columns=columns)
     table.to_csv(out / f"{stem}_trees.csv.gz", index=False)
-    pd.DataFrame(log, columns=["window", "sha256", "bytes", "error"]).to_csv(out / f"{stem}_windows.csv.gz", index=False)
+    pd.DataFrame(log, columns=WINDOW_COLUMNS).to_csv(out / f"{stem}_windows.csv.gz", index=False)
     summary = {
         "flight": flight, "service": spec["service"], "layer": spec["layer"], "shard": shard, "shards": shards,
+        "thresholds": thresholds,
         "windows": int(len(part)), "failed_windows": int(sum(bool(entry["error"]) for entry in log)),
         "trees": int(len(table)), "started_utc": started,
         "finished_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
@@ -320,6 +416,8 @@ def combine(flight: str, folder: Path, out: Path) -> dict:
     shards = {s["shards"] for s in summaries}
     if len(shards) != 1 or sorted(s["shard"] for s in summaries) != list(range(shards.pop())):
         raise SystemExit(f"{flight}: shard summaries are incomplete.")
+    if len({json.dumps(s["thresholds"], sort_keys=True) for s in summaries}) != 1:
+        raise SystemExit(f"{flight}: shards set different thresholds.")
     trees = pd.concat([pd.read_csv(folder / f"{flight}_shard{s['shard']}_trees.csv.gz", dtype={"tree_id": str, "window": str})
                        for s in summaries], ignore_index=True)
     log = pd.concat([pd.read_csv(folder / f"{flight}_shard{s['shard']}_windows.csv.gz", dtype={"window": str}, keep_default_na=False)
@@ -331,7 +429,7 @@ def combine(flight: str, folder: Path, out: Path) -> dict:
     log.to_csv(out / f"crown_windows_{flight}.csv.gz", index=False)
     summary = {
         "flight": flight, "windows": int(len(log)), "failed_windows": int((log["error"] != "").sum()),
-        "trees": int(len(trees)), "shards": summaries,
+        "trees": int(len(trees)), "thresholds": summaries[0]["thresholds"], "shards": summaries,
     }
     (out / f"crown_circles_{flight}.json").write_text(json.dumps(summary, indent=2) + "\n")
     return summary
@@ -345,10 +443,11 @@ def plan() -> dict:
         "street_trees_planted_1980_2019": int(len(trees)),
         "young_planted_2005_2019": int(trees["planting_year"].between(*YOUNG_PLANTED).sum()),
         "windows": int(len(frame)),
+        "calibration_windows_per_shard": CALIBRATION_WINDOWS,
         "pixels_per_flight": pixels,
         "raw_gb_per_flight": round(pixels * 3 / 1e9, 2),
         "shards": SHARDS,
-        "hours_per_shard_at_rate_ceiling": round(len(frame) / SHARDS / MAX_REQUESTS_PER_S / 3600, 1),
+        "hours_per_shard_at_rate_ceiling": round((len(frame) / SHARDS + CALIBRATION_WINDOWS) / MAX_REQUESTS_PER_S / 3600, 1),
         "plan_frozen": frozen(CONFIG.read_text(), PROTOCOL.read_bytes()),
     }
 
