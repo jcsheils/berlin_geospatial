@@ -1,6 +1,6 @@
-# RQ3 crown-health test: pre-specified plan, draft of 23 November 2026
+# RQ3 crown-health test: pre-specified plan, frozen on 24 November 2026
 
-**Status: draft.** This plan was written before any aerial image was opened for the analysis. It is frozen once its SHA-256 is recorded in `config/project.toml`, before any image is downloaded. Changes after the freeze go into a dated deviation note. Survival stays the primary RQ3 outcome ([four-year plan](rq3_four_year_survival_protocol.md)); crown health is the outcome that the data available now can test.
+**Status: frozen on 24 November 2026**, before any aerial image was downloaded for the analysis. Its SHA-256 is recorded in `config/project.toml`, and the extraction and the stages refuse to run if the plan changes. Changes after the freeze go into a dated deviation note. Survival stays the primary RQ3 outcome ([four-year plan](rq3_four_year_survival_protocol.md)); crown health is the outcome that the data available now can test.
 
 ## Revision of 23 November 2026
 

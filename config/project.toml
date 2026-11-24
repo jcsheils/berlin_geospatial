@@ -51,8 +51,9 @@ projection = "output/rq3_four_year_survival/projection.json"
 projection_builder = "analysis/rq3_four_year_projection.py"
 
 [project.rq3_crown_health]
-status = "draft, revised 2026-11-23; freeze (hash here) before any aerial image is downloaded"
+status = "frozen 2026-11-24, before any aerial image was downloaded; changes after the freeze go into a dated deviation note"
 protocol = "docs/rq3_crown_health_protocol.md"
+protocol_sha256 = "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240"
 primary_outcome = "change 2020-2025 in mean NDVI of sunlit vegetation pixels in the 2 m disc (greenness)"
 primary_exposure = "level of care between the flights: 0 never, 1 occasional, 2 repeated, 3 sustained; estimate = 3 x trend"
 background_ring_m = [3.0, 5.0]
