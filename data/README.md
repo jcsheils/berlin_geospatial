@@ -13,6 +13,7 @@ This folder holds every input the analyses use and the shared processed panels. 
 | `spatial/lor_equity_environment_2024.gpkg` | MSS 2025 and Environmental Justice Atlas 2023/24, three layers | Berlin spatial services; DL-DE Zero 2.0; [details](spatial/README.md) |
 | `spatial/alkis_ortsteile_2026_09_29.geojson` | 97 current Ortsteile for the provisional LST extension | Berlin ALKIS WFS; DL-DE Zero 2.0; [boundary caveats](spatial/README.md) |
 | `raw/dwd/*.zip` | Berlin-Tempelhof station archive; daily weather for 2020–2025 | Deutscher Wetterdienst CDC; CC BY 4.0; [notes](raw/dwd/README.md) |
+| `raw/osm_pumps/` | OpenStreetMap full history of 2,331 water-well and street-pump nodes to 27 July 2026; source of the RQ2 pump status panel | ohsome API (HeiGIT); ODbL 1.0, © OpenStreetMap contributors; [selection, checksums and validation](raw/osm_pumps/README.md) |
 | `raw/supervisor/*.csv` | Monthly Ortsteil LST and rainfall, 2018–2025; 9,312 rows | Supplied to the project without extraction metadata or a redistribution licence; [audit](raw/supervisor/README.md) |
 | `Berlin_heat_population_data.csv`, `Berlin_heat_population_death_Birth_data.csv` | Legacy district heat, population and mortality aggregates from the first exploration | Assembly method and licence chain unverified; not a validated climate or health dataset |
 
@@ -21,8 +22,9 @@ This folder holds every input the analyses use and the shared processed panels. 
 - `processed/foundation/`: balanced 542-area × 68-month panel and the tree-to-LOR crosswalk.
 - `processed/temporal/`: 50,259 positive tree-days plus monthly, annual, seasonal, age and genus summaries.
 - `processed/rq1/`: the April–September planning-area-day panel for the RQ1 pilot.
+- `processed/rq2_pumps/`: street-pump register, dated status changes and pump × season panel, 2019–2025. They form the treatment side of the RQ2 pump design; no watering is joined.
 
-Analysis outputs live in `../output/`: source audits (`exploratory/`), LOR metrics and Moran results (`spatial/`), social and environmental joins (`equity/`), the temporal atlas (`03_spatial_equity_vulnerability/`, an older folder name), the monthly weather report (`watering_response/`) and the RQ1 pilot (`rq1_daily/`).
+Analysis outputs live in `../output/`: source audits (`exploratory/`), LOR metrics and Moran results (`spatial/`), social and environmental joins (`equity/`), the temporal atlas (`03_spatial_equity_vulnerability/`, an older folder name), the monthly weather report (`watering_response/`), the RQ1 pilot (`rq1_daily/`) and the pump status audit (`pump_status/`).
 
 ## Licences
 

@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5200,
-      "sha256": "a634650631880ccd4771e02482adbf930c47931e39e6a2002d822f42ffafb984"
+      "bytes": 5239,
+      "sha256": "aee5c1a730c2a0a47f86764e8998b5d98598dffe7571c5444bec1a06faf3cb48"
     },
     {
       "path": "analysis/build_equity_notebook.py",
@@ -56,8 +56,8 @@
     },
     {
       "path": "config/datasets.toml",
-      "bytes": 13941,
-      "sha256": "380290d6ba892ffeb55bae1d75d8d7b72556aed98ec318314a98e67b51328c0d"
+      "bytes": 16672,
+      "sha256": "9217055e6ef47c3475958189b9064fdf6035382abf3081ae03cee21e08f30a3f"
     },
     {
       "path": "config/project.toml",
@@ -76,8 +76,8 @@
     },
     {
       "path": "data/README.md",
-      "bytes": 3926,
-      "sha256": "0f10d4b746f5ef186638868175bb2f5ed1559462b4a9d2bdd714401be0654bf7"
+      "bytes": 4422,
+      "sha256": "17c8580ebf93a291cd178687a0c82dede112e063667a4f3fde4470989d525fc1"
     },
     {
       "path": "data/giessdenkiez_bewässerungsdaten (1).csv",
@@ -211,8 +211,8 @@
     },
     {
       "path": "docs/analysis_plan.md",
-      "bytes": 13437,
-      "sha256": "7bc2c5ce4164c3217569870e4131346c888fdfc6c9d9b39057037fc9c6887c20"
+      "bytes": 13643,
+      "sha256": "2ae244823547194ad5178df047116f1ed1d9ca575c66070655153300c35da9e4"
     },
     {
       "path": "docs/proposal/Proposal_Refined_October_2026.pdf",

@@ -66,8 +66,8 @@ The [reproduction guide](examination/reproducibility.md) gives the full build or
 | Folder | Contents |
 | --- | --- |
 | `docs/` | Analysis plan, revised design, benchmarks memo, protocols, literature, refined proposal |
-| `src/berlin_heat/` | Package: data contracts, panel builders, RQ1 pilot, CLI |
-| `pipelines/` | Numbered build scripts (03–08) for the shared panels and RQ1 |
+| `src/berlin_heat/` | Package: data contracts, panel builders, RQ1 pilot, pump status panel, CLI |
+| `pipelines/` | Numbered build scripts (03–09) for the shared panels, RQ1 and the RQ2 pump panel |
 | `analysis/` | Notebook, report and benchmark builders |
 | `data/` | Frozen source snapshots and processed panels |
 | `output/` | Executed notebooks, figures, tables, maps and reports |

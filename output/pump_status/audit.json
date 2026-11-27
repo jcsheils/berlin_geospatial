@@ -1,0 +1,704 @@
+{
+  "inputs": {
+    "snapshot": {
+      "path": "data/raw/osm_pumps/snapshot.json",
+      "sha256": "e9f883eb6acde9f72cfcfd8b4eafed044fc5cfcbeef03322e9d06ce00806d568",
+      "data_end_utc": "2026-07-27T09:00:00Z",
+      "api_version": "1.10.4"
+    },
+    "lor_boundaries": {
+      "path": "data/spatial/lor_planungsraeume_2021.gpkg",
+      "sha256": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624"
+    },
+    "tree_inventory": {
+      "path": "data/Berlin_trees.gpkg",
+      "sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+      "crs_override": "Declared EPSG:4326 metadata overridden to EPSG:25833 after coordinate-range validation."
+    }
+  },
+  "selection": {
+    "discovery_nodes": 2331,
+    "history_nodes": 2331,
+    "history_versions": 15602,
+    "ever_platform_selector": 2093,
+    "ever_platform_selector_outside_berlin": 0,
+    "universe_pumps": 2093,
+    "universe_versions": 15086,
+    "water_wells_never_platform_selector": 221,
+    "name_variant_only": 11
+  },
+  "platform_layer_replication": [
+    {
+      "commit": "9eb7bee",
+      "committed_utc": "2021-05-02T04:07:01Z",
+      "selector": "description",
+      "published_pumps": 1862,
+      "replicated_pumps": 1862,
+      "in_both": 1862,
+      "only_published": 0,
+      "only_replicated": 0,
+      "status_label_agreement": 1862,
+      "check_date_agreement": 1862
+    },
+    {
+      "commit": "b7471fc",
+      "committed_utc": "2023-04-02T04:05:56Z",
+      "selector": "network",
+      "published_pumps": 1940,
+      "replicated_pumps": 1940,
+      "in_both": 1940,
+      "only_published": 0,
+      "only_replicated": 0,
+      "status_label_agreement": 1940,
+      "check_date_agreement": 1940
+    }
+  ],
+  "street_trees_in_inventory": 433176,
+  "pumps_by_season_start": [
+    {
+      "season": 2019,
+      "date": "2019-04-01",
+      "universe_nodes": 2093,
+      "mapped": 1109,
+      "mapped_as_water_well": 1109,
+      "platform_visible": 0,
+      "working": 215,
+      "broken": 47,
+      "locked": 9,
+      "pump_absent": 14,
+      "unknown": 824,
+      "unrecognised": 0,
+      "disused": 0,
+      "removed": 0,
+      "not_a_pump": 0,
+      "deleted": 0,
+      "not_mapped": 984,
+      "water_wells_with_known_status_pct": 25.7,
+      "working_pct_of_known": 75.4,
+      "water_wells_with_check_date": 241,
+      "median_days_since_check": 455.0,
+      "mapped_in_season": 39,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2020,
+      "date": "2020-04-01",
+      "universe_nodes": 2093,
+      "mapped": 1506,
+      "mapped_as_water_well": 1504,
+      "platform_visible": 1467,
+      "working": 285,
+      "broken": 62,
+      "locked": 16,
+      "pump_absent": 33,
+      "unknown": 1108,
+      "unrecognised": 0,
+      "disused": 0,
+      "removed": 1,
+      "not_a_pump": 0,
+      "deleted": 1,
+      "not_mapped": 587,
+      "water_wells_with_known_status_pct": 26.3,
+      "working_pct_of_known": 72.0,
+      "water_wells_with_check_date": 273,
+      "median_days_since_check": 821.0,
+      "mapped_in_season": 433,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2021,
+      "date": "2021-04-01",
+      "universe_nodes": 2093,
+      "mapped": 1957,
+      "mapped_as_water_well": 1875,
+      "platform_visible": 1862,
+      "working": 863,
+      "broken": 307,
+      "locked": 18,
+      "pump_absent": 5,
+      "unknown": 682,
+      "unrecognised": 0,
+      "disused": 0,
+      "removed": 76,
+      "not_a_pump": 1,
+      "deleted": 5,
+      "not_mapped": 136,
+      "water_wells_with_known_status_pct": 63.6,
+      "working_pct_of_known": 72.3,
+      "water_wells_with_check_date": 867,
+      "median_days_since_check": 212.0,
+      "mapped_in_season": 14,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2022,
+      "date": "2022-04-01",
+      "universe_nodes": 2093,
+      "mapped": 1974,
+      "mapped_as_water_well": 1880,
+      "platform_visible": 1873,
+      "working": 920,
+      "broken": 276,
+      "locked": 17,
+      "pump_absent": 8,
+      "unknown": 659,
+      "unrecognised": 0,
+      "disused": 1,
+      "removed": 81,
+      "not_a_pump": 1,
+      "deleted": 11,
+      "not_mapped": 119,
+      "water_wells_with_known_status_pct": 64.9,
+      "working_pct_of_known": 75.3,
+      "water_wells_with_check_date": 969,
+      "median_days_since_check": 565.0,
+      "mapped_in_season": 95,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2023,
+      "date": "2023-04-01",
+      "universe_nodes": 2093,
+      "mapped": 2079,
+      "mapped_as_water_well": 1945,
+      "platform_visible": 1940,
+      "working": 1092,
+      "broken": 271,
+      "locked": 19,
+      "pump_absent": 3,
+      "unknown": 560,
+      "unrecognised": 0,
+      "disused": 2,
+      "removed": 121,
+      "not_a_pump": 1,
+      "deleted": 10,
+      "not_mapped": 14,
+      "water_wells_with_known_status_pct": 71.2,
+      "working_pct_of_known": 78.8,
+      "water_wells_with_check_date": 1277,
+      "median_days_since_check": 666.0,
+      "mapped_in_season": 8,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2024,
+      "date": "2024-04-01",
+      "universe_nodes": 2093,
+      "mapped": 2089,
+      "mapped_as_water_well": 1948,
+      "platform_visible": 1943,
+      "working": 1160,
+      "broken": 296,
+      "locked": 19,
+      "pump_absent": 3,
+      "unknown": 470,
+      "unrecognised": 0,
+      "disused": 2,
+      "removed": 127,
+      "not_a_pump": 1,
+      "deleted": 11,
+      "not_mapped": 4,
+      "water_wells_with_known_status_pct": 75.9,
+      "working_pct_of_known": 78.5,
+      "water_wells_with_check_date": 1339,
+      "median_days_since_check": 622.0,
+      "mapped_in_season": 3,
+      "possible_duplicate_pairs_within_5m": 0
+    },
+    {
+      "season": 2025,
+      "date": "2025-04-01",
+      "universe_nodes": 2093,
+      "mapped": 2093,
+      "mapped_as_water_well": 1946,
+      "platform_visible": 1941,
+      "working": 1178,
+      "broken": 300,
+      "locked": 19,
+      "pump_absent": 3,
+      "unknown": 446,
+      "unrecognised": 0,
+      "disused": 2,
+      "removed": 133,
+      "not_a_pump": 1,
+      "deleted": 11,
+      "not_mapped": 0,
+      "water_wells_with_known_status_pct": 77.1,
+      "working_pct_of_known": 78.5,
+      "water_wells_with_check_date": 1359,
+      "median_days_since_check": 975.0,
+      "mapped_in_season": 0,
+      "possible_duplicate_pairs_within_5m": 0
+    }
+  ],
+  "changes": {
+    "all": 1702,
+    "by_type": {
+      "exit": 49,
+      "failure": 190,
+      "reclassified": 78,
+      "reentry": 32,
+      "repair": 210,
+      "status_reported": 1114,
+      "status_withdrawn": 29
+    },
+    "repairs_and_failures": 400,
+    "repairs_and_failures_check_date_backed_pct": 84.0,
+    "repairs_and_failures_check_date_backed_day_pct": 78.0,
+    "all_changes_check_date_backed_pct": 69.4,
+    "median_check_date_lag_days_when_backed": 0.0,
+    "repairs_and_failures_in_seasons_2019_2025": 315,
+    "repairs_and_failures_reverted_within_14d": 3,
+    "deletions": 41,
+    "deletions_with_successor_node": 4,
+    "exits_later_restored_by_net_change": {
+      "failure": 5,
+      "none": 5,
+      "reclassified": 13,
+      "repair": 1,
+      "status_reported": 8
+    }
+  },
+  "pumps_with_dated_repair_or_failure_by_season": {
+    "2019": {
+      "repair": 2,
+      "failure": 1,
+      "repair_or_failure": 3,
+      "repair_or_failure_check_backed": 2
+    },
+    "2020": {
+      "repair": 33,
+      "failure": 33,
+      "repair_or_failure": 64,
+      "repair_or_failure_check_backed": 56
+    },
+    "2021": {
+      "repair": 44,
+      "failure": 15,
+      "repair_or_failure": 57,
+      "repair_or_failure_check_backed": 55
+    },
+    "2022": {
+      "repair": 53,
+      "failure": 35,
+      "repair_or_failure": 82,
+      "repair_or_failure_check_backed": 67
+    },
+    "2023": {
+      "repair": 16,
+      "failure": 29,
+      "repair_or_failure": 42,
+      "repair_or_failure_check_backed": 37
+    },
+    "2024": {
+      "repair": 8,
+      "failure": 15,
+      "repair_or_failure": 22,
+      "repair_or_failure_check_backed": 21
+    },
+    "2025": {
+      "repair": 7,
+      "failure": 24,
+      "repair_or_failure": 31,
+      "repair_or_failure_check_backed": 29
+    }
+  },
+  "comparison_2022": [
+    {
+      "source": "OpenStreetMap (this snapshot)",
+      "date": "2022-01-01",
+      "pumps": 1880,
+      "platform_visible": 1874,
+      "working": 922,
+      "not_working": 301,
+      "status_unknown": 657,
+      "working_pct_of_pumps": 49.0,
+      "working_pct_of_known_status": 75.4,
+      "lifecycle_removed_or_disused": 81
+    },
+    {
+      "source": "OpenStreetMap (this snapshot)",
+      "date": "2022-04-01",
+      "pumps": 1880,
+      "platform_visible": 1873,
+      "working": 920,
+      "not_working": 301,
+      "status_unknown": 659,
+      "working_pct_of_pumps": 48.9,
+      "working_pct_of_known_status": 75.3,
+      "lifecycle_removed_or_disused": 82
+    },
+    {
+      "source": "OpenStreetMap (this snapshot)",
+      "date": "2022-07-01",
+      "pumps": 1878,
+      "platform_visible": 1869,
+      "working": 928,
+      "not_working": 302,
+      "status_unknown": 648,
+      "working_pct_of_pumps": 49.4,
+      "working_pct_of_known_status": 75.4,
+      "lifecycle_removed_or_disused": 86
+    },
+    {
+      "source": "OpenStreetMap (this snapshot)",
+      "date": "2022-10-01",
+      "pumps": 1938,
+      "platform_visible": 1933,
+      "working": 1079,
+      "not_working": 298,
+      "status_unknown": 561,
+      "working_pct_of_pumps": 55.7,
+      "working_pct_of_known_status": 78.4,
+      "lifecycle_removed_or_disused": 120
+    },
+    {
+      "source": "OpenStreetMap (this snapshot)",
+      "date": "2022-12-31",
+      "pumps": 1937,
+      "platform_visible": 1932,
+      "working": 1087,
+      "not_working": 293,
+      "status_unknown": 557,
+      "working_pct_of_pumps": 56.1,
+      "working_pct_of_known_status": 78.8,
+      "lifecycle_removed_or_disused": 124
+    },
+    {
+      "source": "Berliner Mieterverein, 'Berliner Wasserpumpen: Trinkwasser per Muskelkraft' (04/2024), reporting 2,079 street pumps of which 1,614 worked (status 2022)",
+      "date": "2022 (status year)",
+      "pumps": 2079,
+      "platform_visible": null,
+      "working": 1614,
+      "not_working": 465,
+      "status_unknown": null,
+      "working_pct_of_pumps": 77.6,
+      "working_pct_of_known_status": 77.6,
+      "lifecycle_removed_or_disused": null
+    }
+  ],
+  "data_quality": {
+    "unrecognised_status_versions": 3,
+    "unparseable_check_date_versions": 0,
+    "unparseable_check_date_values": [],
+    "pumps_moved_more_than_15m": 113,
+    "check_date_after_edit_changes": 1
+  },
+  "design_feasibility": [
+    {
+      "season": 2019,
+      "group": "repair",
+      "pumps": 2,
+      "trees_within_100m": 78,
+      "trees_within_200m": 216,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2019,
+      "group": "failure",
+      "pumps": 1,
+      "trees_within_100m": 39,
+      "trees_within_200m": 158,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2019,
+      "group": "repair_or_failure",
+      "pumps": 3,
+      "trees_within_100m": 117,
+      "trees_within_200m": 374,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2019,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 2,
+      "trees_within_100m": 80,
+      "trees_within_200m": 284,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2019,
+      "group": "unchanged_comparison",
+      "pumps": 282,
+      "trees_within_100m": 10635,
+      "trees_within_200m": 30779,
+      "trees_within_100m_also_near_treated": 0,
+      "trees_within_200m_also_near_treated": 55
+    },
+    {
+      "season": 2020,
+      "group": "repair",
+      "pumps": 33,
+      "trees_within_100m": 983,
+      "trees_within_200m": 3581,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2020,
+      "group": "failure",
+      "pumps": 33,
+      "trees_within_100m": 1109,
+      "trees_within_200m": 3741,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2020,
+      "group": "repair_or_failure",
+      "pumps": 64,
+      "trees_within_100m": 2062,
+      "trees_within_200m": 7072,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2020,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 56,
+      "trees_within_100m": 1657,
+      "trees_within_200m": 5768,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2020,
+      "group": "unchanged_comparison",
+      "pumps": 325,
+      "trees_within_100m": 12242,
+      "trees_within_200m": 34827,
+      "trees_within_100m_also_near_treated": 60,
+      "trees_within_200m_also_near_treated": 1965
+    },
+    {
+      "season": 2021,
+      "group": "repair",
+      "pumps": 44,
+      "trees_within_100m": 1042,
+      "trees_within_200m": 3824,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2021,
+      "group": "failure",
+      "pumps": 15,
+      "trees_within_100m": 387,
+      "trees_within_200m": 1315,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2021,
+      "group": "repair_or_failure",
+      "pumps": 57,
+      "trees_within_100m": 1413,
+      "trees_within_200m": 5080,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2021,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 55,
+      "trees_within_100m": 1403,
+      "trees_within_200m": 4996,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2021,
+      "group": "unchanged_comparison",
+      "pumps": 1133,
+      "trees_within_100m": 39531,
+      "trees_within_200m": 112355,
+      "trees_within_100m_also_near_treated": 43,
+      "trees_within_200m_also_near_treated": 1756
+    },
+    {
+      "season": 2022,
+      "group": "repair",
+      "pumps": 53,
+      "trees_within_100m": 2263,
+      "trees_within_200m": 7617,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2022,
+      "group": "failure",
+      "pumps": 35,
+      "trees_within_100m": 1313,
+      "trees_within_200m": 4611,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2022,
+      "group": "repair_or_failure",
+      "pumps": 82,
+      "trees_within_100m": 3393,
+      "trees_within_200m": 11185,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2022,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 67,
+      "trees_within_100m": 2681,
+      "trees_within_200m": 9033,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2022,
+      "group": "unchanged_comparison",
+      "pumps": 1127,
+      "trees_within_100m": 38655,
+      "trees_within_200m": 109343,
+      "trees_within_100m_also_near_treated": 72,
+      "trees_within_200m_also_near_treated": 3001
+    },
+    {
+      "season": 2023,
+      "group": "repair",
+      "pumps": 16,
+      "trees_within_100m": 373,
+      "trees_within_200m": 1470,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2023,
+      "group": "failure",
+      "pumps": 29,
+      "trees_within_100m": 1014,
+      "trees_within_200m": 3719,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2023,
+      "group": "repair_or_failure",
+      "pumps": 42,
+      "trees_within_100m": 1332,
+      "trees_within_200m": 4848,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2023,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 37,
+      "trees_within_100m": 1187,
+      "trees_within_200m": 4321,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2023,
+      "group": "unchanged_comparison",
+      "pumps": 1341,
+      "trees_within_100m": 47192,
+      "trees_within_200m": 133631,
+      "trees_within_100m_also_near_treated": 82,
+      "trees_within_200m_also_near_treated": 2040
+    },
+    {
+      "season": 2024,
+      "group": "repair",
+      "pumps": 8,
+      "trees_within_100m": 323,
+      "trees_within_200m": 1270,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2024,
+      "group": "failure",
+      "pumps": 15,
+      "trees_within_100m": 587,
+      "trees_within_200m": 2031,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2024,
+      "group": "repair_or_failure",
+      "pumps": 22,
+      "trees_within_100m": 863,
+      "trees_within_200m": 3093,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2024,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 21,
+      "trees_within_100m": 816,
+      "trees_within_200m": 2913,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2024,
+      "group": "unchanged_comparison",
+      "pumps": 1454,
+      "trees_within_100m": 50854,
+      "trees_within_200m": 144294,
+      "trees_within_100m_also_near_treated": 34,
+      "trees_within_200m_also_near_treated": 1184
+    },
+    {
+      "season": 2025,
+      "group": "repair",
+      "pumps": 7,
+      "trees_within_100m": 308,
+      "trees_within_200m": 1112,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2025,
+      "group": "failure",
+      "pumps": 24,
+      "trees_within_100m": 965,
+      "trees_within_200m": 3129,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2025,
+      "group": "repair_or_failure",
+      "pumps": 31,
+      "trees_within_100m": 1273,
+      "trees_within_200m": 4191,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2025,
+      "group": "repair_or_failure_check_backed",
+      "pumps": 29,
+      "trees_within_100m": 1209,
+      "trees_within_200m": 3939,
+      "trees_within_100m_also_near_treated": null,
+      "trees_within_200m_also_near_treated": null
+    },
+    {
+      "season": 2025,
+      "group": "unchanged_comparison",
+      "pumps": 1468,
+      "trees_within_100m": 51334,
+      "trees_within_200m": 145565,
+      "trees_within_100m_also_near_treated": 35,
+      "trees_within_200m_also_near_treated": 1874
+    }
+  ]
+}

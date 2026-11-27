@@ -1,0 +1,4 @@
+status_source,status_raw,versions,nodes
+pump:status,?,1,1
+pump:status,off,1,1
+pump:status,"unbekannt, mehr Pumpen nötig bis zu 60x mal oder mehr",1,1

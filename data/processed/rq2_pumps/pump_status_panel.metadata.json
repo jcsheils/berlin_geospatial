@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "dataset_id": "pump_status_panel_osm",
+  "protocol": "docs/pump_status_protocol.md",
+  "source": {
+    "snapshot_data_end_utc": "2026-07-27T09:00:00Z",
+    "licence": "Open Database License 1.0 (ODbL); © OpenStreetMap contributors"
+  },
+  "inputs": {
+    "snapshot": {
+      "path": "data/raw/osm_pumps/snapshot.json",
+      "sha256": "e9f883eb6acde9f72cfcfd8b4eafed044fc5cfcbeef03322e9d06ce00806d568",
+      "data_end_utc": "2026-07-27T09:00:00Z",
+      "api_version": "1.10.4"
+    },
+    "lor_boundaries": {
+      "path": "data/spatial/lor_planungsraeume_2021.gpkg",
+      "sha256": "062a580dc6f9cf12f741a1cde21c116133bc0bd6f237f884f17d2753daf95624"
+    },
+    "tree_inventory": {
+      "path": "data/Berlin_trees.gpkg",
+      "sha256": "68419dfc94880474c0a47139526f4bd8073d8ed7f2afa8bd35c4098743a241c0",
+      "crs_override": "Declared EPSG:4326 metadata overridden to EPSG:25833 after coordinate-range validation."
+    }
+  },
+  "tables": {
+    "pump_register_osm.csv": {
+      "grain": "osm_node (one row per pump in the platform universe)",
+      "rows": 2093,
+      "period": "2007-10-08 to 2026-07-27",
+      "universe": "Nodes in Berlin that carried network or description = 'Berliner Straßenbrunnen' in at least one version (the platform selector, before and after May 2021).",
+      "denominator": "street_trees_* count catalogued street trees in the current frozen inventory within the radius (Euclidean, inclusive) of the pump's last mapped position.",
+      "zero_semantics": "Zero trees means no catalogued street tree within the radius; trees removed before the inventory snapshot are absent.",
+      "claim_limit": "Describes what OpenStreetMap recorded about street pumps and when it was edited. An OSM edit date is when a mapper recorded a status, not necessarily when the pump changed; edits may follow use. No watering outcome is joined or examined."
+    },
+    "pump_status_changes_osm.csv": {
+      "grain": "status_transition (consecutive versions of one node with different harmonised status)",
+      "rows": 1702,
+      "period": "edits up to 2026-07-27T09:00:00Z",
+      "dates": "change_time_utc is the edit instant; edit_date its Europe/Berlin date; event_date is check_date when the change is check_date-backed at day precision, else edit_date.",
+      "zero_semantics": "A missing row means OSM recorded no change, not that the pump did not change.",
+      "denominator": "None; counts of recorded transitions.",
+      "claim_limit": "Describes what OpenStreetMap recorded about street pumps and when it was edited. An OSM edit date is when a mapper recorded a status, not necessarily when the pump changed; edits may follow use. No watering outcome is joined or examined."
+    },
+    "pump_season_panel_2019_2025.csv": {
+      "grain": "pump x April-September season (balanced over the universe; not-yet-mapped and deleted states are explicit statuses)",
+      "rows": 14651,
+      "period": "2019-2025 seasons, 1 April 00:00 to 1 October 00:00 Europe/Berlin",
+      "timing": "Status at start/end and in-season changes use OSM edit instants, so the start status and the change counts are mutually consistent; check_date dates are in the changes table.",
+      "zero_semantics": "n_* = 0 means no recorded change of that type in the season.",
+      "denominator": "Pumps in the universe; usable_at_start is missing when the status is unknown, not mapped or deleted.",
+      "claim_limit": "Describes what OpenStreetMap recorded about street pumps and when it was edited. An OSM edit date is when a mapper recorded a status, not necessarily when the pump changed; edits may follow use. No watering outcome is joined or examined."
+    }
+  },
+  "status_vocabulary": {
+    "usable": {
+      "working": 1,
+      "broken": 0,
+      "locked": 0,
+      "pump_absent": 0,
+      "disused": 0,
+      "removed": 0
+    },
+    "change_types": [
+      "repair",
+      "failure",
+      "status_reported",
+      "status_withdrawn",
+      "reclassified",
+      "exit",
+      "reentry"
+    ],
+    "platform_selector_switch": "2021-05-10"
+  }
+}

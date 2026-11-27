@@ -1,0 +1,7 @@
+source,date,pumps,platform_visible,working,not_working,status_unknown,working_pct_of_pumps,working_pct_of_known_status,lifecycle_removed_or_disused
+OpenStreetMap (this snapshot),2022-01-01,1880,1874,922,301,657,49.0,75.4,81
+OpenStreetMap (this snapshot),2022-04-01,1880,1873,920,301,659,48.9,75.3,82
+OpenStreetMap (this snapshot),2022-07-01,1878,1869,928,302,648,49.4,75.4,86
+OpenStreetMap (this snapshot),2022-10-01,1938,1933,1079,298,561,55.7,78.4,120
+OpenStreetMap (this snapshot),2022-12-31,1937,1932,1087,293,557,56.1,78.8,124
+"Berliner Mieterverein, 'Berliner Wasserpumpen: Trinkwasser per Muskelkraft' (04/2024), reporting 2,079 street pumps of which 1,614 worked (status 2022)",2022 (status year),2079,,1614,465,,77.6,77.6,

@@ -1,0 +1,145 @@
+{
+  "packaged_date": "2026-11-15",
+  "retrieved_at_utc": "2026-11-15T19:28:55Z",
+  "source": "ohsome API (HeiGIT) over the OpenStreetMap full-history database (OSHDB)",
+  "api_url": "https://api.ohsome.org/v1",
+  "api_version": "1.10.4",
+  "history_start_utc": "2007-10-08T00:00:00Z",
+  "data_end_utc": "2026-07-27T09:00:00Z",
+  "replication_sequence_number": 121586,
+  "licence": "Open Database License 1.0 (ODbL); © OpenStreetMap contributors",
+  "attribution": "© OpenStreetMap contributors",
+  "boundary": {
+    "file": "query_boundary_epsg4326.geojson",
+    "sha256": "33e8aec86eb0cb553836e456c32dae60f300b9f4cbc237eca17c351d326c31f6",
+    "derivation": "Union of the 542 LOR 2021 planning areas, buffered 100 m and simplified 10 m in EPSG:25833, then EPSG:4326 rounded to 6 decimals"
+  },
+  "requests": {
+    "discovery": {
+      "endpoint": "elementsFullHistory/geometry",
+      "spatial": "bpolys=query_boundary_epsg4326.geojson",
+      "time": "2007-10-08T00:00:00Z,2026-07-27T09:00:00Z",
+      "filter": "type:node and (man_made=water_well or network=\"Berliner Straßenbrunnen\" or description=\"Berliner Straßenbrunnen\" or name=\"Berliner Straßenbrunnen\" or removed:man_made=water_well or razed:man_made=water_well or demolished:man_made=water_well or destroyed:man_made=water_well or was:man_made=water_well or disused:man_made=water_well or abandoned:man_made=water_well or pump:status=* or removed:pump:status=*)",
+      "properties": "tags,metadata",
+      "archive": "ohsome_discovery_full_history.geojson.gz",
+      "archive_bytes": 591253,
+      "archive_sha256": "5c7d802564ad4b3e95e3b27e2a1edbb0817774c59b9f0b3b98247c1f3c65d595",
+      "response_bytes": 13518418,
+      "response_sha256": "2d19fe250c34cee74d3d58545ea75fa1a16461c0a743f58b0769a377c7c882ac",
+      "features": 15449,
+      "nodes": 2331,
+      "api_version": "1.10.4"
+    },
+    "histories": {
+      "endpoint": "elementsFullHistory/geometry",
+      "spatial": "bboxes=12.9869,52.2373,13.8626,52.7764",
+      "time": "2007-10-08T00:00:00Z,2026-07-27T09:00:00Z",
+      "properties": "tags,metadata",
+      "chunk_size": 500,
+      "filter": "id:(<consecutive chunk of the discovery node ids, ascending, comma-separated>)",
+      "nodes": 2331,
+      "features": 15602,
+      "parts": [
+        {
+          "archive": "ohsome_node_histories_part01.geojson.gz",
+          "archive_bytes": 176504,
+          "archive_sha256": "2c338c81eb770ffb769198e458554a08b6e5b46c93e02607789aadb1d60f408c",
+          "response_bytes": 4134222,
+          "response_sha256": "78e8eae2a34acc4b96ba070ad90890a5cb351443a46447036e34742fadaf1ffa",
+          "features": 4962,
+          "nodes": 500,
+          "api_version": "1.10.4",
+          "first_id": "node/301784538",
+          "last_id": "node/1589384970",
+          "requested_ids": 500,
+          "filter_sha256": "7aa95a1c54846bc9e339564e85ada2d1930cf90beac4fe1e940bf57843f94455"
+        },
+        {
+          "archive": "ohsome_node_histories_part02.geojson.gz",
+          "archive_bytes": 165268,
+          "archive_sha256": "7ecd95d2d8e3795af2e6421cfb77e5d0cc832349d89613c7485883a072aad5c5",
+          "response_bytes": 3834587,
+          "response_sha256": "3f08afcfbcce0e5f66ce0a99f143755e5ee350d06f5c4d33db54ebb0cc1c3491",
+          "features": 4350,
+          "nodes": 500,
+          "api_version": "1.10.4",
+          "first_id": "node/1589384985",
+          "last_id": "node/5579054614",
+          "requested_ids": 500,
+          "filter_sha256": "fe358dc5378d38337fa365b97f821af1fa33869dbf7249723dfa4826aa494eba"
+        },
+        {
+          "archive": "ohsome_node_histories_part03.geojson.gz",
+          "archive_bytes": 105861,
+          "archive_sha256": "cfc973469498a088394b4c7fc121c2d9be8f0fadbcba07a17c8959d2a4ae0ae2",
+          "response_bytes": 2649576,
+          "response_sha256": "0afb56cecb42d79017f79b141873e6d2e2645a56464266a97a375f05e43f28fb",
+          "features": 2907,
+          "nodes": 500,
+          "api_version": "1.10.4",
+          "first_id": "node/5579054615",
+          "last_id": "node/7172018217",
+          "requested_ids": 500,
+          "filter_sha256": "c8b7f4ee252c2d580dfa3663cfdb8907ec8613b2a092c3fd22dc7076eb02266e"
+        },
+        {
+          "archive": "ohsome_node_histories_part04.geojson.gz",
+          "archive_bytes": 85778,
+          "archive_sha256": "3dd18ce45368226c45f0982b7dfe224ad7c602ca353324b52c3cc8d5bc60ca85",
+          "response_bytes": 2141335,
+          "response_sha256": "a38bc58b3047951cdcb2ca1e1a83c5403824df666b94fe7bfdbc361a6545695e",
+          "features": 2293,
+          "nodes": 500,
+          "api_version": "1.10.4",
+          "first_id": "node/7172018218",
+          "last_id": "node/7857648684",
+          "requested_ids": 500,
+          "filter_sha256": "4858ec8aa49cb6e97f879694a248127d9e8be9b864e600788c590b64fc803cda"
+        },
+        {
+          "archive": "ohsome_node_histories_part05.geojson.gz",
+          "archive_bytes": 40670,
+          "archive_sha256": "734651a5642b839b7447dae3a811cbf0cab43006ccb24cbe17fa4caea6097cd4",
+          "response_bytes": 839697,
+          "response_sha256": "98fd02c7e58fd94a363fc37e899408b73f11bcaf6899d1ff023965b80a705129",
+          "features": 1090,
+          "nodes": 331,
+          "api_version": "1.10.4",
+          "first_id": "node/7857659285",
+          "last_id": "node/14027457122",
+          "requested_ids": 331,
+          "filter_sha256": "20977e1fd124230de11367306a064e18273089c8552a138d8ac7de37fe470d91"
+        }
+      ]
+    }
+  },
+  "compression": "gzip level 9, mtime 0, no embedded file name; archives hold the exact response bytes",
+  "validation": {
+    "platform_layers": [
+      {
+        "commit": "9eb7bee524d3c15f1f2ca79878637554df960cd0",
+        "committed_utc": "2021-05-02T04:07:01Z",
+        "archive": "platform_pumps_2021-05-02_9eb7bee.geojson.gz",
+        "url": "https://raw.githubusercontent.com/technologiestiftung/giessdenkiez-de-osm-pumpen-harvester/9eb7bee524d3c15f1f2ca79878637554df960cd0/out/pumps.geojson",
+        "features": 1862,
+        "archive_bytes": 76585,
+        "archive_sha256": "13c9edc93b7c9a961234dc0bdd1171ff9a14c70a099545b973081434e87b3151",
+        "response_bytes": 598082,
+        "response_sha256": "8194b93f474fdac7d3f57fdd2bfd8f464932c8da52e1dc6f16713d0a0d4a5bc9"
+      },
+      {
+        "commit": "b7471fcd15aaeb40c0c32d17d9c21f1dbb6b5754",
+        "committed_utc": "2023-04-02T04:05:56Z",
+        "archive": "platform_pumps_2023-04-02_b7471fc.geojson.gz",
+        "url": "https://raw.githubusercontent.com/technologiestiftung/giessdenkiez-de-osm-pumpen-harvester/b7471fcd15aaeb40c0c32d17d9c21f1dbb6b5754/out/pumps.geojson",
+        "features": 1940,
+        "archive_bytes": 80846,
+        "archive_sha256": "57e66624e6a413252add57829c3b302779022786e1220a21c6522fb898f8edc7",
+        "response_bytes": 627336,
+        "response_sha256": "dbd00006d2616a156c299d55834a1b18b7703d84e955df071cdcf30820b77778"
+      }
+    ],
+    "purpose": "Pump layers the platform's harvester published (weekly Overpass query); the build checks that the snapshot reproduces their pump ids, labels and check dates at the commit instant.",
+    "retrieved_at_utc": "2026-11-15T19:32:36Z"
+  }
+}

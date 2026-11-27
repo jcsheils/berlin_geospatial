@@ -317,6 +317,56 @@ expected_rows = 6596
 required_columns = ["ortsteil", "district", "month_date", "recorded_watering_events", "recorded_litres", "recorded_watered_trees", "comparison_eligible", "lst_c", "previous_month_lst_c", "next_month_lst_c"]
 known_warning = "97 areas × 68 months. Only 93 candidate areas enter provisional temperature comparisons; current polygon denominators and source alignment remain limitations. Missing LST is not zero. May 2020 is partial; recorded zero does not imply no other watering."
 
+[datasets.osm_pump_history_snapshot]
+label = "Frozen OpenStreetMap full history of Berlin street pumps (ohsome API)"
+path = "data/raw/osm_pumps/snapshot.json"
+format = "json"
+availability = "current"
+required = false
+grain = "osm_node_version"
+source = "ohsome API (HeiGIT); OpenStreetMap full history to 2026-07-27T09:00Z; retrieved 2026-11-15"
+license = "ODbL 1.0; © OpenStreetMap contributors"
+known_warning = "OpenStreetMap records mapping and status reports, not maintenance: pumps enter when mapped, and an edit dates the report rather than the breakdown or repair. Status edits may follow use. snapshot.json holds the checksums of the frozen responses."
+
+[datasets.pump_register_osm]
+label = "Street-pump register with design-feasibility street-tree counts"
+path = "data/processed/rq2_pumps/pump_register_osm.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "osm_node_street_pump"
+expected_rows = 2093
+required_columns = ["osm_id", "plr_id", "x_25833", "y_25833", "first_mapped_utc", "status_at_snapshot_end", "street_trees_100m", "street_trees_200m"]
+license = "ODbL 1.0; © OpenStreetMap contributors"
+known_warning = "Street-tree counts use the current inventory and straight-line distance from the last mapped position; they are design-feasibility counts, not exposure measures."
+
+[datasets.pump_status_changes_osm]
+label = "Dated street-pump status changes from OpenStreetMap"
+path = "data/processed/rq2_pumps/pump_status_changes_osm.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "pump_status_transition"
+expected_rows = 1702
+required_columns = ["osm_id", "change_time_utc", "edit_date", "from_status", "to_status", "change_type", "check_date_backed", "event_date", "event_date_basis"]
+license = "ODbL 1.0; © OpenStreetMap contributors"
+known_warning = "Edit dates record when a status was reported; check_date-backed rows carry a stated survey date. No watering outcome is joined."
+
+[datasets.pump_season_panel_2019_2025]
+label = "Street pump x April-September season status panel, 2019-2025"
+path = "data/processed/rq2_pumps/pump_season_panel_2019_2025.csv"
+format = "csv"
+delimiter = ","
+availability = "current"
+required = false
+grain = "street_pump_season"
+expected_rows = 14651
+required_columns = ["osm_id", "season", "status_at_start", "usable_at_start", "status_at_end", "n_repair", "n_failure", "repair_or_failure", "repair_or_failure_check_backed"]
+license = "ODbL 1.0; © OpenStreetMap contributors"
+known_warning = "Balanced over 2,093 pumps; early seasons have low mapping and status coverage, and unknown status is missing information. Treatment side only: watering near pumps is not joined before the design is registered."
+
 [datasets.landsat_lst_time_series]
 label = "Cloud-audited Landsat surface-temperature time series"
 format = "planned"
