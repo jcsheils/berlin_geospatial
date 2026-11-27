@@ -23,6 +23,7 @@ This folder holds every input the analyses use and the shared processed panels. 
 - `processed/temporal/`: 50,259 positive tree-days plus monthly, annual, seasonal, age and genus summaries.
 - `processed/rq1/`: the April–September planning-area-day panel for the RQ1 pilot.
 - `processed/rq2_pumps/`: street-pump register, dated status changes and pump × season panel, 2019–2025. They form the treatment side of the RQ2 pump design; no watering is joined.
+- `processed/rq3_crown_health/`: the eye-check sheet, a summary of each flight's extraction (layer, thresholds, counts) and the three layer crosschecks. The ten extracted tables, about 122 MB, are too large for git. `python tools/crown_tables.py fetch` downloads them from the release `rq3-crown-health-tables-2026-11` and checks each against `outcome.json`. Derived from Berlin orthophotos and the tree cadastre, both DL-DE Zero 2.0.
 
 Analysis outputs live in `../output/`: source audits (`exploratory/`), LOR metrics and Moran results (`spatial/`), social and environmental joins (`equity/`), the temporal atlas (`03_spatial_equity_vulnerability/`, an older folder name), the monthly weather report (`watering_response/`), the RQ1 pilot (`rq1_daily/`) and the pump status audit (`pump_status/`).
 

@@ -61,8 +61,8 @@
     },
     {
       "path": "config/project.toml",
-      "bytes": 7725,
-      "sha256": "79ef3fa2409207d035350bb20a751f38d4296c56512e068fba0311d293911991"
+      "bytes": 7886,
+      "sha256": "a9a2805936c2521a611d1c80ce97fc6325cf270c833704ce6135d210278286d4"
     },
     {
       "path": "data/Berlin_heat_population_data.csv",
@@ -76,8 +76,8 @@
     },
     {
       "path": "data/README.md",
-      "bytes": 4422,
-      "sha256": "17c8580ebf93a291cd178687a0c82dede112e063667a4f3fde4470989d525fc1"
+      "bytes": 4857,
+      "sha256": "4891c2b203908c57b5aa9e7d3d5878c386cf56eb3e415298b75cbf8125256aac"
     },
     {
       "path": "data/giessdenkiez_bewässerungsdaten (1).csv",

@@ -1,0 +1,147 @@
+{
+  "flight": "2015",
+  "windows": 64990,
+  "failed_windows": 0,
+  "trees": 232241,
+  "thresholds": {
+    "windows": 200,
+    "pixels": 4023989,
+    "seed": 42,
+    "shadow": 62.5,
+    "vegetation": 0.19999999999999996
+  },
+  "shards": [
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 0,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38955,
+      "started_utc": "2026-11-25T04:58:06Z",
+      "finished_utc": "2026-11-25T06:35:35Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 1,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38004,
+      "started_utc": "2026-11-25T04:58:01Z",
+      "finished_utc": "2026-11-25T06:56:19Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 2,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38889,
+      "started_utc": "2026-11-25T06:35:56Z",
+      "finished_utc": "2026-11-25T08:13:28Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 3,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 39028,
+      "started_utc": "2026-11-25T06:56:49Z",
+      "finished_utc": "2026-11-25T09:24:34Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 4,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10831,
+      "failed_windows": 0,
+      "trees": 38631,
+      "started_utc": "2026-11-25T08:13:53Z",
+      "finished_utc": "2026-11-25T10:09:16Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2015",
+      "service": "dop_2015",
+      "layer": "dop_2015_cir",
+      "shard": 5,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4023989,
+        "seed": 42,
+        "shadow": 62.5,
+        "vegetation": 0.19999999999999996
+      },
+      "windows": 10831,
+      "failed_windows": 0,
+      "trees": 38734,
+      "started_utc": "2026-11-25T09:25:06Z",
+      "finished_utc": "2026-11-25T12:58:21Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    }
+  ]
+}

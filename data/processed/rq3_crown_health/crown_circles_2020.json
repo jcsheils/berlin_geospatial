@@ -1,0 +1,147 @@
+{
+  "flight": "2020",
+  "windows": 64990,
+  "failed_windows": 0,
+  "trees": 232241,
+  "thresholds": {
+    "windows": 200,
+    "pixels": 4026551,
+    "seed": 42,
+    "shadow": 55.0,
+    "vegetation": 0.18999999999999995
+  },
+  "shards": [
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 0,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38955,
+      "started_utc": "2026-11-24T14:30:29Z",
+      "finished_utc": "2026-11-24T16:56:14Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 1,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38004,
+      "started_utc": "2026-11-24T14:30:28Z",
+      "finished_utc": "2026-11-24T16:09:58Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 2,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 38889,
+      "started_utc": "2026-11-24T16:10:35Z",
+      "finished_utc": "2026-11-24T18:48:33Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 3,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10832,
+      "failed_windows": 0,
+      "trees": 39028,
+      "started_utc": "2026-11-24T16:56:52Z",
+      "finished_utc": "2026-11-24T19:48:14Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 4,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10831,
+      "failed_windows": 0,
+      "trees": 38631,
+      "started_utc": "2026-11-24T18:49:11Z",
+      "finished_utc": "2026-11-24T21:50:39Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    },
+    {
+      "flight": "2020",
+      "service": "truedop_2020_sommer",
+      "layer": "truedop_2020_sommer_cir",
+      "shard": 5,
+      "shards": 6,
+      "thresholds": {
+        "windows": 200,
+        "pixels": 4026551,
+        "seed": 42,
+        "shadow": 55.0,
+        "vegetation": 0.18999999999999995
+      },
+      "windows": 10831,
+      "failed_windows": 0,
+      "trees": 38734,
+      "started_utc": "2026-11-24T19:48:39Z",
+      "finished_utc": "2026-11-24T22:31:52Z",
+      "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+      "code_sha256": "0b21bfdbbfc6fbe1c1c23363babb517f1f86bc44df5a408561e9f4f40efc9c56",
+      "inventory_sha256": "d4c739f84c393584e4dccfb2168ca20346adb42fd3c0668c768c315c26bb86ad"
+    }
+  ]
+}

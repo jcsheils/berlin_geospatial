@@ -1,0 +1,70 @@
+# Copies the RQ3 crown-health tables from the extraction runs' artifacts into one GitHub
+# release, so they outlive the 90-day artifact limit (22-23 February 2027). Started by hand,
+# once. Nothing is published unless all ten tables match the SHA-256 values recorded in
+# output/rq3_crown_health/outcome.json, and an existing release is never replaced.
+# Reads no image and leaves the extraction workflow unchanged.
+name: RQ3 crown-health archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: rq3-crown-health-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: rq3-crown-health-tables-2026-11
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Stop if the release exists
+        run: |
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            echo "Release $TAG already exists; nothing is replaced." >&2
+            exit 1
+          fi
+      - name: Download the artifacts of runs 1-9
+        run: |
+          set -euo pipefail
+          artifacts=(
+            "45412354134 crown-health-crosscheck-2025"
+            "45412961919 crown-health-crosscheck-2020"
+            "45413810834 crown-health-crosscheck-2015"
+            "45414355248 crown-health-chips-2025"
+            "45414461244 crown-health-2020"
+            "45414942459 crown-health-2025"
+            "45502266941 crown-health-2015"
+            "45550822416 crown-health-2020rgb"
+            "45619200985 crown-health-2023"
+          )
+          for entry in "${artifacts[@]}"; do
+            read -r run name <<< "$entry"
+            gh run download "$run" --repo "$GITHUB_REPOSITORY" --name "$name" --dir "staging/$name"
+          done
+      - name: Gather and check the files
+        run: |
+          set -euo pipefail
+          mkdir release
+          for flight in 2015 2020 2020rgb 2023 2025; do
+            cp "staging/crown-health-$flight"/* release/
+          done
+          cp staging/crown-health-crosscheck-*/*_crosscheck.json release/
+          (cd staging/crown-health-chips-2025 && zip -qr ../../release/crown-health-chips-2025.zip .)
+          python tools/crown_tables.py verify release --sums
+          ls -l release
+      - name: Publish the release
+        run: |
+          gh release create "$TAG" release/* --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
+            --title "RQ3 crown-health tables, November 2026" \
+            --notes "Per-tree crown means from Berlin's August 2015, 2020 and 2025 colour-infrared aerial images and the 2020 and 2023 colour images, extracted by the RQ3 crown-health workflow (runs 1-9) under the plan frozen in ebfcbf3. The ten tables match the SHA-256 values in output/rq3_crown_health/outcome.json, and SHA256SUMS covers every file. Fetch and check the tables with: python tools/crown_tables.py fetch. Sources: Geoportal Berlin orthophotos and the Berlin street and park tree cadastre, both under Datenlizenz Deutschland - Zero - Version 2.0."
