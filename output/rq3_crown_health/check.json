@@ -1,0 +1,94 @@
+{
+  "stage": "check",
+  "passes": true,
+  "checks": {
+    "responses_are_three_band_images_of_the_requested_size": true,
+    "colour_infrared_and_colour_layers_agree": true,
+    "thresholds_set_for_every_infrared_flight": true,
+    "young_circles_inside_2020_and_2025_images_at_least_98_pct": true,
+    "eye_check_at_most_10_pct_miss": true
+  },
+  "responses": {
+    "2015": {
+      "windows": 64990,
+      "failed": 0,
+      "wrong_image": 0
+    },
+    "2020": {
+      "windows": 64990,
+      "failed": 0,
+      "wrong_image": 0
+    },
+    "2025": {
+      "windows": 64990,
+      "failed": 0,
+      "wrong_image": 0
+    }
+  },
+  "layer_differences": {
+    "2015": {
+      "red": 0.0,
+      "green": 0.0
+    },
+    "2020": {
+      "red": 0.0,
+      "green": 0.0
+    },
+    "2025": {
+      "red": 0.0,
+      "green": 0.0
+    }
+  },
+  "thresholds": {
+    "2015": {
+      "windows": 200,
+      "pixels": 4023989,
+      "seed": 42,
+      "shadow": 62.5,
+      "vegetation": 0.19999999999999996
+    },
+    "2020": {
+      "windows": 200,
+      "pixels": 4026551,
+      "seed": 42,
+      "shadow": 55.0,
+      "vegetation": 0.18999999999999995
+    },
+    "2025": {
+      "windows": 200,
+      "pixels": 4026679,
+      "seed": 42,
+      "shadow": 70.0,
+      "vegetation": 0.24
+    }
+  },
+  "flight_consistency": {
+    "2015_2020": {
+      "windows": 20915,
+      "stable_ndvi_shift_median": -0.0375255325357454,
+      "stable_ndvi_shift_iqr": [
+        -0.06965151106475935,
+        -0.008527419384590654
+      ],
+      "spearman_stable_shift_vs_mean_greenness_change": 0.0976590526475916
+    },
+    "2020_2025": {
+      "windows": 22473,
+      "stable_ndvi_shift_median": 0.101716288614358,
+      "stable_ndvi_shift_iqr": [
+        0.0734775618424392,
+        0.1287375415282391
+      ],
+      "spearman_stable_shift_vs_mean_greenness_change": -0.01980731346570702
+    }
+  },
+  "young_trees": 51371,
+  "young_circles_inside_both_images_pct": 99.54,
+  "eye_check": {
+    "complete": true,
+    "rated": 200,
+    "miss_pct": 6.0
+  },
+  "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+  "code_sha256": "8b42fd701a3800dddfe15be321da31a0f2c3ddee6bbe1f747adf2a06d9ad59bb"
+}

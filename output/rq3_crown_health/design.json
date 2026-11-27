@@ -1,0 +1,347 @@
+{
+  "stage": "design",
+  "validity": {
+    "trees": 47947,
+    "removals": 692,
+    "removal_pct": 1.44,
+    "min_canopy_fraction_2025": 0.1,
+    "passes": true,
+    "evaluable": true,
+    "models": {
+      "greenness_change": {
+        "pp_per_sd": -0.4763574273026122,
+        "ci95_pp": [
+          -0.7221815276872382,
+          -0.23053332691798623
+        ],
+        "auc_lower_scores_removed": 0.5591372109138526
+      },
+      "canopy_fraction_change": {
+        "pp_per_sd": -0.49440498407104944,
+        "ci95_pp": [
+          -0.7508161370312546,
+          -0.23799383111084418
+        ],
+        "auc_lower_scores_removed": 0.5896636775140166
+      },
+      "greenness_2025": {
+        "pp_per_sd": -0.6578083653926525,
+        "ci95_pp": [
+          -0.883375232575245,
+          -0.43224149821006014
+        ],
+        "auc_lower_scores_removed": 0.5939216451389369
+      }
+    },
+    "rule": "passes if the 95% interval for greenness change lies below zero (a fall goes with removal)"
+  },
+  "smallest_effect": {
+    "delta": 0.0018546225886985077,
+    "rule": "half the one-year gain with age",
+    "age_slope": 0.0037092451773970154,
+    "trees_for_slope": 43331,
+    "pooled_sd_of_change": 0.06844705144433608
+  },
+  "primary_residual_sd_of_change": 0.059707861353500646,
+  "noise_floor_residual_sd_never_watered_16_40": 0.05880356941411252,
+  "primary_mde_greenness_design_effect_1_and_2": [
+    0.00752,
+    0.01075
+  ],
+  "power_pct_test_a_if_gain_equals_delta": [
+    10.2,
+    7.0
+  ],
+  "power_pct_test_b_if_no_difference": [
+    17.0,
+    12.3
+  ],
+  "analyses": {
+    "primary": {
+      "available": true,
+      "treated": 1785,
+      "controls": 45775,
+      "by_level": {
+        "never": 45775,
+        "occasional": 965,
+        "repeated": 668,
+        "sustained": 152
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.126,
+        0.18
+      ]
+    },
+    "placebo_2015_2020": {
+      "available": true,
+      "treated": 876,
+      "controls": 33164,
+      "by_level": {
+        "never": 33164,
+        "occasional": 484,
+        "repeated": 315,
+        "sustained": 77
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.183,
+        0.258
+      ]
+    },
+    "older_16_40": {
+      "available": true,
+      "treated": 2461,
+      "controls": 173773,
+      "by_level": {
+        "never": 173773,
+        "occasional": 1539,
+        "repeated": 771,
+        "sustained": 151
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.111,
+        0.156
+      ]
+    },
+    "primary_minus_placebo": {
+      "available": true,
+      "treated": 874,
+      "controls": 33062,
+      "by_level": {
+        "never": 33062,
+        "occasional": 483,
+        "repeated": 314,
+        "sustained": 77
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.183,
+        0.258
+      ]
+    },
+    "s1_1m_circle": {
+      "available": true,
+      "treated": 1702,
+      "controls": 44193,
+      "by_level": {
+        "never": 44193,
+        "occasional": 917,
+        "repeated": 636,
+        "sustained": 149
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.129,
+        0.183
+      ]
+    },
+    "s2_3m_circle": {
+      "available": true,
+      "treated": 1802,
+      "controls": 46044,
+      "by_level": {
+        "never": 46044,
+        "occasional": 968,
+        "repeated": 675,
+        "sustained": 159
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.126,
+        0.177
+      ]
+    },
+    "s3_occasional": {
+      "available": true,
+      "treated": 965,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.095,
+        0.134
+      ]
+    },
+    "s3_repeated": {
+      "available": true,
+      "treated": 668,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.113,
+        0.159
+      ]
+    },
+    "s3_sustained": {
+      "available": true,
+      "treated": 152,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.236,
+        0.334
+      ]
+    },
+    "s4_any_log": {
+      "available": true,
+      "treated": 1785,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.071,
+        0.101
+      ]
+    },
+    "s5_500_l_or_more": {
+      "available": true,
+      "treated": 148,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.236,
+        0.333
+      ]
+    },
+    "s6_logs_in_dry_2022": {
+      "available": true,
+      "treated": 805,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.104,
+        0.147
+      ]
+    },
+    "s7_with_trees_watered_before_2020": {
+      "available": true,
+      "treated": 2651,
+      "controls": 45775,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.06,
+        0.085
+      ]
+    },
+    "s8_exact_matching": {
+      "available": true,
+      "treated": 1785,
+      "controls": 45775
+    },
+    "s9_adjusted_level": {
+      "available": true,
+      "treated": 1785,
+      "controls": 45775,
+      "by_level": {
+        "never": 45775,
+        "occasional": 965,
+        "repeated": 668,
+        "sustained": 152
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.126,
+        0.18
+      ]
+    },
+    "s10_canopy_fraction": {
+      "available": true,
+      "treated": 1956,
+      "controls": 48224,
+      "by_level": {
+        "never": 48224,
+        "occasional": 1054,
+        "repeated": 731,
+        "sustained": 171
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.12,
+        0.171
+      ]
+    },
+    "s11_disc_mean_ndvi": {
+      "available": true,
+      "treated": 1956,
+      "controls": 48224,
+      "by_level": {
+        "never": 48224,
+        "occasional": 1054,
+        "repeated": 731,
+        "sustained": 171
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.12,
+        0.171
+      ]
+    },
+    "s12_minus_background_ring": {
+      "available": true,
+      "treated": 1338,
+      "controls": 38739,
+      "by_level": {
+        "never": 38739,
+        "occasional": 731,
+        "repeated": 503,
+        "sustained": 104
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.147,
+        0.21
+      ]
+    },
+    "s13_stable_surface_covariate": {
+      "available": true,
+      "treated": 1784,
+      "controls": 45618,
+      "by_level": {
+        "never": 45618,
+        "occasional": 965,
+        "repeated": 667,
+        "sustained": 152
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.126,
+        0.18
+      ]
+    },
+    "s14_without_shaded_discs": {
+      "available": true,
+      "treated": 1510,
+      "controls": 42008,
+      "by_level": {
+        "never": 42008,
+        "occasional": 819,
+        "repeated": 559,
+        "sustained": 132
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.138,
+        0.195
+      ]
+    },
+    "s15_planted_by_2014": {
+      "available": true,
+      "treated": 976,
+      "controls": 34610,
+      "by_level": {
+        "never": 34610,
+        "occasional": 542,
+        "repeated": 347,
+        "sustained": 87
+      },
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.171,
+        0.243
+      ]
+    },
+    "s16_2020_2023_green_share": {
+      "available": true,
+      "treated": 1337,
+      "controls": 45561,
+      "mde_residual_sd_design_effect_1_and_2": [
+        0.082,
+        0.116
+      ]
+    }
+  },
+  "inputs_sha256": {
+    "crown_circles_2015.csv.gz": "633a5cb97aa9d9cb8a34e562d0ab55f2f909adf8d679c82ec0ac763f0175aa88",
+    "crown_circles_2020.csv.gz": "c783713f7105e9e152d4d013307fdacdb80c0c4222746999ac8c4cb2912f2e5a",
+    "crown_circles_2020rgb.csv.gz": "bf92474ca26b961d8f88e901b3d02413ea5674205a59761b6c5f309a759d2d22",
+    "crown_circles_2023.csv.gz": "337bf34581b6d4e522cd714b74cf643b956e160d8dbf8665efb192e387c67876",
+    "crown_circles_2025.csv.gz": "84ce8ddbd016fe0b469074cdbe11cf2899b727e8d1034ed53b6470c3c73df9a0",
+    "crown_windows_2015.csv.gz": "4085546dcacae096b6c3603b49bbd946048c56edee8ca34b33e1e10b5680789f",
+    "crown_windows_2020.csv.gz": "996fc876afafc9b43b3be9a30e8319e703b7be7513d0b34d47f65a6734e60c24",
+    "crown_windows_2020rgb.csv.gz": "22606bd2e9b19a0b69f3ef22a418f60e69da93fc974b4032aa5ee9088382e269",
+    "crown_windows_2023.csv.gz": "90da6561403bfcb121e9cfc125110c8513df57f037ca7f0cb87be8b67c4ab938",
+    "crown_windows_2025.csv.gz": "1c298629f5554e495bce519ba5ce783aeec201be43b728578f3b87923d77ce47"
+  },
+  "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+  "code_sha256": "8b42fd701a3800dddfe15be321da31a0f2c3ddee6bbe1f747adf2a06d9ad59bb"
+}

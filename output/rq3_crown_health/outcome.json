@@ -1,0 +1,609 @@
+{
+  "stage": "outcome",
+  "delta": 0.0018546225886985077,
+  "outcome_reading": "crown condition",
+  "bootstrap": {
+    "reps": 5000,
+    "seed": 42,
+    "cluster": "planning area"
+  },
+  "primary": {
+    "treated": 1785,
+    "controls": 45775,
+    "by_level": {
+      "never": 45775,
+      "occasional": 965,
+      "repeated": 668,
+      "sustained": 152
+    },
+    "planning_areas": 534,
+    "estimand": "gain from no care to sustained care (3 x trend)",
+    "difference": 0.005471922558442683,
+    "ci95_bootstrap": [
+      -0.0016422827198742575,
+      0.012331583948882853
+    ],
+    "ci90_bootstrap": [
+      -0.00048607502015341755,
+      0.011200803461712872
+    ],
+    "ci95_cluster_robust": [
+      -0.0014252162265528927,
+      0.01236906134343826
+    ],
+    "test_a_gain": false,
+    "test_b_gain_of_delta_ruled_out": false,
+    "report": "Inconclusive; report the largest gain the interval does not exclude",
+    "largest_gain_not_excluded": 0.012331583948882853
+  },
+  "selection_checks": {
+    "same_direction_as_primary": {
+      "placebo_2015_2020": false,
+      "older_16_40": false
+    },
+    "primary_reported_as_likely_selection": false
+  },
+  "s17_survivor_bounds": {
+    "grid": [
+      {
+        "shares": "observed_rates",
+        "removed_cared_for": 0.04997015806880001,
+        "removed_never_watered": 0.06000559450820997,
+        "removed_outcome": "removed_tree_at_1st_percentile",
+        "difference": 0.006920352719713583,
+        "ci95": [
+          0.00016164540368803133,
+          0.013437235746175013
+        ]
+      },
+      {
+        "shares": "observed_rates",
+        "removed_cared_for": 0.04997015806880001,
+        "removed_never_watered": 0.06000559450820997,
+        "removed_outcome": "removed_tree_at_median",
+        "difference": 0.005179134222390213,
+        "ci95": [
+          -0.0015795730936353394,
+          0.011696017248851642
+        ]
+      },
+      {
+        "shares": "rates_swapped",
+        "removed_cared_for": 0.06000559450820997,
+        "removed_never_watered": 0.04997015806880001,
+        "removed_outcome": "removed_tree_at_1st_percentile",
+        "difference": 0.0034217135957639315,
+        "ci95": [
+          -0.003265599565374156,
+          0.009869756926345724
+        ]
+      },
+      {
+        "shares": "rates_swapped",
+        "removed_cared_for": 0.06000559450820997,
+        "removed_never_watered": 0.04997015806880001,
+        "removed_outcome": "removed_tree_at_median",
+        "difference": 0.005162932093087302,
+        "ci95": [
+          -0.0015243810680507853,
+          0.011610975423669095
+        ]
+      },
+      {
+        "shares": "equal_rates",
+        "removed_cared_for": 0.06000559450820997,
+        "removed_never_watered": 0.06000559450820997,
+        "removed_outcome": "removed_tree_at_1st_percentile",
+        "difference": 0.005143576592220445,
+        "ci95": [
+          -0.0015437365689176426,
+          0.011591619922802238
+        ]
+      },
+      {
+        "shares": "equal_rates",
+        "removed_cared_for": 0.06000559450820997,
+        "removed_never_watered": 0.06000559450820997,
+        "removed_outcome": "removed_tree_at_median",
+        "difference": 0.005143576592220445,
+        "ci95": [
+          -0.0015437365689176426,
+          0.011591619922802238
+        ]
+      }
+    ],
+    "difference_range": [
+      0.0034217135957639315,
+      0.006920352719713583
+    ],
+    "widest_ci95": [
+      -0.003265599565374156,
+      0.013437235746175013
+    ],
+    "removal_rates_from": "output/rq3_one_year_survival/corrected.json"
+  },
+  "secondary": {
+    "placebo_2015_2020": {
+      "treated": 876,
+      "controls": 33164,
+      "by_level": {
+        "never": 33164,
+        "occasional": 484,
+        "repeated": 315,
+        "sustained": 77
+      },
+      "planning_areas": 529,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": -0.0017857849226356475,
+      "ci95_bootstrap": [
+        -0.011477040611700328,
+        0.00809079369826223
+      ],
+      "ci90_bootstrap": [
+        -0.009815804158124358,
+        0.006677802309596587
+      ],
+      "ci95_cluster_robust": [
+        -0.011556430367849979,
+        0.007984860522578685
+      ]
+    },
+    "older_16_40": {
+      "treated": 2461,
+      "controls": 173773,
+      "by_level": {
+        "never": 173773,
+        "occasional": 1539,
+        "repeated": 771,
+        "sustained": 151
+      },
+      "planning_areas": 539,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.0013739138695546146,
+      "ci95_bootstrap": [
+        -0.004458987227314992,
+        0.006632226157967957
+      ],
+      "ci90_bootstrap": [
+        -0.0034487087222589453,
+        0.005839330615466677
+      ],
+      "ci95_cluster_robust": [
+        -0.004093255779592513,
+        0.006841083518701741
+      ]
+    },
+    "primary_minus_placebo": {
+      "treated": 874,
+      "controls": 33062,
+      "by_level": {
+        "never": 33062,
+        "occasional": 483,
+        "repeated": 314,
+        "sustained": 77
+      },
+      "planning_areas": 529,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.009439613636838358,
+      "ci95_bootstrap": [
+        -0.007010396266297445,
+        0.025928206633181697
+      ],
+      "ci90_bootstrap": [
+        -0.004671351243601542,
+        0.02300339336842337
+      ],
+      "ci95_cluster_robust": [
+        -0.007059519475462453,
+        0.025938746749139166
+      ]
+    },
+    "s1_1m_circle": {
+      "treated": 1702,
+      "controls": 44193,
+      "by_level": {
+        "never": 44193,
+        "occasional": 917,
+        "repeated": 636,
+        "sustained": 149
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.006628949477536499,
+      "ci95_bootstrap": [
+        -0.0013166514527036854,
+        0.014163686350789444
+      ],
+      "ci90_bootstrap": [
+        -4.90962952015161e-05,
+        0.013045463576566933
+      ],
+      "ci95_cluster_robust": [
+        -0.0010568730580589932,
+        0.014314772013131992
+      ]
+    },
+    "s2_3m_circle": {
+      "treated": 1802,
+      "controls": 46044,
+      "by_level": {
+        "never": 46044,
+        "occasional": 968,
+        "repeated": 675,
+        "sustained": 159
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.005095227367447717,
+      "ci95_bootstrap": [
+        -0.001225951573058543,
+        0.011514189319132914
+      ],
+      "ci90_bootstrap": [
+        -0.0003539357542456483,
+        0.010520065767470395
+      ],
+      "ci95_cluster_robust": [
+        -0.0013134899372678486,
+        0.011503944672163282
+      ]
+    },
+    "s3_occasional": {
+      "treated": 965,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.0023082476759726045,
+      "ci95_bootstrap": [
+        -0.002602348432082237,
+        0.0072338213628353005
+      ],
+      "ci90_bootstrap": [
+        -0.0017474650862211987,
+        0.006547859939465247
+      ],
+      "ci95_cluster_robust": [
+        -0.0026749883030624273,
+        0.007291483655007636
+      ]
+    },
+    "s3_repeated": {
+      "treated": 668,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.001589743722615783,
+      "ci95_bootstrap": [
+        -0.004371511848904277,
+        0.007976998244716113
+      ],
+      "ci90_bootstrap": [
+        -0.003423516738458206,
+        0.006836755791363388
+      ],
+      "ci95_cluster_robust": [
+        -0.004376194851810242,
+        0.007555682297041807
+      ]
+    },
+    "s3_sustained": {
+      "treated": 152,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.011806893089230368,
+      "ci95_bootstrap": [
+        -0.0004622740815174323,
+        0.022379211421110875
+      ],
+      "ci90_bootstrap": [
+        0.0018125267079537094,
+        0.020667652504471598
+      ],
+      "ci95_cluster_robust": [
+        0.0007325533523008347,
+        0.022881232826159902
+      ]
+    },
+    "s4_any_log": {
+      "treated": 1785,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.0026384240117687872,
+      "ci95_bootstrap": [
+        -0.0012814929278116719,
+        0.006535843555633357
+      ],
+      "ci90_bootstrap": [
+        -0.0006518315368511885,
+        0.005876361467042314
+      ],
+      "ci95_cluster_robust": [
+        -0.001265087255750775,
+        0.00654193527928835
+      ]
+    },
+    "s5_500_l_or_more": {
+      "treated": 148,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.004069571160771003,
+      "ci95_bootstrap": [
+        -0.008878716829216206,
+        0.01568775247114773
+      ],
+      "ci90_bootstrap": [
+        -0.006188891103129264,
+        0.013966862347645857
+      ],
+      "ci95_cluster_robust": [
+        -0.007773260062595261,
+        0.01591240238413727
+      ]
+    },
+    "s6_logs_in_dry_2022": {
+      "treated": 805,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": -6.063321616899077e-05,
+      "ci95_bootstrap": [
+        -0.004635726531985484,
+        0.004907423705977069
+      ],
+      "ci90_bootstrap": [
+        -0.0038762210336658934,
+        0.004071786347354117
+      ],
+      "ci95_cluster_robust": [
+        -0.004859846394338857,
+        0.004738579962000875
+      ]
+    },
+    "s7_with_trees_watered_before_2020": {
+      "treated": 2651,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.0022229297733330562,
+      "ci95_bootstrap": [
+        -0.0009214032475205162,
+        0.005514779787691481
+      ],
+      "ci90_bootstrap": [
+        -0.00046666090591887126,
+        0.0050137594367793
+      ],
+      "ci95_cluster_robust": [
+        -0.001050728210451915,
+        0.005496587757118027
+      ]
+    },
+    "s8_exact_matching": {
+      "treated": 1785,
+      "controls": 45775,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.002258707597554366,
+      "ci95_bootstrap": [
+        -0.0016991664271183624,
+        0.006267329944292419
+      ],
+      "ci90_bootstrap": [
+        -0.0010264663149934057,
+        0.005575945462419205
+      ]
+    },
+    "s9_adjusted_level": {
+      "treated": 1785,
+      "controls": 45775,
+      "by_level": {
+        "never": 45775,
+        "occasional": 965,
+        "repeated": 668,
+        "sustained": 152
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.0006241293251075686,
+      "ci95_bootstrap": [
+        -0.004397765510270979,
+        0.005347869749649595
+      ],
+      "ci90_bootstrap": [
+        -0.0036813037398998956,
+        0.004611722271600287
+      ],
+      "ci95_cluster_robust": [
+        -0.004288315695919065,
+        0.005536574346134202
+      ]
+    },
+    "s10_canopy_fraction": {
+      "treated": 1956,
+      "controls": 48224,
+      "by_level": {
+        "never": 48224,
+        "occasional": 1054,
+        "repeated": 731,
+        "sustained": 171
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.01018718608740043,
+      "ci95_bootstrap": [
+        -0.012407207987359519,
+        0.034004748314447275
+      ],
+      "ci90_bootstrap": [
+        -0.008801438799223224,
+        0.02998879734651665
+      ],
+      "ci95_cluster_robust": [
+        -0.013226766705869865,
+        0.033601138880670726
+      ]
+    },
+    "s11_disc_mean_ndvi": {
+      "treated": 1956,
+      "controls": 48224,
+      "by_level": {
+        "never": 48224,
+        "occasional": 1054,
+        "repeated": 731,
+        "sustained": 171
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.005239445481889981,
+      "ci95_bootstrap": [
+        -0.004049999569445479,
+        0.014205496831335493
+      ],
+      "ci90_bootstrap": [
+        -0.002545217182593739,
+        0.012657992645970234
+      ],
+      "ci95_cluster_robust": [
+        -0.0038296089725086075,
+        0.01430849993628857
+      ]
+    },
+    "s12_minus_background_ring": {
+      "treated": 1338,
+      "controls": 38739,
+      "by_level": {
+        "never": 38739,
+        "occasional": 731,
+        "repeated": 503,
+        "sustained": 104
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": -0.0014643178787541152,
+      "ci95_bootstrap": [
+        -0.008906404830158159,
+        0.005251759413553787
+      ],
+      "ci90_bootstrap": [
+        -0.007757849373777125,
+        0.0042177602060575435
+      ],
+      "ci95_cluster_robust": [
+        -0.008470523406802717,
+        0.005541887649294486
+      ]
+    },
+    "s13_stable_surface_covariate": {
+      "treated": 1784,
+      "controls": 45618,
+      "by_level": {
+        "never": 45618,
+        "occasional": 965,
+        "repeated": 667,
+        "sustained": 152
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.005350797103000963,
+      "ci95_bootstrap": [
+        -0.0016772708816381072,
+        0.012164306662170903
+      ],
+      "ci90_bootstrap": [
+        -0.0005155092959974878,
+        0.011047420607452792
+      ],
+      "ci95_cluster_robust": [
+        -0.0014998111610962294,
+        0.012201405367098156
+      ]
+    },
+    "s14_without_shaded_discs": {
+      "treated": 1510,
+      "controls": 42008,
+      "by_level": {
+        "never": 42008,
+        "occasional": 819,
+        "repeated": 559,
+        "sustained": 132
+      },
+      "planning_areas": 534,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.007751802334462226,
+      "ci95_bootstrap": [
+        0.0007688155427495334,
+        0.014669551426946802
+      ],
+      "ci90_bootstrap": [
+        0.0018393840268259778,
+        0.013545763971775012
+      ],
+      "ci95_cluster_robust": [
+        0.0008505910535869217,
+        0.01465301361533753
+      ]
+    },
+    "s15_planted_by_2014": {
+      "treated": 976,
+      "controls": 34610,
+      "by_level": {
+        "never": 34610,
+        "occasional": 542,
+        "repeated": 347,
+        "sustained": 87
+      },
+      "planning_areas": 529,
+      "estimand": "gain from no care to sustained care (3 x trend)",
+      "difference": 0.004173592745731813,
+      "ci95_bootstrap": [
+        -0.004605777588894979,
+        0.012760540313996267
+      ],
+      "ci90_bootstrap": [
+        -0.0031387228297181436,
+        0.0114337056274947
+      ],
+      "ci95_cluster_robust": [
+        -0.004617679443691115,
+        0.012964864935154741
+      ]
+    },
+    "s16_2020_2023_green_share": {
+      "treated": 1337,
+      "controls": 45561,
+      "planning_areas": 534,
+      "estimand": "treated minus never watered",
+      "difference": 0.00014947718814420206,
+      "ci95_bootstrap": [
+        -0.0014004862642730091,
+        0.0018137171094724412
+      ],
+      "ci90_bootstrap": [
+        -0.001129993706091168,
+        0.001549040172394404
+      ],
+      "ci95_cluster_robust": [
+        -0.001448101078863875,
+        0.0017470554551522793
+      ]
+    }
+  },
+  "s18_without_survivor_selection": "awaits CityLAB's 2020 tree table and full log history",
+  "inputs_sha256": {
+    "crown_circles_2015.csv.gz": "633a5cb97aa9d9cb8a34e562d0ab55f2f909adf8d679c82ec0ac763f0175aa88",
+    "crown_circles_2020.csv.gz": "c783713f7105e9e152d4d013307fdacdb80c0c4222746999ac8c4cb2912f2e5a",
+    "crown_circles_2020rgb.csv.gz": "bf92474ca26b961d8f88e901b3d02413ea5674205a59761b6c5f309a759d2d22",
+    "crown_circles_2023.csv.gz": "337bf34581b6d4e522cd714b74cf643b956e160d8dbf8665efb192e387c67876",
+    "crown_circles_2025.csv.gz": "84ce8ddbd016fe0b469074cdbe11cf2899b727e8d1034ed53b6470c3c73df9a0",
+    "crown_windows_2015.csv.gz": "4085546dcacae096b6c3603b49bbd946048c56edee8ca34b33e1e10b5680789f",
+    "crown_windows_2020.csv.gz": "996fc876afafc9b43b3be9a30e8319e703b7be7513d0b34d47f65a6734e60c24",
+    "crown_windows_2020rgb.csv.gz": "22606bd2e9b19a0b69f3ef22a418f60e69da93fc974b4032aa5ee9088382e269",
+    "crown_windows_2023.csv.gz": "90da6561403bfcb121e9cfc125110c8513df57f037ca7f0cb87be8b67c4ab938",
+    "crown_windows_2025.csv.gz": "1c298629f5554e495bce519ba5ce783aeec201be43b728578f3b87923d77ce47"
+  },
+  "protocol_sha256": "ed820d90861b4bac62b97525e18172d947c5c6ab68420063303f6e774534a240",
+  "code_sha256": "8b42fd701a3800dddfe15be321da31a0f2c3ddee6bbe1f747adf2a06d9ad59bb"
+}
